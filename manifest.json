@@ -3,5 +3,6 @@
     "author": "Isabelle Basso",
     "version": "0.1.0",
     "minAppVersion": "0.12.0",
-    "theme": true
+    "theme": true,
+    "isDesktopOnly": false
 }
