@@ -277,6 +277,9 @@ settings:
   border-radius: 8px;
   align-self: auto;
 }
+.view-header-title-container.mod-at-start.mod-fade {
+  align-content: center;
+}
 .workspace-tab-header-container { /* parte de cima da interface*/
   position: relative;
   padding-bottom: 5px;
