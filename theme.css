@@ -1,0 +1,659 @@
+/*
+-------------------------------------------
+Minimalists Paradise
+-------------------------------------------
+By; Isabelle Rodrigues Basso
+Version: 0.1.0
+-------------------------------------------
+MIT License
+
+Copyright (c) 2025 Isabelle Rodrigues Basso
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
+/* @settings
+name: Minimalists Paradise
+id: mp-theme
+settings:
+  - id: theme-colors
+    title: main colors
+    type: heading
+    level: 1
+
+  - id: background-primary
+    title: Fundo primário
+    type: variable-themed-color
+    format: hex
+    default-light: "#ffffff"
+    default-dark: "#000000"
+    variable: background-primary
+
+  - id: card-bg
+    title: Fundo dos cards
+    type: variable-themed-color
+    format: hex
+    default-light: "#f0f0f0"
+    default-dark: "#0c0c0c"
+    variable: card-bg
+
+  - id: card-border-color
+    title: Cor da borda dos cards
+    type: variable-themed-color
+    format: hex
+    default-light: "#252525c3"
+    default-dark: "#4d4d4f"
+    variable: card-border-color
+
+  - id: syntax-colors
+    title: syntax colors </>
+    type: heading
+    level: 1
+
+  - id: syntax-keyword
+    title: Palavras-chave (def, return, if...)
+    type: variable-themed-color
+    format: hex
+    default-dark: "#552B79"
+    default-light: "#552B79"
+    variable: syntax-keyword
+
+  - id: syntax-def
+    title: Definições (funções, etc)
+    type: variable-themed-color
+    format: hex
+    default-dark: "#69EED7"
+    default-light: "#69EED7"
+    variable: syntax-def
+
+  - id: syntax-variable
+    title: Variáveis padrão
+    type: variable-themed-color
+    format: hex
+    default-dark: "#558FC7"
+    default-light: "#558FC7"
+    variable: syntax-variable
+
+  - id: syntax-variable-2
+    title: Parâmetros e argumentos
+    type: variable-themed-color
+    format: hex
+    default-dark: "#4186B6"
+    default-light: "#4186B6"
+    variable: syntax-variable-2
+
+  - id: syntax-variable-3
+    title: Variáveis especiais/objetos
+    type: variable-themed-color
+    format: hex
+    default-dark: "#C689E3"
+    default-light: "#C689E3"
+    variable: syntax-variable-3
+
+  - id: syntax-string
+    title: Strings
+    type: variable-themed-color
+    format: hex
+    default-dark: "#BE4AA0"
+    default-light: "#BE4AA0"
+    variable: syntax-string
+
+  - id: syntax-number
+    title: Números
+    type: variable-themed-color
+    format: hex
+    default-dark: "#9795EE"
+    default-light: "#9795EE"
+    variable: syntax-number
+
+  - id: syntax-comment
+    title: Comentários
+    type: variable-themed-color
+    format: hex
+    default-dark: "#16486D"
+    default-light: "#16486D"
+    variable: syntax-comment
+
+  - id: syntax-builtin
+    title: Funções built-in (print, len...)
+    type: variable-themed-color
+    format: hex
+    default-dark: "#2D76E9"
+    default-light: "#2D76E9"
+    variable: syntax-builtin
+
+  - id: syntax-operator
+    title: Operadores (+, =, -...)
+    type: variable-themed-color
+    format: hex
+    default-dark: "#6852B3"
+    default-light: "#6852B3"
+    variable: syntax-operator
+
+  - id: syntax-property
+    title: Propriedades e métodos
+    type: variable-themed-color
+    format: hex
+    default-dark: "#4A6BDB"
+    default-light: "#4A6BDB"
+    variable: syntax-property
+
+  - id: syntax-default-text
+    title: Texto padrão em blocos de código
+    type: variable-themed-color
+    format: hex
+    default-dark: "#eeeeee"
+    default-light: "#eeeeee"
+    variable: syntax-default-text
+
+  - id: syntax-border
+    title: Cor da borda de destaque em blocos de código
+    type: variable-themed-color
+    format: hex
+    default-dark: "#A0A6A7"
+    default-light: "#A0A6A7"
+    variable: syntax-border
+  
+  # --- Font settings section ---
+  - id: font-settings
+    title: fonts
+    type: heading
+    level: 1
+
+  - id: default-font
+    title: default font
+    type: variable-text
+    default: "'Times New Roman', Times, serif"
+    variable: default-font
+
+  - id: code-font
+    title: code font
+    type: variable-text
+    default: "'Fira Code', 'JetBrains Mono', monospace"
+    variable: code-font
+
+  - id: default-font-size
+    title: font size
+    type: variable-number-slider
+    default: 16
+    min: 10
+    max: 24
+    step: 1
+    format: px
+    variable: default-font-size
+*/
+/* =============================================== global =================================================*/
+:root {
+    padding-bottom: 24px;
+    --default-font: 'Times New Roman', Times, serif;
+    --default-font-size: 16px;
+    --code-font: 'Fira Code', 'JetBrains Mono', monospace;
+    --accent-color: #68686e;
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    --card-max-width: 10000px;
+    --card-width: 100%;
+    --card-margin: 0px 8px 0px 8px;
+    --card-padding: 16px;
+    --divider-width: 1px;
+    --divider-color: #4d4d4f;
+    --button-padding: 4px 6px;
+    --button-margin: 0px 3px 0px 0px;
+
+.markdown-source-view.mod-cm6,
+.markdown-source-view.mod-cm6 .cm-scroller,
+.cm-s-obsidian {
+  font-family: var(--default-font, 'Times New Roman', Times, serif) !important;
+  font-size: var(--default-font-size);
+}
+.markdown-preview-view {
+  font-family: var(--default-font, 'Times New Roman', Times, serif) !important;
+  font-size: var(--default-font-size);
+}
+.cm-s-obsidian span.cm-inline-code,
+.markdown-preview-view code {
+  font-family: var(--code-font) !important;
+}
+.markdown-preview-view pre code,
+.cm-s-obsidian pre,
+.cm-s-obsidian code[class*="language-"] {
+  font-family: var(--code-font) !important;
+}
+.cm-s-obsidian span.cm-inline-code,
+.markdown-preview-view code {
+  font-family: var(--code-font, 'Fira Code', monospace) !important;
+}
+.markdown-preview-view pre code,
+.cm-s-obsidian pre,
+.cm-s-obsidian code[class*="language-"] {
+  font-family: var(--code-font, 'Fira Code', monospace) !important;
+  font-size: 0.95rem;
+}
+/* ---------------------------------------- bordas transparentes ------------------------------------------*/
+.workspace-split.mod-horizontal > .workspace-leaf-resize-handle,
+.workspace-split.mod-vertical > .workspace-leaf-resize-handle {
+    border: none !important;
+}
+
+.pane-view {
+    border: none !important;
+}
+.mod-left {
+    border: none !important;
+    border-right: none !important;
+    border-bottom: none !important;
+    border-top: none !important;
+}
+.mod-left::before {
+    border: none !important;
+}
+.mod-right {
+    border-left: none !important;
+}
+
+.workspace-leaf {
+    border: none !important;
+}
+
+.view-content {
+    border: none !important;
+}
+.workspace-sidedock-vault-profile {
+    border: none !important;
+}
+/* --------------------------------------------------------------------------------------------------------*/
+.workspace-tab-container { /* paineis */
+  position: initial;
+  display: block;
+  width: calc(100% - var(--card-margin-horizontal, 16px) * 2);
+  max-width: var(--card-max-width, 2000px); /* limite de largura */
+  margin: var(--card-margin-vertical, 16px) auto;
+  margin-left: var(--card-margin-horizontal, 16px);
+  margin-right: var(--card-margin-horizontal, 16px);
+  padding: var(--card-padding, 16px);
+  align-self: center;
+  box-sizing: border-box;
+
+  /* Visual de card */
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border-color, #e0e0e0);
+  border-radius: var(--card-radius, 12px);
+  box-shadow: var(--card-shadow, 0 4px 12px rgba(0, 0, 0, 0.05)); 
+}
+.workspace-leaf { /* painel lateral esquerdo cor */
+  background-color: var(--card-bg);
+}
+.cm-scroller {
+  background-color: var(--card-bg);
+}
+.view-header { /* header da parte do meio */
+  background-color: var(--card-bg);
+  border: 1px dotted var(--card-border-color);
+  border-radius: 8px;
+  align-self: auto;
+}
+.workspace-tab-header-container { /* parte de cima da interface*/
+  position: relative;
+  padding-bottom: 5px;
+  background-color: transparent;
+  border-bottom: 1px solid var(--card-bg);
+}
+.workspace-tab-header { /* tab */
+  position: inherit;
+  border-radius: 4px 4px 4px 4px !important;
+  background-color: var(--card-bg);
+  border: 1px solid var(--card-border-color);
+  margin-right: 6px;
+  margin-bottom: -0px;
+  padding: 4px 12px;
+  padding-bottom: 4px;
+  color: var(--color-accent);
+  font-weight: 500;
+  transition: background 0.3s ease-in-out;
+}
+.workspace-tab-header.is-active { /* tab em uso */
+  background-color: var(--color-accent);
+  border: 1px solid var(--card-border-color);
+}
+.workspace-tab-header-container { /* parte de cima da interface*/
+  position: relative;
+  padding-bottom: 5px;
+  background-color: transparent;
+  border-bottom: 1px solid var(--card-bg);
+}
+.workspace-tab-header-container.tap-pable { /* botões da parte de cima da interface */
+    position: auto;
+    margin: var(--button-margin), 0px;
+    padding: var(--button-padding), 0px;
+}
+.workspace-tab-header-container-inner {
+    width: 100%;
+    position: auto;
+    padding-bottom: 0px;
+}
+.workspace-tab-header-inner {
+    padding: 0%;
+}
+.workspace-tab-header-inner-title {
+    padding: 0px 0px 0px 4px;
+}
+.status-bar { /* status bar */
+  border: none !important;
+  width: 100vw; /* Ocupa toda a largura da viewport */
+  left: 0;
+  right: 0;
+  position: fixed;
+  bottom: 2px;
+  background-color: var(--background-primary);
+}
+.markdown-reading-view {
+    background-color: var(--card-bg);
+}
+body {
+  --syntax-keyword: #552B79;
+  --syntax-def: #69EED7;
+  --syntax-variable: #558FC7;
+  --syntax-variable-2: #4186B6;
+  --syntax-variable-3: #C689E3;
+  --syntax-string: #BE4AA0;
+  --syntax-number: #9795EE;
+  --syntax-comment: #16486D;
+  --syntax-builtin: #2D76E9;
+  --syntax-operator: #6852B3;
+  --syntax-property: #4A6BDB;
+  --syntax-default-text: #eeeeee;
+  --syntax-border: #A0A6A7;
+}
+/* ----------------------------------------------- syntax ------------------------------------------------ */
+.cm-s-obsidian span.cm-keyword {
+  color: var(--syntax-keyword); /* palavras-chave: def, return, if */
+}
+
+.cm-s-obsidian span.cm-def {
+  color: var(--syntax-def); /* nomes de funções e definições */
+}
+
+.cm-s-obsidian span.cm-variable {
+  color: var(--syntax-variable); /* variáveis padrão */
+}
+
+.cm-s-obsidian span.cm-variable-2 {
+  color: var(--syntax-variable-2); /* parâmetros e argumentos */
+}
+
+.cm-s-obsidian span.cm-variable-3 {
+  color: var(--syntax-variable-3); /* variáveis especiais ou objetos */
+}
+
+.cm-s-obsidian span.cm-string {
+  color: var(--syntax-string); /* strings */
+}
+
+.cm-s-obsidian span.cm-number {
+  color: var(--syntax-number); /* números */
+}
+
+.cm-s-obsidian span.cm-comment {
+  color: var(--syntax-comment); /* comentários */
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.cm-s-obsidian span.cm-builtin {
+  color: var(--syntax-builtin); /* funções built-in: print, len, etc. */
+}
+
+.cm-s-obsidian span.cm-operator {
+  color: var(--syntax-operator); /* operadores como +, =, -, etc. */
+}
+
+.cm-s-obsidian span.cm-property {
+  color: var(--syntax-property); /* métodos chamados via obj.metodo() */
+  font-style: italic;
+}
+
+/* Ajustes visuais gerais para blocos de código */
+
+.cm-s-obsidian code[class*="language-python"] {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  background-color: rgba(255, 255, 255, 0.02); /* sutil no escuro */
+  border-left: 2px solid var(--syntax-border) !important;
+  padding-left: 0.5em;
+  border-radius: 6px;
+  color: var(--syntax-default-text); /* cor de texto padrão para escuro */
+}
+
+.markdown-preview-view code.language-python {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-left: 2px solid var(--syntax-border);
+  padding-left: 0.5em;
+  border-radius: 6px;
+  color: var(--syntax-default-text);
+  display: block;
+  white-space: pre;
+}
+
+.markdown-preview-view code.language-python .cm-keyword {
+  color: var(--syntax-keyword);
+  font-weight: bold;
+}
+
+.markdown-preview-view code.language-python .cm-def {
+  color: var(--syntax-def);
+}
+
+.markdown-preview-view code.language-python .cm-variable {
+  color: var(--syntax-variable);
+}
+
+.markdown-preview-view code.language-python .cm-variable-2 {
+  color: var(--syntax-variable-2);
+}
+
+.markdown-preview-view code.language-python .cm-variable-3 {
+  color: var(--syntax-variable-3);
+}
+
+.markdown-preview-view code.language-python .cm-string {
+  color: var(--syntax-string);
+}
+
+.markdown-preview-view code.language-python .cm-number {
+  color: var(--syntax-number);
+}
+
+.markdown-preview-view code.language-python .cm-comment {
+  color: var(--syntax-comment);
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.markdown-preview-view code.language-python .cm-builtin {
+  color: var(--syntax-builtin);
+  font-weight: bold;
+}
+
+.markdown-preview-view code.language-python .cm-operator {
+  color: var(--syntax-operator);
+}
+
+.markdown-preview-view code.language-python .cm-property {
+  color: var(--syntax-property);
+  font-style: italic;
+}
+
+/* Highlight basic Python syntax in Preview Mode without plugins */
+.markdown-preview-view code.language-python {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.markdown-preview-view code.language-python span {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+}
+
+/* Manual highlighting using data-token or keyword-based targeting */
+.markdown-preview-view code.language-python span:has(> .token-keyword),
+.markdown-preview-view code.language-python span:contains("def"),
+.markdown-preview-view code.language-python span:contains("return"),
+.markdown-preview-view code.language-python span:contains("if"),
+.markdown-preview-view code.language-python span:contains("else"),
+.markdown-preview-view code.language-python span:contains("elif"),
+.markdown-preview-view code.language-python span:contains("while"),
+.markdown-preview-view code.language-python span:contains("for"),
+.markdown-preview-view code.language-python span:contains("in") {
+  color: var(--syntax-keyword);
+  font-weight: bold;
+}
+
+.markdown-preview-view code.language-python span:contains("print"),
+.markdown-preview-view code.language-python span:contains("len"),
+.markdown-preview-view code.language-python span:contains("range"),
+.markdown-preview-view code.language-python span:contains("str"),
+.markdown-preview-view code.language-python span:contains("int") {
+  color: var(--syntax-builtin);
+}
+
+.markdown-preview-view code.language-python span:contains("'"),
+.markdown-preview-view code.language-python span:contains('"') {
+  color: var(--syntax-string);
+}
+
+.markdown-preview-view code.language-python span:contains("#") {
+  color: var(--syntax-comment);
+  font-style: italic;
+  opacity: 0.85;
+}
+/* Força aplicação da paleta de sintaxe no Preview Mode mesmo sem classes específicas */
+.markdown-preview-view code.language-python span {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+}
+
+.markdown-preview-view code.language-python span:has(> .token-keyword),
+.markdown-preview-view code.language-python span[class*="token-keyword"],
+.markdown-preview-view code.language-python span[class*="keyword"] {
+  color: var(--syntax-keyword);
+}
+
+.markdown-preview-view code.language-python span[class*="def"],
+.markdown-preview-view code.language-python span[class*="function"] {
+  color: var(--syntax-def);
+}
+
+.markdown-preview-view code.language-python span[class*="string"] {
+  color: var(--syntax-string);
+}
+
+.markdown-preview-view code.language-python span[class*="number"] {
+  color: var(--syntax-number);
+}
+
+.markdown-preview-view code.language-python span[class*="comment"] {
+  color: var(--syntax-comment);
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.markdown-preview-view code.language-python span[class*="builtin"],
+.markdown-preview-view code.language-python span:contains("print"),
+.markdown-preview-view code.language-python span:contains("len"),
+.markdown-preview-view code.language-python span:contains("range") {
+  color: var(--syntax-builtin);
+}
+
+.markdown-preview-view code.language-python span[class*="operator"] {
+  color: var(--syntax-operator);
+}
+
+.markdown-preview-view code.language-python span[class*="property"] {
+  color: var(--syntax-property);
+  font-style: italic;
+}
+/* ------------------------------------------------------------------------------------------------------- */
+}
+/* ======================================================================================================= */
+.theme-dark {
+    --background-default: #000000;
+    --text-color: #ffffff;
+    --background-primary: #000000;
+    --background-primary-alt: #000000;
+    --background-secondary: #000000;
+    --background-secondary-alt: #000000;
+    --card-bg: #0c0c0c;
+    --card-border-color: #4d4d4f;
+}
+.theme-light {
+    --background-default: #ffffff;
+    --text-color: #000000;
+    --background-primary: #ffffff;
+    --background-primary-alt: #ffffff;
+    --background-secondary: #ffffff;
+    --background-secondary-alt: #ffffff;
+    --card-bg: #f0f0f0;
+    --card-border-color: #252525c3;
+}
+/* Força aplicação da paleta de sintaxe no Preview Mode mesmo sem classes específicas */
+.markdown-preview-view code.language-python span {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+}
+
+.markdown-preview-view code.language-python span:has(> .token-keyword),
+.markdown-preview-view code.language-python span[class*="token-keyword"],
+.markdown-preview-view code.language-python span[class*="keyword"] {
+  color: var(--syntax-keyword);
+}
+
+.markdown-preview-view code.language-python span[class*="def"],
+.markdown-preview-view code.language-python span[class*="function"] {
+  color: var(--syntax-def);
+}
+
+.markdown-preview-view code.language-python span[class*="string"] {
+  color: var(--syntax-string);
+}
+
+.markdown-preview-view code.language-python span[class*="number"] {
+  color: var(--syntax-number);
+}
+
+.markdown-preview-view code.language-python span[class*="comment"] {
+  color: var(--syntax-comment);
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.markdown-preview-view code.language-python span[class*="builtin"],
+.markdown-preview-view code.language-python span:contains("print"),
+.markdown-preview-view code.language-python span:contains("len"),
+.markdown-preview-view code.language-python span:contains("range") {
+  color: var(--syntax-builtin);
+}
+
+.markdown-preview-view code.language-python span[class*="operator"] {
+  color: var(--syntax-operator);
+}
+
+.markdown-preview-view code.language-python span[class*="property"] {
+  color: var(--syntax-property);
+  font-style: italic;
+}
