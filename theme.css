@@ -302,6 +302,7 @@ settings:
 .workspace-tab-header.is-active { /* tab em uso */
   background-color: var(--color-accent);
   border: 1px solid var(--card-border-color);
+  color: var(--text-color);
 }
 .workspace-tab-header-container { /* parte de cima da interface*/
   position: relative;
