@@ -1,3 +1,33 @@
+/*
+-------------------------------------------
+Minimalists Paradise
+-------------------------------------------
+By; Isabelle Rodrigues Basso
+Version: 0.0.1
+-------------------------------------------
+MIT License
+
+Copyright (c) 2025 Isabelle Rodrigues Basso
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+*/
+
 /* @settings
 name: Minimalists Paradise
 id: mp-theme
@@ -11,7 +41,7 @@ settings:
     title: Fundo primário
     type: variable-themed-color
     format: hex
-    default-light: "#ffffff"
+    default-light: "#A5AAAE"
     default-dark: "#000000"
     variable: background-primary
 
@@ -19,7 +49,7 @@ settings:
     title: Fundo dos cards
     type: variable-themed-color
     format: hex
-    default-light: "#f0f0f0"
+    default-light: "#D1D5D7"
     default-dark: "#0c0c0c"
     variable: card-bg
 
@@ -167,6 +197,53 @@ settings:
     step: 1
     format: px
     variable: default-font-size
+  
+  - id: blockquote-styles
+    title: blockquote styles
+    type: heading
+    level: 1
+
+  - id: blockquote-bg
+    title: blockquote background color
+    type: variable-themed-color
+    format: hex
+    default-light: "#f9f9f9"
+    default-dark: "#0c0c0c"
+    variable: blockquote-bg
+
+  - id: blockquote-border-color
+    title: blockquote border color
+    type: variable-themed-color
+    format: hex
+    default-light: "#252525c3"
+    default-dark: "#4d4d4f"
+    variable: blockquote-border-color
+
+  - id: blockquote-text
+    title: blockquote text color
+    type: variable-themed-color
+    format: hex
+    default-light: "#000000"
+    default-dark: "#ffffff"
+    variable: blockquote-text
+
+  - id: blockquote-radius
+    title: blockquote border radius
+    type: variable-number-slider
+    default: 8
+    min: 0
+    max: 20
+    step: 1
+    format: px
+    variable: blockquote-radius
+
+  - id: citation-bg
+    title: citation background color
+    type: variable-themed-color
+    format: hex
+    default-light: "#68686e"
+    default-dark: "#68686e"
+    variable: citation-bg
 */
 /* =============================================== global =================================================*/
 :root {
@@ -175,7 +252,6 @@ settings:
     --default-font-size: 16px;
     --code-font: 'Fira Code', 'JetBrains Mono', monospace;
     --accent-color: #68686e;
-    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
     --card-max-width: 10000px;
     --card-width: 100%;
     --card-margin: 0px 8px 0px 8px;
@@ -195,6 +271,70 @@ settings:
   font-family: var(--default-font, 'Times New Roman', Times, serif) !important;
   font-size: var(--default-font-size);
 }
+/* Preview mode (leitura) */
+.markdown-preview-view h1 { /* divisão h1 no reading mode */
+  display: block;
+  width: 100%;
+  border-bottom: 2px solid var(--divider-color, #ccc);
+  padding-bottom: 2px;
+  margin-bottom: 2px;
+}
+/* ----------------------------------------------- quotes ------------------------------------------------ */
+--blockquote-radius: 8px;
+/* for editor */
+.cm-quote {
+    color: var(--text-normal) !important;
+}
+
+/* for preview */
+.markdown-preview-view blockquote {
+    border: 2px solid;
+    border-color: var(--blockquote-border-color) !important;
+    border-left-width: 2px !important;
+    border-radius: var(--blockquote-radius);
+    font-size: inherit;
+    line-height: 1.5em;
+    margin: 10px 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: var(--blockquote-bg);
+}
+
+.markdown-preview-view blockquote {
+    position: relative;
+}
+
+/* if paraphrasing, wrap your quote in <blockquote class=paraphrase>text</blockquote> */
+
+.markdown-preview-view blockquote.paraphrase:after { 
+	display: none;
+}
+
+/* for citations */ 
+
+cite {
+	background-color: var(--citation-bg);
+  border-radius: 6px;
+	color: var(--blockquote-text);
+	margin-left: -10px;
+	margin-right: -10px;
+	padding-left: 10px;
+	padding-right: 10px;
+	text-align: right;
+	display: block;
+}
+
+cite a:link {
+	color: white;
+}
+cite {
+  color: var(--text-color);
+  text-align: end;
+  display: block;
+  padding-right: 1em;
+}
+/* ------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------- fontes ------------------------------------------------ */
 .cm-s-obsidian span.cm-inline-code,
 .markdown-preview-view code {
   font-family: var(--code-font) !important;
@@ -214,6 +354,13 @@ settings:
   font-family: var(--code-font, 'Fira Code', monospace) !important;
   font-size: 0.95rem;
 }
+.cm-highlight {
+  background-color: #A0A6A7A6 !important; /* cor do destaque */
+  display: inline;
+  border-radius: 5px;
+  padding: 0.075em 0.2em; /* espaçamento interno */
+}
+/* ------------------------------------------------------------------------------------------------------- */
 /* ---------------------------------------- bordas transparentes ------------------------------------------*/
 .workspace-split.mod-horizontal > .workspace-leaf-resize-handle,
 .workspace-split.mod-vertical > .workspace-leaf-resize-handle {
@@ -246,16 +393,25 @@ settings:
 .workspace-sidedock-vault-profile {
     border: none !important;
 }
+.workspace-tab-header-container-inner {
+    border: none !important;
+}
+.workspace-leaf-resize-handle {
+    border: none !important;
+}
+.workspace-tab-header-container {
+    border-bottom: none !important;
+}
 /* --------------------------------------------------------------------------------------------------------*/
 .workspace-tab-container { /* paineis */
   position: initial;
   display: block;
   width: calc(100% - var(--card-margin-horizontal, 16px) * 2);
   max-width: var(--card-max-width, 2000px); /* limite de largura */
-  margin: var(--card-margin-vertical, 16px) auto;
+  margin-bottom: 16px;
   margin-left: var(--card-margin-horizontal, 16px);
   margin-right: var(--card-margin-horizontal, 16px);
-  padding: var(--card-padding, 16px);
+  padding: 0px;
   align-self: center;
   box-sizing: border-box;
 
@@ -272,13 +428,34 @@ settings:
   background-color: var(--card-bg);
 }
 .view-header { /* header da parte do meio */
-  background-color: var(--card-bg);
+  background-color: transparent;
   border: 1px dotted var(--card-border-color);
   border-radius: 8px;
   align-self: auto;
+  margin: 8px;
+  box-shadow: none;
 }
-.view-header-title-container.mod-at-start.mod-fade {
-  align-content: center;
+.view-header-title-container.mod-at-start.mod-fade { /* fade título do header */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 8px;
+  color: var(--text-color);
+}
+.view-header-title-container { /* título do header */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 8px;
+  color: var(--text-color);
+  align-items: center;
+  justify-content: center;
+}
+.view-header-breadcrumb-separator { /* separador do breadcrumb */
+  color: var(--text-color);
+}
+.empty-state { /* nada aberto */
+  background-color: var(--card-bg);
 }
 .workspace-tab-header-container { /* parte de cima da interface*/
   position: relative;
@@ -304,12 +481,6 @@ settings:
   border: 1px solid var(--card-border-color);
   color: var(--text-color);
 }
-.workspace-tab-header-container { /* parte de cima da interface*/
-  position: relative;
-  padding-bottom: 5px;
-  background-color: transparent;
-  border-bottom: 1px solid var(--card-bg);
-}
 .workspace-tab-header-container.tap-pable { /* botões da parte de cima da interface */
     position: auto;
     margin: var(--button-margin), 0px;
@@ -334,6 +505,13 @@ settings:
   position: fixed;
   bottom: 2px;
   background-color: var(--background-primary);
+}
+.workspace-sidedock-vault-profile { /* vault profile */
+  padding: 0px;
+  margin: 0px;
+  background-color: var(--card-bg);
+  border: 1 px solid var(--card-border-color) !important;
+  border-radius: 0px 4px 4px 0px;
 }
 .markdown-reading-view {
     background-color: var(--card-bg);
@@ -564,27 +742,51 @@ body {
   font-style: italic;
 }
 /* ------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------- random tweaks ---------------------------------------------- */
+.callout {
+  border-radius: 18px;
+  border-color: 1px solid var(--blockquote-border-color) !important;
+}
+.callout-content {
+  background-color: transparent;
+  color: var(--text-color);
+}
+.cm-def.cm-hmd-frontmatter { /* frontmatter */
+  color: var(--text-color)
+}
 }
 /* ======================================================================================================= */
 .theme-dark {
     --background-default: #000000;
     --text-color: #ffffff;
     --background-primary: #000000;
-    --background-primary-alt: #000000;
-    --background-secondary: #000000;
-    --background-secondary-alt: #000000;
+    --background-primary-alt: var(--background-primary);
+    --background-secondary: var(--background-primary);
+    --background-secondary-alt: var(--background-primary);
     --card-bg: #0c0c0c;
     --card-border-color: #4d4d4f;
+    --blockquote-border-color: #4d4d4f;
+    --blockquote-bg: #0c0c0c;
+    --blockquote-radius: 8px;
+    --blockquote-text: inherit;
+    --citation-bg: #68686e;
+    --card-shadow: 0 4px 12px rgba(255, 255, 255, 0.03);
 }
 .theme-light {
-    --background-default: #ffffff;
+    --background-default: #A5AAAE;
     --text-color: #000000;
-    --background-primary: #ffffff;
-    --background-primary-alt: #ffffff;
-    --background-secondary: #ffffff;
-    --background-secondary-alt: #ffffff;
-    --card-bg: #f0f0f0;
+    --background-primary: #A5AAAE;
+    --background-primary-alt: var(--background-primary);
+    --background-secondary: var(--background-primary);
+    --background-secondary-alt: var(--background-primary);
+    --card-bg: #D1D5D7;
     --card-border-color: #252525c3;
+    --blockquote-border-color: #252525c3;
+    --blockquote-bg: #a5AAAE;
+    --blockquote-radius: 8px;
+    --blockquote-text: inherit;
+    --citation-bg: #68686e;
+    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 /* Força aplicação da paleta de sintaxe no Preview Mode mesmo sem classes específicas */
 .markdown-preview-view code.language-python span {
