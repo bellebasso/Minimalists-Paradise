@@ -770,7 +770,7 @@ body {
     --blockquote-radius: 8px;
     --blockquote-text: inherit;
     --citation-bg: #68686e;
-    --card-shadow: 0 4px 12px rgba(255, 255, 255, 0.03);
+    --card-shadow: 0 4px 12px rgba(230, 230, 230, 0.3);
 }
 .theme-light {
     --background-default: #A5AAAE;
