@@ -61,6 +61,27 @@ settings:
     default-dark: "#4d4d4f"
     variable: card-border-color
 
+  - id: graph-view-style
+    title: graph view
+    type: heading
+    level: 1
+
+  - id: graph-bg
+    title: graph view background
+    type: variable-themed-color
+    format: hex
+    default-light: "#a5aaae"
+    default-dark: "#0c0c0c"
+    variable: graph-bg
+
+  - id: graph-line-color
+    title: graph view line color
+    type: variable-themed-color
+    format: hex
+    default-light: "#6767672c"
+    default-dark: "#4d4d4f"
+    variable: graph-line-color
+
   - id: syntax-colors
     title: syntax colors </>
     type: heading
@@ -247,47 +268,61 @@ settings:
 */
 /* =============================================== global =================================================*/
 :root {
-    padding-bottom: 24px;
-    --default-font: 'Times New Roman', Times, serif;
-    --default-font-size: 16px;
-    --code-font: 'Fira Code', 'JetBrains Mono', monospace;
-    --accent-color: #68686e;
-    --card-max-width: 10000px;
-    --card-width: 100%;
-    --card-margin: 0px 8px 0px 8px;
-    --card-padding: 16px;
-    --divider-width: 1px;
-    --divider-color: #4d4d4f;
-    --button-padding: 4px 6px;
-    --button-margin: 0px 3px 0px 0px;
+  padding-bottom: 24px;
+  --default-font: 'Times New Roman', Times, serif;
+  --default-font-size: 16px;
+  --code-font: 'Fira Code', 'JetBrains Mono', monospace;
+  --accent-color: #68686e;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --card-max-width: 10000px;
+  --card-width: 100%;
+  --card-margin: 0px 8px 0px 8px;
+  --card-padding: 16px;
+  --divider-width: 1px;
+  --divider-color: #4d4d4f;
+  --button-padding: 4px 6px;
+  --button-margin: 0px 3px 0px 0px;
 
-.markdown-source-view.mod-cm6,
-.markdown-source-view.mod-cm6 .cm-scroller,
-.cm-s-obsidian {
-  font-family: var(--default-font, 'Times New Roman', Times, serif) !important;
-  font-size: var(--default-font-size);
-}
-.markdown-preview-view {
-  font-family: var(--default-font, 'Times New Roman', Times, serif) !important;
-  font-size: var(--default-font-size);
-}
-/* Preview mode (leitura) */
-.markdown-preview-view h1 { /* divisão h1 no reading mode */
-  display: block;
-  width: 100%;
-  border-bottom: 2px solid var(--divider-color, #ccc);
-  padding-bottom: 2px;
-  margin-bottom: 2px;
-}
-/* ----------------------------------------------- quotes ------------------------------------------------ */
---blockquote-radius: 8px;
-/* for editor */
-.cm-quote {
+  .markdown-source-view.mod-cm6,
+  .markdown-source-view.mod-cm6 .cm-scroller,
+  .cm-s-obsidian {
+    font-family: var(--default-font, 'Times New Roman', Times, serif) !important;
+    font-size: var(--default-font-size);
+  }
+
+  .markdown-preview-view {
+    font-family: var(--default-font, 'Times New Roman', Times, serif) !important;
+    font-size: var(--default-font-size);
+  }
+
+  /* Preview mode (leitura) */
+  .markdown-preview-view h1 {
+    /* divisão h1 no reading mode */
+    display: block;
+    width: 100%;
+    border-bottom: 2px solid var(--divider-color, #ccc);
+    padding-bottom: 2px;
+    margin-bottom: 2px;
+  }
+
+  .graph-view.color-fill {
+    background-color: var(--graph-bg) !important;
+  }
+
+  .graph-view.color-line {
+    color: var(--graph-line-color) !important;
+  }
+
+  /* ----------------------------------------------- quotes ------------------------------------------------ */
+  --blockquote-radius: 8px;
+
+  /* for editor */
+  .cm-quote {
     color: var(--text-normal) !important;
-}
+  }
 
-/* for preview */
-.markdown-preview-view blockquote {
+  /* for preview */
+  .markdown-preview-view blockquote {
     border: 2px solid;
     border-color: var(--blockquote-border-color) !important;
     border-left-width: 2px !important;
@@ -298,496 +333,573 @@ settings:
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: var(--blockquote-bg);
-}
+  }
 
-.markdown-preview-view blockquote {
+  .markdown-preview-view blockquote {
     position: relative;
-}
+  }
 
-/* if paraphrasing, wrap your quote in <blockquote class=paraphrase>text</blockquote> */
+  /* if paraphrasing, wrap your quote in <blockquote class=paraphrase>text</blockquote> */
 
-.markdown-preview-view blockquote.paraphrase:after { 
-	display: none;
-}
+  .markdown-preview-view blockquote.paraphrase:after {
+    display: none;
+  }
 
-/* for citations */ 
+  /* for citations */
 
-cite {
-	background-color: var(--citation-bg);
-  border-radius: 6px;
-	color: var(--blockquote-text);
-	margin-left: -10px;
-	margin-right: -10px;
-	padding-left: 10px;
-	padding-right: 10px;
-	text-align: right;
-	display: block;
-}
+  cite {
+    background-color: var(--citation-bg);
+    border-radius: 6px;
+    color: var(--blockquote-text);
+    margin-left: -10px;
+    margin-right: -10px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: right;
+    display: block;
+  }
 
-cite a:link {
-	color: white;
-}
-cite {
-  color: var(--text-color);
-  text-align: end;
-  display: block;
-  padding-right: 1em;
-}
-/* ------------------------------------------------------------------------------------------------------- */
-/* ----------------------------------------------- fontes ------------------------------------------------ */
-.cm-s-obsidian span.cm-inline-code,
-.markdown-preview-view code {
-  font-family: var(--code-font) !important;
-}
-.markdown-preview-view pre code,
-.cm-s-obsidian pre,
-.cm-s-obsidian code[class*="language-"] {
-  font-family: var(--code-font) !important;
-}
-.cm-s-obsidian span.cm-inline-code,
-.markdown-preview-view code {
-  font-family: var(--code-font, 'Fira Code', monospace) !important;
-}
-.markdown-preview-view pre code,
-.cm-s-obsidian pre,
-.cm-s-obsidian code[class*="language-"] {
-  font-family: var(--code-font, 'Fira Code', monospace) !important;
-  font-size: 0.95rem;
-}
-.cm-highlight {
-  background-color: #A0A6A7A6 !important; /* cor do destaque */
-  display: inline;
-  border-radius: 5px;
-  padding: 0.075em 0.2em; /* espaçamento interno */
-}
-/* ------------------------------------------------------------------------------------------------------- */
-/* ---------------------------------------- bordas transparentes ------------------------------------------*/
-.workspace-split.mod-horizontal > .workspace-leaf-resize-handle,
-.workspace-split.mod-vertical > .workspace-leaf-resize-handle {
+  cite a:link {
+    color: white;
+  }
+
+  cite {
+    color: var(--text-color);
+    text-align: end;
+    display: block;
+    padding-right: 1em;
+  }
+
+  /* ------------------------------------------------------------------------------------------------------- */
+  /* ----------------------------------------------- fontes ------------------------------------------------ */
+  .cm-s-obsidian span.cm-inline-code,
+  .markdown-preview-view code {
+    font-family: var(--code-font) !important;
+  }
+
+  .markdown-preview-view pre code,
+  .cm-s-obsidian pre,
+  .cm-s-obsidian code[class*="language-"] {
+    font-family: var(--code-font) !important;
+  }
+
+  .cm-s-obsidian span.cm-inline-code,
+  .markdown-preview-view code {
+    font-family: var(--code-font, 'Fira Code', monospace) !important;
+  }
+
+  .markdown-preview-view pre code,
+  .cm-s-obsidian pre,
+  .cm-s-obsidian code[class*="language-"] {
+    font-family: var(--code-font, 'Fira Code', monospace) !important;
+    font-size: 0.95rem;
+  }
+
+  .cm-highlight {
+    background-color: #A0A6A7A6 !important;
+    /* cor do destaque */
+    display: inline;
+    border-radius: 5px;
+    padding: 0.075em 0.2em;
+    /* espaçamento interno */
+  }
+
+  /* ------------------------------------------------------------------------------------------------------- */
+  /* ---------------------------------------- bordas transparentes ------------------------------------------*/
+  .workspace-split.mod-horizontal>.workspace-leaf-resize-handle,
+  .workspace-split.mod-vertical>.workspace-leaf-resize-handle {
     border: none !important;
-}
+  }
 
-.pane-view {
+  .pane-view {
     border: none !important;
-}
-.mod-left {
+  }
+
+  .mod-left {
     border: none !important;
     border-right: none !important;
     border-bottom: none !important;
     border-top: none !important;
-}
-.mod-left::before {
+  }
+
+  .mod-left::before {
     border: none !important;
-}
-.mod-right {
+  }
+
+  .mod-right {
     border-left: none !important;
-}
+  }
 
-.workspace-leaf {
+  .workspace-leaf {
     border: none !important;
-}
+  }
 
-.view-content {
+  .view-content {
     border: none !important;
-}
-.workspace-sidedock-vault-profile {
+  }
+
+  .workspace-sidedock-vault-profile {
     border: none !important;
-}
-.workspace-tab-header-container-inner {
+  }
+
+  .workspace-tab-header-container-inner {
     border: none !important;
-}
-.workspace-leaf-resize-handle {
+  }
+
+  .workspace-leaf-resize-handle {
     border: none !important;
-}
-.workspace-tab-header-container {
+  }
+
+  .workspace-tab-header-container {
     border-bottom: none !important;
-}
-/* --------------------------------------------------------------------------------------------------------*/
-.workspace-tab-container { /* paineis */
-  position: initial;
-  display: block;
-  width: calc(100% - var(--card-margin-horizontal, 16px) * 2);
-  max-width: var(--card-max-width, 2000px); /* limite de largura */
-  margin-bottom: 16px;
-  margin-left: var(--card-margin-horizontal, 16px);
-  margin-right: var(--card-margin-horizontal, 16px);
-  padding: 0px;
-  align-self: center;
-  box-sizing: border-box;
+  }
 
-  /* Visual de card */
-  background-color: var(--card-bg);
-  border: 1px solid var(--card-border-color, #e0e0e0);
-  border-radius: var(--card-radius, 12px);
-  box-shadow: var(--card-shadow, 0 4px 12px rgba(0, 0, 0, 0.05)); 
-}
-.workspace-leaf { /* painel lateral esquerdo cor */
-  background-color: var(--card-bg);
-}
-.cm-scroller {
-  background-color: var(--card-bg);
-}
-.view-header { /* header da parte do meio */
-  background-color: transparent;
-  border: 1px dotted var(--card-border-color);
-  border-radius: 8px;
-  align-self: auto;
-  margin: 8px;
-  box-shadow: none;
-}
-.view-header-title-container.mod-at-start.mod-fade { /* fade título do header */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0px 8px;
-  color: var(--text-color);
-}
-.view-header-title-container { /* título do header */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 0px 8px;
-  color: var(--text-color);
-  align-items: center;
-  justify-content: center;
-}
-.view-header-breadcrumb-separator { /* separador do breadcrumb */
-  color: var(--text-color);
-}
-.empty-state { /* nada aberto */
-  background-color: var(--card-bg);
-}
-.workspace-tab-header-container { /* parte de cima da interface*/
-  position: relative;
-  padding-bottom: 5px;
-  background-color: transparent;
-  border-bottom: 1px solid var(--card-bg);
-}
-.workspace-tab-header { /* tab */
-  position: inherit;
-  border-radius: 4px 4px 4px 4px !important;
-  background-color: var(--card-bg);
-  border: 1px solid var(--card-border-color);
-  margin-right: 6px;
-  margin-bottom: -0px;
-  padding: 4px 12px;
-  padding-bottom: 4px;
-  color: var(--color-accent);
-  font-weight: 500;
-  transition: background 0.3s ease-in-out;
-}
-.workspace-tab-header.is-active { /* tab em uso */
-  background-color: var(--color-accent);
-  border: 1px solid var(--card-border-color);
-  color: var(--text-color);
-}
-.workspace-tab-header-container.tap-pable { /* botões da parte de cima da interface */
+  /* --------------------------------------------------------------------------------------------------------*/
+  .workspace-tab-container {
+    /* paineis */
+    position: initial;
+    display: block;
+    width: calc(100% - var(--card-margin-horizontal, 16px) * 2);
+    max-width: var(--card-max-width, 2000px);
+    /* limite de largura */
+    margin-bottom: 16px;
+    margin-left: var(--card-margin-horizontal, 16px);
+    margin-right: var(--card-margin-horizontal, 16px);
+    padding: 0px;
+    align-self: center;
+    box-sizing: border-box;
+
+    /* Visual de card */
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border-color, #e0e0e0);
+    border-radius: var(--card-radius, 12px);
+    box-shadow: var(--card-shadow, 0 4px 12px rgba(0, 0, 0, 0.05));
+  }
+
+  .workspace-leaf {
+    /* painel lateral esquerdo cor */
+    background-color: var(--card-bg);
+  }
+
+  .cm-scroller {
+    background-color: var(--card-bg);
+  }
+
+  .view-header {
+    /* header da parte do meio */
+    background-color: transparent;
+    border: 1px dotted var(--card-border-color);
+    border-radius: 8px;
+    align-self: auto;
+    margin: 8px;
+    box-shadow: none;
+  }
+
+  .view-header-title-container.mod-at-start.mod-fade {
+    /* fade título do header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 8px;
+    color: var(--text-color);
+  }
+
+  .view-header-title-container {
+    /* título do header */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0px 8px;
+    color: var(--text-color);
+    align-items: center;
+    justify-content: center;
+  }
+
+  .view-header-breadcrumb-separator {
+    /* separador do breadcrumb */
+    color: var(--text-color);
+  }
+
+  .empty-state {
+    /* nada aberto */
+    background-color: var(--card-bg);
+  }
+
+  .workspace-tab-header-container {
+    /* parte de cima da interface*/
+    position: relative;
+    padding-bottom: 5px;
+    background-color: transparent;
+    border-bottom: 1px solid var(--card-bg);
+  }
+
+  .workspace-tab-header {
+    /* tab */
+    position: inherit;
+    border-radius: 4px 4px 4px 4px !important;
+    background-color: var(--card-bg);
+    border: 1px solid var(--card-border-color);
+    margin-right: 6px;
+    margin-bottom: -0px;
+    padding: 4px 12px;
+    padding-bottom: 4px;
+    color: var(--color-accent);
+    font-weight: 500;
+    transition: background 0.3s ease-in-out;
+  }
+
+  .workspace-tab-header.is-active {
+    /* tab em uso */
+    background-color: var(--color-accent);
+    border: 1px solid var(--card-border-color);
+    color: var(--text-color);
+  }
+
+  .workspace-tab-header-container.tap-pable {
+    /* botões da parte de cima da interface */
     position: auto;
     margin: var(--button-margin), 0px;
     padding: var(--button-padding), 0px;
-}
-.workspace-tab-header-container-inner {
+  }
+
+  .workspace-tab-header-container-inner {
     width: 100%;
     position: auto;
     padding-bottom: 0px;
-}
-.workspace-tab-header-inner {
+  }
+
+  .workspace-tab-header-inner {
     padding: 0%;
-}
-.workspace-tab-header-inner-title {
+  }
+
+  .workspace-tab-header-inner-title {
     padding: 0px 0px 0px 4px;
-}
-.status-bar { /* status bar */
-  border: none !important;
-  width: 100vw; /* Ocupa toda a largura da viewport */
-  left: 0;
-  right: 0;
-  position: fixed;
-  bottom: 2px;
-  background-color: var(--background-primary);
-}
-.workspace-sidedock-vault-profile { /* vault profile */
-  padding: 0px;
-  margin: 0px;
-  background-color: var(--card-bg);
-  border: 1 px solid var(--card-border-color) !important;
-  border-radius: 0px 4px 4px 0px;
-}
-.markdown-reading-view {
+  }
+
+  .status-bar {
+    /* status bar */
+    border: none !important;
+    width: 100vw;
+    /* Ocupa toda a largura da viewport */
+    left: 0;
+    right: 0;
+    position: fixed;
+    bottom: 2px;
+    background-color: var(--background-primary);
+  }
+
+  .workspace-sidedock-vault-profile {
+    /* vault profile */
+    padding: 0px;
+    margin: 0px;
     background-color: var(--card-bg);
-}
-body {
-  --syntax-keyword: #552B79;
-  --syntax-def: #69EED7;
-  --syntax-variable: #558FC7;
-  --syntax-variable-2: #4186B6;
-  --syntax-variable-3: #C689E3;
-  --syntax-string: #BE4AA0;
-  --syntax-number: #9795EE;
-  --syntax-comment: #16486D;
-  --syntax-builtin: #2D76E9;
-  --syntax-operator: #6852B3;
-  --syntax-property: #4A6BDB;
-  --syntax-default-text: #eeeeee;
-  --syntax-border: #A0A6A7;
-}
-/* ----------------------------------------------- syntax ------------------------------------------------ */
-.cm-s-obsidian span.cm-keyword {
-  color: var(--syntax-keyword); /* palavras-chave: def, return, if */
+    border: 1 px solid var(--card-border-color) !important;
+    border-radius: 0px 4px 4px 0px;
+  }
+
+  .markdown-reading-view {
+    background-color: var(--card-bg);
+  }
+
+  body {
+    --syntax-keyword: #552B79;
+    --syntax-def: #69EED7;
+    --syntax-variable: #558FC7;
+    --syntax-variable-2: #4186B6;
+    --syntax-variable-3: #C689E3;
+    --syntax-string: #BE4AA0;
+    --syntax-number: #9795EE;
+    --syntax-comment: #16486D;
+    --syntax-builtin: #2D76E9;
+    --syntax-operator: #6852B3;
+    --syntax-property: #4A6BDB;
+    --syntax-default-text: #eeeeee;
+    --syntax-border: #A0A6A7;
+  }
+
+  /* ----------------------------------------------- syntax ------------------------------------------------ */
+  .cm-s-obsidian span.cm-keyword {
+    color: var(--syntax-keyword);
+    /* palavras-chave: def, return, if */
+  }
+
+  .cm-s-obsidian span.cm-def {
+    color: var(--syntax-def);
+    /* nomes de funções e definições */
+  }
+
+  .cm-s-obsidian span.cm-variable {
+    color: var(--syntax-variable);
+    /* variáveis padrão */
+  }
+
+  .cm-s-obsidian span.cm-variable-2 {
+    color: var(--syntax-variable-2);
+    /* parâmetros e argumentos */
+  }
+
+  .cm-s-obsidian span.cm-variable-3 {
+    color: var(--syntax-variable-3);
+    /* variáveis especiais ou objetos */
+  }
+
+  .cm-s-obsidian span.cm-string {
+    color: var(--syntax-string);
+    /* strings */
+  }
+
+  .cm-s-obsidian span.cm-number {
+    color: var(--syntax-number);
+    /* números */
+  }
+
+  .cm-s-obsidian span.cm-comment {
+    color: var(--syntax-comment);
+    /* comentários */
+    font-style: italic;
+    opacity: 0.85;
+  }
+
+  .cm-s-obsidian span.cm-builtin {
+    color: var(--syntax-builtin);
+    /* funções built-in: print, len, etc. */
+  }
+
+  .cm-s-obsidian span.cm-operator {
+    color: var(--syntax-operator);
+    /* operadores como +, =, -, etc. */
+  }
+
+  .cm-s-obsidian span.cm-property {
+    color: var(--syntax-property);
+    /* métodos chamados via obj.metodo() */
+    font-style: italic;
+  }
+
+  /* Ajustes visuais gerais para blocos de código */
+
+  .cm-s-obsidian code[class*="language-python"] {
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    background-color: rgba(255, 255, 255, 0.02);
+    /* sutil no escuro */
+    border-left: 2px solid var(--syntax-border) !important;
+    padding-left: 0.5em;
+    border-radius: 6px;
+    color: var(--syntax-default-text);
+    /* cor de texto padrão para escuro */
+  }
+
+  .markdown-preview-view code.language-python {
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+    font-size: 0.95rem;
+    line-height: 1.5;
+    background-color: rgba(255, 255, 255, 0.02);
+    border-left: 2px solid var(--syntax-border);
+    padding-left: 0.5em;
+    border-radius: 6px;
+    color: var(--syntax-default-text);
+    display: block;
+    white-space: pre;
+  }
+
+  .markdown-preview-view code.language-python .cm-keyword {
+    color: var(--syntax-keyword);
+    font-weight: bold;
+  }
+
+  .markdown-preview-view code.language-python .cm-def {
+    color: var(--syntax-def);
+  }
+
+  .markdown-preview-view code.language-python .cm-variable {
+    color: var(--syntax-variable);
+  }
+
+  .markdown-preview-view code.language-python .cm-variable-2 {
+    color: var(--syntax-variable-2);
+  }
+
+  .markdown-preview-view code.language-python .cm-variable-3 {
+    color: var(--syntax-variable-3);
+  }
+
+  .markdown-preview-view code.language-python .cm-string {
+    color: var(--syntax-string);
+  }
+
+  .markdown-preview-view code.language-python .cm-number {
+    color: var(--syntax-number);
+  }
+
+  .markdown-preview-view code.language-python .cm-comment {
+    color: var(--syntax-comment);
+    font-style: italic;
+    opacity: 0.85;
+  }
+
+  .markdown-preview-view code.language-python .cm-builtin {
+    color: var(--syntax-builtin);
+    font-weight: bold;
+  }
+
+  .markdown-preview-view code.language-python .cm-operator {
+    color: var(--syntax-operator);
+  }
+
+  .markdown-preview-view code.language-python .cm-property {
+    color: var(--syntax-property);
+    font-style: italic;
+  }
+
+  /* Highlight basic Python syntax in Preview Mode without plugins */
+  .markdown-preview-view code.language-python {
+    white-space: pre-wrap;
+    word-break: break-word;
+  }
+
+  .markdown-preview-view code.language-python span {
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  }
+
+  /* Manual highlighting using data-token or keyword-based targeting */
+  .markdown-preview-view code.language-python span:has(> .token-keyword),
+  .markdown-preview-view code.language-python span:contains("def"),
+  .markdown-preview-view code.language-python span:contains("return"),
+  .markdown-preview-view code.language-python span:contains("if"),
+  .markdown-preview-view code.language-python span:contains("else"),
+  .markdown-preview-view code.language-python span:contains("elif"),
+  .markdown-preview-view code.language-python span:contains("while"),
+  .markdown-preview-view code.language-python span:contains("for"),
+  .markdown-preview-view code.language-python span:contains("in") {
+    color: var(--syntax-keyword);
+    font-weight: bold;
+  }
+
+  .markdown-preview-view code.language-python span:contains("print"),
+  .markdown-preview-view code.language-python span:contains("len"),
+  .markdown-preview-view code.language-python span:contains("range"),
+  .markdown-preview-view code.language-python span:contains("str"),
+  .markdown-preview-view code.language-python span:contains("int") {
+    color: var(--syntax-builtin);
+  }
+
+  .markdown-preview-view code.language-python span:contains("'"),
+  .markdown-preview-view code.language-python span:contains('"') {
+    color: var(--syntax-string);
+  }
+
+  .markdown-preview-view code.language-python span:contains("#") {
+    color: var(--syntax-comment);
+    font-style: italic;
+    opacity: 0.85;
+  }
+
+  /* Força aplicação da paleta de sintaxe no Preview Mode mesmo sem classes específicas */
+  .markdown-preview-view code.language-python span {
+    font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  }
+
+  .markdown-preview-view code.language-python span:has(> .token-keyword),
+  .markdown-preview-view code.language-python span[class*="token-keyword"],
+  .markdown-preview-view code.language-python span[class*="keyword"] {
+    color: var(--syntax-keyword);
+  }
+
+  .markdown-preview-view code.language-python span[class*="def"],
+  .markdown-preview-view code.language-python span[class*="function"] {
+    color: var(--syntax-def);
+  }
+
+  .markdown-preview-view code.language-python span[class*="string"] {
+    color: var(--syntax-string);
+  }
+
+  .markdown-preview-view code.language-python span[class*="number"] {
+    color: var(--syntax-number);
+  }
+
+  .markdown-preview-view code.language-python span[class*="comment"] {
+    color: var(--syntax-comment);
+    font-style: italic;
+    opacity: 0.85;
+  }
+
+  .markdown-preview-view code.language-python span[class*="builtin"],
+  .markdown-preview-view code.language-python span:contains("print"),
+  .markdown-preview-view code.language-python span:contains("len"),
+  .markdown-preview-view code.language-python span:contains("range") {
+    color: var(--syntax-builtin);
+  }
+
+  .markdown-preview-view code.language-python span[class*="operator"] {
+    color: var(--syntax-operator);
+  }
+
+  .markdown-preview-view code.language-python span[class*="property"] {
+    color: var(--syntax-property);
+    font-style: italic;
+  }
+
+  /* ------------------------------------------------------------------------------------------------------- */
+  /* ------------------------------------------- random tweaks ---------------------------------------------- */
+  .callout {
+    border-radius: 18px;
+    border-color: 1px solid var(--blockquote-border-color) !important;
+  }
+
+  .callout-content {
+    background-color: transparent;
+    color: var(--text-color);
+  }
+
+  .cm-def.cm-hmd-frontmatter {
+    /* frontmatter */
+    color: var(--text-color)
+  }
 }
 
-.cm-s-obsidian span.cm-def {
-  color: var(--syntax-def); /* nomes de funções e definições */
-}
-
-.cm-s-obsidian span.cm-variable {
-  color: var(--syntax-variable); /* variáveis padrão */
-}
-
-.cm-s-obsidian span.cm-variable-2 {
-  color: var(--syntax-variable-2); /* parâmetros e argumentos */
-}
-
-.cm-s-obsidian span.cm-variable-3 {
-  color: var(--syntax-variable-3); /* variáveis especiais ou objetos */
-}
-
-.cm-s-obsidian span.cm-string {
-  color: var(--syntax-string); /* strings */
-}
-
-.cm-s-obsidian span.cm-number {
-  color: var(--syntax-number); /* números */
-}
-
-.cm-s-obsidian span.cm-comment {
-  color: var(--syntax-comment); /* comentários */
-  font-style: italic;
-  opacity: 0.85;
-}
-
-.cm-s-obsidian span.cm-builtin {
-  color: var(--syntax-builtin); /* funções built-in: print, len, etc. */
-}
-
-.cm-s-obsidian span.cm-operator {
-  color: var(--syntax-operator); /* operadores como +, =, -, etc. */
-}
-
-.cm-s-obsidian span.cm-property {
-  color: var(--syntax-property); /* métodos chamados via obj.metodo() */
-  font-style: italic;
-}
-
-/* Ajustes visuais gerais para blocos de código */
-
-.cm-s-obsidian code[class*="language-python"] {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  background-color: rgba(255, 255, 255, 0.02); /* sutil no escuro */
-  border-left: 2px solid var(--syntax-border) !important;
-  padding-left: 0.5em;
-  border-radius: 6px;
-  color: var(--syntax-default-text); /* cor de texto padrão para escuro */
-}
-
-.markdown-preview-view code.language-python {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  background-color: rgba(255, 255, 255, 0.02);
-  border-left: 2px solid var(--syntax-border);
-  padding-left: 0.5em;
-  border-radius: 6px;
-  color: var(--syntax-default-text);
-  display: block;
-  white-space: pre;
-}
-
-.markdown-preview-view code.language-python .cm-keyword {
-  color: var(--syntax-keyword);
-  font-weight: bold;
-}
-
-.markdown-preview-view code.language-python .cm-def {
-  color: var(--syntax-def);
-}
-
-.markdown-preview-view code.language-python .cm-variable {
-  color: var(--syntax-variable);
-}
-
-.markdown-preview-view code.language-python .cm-variable-2 {
-  color: var(--syntax-variable-2);
-}
-
-.markdown-preview-view code.language-python .cm-variable-3 {
-  color: var(--syntax-variable-3);
-}
-
-.markdown-preview-view code.language-python .cm-string {
-  color: var(--syntax-string);
-}
-
-.markdown-preview-view code.language-python .cm-number {
-  color: var(--syntax-number);
-}
-
-.markdown-preview-view code.language-python .cm-comment {
-  color: var(--syntax-comment);
-  font-style: italic;
-  opacity: 0.85;
-}
-
-.markdown-preview-view code.language-python .cm-builtin {
-  color: var(--syntax-builtin);
-  font-weight: bold;
-}
-
-.markdown-preview-view code.language-python .cm-operator {
-  color: var(--syntax-operator);
-}
-
-.markdown-preview-view code.language-python .cm-property {
-  color: var(--syntax-property);
-  font-style: italic;
-}
-
-/* Highlight basic Python syntax in Preview Mode without plugins */
-.markdown-preview-view code.language-python {
-  white-space: pre-wrap;
-  word-break: break-word;
-}
-
-.markdown-preview-view code.language-python span {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
-}
-
-/* Manual highlighting using data-token or keyword-based targeting */
-.markdown-preview-view code.language-python span:has(> .token-keyword),
-.markdown-preview-view code.language-python span:contains("def"),
-.markdown-preview-view code.language-python span:contains("return"),
-.markdown-preview-view code.language-python span:contains("if"),
-.markdown-preview-view code.language-python span:contains("else"),
-.markdown-preview-view code.language-python span:contains("elif"),
-.markdown-preview-view code.language-python span:contains("while"),
-.markdown-preview-view code.language-python span:contains("for"),
-.markdown-preview-view code.language-python span:contains("in") {
-  color: var(--syntax-keyword);
-  font-weight: bold;
-}
-
-.markdown-preview-view code.language-python span:contains("print"),
-.markdown-preview-view code.language-python span:contains("len"),
-.markdown-preview-view code.language-python span:contains("range"),
-.markdown-preview-view code.language-python span:contains("str"),
-.markdown-preview-view code.language-python span:contains("int") {
-  color: var(--syntax-builtin);
-}
-
-.markdown-preview-view code.language-python span:contains("'"),
-.markdown-preview-view code.language-python span:contains('"') {
-  color: var(--syntax-string);
-}
-
-.markdown-preview-view code.language-python span:contains("#") {
-  color: var(--syntax-comment);
-  font-style: italic;
-  opacity: 0.85;
-}
-/* Força aplicação da paleta de sintaxe no Preview Mode mesmo sem classes específicas */
-.markdown-preview-view code.language-python span {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
-}
-
-.markdown-preview-view code.language-python span:has(> .token-keyword),
-.markdown-preview-view code.language-python span[class*="token-keyword"],
-.markdown-preview-view code.language-python span[class*="keyword"] {
-  color: var(--syntax-keyword);
-}
-
-.markdown-preview-view code.language-python span[class*="def"],
-.markdown-preview-view code.language-python span[class*="function"] {
-  color: var(--syntax-def);
-}
-
-.markdown-preview-view code.language-python span[class*="string"] {
-  color: var(--syntax-string);
-}
-
-.markdown-preview-view code.language-python span[class*="number"] {
-  color: var(--syntax-number);
-}
-
-.markdown-preview-view code.language-python span[class*="comment"] {
-  color: var(--syntax-comment);
-  font-style: italic;
-  opacity: 0.85;
-}
-
-.markdown-preview-view code.language-python span[class*="builtin"],
-.markdown-preview-view code.language-python span:contains("print"),
-.markdown-preview-view code.language-python span:contains("len"),
-.markdown-preview-view code.language-python span:contains("range") {
-  color: var(--syntax-builtin);
-}
-
-.markdown-preview-view code.language-python span[class*="operator"] {
-  color: var(--syntax-operator);
-}
-
-.markdown-preview-view code.language-python span[class*="property"] {
-  color: var(--syntax-property);
-  font-style: italic;
-}
-/* ------------------------------------------------------------------------------------------------------- */
-/* ------------------------------------------- random tweaks ---------------------------------------------- */
-.callout {
-  border-radius: 18px;
-  border-color: 1px solid var(--blockquote-border-color) !important;
-}
-.callout-content {
-  background-color: transparent;
-  color: var(--text-color);
-}
-.cm-def.cm-hmd-frontmatter { /* frontmatter */
-  color: var(--text-color)
-}
-}
 /* ======================================================================================================= */
 .theme-dark {
-    --background-default: #000000;
-    --text-color: #ffffff;
-    --background-primary: #000000;
-    --background-primary-alt: var(--background-primary);
-    --background-secondary: var(--background-primary);
-    --background-secondary-alt: var(--background-primary);
-    --card-bg: #0c0c0c;
-    --card-border-color: #4d4d4f;
-    --blockquote-border-color: #4d4d4f;
-    --blockquote-bg: #0c0c0c;
-    --blockquote-radius: 8px;
-    --blockquote-text: inherit;
-    --citation-bg: #68686e;
-    --card-shadow: 0 4px 12px rgba(230, 230, 230, 0.3);
+  --background-default: #000000;
+  --text-color: #ffffff;
+  --background-primary: #000000;
+  --background-primary-alt: var(--background-primary);
+  --background-secondary: var(--background-primary);
+  --background-secondary-alt: var(--background-primary);
+  --card-bg: #0c0c0c;
+  --card-border-color: #4d4d4f;
+  --blockquote-border-color: #4d4d4f;
+  --blockquote-bg: #0c0c0c;
+  --blockquote-radius: 8px;
+  --blockquote-text: inherit;
+  --citation-bg: #68686e;
+  --card-shadow: 0 4px 12px rgba(230, 230, 230, 0.3);
+  --graph-bg: #0c0c0c;
+  --graph-line-color: #4d4d4f;
 }
+
 .theme-light {
-    --background-default: #A5AAAE;
-    --text-color: #000000;
-    --background-primary: #A5AAAE;
-    --background-primary-alt: var(--background-primary);
-    --background-secondary: var(--background-primary);
-    --background-secondary-alt: var(--background-primary);
-    --card-bg: #D1D5D7;
-    --card-border-color: #252525c3;
-    --blockquote-border-color: #252525c3;
-    --blockquote-bg: #a5AAAE;
-    --blockquote-radius: 8px;
-    --blockquote-text: inherit;
-    --citation-bg: #68686e;
-    --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --background-default: #A5AAAE;
+  --text-color: #000000;
+  --background-primary: #A5AAAE;
+  --background-primary-alt: var(--background-primary);
+  --background-secondary: var(--background-primary);
+  --background-secondary-alt: var(--background-primary);
+  --card-bg: #D1D5D7;
+  --card-border-color: #252525c3;
+  --blockquote-border-color: #252525c3;
+  --blockquote-bg: #a5AAAE;
+  --blockquote-radius: 8px;
+  --blockquote-text: inherit;
+  --citation-bg: #68686e;
+  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --graph-bg: #A5AAAE;
+  --graph-line-color: #6767672c;
+
 }
+
 /* Força aplicação da paleta de sintaxe no Preview Mode mesmo sem classes específicas */
 .markdown-preview-view code.language-python span {
   font-family: 'Fira Code', 'JetBrains Mono', monospace;
