@@ -399,7 +399,7 @@ settings:
     background-color: #A0A6A7A6 !important;
     /* cor do destaque */
     display: inline;
-    border-radius: 5px;
+    border-radius: 8px;
     padding: 0.075em 0.2em;
     /* espaçamento interno */
   }
