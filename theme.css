@@ -571,6 +571,7 @@ settings:
     color: var(--color-accent);
     font-weight: 500;
     transition: background 0.3s ease-in-out;
+    max-width: 50px;
   }
 
   .workspace-tab-header.is-active {
@@ -578,6 +579,7 @@ settings:
     background-color: var(--color-accent);
     border: 1px solid var(--card-border-color);
     color: var(--text-color);
+    max-width: 50px;
   }
 
   .workspace-tab-header .tappable,
