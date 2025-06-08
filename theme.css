@@ -403,7 +403,7 @@ settings:
     /* espaçamento interno */
   }
 
-  .markdown-preview-view .cm-highlight {
+  .markdown-preview-view mark {
     background-color: var(--color-accent) !important;
     /* cor do destaque */
     display: inline;
