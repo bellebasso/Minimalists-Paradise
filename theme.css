@@ -404,7 +404,7 @@ settings:
   }
 
   .markdown-preview-view mark {
-    background-color: var(--color-accent) !important;
+    background: var(--color-accent) !important;
     /* cor do destaque */
     display: inline;
     border-radius: 8px;
