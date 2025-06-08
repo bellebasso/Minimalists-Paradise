@@ -584,12 +584,13 @@ settings:
     /* botões da parte de cima da interface */
     border: none;
     position: auto;
-    margin: var(--button-margin), 0px;
-    padding: 2px;
+    padding: 0px 8px;
   }
 
   .workspace-tab-header-container .tap-pable .is-active {
-    border: var(--card-border-color)
+    border: var(--card-border-color);
+    position: auto;
+    padding: 0px 8px;
   }
 
   .workspace-tab-header-container-inner {
