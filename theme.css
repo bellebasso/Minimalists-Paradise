@@ -585,7 +585,7 @@ settings:
     border: none;
     position: auto;
     margin: var(--button-margin), 0px;
-    padding: var(--button-padding), 0px;
+    padding: 2px;
   }
 
   .workspace-tab-header-container .tap-pable .is-active {
