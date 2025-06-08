@@ -403,13 +403,12 @@ settings:
     /* espaçamento interno */
   }
 
-  .markdown-preview-view mark {
-    background: var(--color-accent) !important;
-    /* cor do destaque */
-    display: inline;
+  .theme-light .markdown-preview-view mark,
+  .theme-dark .markdown-preview-view mark {
+    background-color: var(--color-accent) !important;
     border-radius: 8px;
     padding: 0.075em 0.2em;
-    /* espaçamento interno */
+    color: inherit;
   }
 
   /* ------------------------------------------------------------------------------------------------------- */
