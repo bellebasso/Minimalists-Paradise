@@ -584,6 +584,8 @@ settings:
 
   .workspace-tab-header .tappable,
   .workspace-tab-header .tappable .is-active {
+    max-width: 200px;
+    width: fit fit-content;
     padding: 0px;
     margin: 0%;
   }
@@ -596,7 +598,7 @@ settings:
   }
 
   .workspace-tab-header-inner {
-    max-width: fit-content;
+    max-width: 200px;
     padding: 0px 8px;
     position: auto;
     border: none;
