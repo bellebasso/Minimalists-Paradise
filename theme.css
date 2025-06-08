@@ -585,33 +585,36 @@ settings:
   .workspace-tab-header .tappable,
   .workspace-tab-header .tappable .is-active {
     max-width: 200px;
-    width: fit fit-content;
+    width: fit-content;
     padding: 0px;
     margin: 0%;
   }
 
   .workspace-tab-header-container-inner {
     max-width: 200px;
-    width: 100%;
+    width: fit-content;
     position: auto;
     padding-bottom: 0px;
   }
 
   .workspace-tab-header-inner {
     max-width: 200px;
+    width: fit-content;
     padding: 0px 8px;
     position: auto;
     border: none;
   }
 
   .workspace-tab-header-inner .is-active {
-    max-width: fit-content;
+    max-width: 200px;
+    width: fit-content;
     padding: 0px 8px;
     border: 1px solid var(--card-border-color);
     position: auto;
   }
 
   .workspace-tab-header-inner-title {
+    max-width: fit-content;
     padding: 0px 0px 0px 4px;
   }
 
