@@ -465,6 +465,10 @@ settings:
 
   .workspace-tab-header-container-inner {
     border: none !important;
+    align-items: center !important;
+    align-content: center !important;
+    justify-content: center;
+    justify-self: center;
   }
 
   .workspace-leaf-resize-handle {
