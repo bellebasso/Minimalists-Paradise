@@ -272,7 +272,6 @@ settings:
   --default-font: 'Times New Roman', Times, serif;
   --default-font-size: 16px;
   --code-font: 'Fira Code', 'JetBrains Mono', monospace;
-  --accent-color: #68686e;
   --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   --card-max-width: 10000px;
   --card-width: 100%;
@@ -396,7 +395,7 @@ settings:
   }
 
   .cm-highlight {
-    background-color: #A0A6A7A6 !important;
+    background-color: var(--color-accent);
     /* cor do destaque */
     display: inline;
     border-radius: 8px;
