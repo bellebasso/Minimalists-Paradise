@@ -580,14 +580,14 @@ settings:
     color: var(--text-color);
   }
 
-  .workspace-tab-header-container .tap-pable {
+  .workspace-tab-header-container .tappable {
     /* botões da parte de cima da interface */
     border: none !important;
     position: auto;
     padding: 0px 8px !important;
   }
 
-  .workspace-tab-header-container .tap-pable .is-active {
+  .workspace-tab-header-container .tappable .is-active {
     border: var(--card-border-color);
     position: auto;
     padding: 0px 8px !important;
