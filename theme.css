@@ -580,19 +580,6 @@ settings:
     color: var(--text-color);
   }
 
-  .workspace-tab-header-container .tappable {
-    /* botões da parte de cima da interface */
-    border: none !important;
-    position: auto;
-    padding: 0px 8px !important;
-  }
-
-  .workspace-tab-header-container .tappable .is-active {
-    border: var(--card-border-color);
-    position: auto;
-    padding: 0px 8px !important;
-  }
-
   .workspace-tab-header-container-inner {
     width: 100%;
     position: auto;
@@ -600,7 +587,15 @@ settings:
   }
 
   .workspace-tab-header-inner {
-    padding: 0%;
+    padding: 0px 8px;
+    position: auto;
+    border: none;
+  }
+
+  .workspace-tab-header-inner .is-active {
+    padding: 0px 8px;
+    border: 1px solid var(--card-border-color);
+    position: auto;
   }
 
   .workspace-tab-header-inner-title {
