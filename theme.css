@@ -568,7 +568,7 @@ settings:
 
   .workspace-tab-header[data-type="markdown"],
   .workspace-tab-header[data-type="empty"] {
-    max-width: 100% !important;
+    max-width: 100%;
     border-radius: 6px;
     padding: 0 !important;
     box-shadow: none !important;
@@ -580,6 +580,7 @@ settings:
 
   .workspace-tab-header[data-type="markdown"].is-active.mod-active,
   .workspace-tab-header[data-type="empty"].is-active.mod-active {
+    max-width: 250px;
     background-color: var(--color-accent);
     flex-grow: 2 !important;
     box-sizing: border-box;
@@ -587,6 +588,7 @@ settings:
   }
 
   .workspace-tab-header .is-active {
+    max-width: 200px;
     background-color: var(--color-accent);
     box-sizing: border-box;
     border: none;
