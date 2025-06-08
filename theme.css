@@ -580,6 +580,12 @@ settings:
     color: var(--text-color);
   }
 
+  .workspace-tab-header .tappable,
+  .workspace-tab-header .tappable .is-active {
+    padding: 0px;
+    margin: 0%;
+  }
+
   .workspace-tab-header-container-inner {
     width: 100%;
     position: auto;
