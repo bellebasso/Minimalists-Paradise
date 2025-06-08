@@ -279,7 +279,7 @@ settings:
   --card-padding: 16px;
   --divider-width: 1px;
   --divider-color: #4d4d4f;
-  --button-padding: 4px 6px;
+  --button-padding: 4px 4px;
   --button-margin: 0px 3px 0px 0px;
 
   .markdown-source-view.mod-cm6,
@@ -582,9 +582,14 @@ settings:
 
   .workspace-tab-header-container.tap-pable {
     /* botões da parte de cima da interface */
+    border: none;
     position: auto;
     margin: var(--button-margin), 0px;
     padding: var(--button-padding), 0px;
+  }
+
+  .workspace-tab-header-container.tap-pable.is-active {
+    border: var(--card-border-color)
   }
 
   .workspace-tab-header-container-inner {
