@@ -403,6 +403,15 @@ settings:
     /* espaçamento interno */
   }
 
+  .markdown-preview-view.cm-highlight {
+    background-color: var(--color-accent);
+    /* cor do destaque */
+    display: inline;
+    border-radius: 8px;
+    padding: 0.075em 0.2em;
+    /* espaçamento interno */
+  }
+
   /* ------------------------------------------------------------------------------------------------------- */
   /* ---------------------------------------- bordas transparentes ------------------------------------------*/
   .workspace-split.mod-horizontal>.workspace-leaf-resize-handle,
