@@ -1,5 +1,5 @@
 # MinimalistsParadise
-Minimal, but not too simple. Card layout with customizable features via the [style settings](https://github.com/mgmeyers/obsidian-style-settings) plugin.
+Minimal, but not too simple. Inspired by [AnuPpuccin](https://github.com/AnubisNekhet/AnuPpuccin) and [Border](https://github.com/Akifyss/obsidian-border), the main attraction of Minamilists Paradise is a card layout with customizable features via the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin.
 
 ## Showcase
 Default Light Mode
