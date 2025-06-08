@@ -575,36 +575,46 @@ settings:
     transition: background-color 200ms ease-in-out;
     background: var(--card-bg);
     transition: flex-grow 0.25s ease-in-out !important;
+    box-sizing: border-box;
   }
 
   .workspace-tab-header[data-type="markdown"].is-active.mod-active,
   .workspace-tab-header[data-type="empty"].is-active.mod-active {
     background-color: var(--color-accent);
     flex-grow: 2 !important;
+    box-sizing: border-box;
+    border: none;
   }
 
   .workspace-tab-header .is-active {
     background-color: var(--color-accent);
+    box-sizing: border-box;
+    border: none;
   }
 
   .workspace-tab-header-inner::after {
+    box-sizing: border-box;
     display: none;
   }
 
   .workspace-tab-header::after,
   .workspace-tab-header::before {
+    box-sizing: border-box;
     display: none;
   }
 
   .workspace-tab-header:not(.is-active) .workspace-tab-header-inner-close-button {
+    box-sizing: border-box;
     display: none;
   }
 
   .workspace-tab-header:hover .workspace-tab-header-inner-close-button {
+    box-sizing: border-box;
     display: flex;
   }
 
   .workspace-tab-header-tab-list {
+    box-sizing: border-box;
     display: none !important;
   }
 
@@ -612,22 +622,27 @@ settings:
   .mod-right-split .workspace-tab-header-container-inner {
     padding: 4px 4px;
     margin: 4px 4px;
+    box-sizing: border-box;
   }
 
   .mod-left-split .workspace-tab-header-container .is-active,
   .mod-right-split .workspace-tab-header-container .is-active {
     background-color: var(--color-accent);
+    box-sizing: border-box;
+    border: none;
   }
 
   .mod-left-split .workspace-tab-header-inner,
   .mod-right-split .workspace-tab-header-inner {
     padding: 2px;
+    box-sizing: border-box;
   }
 
   .mod-left-split .workspace-tab-header-container-inner,
   .mod-right-split .workspace-tab-header-container-inner {
     justify-content: left;
     justify-self: left;
+    box-sizing: border-box;
   }
 
   .status-bar {
