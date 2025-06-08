@@ -469,6 +469,7 @@ settings:
     align-content: center !important;
     justify-content: center;
     justify-self: center;
+    max-width: 100%;
   }
 
   .workspace-leaf-resize-handle {
@@ -558,60 +559,75 @@ settings:
     border-bottom: 1px solid var(--card-bg);
   }
 
-  .workspace-tab-header {
-    /* tab */
-    position: inherit;
-    border-radius: 4px 4px 4px 4px !important;
-    background-color: var(--card-bg);
-    border: 1px solid var(--card-border-color);
-    margin-right: 6px;
-    margin-bottom: -0px;
-    padding: 4px 12px;
-    padding-bottom: 4px;
-    color: var(--color-accent);
-    font-weight: 500;
-    transition: background 0.3s ease-in-out;
-    max-width: 200px;
-  }
-
-  .workspace-tab-header.is-active {
-    /* tab em uso */
-    background-color: var(--color-accent);
-    border: 1px solid var(--card-border-color);
-    color: var(--text-color);
-    width: fit-content;
-  }
-
-  .workspace-tab-header .tappable,
-  .workspace-tab-header .tappable .is-active {
-    width: fit-content;
-    padding: 0px;
-    margin: 0%;
-  }
-
   .workspace-tab-header-container-inner {
-    width: fit-content;
-    position: auto;
-    padding-bottom: 0px;
+    margin-bottom: 0px;
+    margin-top: 4px;
+    gap: 8px;
+    width: 100%;
   }
 
-  .workspace-tab-header-inner {
-    width: fit-content;
-    padding: 0px 8px;
-    position: auto;
-    border: none;
+  .workspace-tab-header[data-type="markdown"],
+  .workspace-tab-header[data-type="empty"] {
+    max-width: 100% !important;
+    border-radius: 6px;
+    padding: 0 !important;
+    box-shadow: none !important;
+    transition: background-color 200ms ease-in-out;
+    background: var(--card-bg);
+    transition: flex-grow 0.25s ease-in-out !important;
   }
 
-  .workspace-tab-header-inner .is-active {
-    width: fit-content;
-    padding: 0px 8px;
-    border: 1px solid var(--card-border-color);
-    position: auto;
+  .workspace-tab-header[data-type="markdown"].is-active.mod-active,
+  .workspace-tab-header[data-type="empty"].is-active.mod-active {
+    background-color: var(--color-accent);
+    flex-grow: 2 !important;
   }
 
-  .workspace-tab-header-inner-title {
-    max-width: fit-content;
-    padding: 0px 0px 0px 4px;
+  .workspace-tab-header .is-active {
+    background-color: var(--color-accent);
+  }
+
+  .workspace-tab-header-inner::after {
+    display: none;
+  }
+
+  .workspace-tab-header::after,
+  .workspace-tab-header::before {
+    display: none;
+  }
+
+  .workspace-tab-header:not(.is-active) .workspace-tab-header-inner-close-button {
+    display: none;
+  }
+
+  .workspace-tab-header:hover .workspace-tab-header-inner-close-button {
+    display: flex;
+  }
+
+  .workspace-tab-header-tab-list {
+    display: none !important;
+  }
+
+  .mod-left-split .workspace-tab-header-container-inner,
+  .mod-right-split .workspace-tab-header-container-inner {
+    padding: 4px 4px;
+    margin: 4px 4px;
+  }
+
+  .mod-left-split .workspace-tab-header-container .is-active,
+  .mod-right-split .workspace-tab-header-container .is-active {
+    background-color: var(--color-accent);
+  }
+
+  .mod-left-split .workspace-tab-header-inner,
+  .mod-right-split .workspace-tab-header-inner {
+    padding: 2px;
+  }
+
+  .mod-left-split .workspace-tab-header-container-inner,
+  .mod-right-split .workspace-tab-header-container-inner {
+    justify-content: left;
+    justify-self: left;
   }
 
   .status-bar {
@@ -916,6 +932,7 @@ settings:
   --card-shadow: 0 4px 12px rgba(230, 230, 230, 0.3);
   --graph-bg: #0c0c0c;
   --graph-line-color: #4d4d4f;
+  --tab-background-active: rgba(255, 255, 255, 0.1);
 }
 
 .theme-light {
@@ -935,7 +952,7 @@ settings:
   --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
   --graph-bg: #A5AAAE;
   --graph-line-color: #6767672c;
-
+  --tab-background-active: rgba(0, 0, 0, 0.08);
 }
 
 /* Força aplicação da paleta de sintaxe no Preview Mode mesmo sem classes específicas */
