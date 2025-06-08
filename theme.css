@@ -418,6 +418,13 @@ settings:
     color: inherit;
   }
 
+  mark {
+    background-color: var(--color-accent) !important;
+    border-radius: 8px;
+    padding: 0.075em 0.2em;
+    color: inherit;
+  }
+
   /* ------------------------------------------------------------------------------------------------------- */
   /* ---------------------------------------- bordas transparentes ------------------------------------------*/
   .workspace-split.mod-horizontal>.workspace-leaf-resize-handle,
