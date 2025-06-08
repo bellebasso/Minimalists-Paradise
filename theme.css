@@ -395,7 +395,7 @@ settings:
   }
 
   .cm-highlight {
-    background-color: var(--color-accent);
+    background-color: var(--color-accent) !important;
     /* cor do destaque */
     display: inline;
     border-radius: 8px;
