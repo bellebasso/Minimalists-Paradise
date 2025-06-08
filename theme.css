@@ -580,7 +580,7 @@ settings:
     color: var(--text-color);
   }
 
-  .workspace-tab-header-container.tap-pable {
+  .workspace-tab-header-container .tap-pable {
     /* botões da parte de cima da interface */
     border: none;
     position: auto;
@@ -588,7 +588,7 @@ settings:
     padding: var(--button-padding), 0px;
   }
 
-  .workspace-tab-header-container.tap-pable.is-active {
+  .workspace-tab-header-container .tap-pable .is-active {
     border: var(--card-border-color)
   }
 
