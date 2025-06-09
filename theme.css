@@ -575,17 +575,20 @@ settings:
   .workspace-tab-header[data-type="markdown"],
   .workspace-tab-header[data-type="empty"] {
     max-width: 100%;
+    display: flex;
+    flex-grow: 1;
     border-radius: 6px;
     padding: 0 !important;
     box-shadow: none !important;
     transition: background-color 200ms ease-in-out;
     background: var(--card-bg);
-    transition: flex-grow 0.25s ease-in-out !important;
+    transition: flex-grow 0.5s ease-in-out, background-color 0.5s ease !important;
     box-sizing: border-box;
   }
 
   .workspace-tab-header[data-type="markdown"].is-active.mod-active,
   .workspace-tab-header[data-type="empty"].is-active.mod-active {
+    flex-grow: 2;
     max-width: 250px;
     background-color: var(--color-accent);
     flex-grow: 2 !important;
