@@ -1,5 +1,5 @@
 # MinimalistsParadise
-Minimal, but not too simple. Inspired by [AnuPpuccin](https://github.com/AnubisNekhet/AnuPpuccin) and [Border](https://github.com/Akifyss/obsidian-border), the main attraction of Minimalists Paradise is a card layout with customizable features via the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin.
+Minimal, but not too simple. Inspired by [AnuPpuccin](https://github.com/AnubisNekhet/AnuPpuccin) and [Border](https://github.com/Akifyss/obsidian-border), the main attraction of Minimalists Paradise is a card layout with customizable features via the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin. Never lose track with the safari tabs (inspired by [this snippet](https://github.com/gavinmn/obsidian-theme/blob/main/safaritabs.css)) which also match your color accent!
 
 ## Showcase
 Default Light Mode
@@ -9,3 +9,6 @@ Default Dark Mode
 
 ## Customizable Features
 Customize colors, fonts, syntax highlighting and blockquotes. A little freedom, without being overwhelming.
+
+## How to install?
+Currently this theme is not available on the official community themes store, so to use it you need to clone this repository into your themes folder.
