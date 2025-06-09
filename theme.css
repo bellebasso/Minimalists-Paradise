@@ -529,7 +529,7 @@ settings:
 
   .view-header-title-container.mod-at-start.mod-fade {
     /* fade título do header */
-    display: none;
+    display: flex;
     align-items: center;
     justify-content: center;
     padding: 0px 8px;
