@@ -281,6 +281,7 @@ settings:
   --divider-color: #4d4d4f;
   --button-padding: 4px 4px;
   --button-margin: 0px 3px 0px 0px;
+  --card-radius: 16px;
 
   .markdown-source-view.mod-cm6,
   .markdown-source-view.mod-cm6 .cm-scroller,
@@ -485,21 +486,26 @@ settings:
     /* paineis */
     position: initial;
     display: block;
-    width: calc(100% - var(--card-margin-horizontal, 16px) * 2);
+    width: calc(100% - var(--card-margin-horizontal, 8px) * 2);
     max-width: var(--card-max-width, 2000px);
     /* limite de largura */
     margin-bottom: 16px;
-    margin-left: var(--card-margin-horizontal, 16px);
-    margin-right: var(--card-margin-horizontal, 16px);
+    margin-left: var(--card-margin-horizontal, 8px);
+    margin-right: var(--card-margin-horizontal, 8px);
     padding: 0px;
     align-self: center;
     box-sizing: border-box;
+    border: 0.5px solid var(--card-border-color);
 
     /* Visual de card */
     background-color: var(--card-bg);
-    border: 1px solid var(--card-border-color, #e0e0e0);
-    border-radius: var(--card-radius, 12px);
-    box-shadow: var(--card-shadow, 0 4px 12px rgba(0, 0, 0, 0.05));
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+  }
+
+  canvas {
+    width: 100%;
+    height: 100%;
   }
 
   .workspace-leaf {
@@ -513,7 +519,7 @@ settings:
 
   .view-header {
     /* header da parte do meio */
-    background-color: transparent;
+    background-color: var(--card-bg);
     border: 1px dotted var(--card-border-color);
     border-radius: 8px;
     align-self: auto;
@@ -940,13 +946,13 @@ settings:
   --background-secondary: var(--background-primary);
   --background-secondary-alt: var(--background-primary);
   --card-bg: #0c0c0c;
-  --card-border-color: #4d4d4f;
+  --card-border-color: #4d4d4f84;
   --blockquote-border-color: #4d4d4f;
   --blockquote-bg: #0c0c0c;
   --blockquote-radius: 8px;
   --blockquote-text: inherit;
   --citation-bg: #68686e;
-  --card-shadow: 0 4px 12px rgba(230, 230, 230, 0.3);
+  --card-shadow: 0 4px 20px rgba(97, 97, 97, 0.3);
   --graph-bg: #0c0c0c;
   --graph-line-color: #4d4d4f;
   --tab-background-active: rgba(255, 255, 255, 0.1);
