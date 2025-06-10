@@ -335,6 +335,16 @@ settings:
     overflow: hidden;
   }
 
+  /* dataview tables */
+  .dataview .dataview-table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
 
 
   /* ----------------------------------------------- quotes ------------------------------------------------ */
