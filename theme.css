@@ -377,7 +377,7 @@ settings:
   /* for citations */
 
   cite {
-    background-color: var(--citation-bg);
+    background-color: var(--color-accent);
     border-radius: 6px;
     color: var(--blockquote-text);
     margin-left: -10px;
