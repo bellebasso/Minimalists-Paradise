@@ -324,9 +324,7 @@ settings:
   }
 
   .cm-s-obsidian .cm-table,
-  .cm-s-obsidian table,
-  .cm-s-obsidian th,
-  .cm-s-obsidian td {
+  .cm-s-obsidian table {
     border-collapse: separate;
     border-spacing: 0;
     width: fit-content;
