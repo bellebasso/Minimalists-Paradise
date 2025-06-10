@@ -317,7 +317,7 @@ settings:
   .markdown-preview-view table {
     border-collapse: separate;
     border-spacing: 0;
-    width: 100%;
+    width: fit-content;
     border: 1px solid var(--background-modifier-border);
     border-radius: 10px;
     overflow: hidden;
