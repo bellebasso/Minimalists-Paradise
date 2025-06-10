@@ -315,6 +315,7 @@ settings:
 
   /* tables */
   .markdown-preview-view table {
+    /* preview */
     border-collapse: separate;
     border-spacing: 0;
     width: fit-content;
@@ -325,6 +326,7 @@ settings:
 
   .cm-s-obsidian .cm-table,
   .cm-s-obsidian table {
+    /* live view */
     border-collapse: separate;
     border-spacing: 0;
     width: fit-content;
