@@ -313,6 +313,23 @@ settings:
     color: var(--graph-line-color) !important;
   }
 
+  /* tables */
+  .markdown-preview-view table tr:first-child th:first-child {
+    border-top-left-radius: 10px;
+  }
+
+  .markdown-preview-view table tr:first-child th:last-child {
+    border-top-right-radius: 10px;
+  }
+
+  .markdown-preview-view table tr:last-child td:first-child {
+    border-bottom-left-radius: 10px;
+  }
+
+  .markdown-preview-view table tr:last-child td:last-child {
+    border-bottom-right-radius: 10px;
+  }
+
   /* ----------------------------------------------- quotes ------------------------------------------------ */
   --blockquote-radius: 8px;
 
