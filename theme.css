@@ -659,6 +659,7 @@ settings:
 
   .mod-left-split .workspace-tab-header-container-inner,
   .mod-right-split .workspace-tab-header-container-inner {
+    /* botões da direita e esquerda em cima */
     padding: 4px 4px;
     margin: 4px 4px;
     box-sizing: border-box;
@@ -666,7 +667,9 @@ settings:
 
   .mod-left-split .workspace-tab-header-container .is-active,
   .mod-right-split .workspace-tab-header-container .is-active {
-    background-color: var(--color-accent);
+    /* botões da direita e esquerda em cima ativos */
+    opacity: 0.5;
+    background-color: var(--color-accent, );
     box-sizing: border-box;
     border: none;
   }
