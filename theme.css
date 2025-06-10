@@ -314,6 +314,15 @@ settings:
   }
 
   /* tables */
+  .markdown-preview-view table {
+    border-collapse: separate;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid var(--background-modifier-border);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+
   .markdown-preview-view table tr:first-child th:first-child {
     border-top-left-radius: 10px;
   }
