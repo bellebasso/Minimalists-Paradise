@@ -993,9 +993,9 @@ settings:
 }
 
 .theme-light {
-  --background-default: #A5AAAE;
+  --background-default: #b3b6b8;
   --text-color: #000000;
-  --background-primary: #A5AAAE;
+  --background-primary: #b3b6b8;
   --background-primary-alt: var(--background-primary);
   --background-secondary: var(--background-primary);
   --background-secondary-alt: var(--background-primary);
