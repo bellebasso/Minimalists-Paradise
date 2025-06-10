@@ -318,7 +318,6 @@ settings:
     /* preview */
     border-collapse: separate;
     border-spacing: 0;
-    width: fit-content;
     border: 1px solid var(--background-modifier-border);
     border-radius: 10px;
     overflow: hidden;
@@ -339,7 +338,6 @@ settings:
   .dataview .dataview-table {
     border-collapse: separate;
     border-spacing: 0;
-    width: 100% !important;
     border: 1px solid var(--background-modifier-border);
     border-radius: 10px;
     overflow: hidden;
