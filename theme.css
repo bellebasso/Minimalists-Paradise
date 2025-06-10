@@ -519,11 +519,11 @@ settings:
 
   .view-header {
     /* header da parte do meio */
-    background-color: var(--card-bg);
-    border: 1px dotted var(--card-border-color);
-    border-radius: 8px;
+    background-color: var(--card-bg) !important;
+    border-bottom: 1px dashed var(--card-border-color);
+    border-radius: 16px 16px 0px 0px;
     align-self: auto;
-    margin: 8px;
+    margin: 0px;
     box-shadow: none;
   }
 
@@ -534,6 +534,10 @@ settings:
     justify-content: center;
     padding: 0px 8px;
     color: var(--text-color);
+  }
+
+  .mod-fade:not(.mod-at-end):after {
+    display: none;
   }
 
   .view-header-title-container {
@@ -969,7 +973,7 @@ settings:
   --background-secondary: var(--background-primary);
   --background-secondary-alt: var(--background-primary);
   --card-bg: #D1D5D7;
-  --card-border-color: #252525c3;
+  --card-border-color: #25252586;
   --blockquote-border-color: #252525c3;
   --blockquote-bg: #a5AAAE;
   --blockquote-radius: 8px;
