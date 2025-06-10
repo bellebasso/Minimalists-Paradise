@@ -668,7 +668,7 @@ settings:
   .mod-left-split .workspace-tab-header-container .is-active,
   .mod-right-split .workspace-tab-header-container .is-active {
     /* botões da direita e esquerda em cima ativos */
-    opacity: 0.5;
+    opacity: 0.8;
     background-color: var(--color-accent, );
     box-sizing: border-box;
     border: none;
