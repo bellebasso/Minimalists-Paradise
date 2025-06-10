@@ -361,7 +361,6 @@ settings:
     border-radius: var(--blockquote-radius);
     font-size: inherit;
     line-height: 1.5em;
-    margin: 5px 5px;
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: var(--blockquote-bg);
