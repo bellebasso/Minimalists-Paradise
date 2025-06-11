@@ -532,6 +532,10 @@ settings:
     box-shadow: var(--card-shadow);
   }
 
+  .workspace-tab-container .mod-top-left-space {
+    margin-bottom: 0px;
+  }
+
   canvas {
     width: 100%;
     height: 100%;
