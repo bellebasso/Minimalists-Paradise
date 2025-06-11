@@ -295,16 +295,6 @@ settings:
     font-size: var(--default-font-size);
   }
 
-  /* Preview mode (leitura) */
-  .markdown-preview-view h1 {
-    /* divisão h1 no reading mode */
-    display: block;
-    width: 100%;
-    border-bottom: 2px solid var(--divider-color, #ccc);
-    padding-bottom: 2px;
-    margin-bottom: 2px;
-  }
-
   .graph-view.color-fill {
     background-color: var(--graph-bg) !important;
   }
