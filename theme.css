@@ -335,7 +335,6 @@ settings:
 
 
 
-
   /* ----------------------------------------------- quotes ------------------------------------------------ */
   --blockquote-radius: 8px;
 
@@ -534,10 +533,6 @@ settings:
 
   .workspace-leaf {
     /* painel lateral esquerdo cor */
-    background-color: var(--card-bg);
-  }
-
-  .cm-scroller {
     background-color: var(--card-bg);
   }
 
@@ -973,9 +968,9 @@ settings:
 
 /* ======================================================================================================= */
 .theme-dark {
-  --background-default: #000000;
+  --background-default: #0c0c0c;
   --text-color: #ffffff;
-  --background-primary: #000000;
+  --background-primary: #0c0c0c;
   --background-primary-alt: var(--background-primary);
   --background-secondary: var(--background-primary);
   --background-secondary-alt: var(--background-primary);
@@ -986,30 +981,32 @@ settings:
   --blockquote-radius: 8px;
   --blockquote-text: inherit;
   --citation-bg: #68686e;
-  --card-shadow: 0 4px 20px rgba(97, 97, 97, 0.3);
+  --card-shadow: 0 3px 8px rgba(97, 97, 97, 0.15);
   --graph-bg: #0c0c0c;
   --graph-line-color: #4d4d4f;
   --tab-background-active: rgba(255, 255, 255, 0.1);
+  --caret-color: var(--text-color);
 }
 
 .theme-light {
   --background-default: #A5AAAE;
   --text-color: #000000;
-  --background-primary: #A5AAAE;
+  --background-primary: #a5aaae;
   --background-primary-alt: var(--background-primary);
   --background-secondary: var(--background-primary);
   --background-secondary-alt: var(--background-primary);
-  --card-bg: #D1D5D7;
+  --card-bg: #a5aaae;
   --card-border-color: #25252586;
   --blockquote-border-color: #252525c3;
   --blockquote-bg: #a5AAAE;
   --blockquote-radius: 8px;
   --blockquote-text: inherit;
   --citation-bg: #68686e;
-  --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --card-shadow: 1px 3px 8px rgba(0, 0, 0, 0.3);
   --graph-bg: #A5AAAE;
   --graph-line-color: #6767672c;
   --tab-background-active: rgba(0, 0, 0, 0.08);
+  --caret-color: var(--text-color);
 }
 
 /* Força aplicação da paleta de sintaxe no Preview Mode mesmo sem classes específicas */
