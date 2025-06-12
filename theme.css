@@ -85,6 +85,21 @@ SOFTWARE.
     overflow: hidden;
   }
 
+  .markdown-preview-view table thead {
+    /* table header preview mode */
+    background-color: var(--color-accent);
+    color: var(--text-color);
+    padding: 0.5em;
+    border: 1px solid var(--card-border-color);
+  }
+
+  .markdown-source-view.mod-cm6 table thead {
+    /* table header live mode */
+    background-color: var(--color-accent);
+    color: var(--text-color);
+    border: 1px solid var(--card-border-color);
+  }
+
   /* dataview tables */
   .dataview .dataview-table {
     border-collapse: separate;
@@ -92,9 +107,21 @@ SOFTWARE.
     border: 1px solid var(--background-modifier-border);
     border-radius: 10px;
     overflow: hidden;
+    width: 100%;
   }
 
+  /* Optional: vertical lines between columns */
+  .table-view-table .table-view-td,
+  .table-view-table .table-view-th {
+    border-right: 2px solid var(--card-border-color);
+    border-bottom: 2px solid var(--card-border-color);
+    padding: 6px 10px;
+  }
 
+  /* Remove last column's right border for visual polish */
+  .table-view-tr> :last-child {
+    border-right: none;
+  }
 
   /* ----------------------------------------------- quotes ------------------------------------------------ */
   --blockquote-radius: 8px;
@@ -995,6 +1022,7 @@ settings:
   --tab-background-active: rgba(255, 255, 255, 0.1);
   --caret-color: var(--text-color);
   --color-panel: #0c0c0c;
+  --table-header-background: var(--color-accent)
 }
 
 .theme-light {
@@ -1017,6 +1045,7 @@ settings:
   --tab-background-active: rgba(0, 0, 0, 0.08);
   --caret-color: var(--text-color);
   --color-panel: #a5aab6;
+  --table-header-background: var(--color-accent)
 }
 
 /* Força aplicação da paleta de sintaxe no Preview Mode mesmo sem classes específicas */
