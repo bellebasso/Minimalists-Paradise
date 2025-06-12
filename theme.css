@@ -969,6 +969,10 @@ settings:
     /* frontmatter */
     color: var(--text-color)
   }
+
+  a.internal-link {
+    text-decoration: none;
+  }
 }
 
 /* ======================================================================================================= */
