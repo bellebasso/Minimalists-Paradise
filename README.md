@@ -5,9 +5,10 @@ Minimal, but not too simple. Inspired by [AnuPpuccin](https://github.com/AnubisN
 
 ## Showcase
 Default Light Mode
-<img width="1404" alt="mp light mode" src="https://github.com/user-attachments/assets/4390556d-75c9-4738-9b19-07e72b0f7d03" />
+<img width="700" alt="preview 1 dark" src="https://github.com/user-attachments/assets/2d03b7eb-8fb6-4de7-9616-aa93f7d06880" />
 Default Dark Mode
-<img width="1404" alt="mp dark mode" src="https://github.com/user-attachments/assets/a062ad72-94c4-4f80-aad2-28ceb03a529a" />
+<img width="700" alt="preview 1 light" src="https://github.com/user-attachments/assets/73cd326e-3e53-40a5-878e-aa76fa5775ec" />
+
 
 ## Customizable Features
 Customize colors, fonts, syntax highlighting and blockquotes. A little freedom, without being overwhelming.
