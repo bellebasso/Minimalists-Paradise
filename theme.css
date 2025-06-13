@@ -101,6 +101,10 @@ SOFTWARE.
   }
 
   /* dataview tables */
+  table .dataview .dataview-table {
+    width: 100%;
+  }
+
   .dataview .dataview-table {
     border-collapse: separate;
     border-spacing: 0;
@@ -142,7 +146,6 @@ SOFTWARE.
     padding-top: 10px;
     padding-bottom: 10px;
     background-color: var(--blockquote-bg);
-    position: relative;
     width: 100%;
   }
 
@@ -164,6 +167,7 @@ SOFTWARE.
     padding-right: 10px;
     text-align: right;
     display: block;
+    position: relative;
   }
 
   cite a:link {
