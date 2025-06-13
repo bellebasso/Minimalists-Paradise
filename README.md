@@ -14,4 +14,10 @@ Default Dark Mode
 Customize colors, fonts, syntax highlighting and blockquotes. A little freedom, without being overwhelming.
 
 ## How to install?
-Currently this theme is not available on the official community themes store, so to use it you need to clone this repository into your themes folder.
+1. Go to Settings > Appearance > Themes > Manage
+2. Click on "Use community theme" > Browse
+3. Search for "Minimalists Paradise"
+(Or install manually by cloning this repo into your themes folder)
+
+## Contribute
+Any suggestions, feature requests, bug reports and pull requests are always welcome.
