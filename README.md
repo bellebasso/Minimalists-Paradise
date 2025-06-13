@@ -6,6 +6,7 @@ Minimal, but not too simple. Inspired by [AnuPpuccin](https://github.com/AnubisN
 ## Showcase
 Default Light Mode
 <img width="700" alt="preview 1 dark" src="https://github.com/user-attachments/assets/2d03b7eb-8fb6-4de7-9616-aa93f7d06880" />
+
 Default Dark Mode
 <img width="700" alt="preview 1 light" src="https://github.com/user-attachments/assets/73cd326e-3e53-40a5-878e-aa76fa5775ec" />
 
