@@ -56,6 +56,14 @@ SOFTWARE.
     font-size: var(--default-font-size);
   }
 
+  body.mod-mobile .graph-view.color-fill {
+    background-color: var(--graph-bg) !important;
+  }
+
+  body.mod-mobile .graph-view.color-line {
+    color: var(--graph-line-color) !important;
+  }
+
   .graph-view.color-fill {
     background-color: var(--graph-bg) !important;
   }
