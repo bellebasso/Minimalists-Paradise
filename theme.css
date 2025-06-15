@@ -322,6 +322,27 @@ SOFTWARE.
     box-shadow: var(--card-shadow);
   }
 
+  body.mod-mobile .workspace-tab-container {
+    /* paineis */
+    position: initial;
+    display: block;
+    width: calc(100% - var(--card-margin-horizontal, 8px) * 2);
+    max-width: var(--card-max-width, 2000px);
+    /* limite de largura */
+    margin-bottom: 16px;
+    margin-left: var(--card-margin-horizontal, 8px);
+    margin-right: var(--card-margin-horizontal, 8px);
+    padding: 0px;
+    align-self: center;
+    box-sizing: border-box;
+    border: 0.5px solid var(--card-border-color);
+
+    /* Visual de card */
+    background-color: var(--color-panel);
+    border-radius: var(--card-radius);
+    box-shadow: var(--card-shadow);
+  }
+
   .mod-top-left-space .workspace-tab-container {
     margin-bottom: 8px;
   }
@@ -338,6 +359,10 @@ SOFTWARE.
 
   .workspace-leaf {
     /* painel lateral esquerdo cor */
+    background-color: var(--color-panel);
+  }
+
+  body.mod-mobile .workspace-leaf {
     background-color: var(--color-panel);
   }
 
