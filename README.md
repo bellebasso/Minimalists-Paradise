@@ -1,5 +1,5 @@
 # MinimalistsParadise
-Minimal, but not too simple. Inspired by [AnuPpuccin](https://github.com/AnubisNekhet/AnuPpuccin) and [Border](https://github.com/Akifyss/obsidian-border), the main attraction of Minimalists Paradise is a card layout with customizable features via the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin. Never lose track with the safari tabs (inspired by [this snippet](https://github.com/gavinmn/obsidian-theme/blob/main/safaritabs.css)) which also match your color accent!
+Minimal, but not too simple. Inspired by [AnuPpuccin](https://github.com/AnubisNekhet/AnuPpuccin) and [Border](https://github.com/Akifyss/obsidian-border), the main attraction of Minimalists Paradise is a card layout with customizable features via the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin. Never lose track with the safari tabs (inspired by [this snippet](https://github.com/gavinmn/obsidian-theme/blob/main/safaritabs.css)) which also match your color accent! Enable or disable colored headers with different preset options or create your own.
 
 **WARNING**: As of now, some things are not completely optimized for light mode (including some visual inconsistencies in reading mode), such as dataview tables styling and custom callouts. However, other features (such as vanilla callouts, markdown tables, blockquotes and citations, etc) work as expected in light mode in both reading and live mode.
 
@@ -10,6 +10,8 @@ Default Dark Mode
 Default Light Mode
 <img width="700" alt="preview 1 light" src="https://github.com/user-attachments/assets/73cd326e-3e53-40a5-878e-aa76fa5775ec" />
 
+## Colored Headers
+Give a little color to your notes with the colored headers! Choose between different presets or create your own custom combinations.
 
 ## Customizable Features
 Customize colors, fonts, syntax highlighting and blockquotes. A little freedom, without being overwhelming.
