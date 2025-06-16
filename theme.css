@@ -863,7 +863,7 @@ settings:
     collapsed: true
 
   - id: background-primary
-    title: Fundo primário
+    title: primary background
     type: variable-themed-color
     format: hex
     default-light: "#A5AAAE"
@@ -871,7 +871,7 @@ settings:
     variable: background-primary
 
   - id: color-panel
-    title: Fundo dos cards
+    title: cards background
     type: variable-themed-color
     format: hex
     default-light: "#a5aab6"
@@ -879,7 +879,7 @@ settings:
     variable: color-panel
 
   - id: card-border-color
-    title: Cor da borda dos cards
+    title: card border color
     type: variable-themed-color
     format: hex
     default-light: "#252525c3"
