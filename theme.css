@@ -821,6 +821,40 @@ SOFTWARE.
 name: Minimalists Paradise
 id: mp-theme
 settings:
+  - id: color-accent-theme
+    title: theme color accent override
+    type: heading
+    level: 1
+
+  - id: custom-color-accent-light-toggle
+    title: enable light theme color accent override?
+    type: class-toggle
+    default: false
+
+  - id: custom-color-accent-light
+    title: custom light theme color accent
+    type: variable-color
+    format: hex
+    default: "#a0a6a7"
+    condition:
+      - id: custom-color-accent-light-toggle
+        value: true
+
+    
+  - id: custom-color-accent-dark-toggle
+    title: enable dark theme color accent override?
+    type: class-toggle
+    default: false
+    
+  - id: custom-color-accent-dark
+    title: custom dark theme color accent
+    type: variable-color
+    format: hex
+    default: "#68686e"
+    condition:
+      - id: custom-color-accent-dark-toggle
+        value: true
+
   - id: theme-colors
     title: main colors
     type: heading
@@ -849,6 +883,81 @@ settings:
     default-light: "#252525c3"
     default-dark: "#4d4d4f"
     variable: card-border-color
+
+  - id: colored-headers-title
+    title: colored headers
+    type: heading
+    level: 1  
+
+  - id: colored-headers
+    title: enable colored headers?
+    type: class-toggle
+    class: colored-headers
+    default: false
+
+  - id: colored-headers-scheme
+    title: header color scheme
+    type: class-select
+    default: colored-headers-grey
+    options:
+      - label: grey headers
+        value: colored-headers-grey
+      - label: blue headers
+        value: colored-headers-blue
+      - label: custom headers
+        value: colored-headers-custom
+      - label: purple headers
+        value: colored-headers-purple
+      - label: green headers
+        value: colored-headers-green
+      - label: orange headers
+        value: colored-headers-orange
+      - label: red headers
+        value: colored-headers-red
+      - label: pink headers
+        value: colored-headers-pink
+
+  - id: colored-headers-custom-configs
+    title: custom header colors
+    type: heading
+    level: 2
+    collapsed: true
+    condition:
+      - id: colored-headers-scheme
+        value: colored-headers-custom
+      - id: colored-headers-toggle
+        value: true
+    settings:
+      - id: header-1-custom
+        title: header 1 color
+        type: variable-themed-color
+        default-dark: #474E5C
+        default-light: #2C313A
+      - id: header-2-custom
+        title: header 2 color
+        type: variable-themed-color
+        default-dark: #5E6573
+        default-light: #3D4450
+      - id: header-3-custom
+        title: header 3 color
+        type: variable-themed-color
+        default-dark: #787F8D
+        default-light: #4F5867
+      - id: header-4-custom
+        title: header 4 color
+        type: variable-themed-color
+        default-dark: #979DAA
+        default-light: #61707F
+      - id: header-5-custom
+        title: header 5 color
+        type: variable-themed-color
+        default-dark: #B7BCC9
+        default-light: #7A8A99
+      - id: header-6-custom
+        title: header 6 color
+        type: variable-themed-color
+        default-dark: #D8DCE6
+        default-light: #95A5B2
 
   - id: graph-view-style
     title: graph view
@@ -1075,7 +1184,8 @@ settings:
   --tab-background-active: rgba(255, 255, 255, 0.1);
   --caret-color: var(--text-color);
   --color-panel: #0c0c0c;
-  --table-header-background: var(--color-accent)
+  --table-header-background: var(--color-accent);
+  --custom-color-accent-dark: #68686e;
 }
 
 .theme-light {
@@ -1098,7 +1208,16 @@ settings:
   --tab-background-active: rgba(0, 0, 0, 0.08);
   --caret-color: var(--text-color);
   --color-panel: #a5aab6;
-  --table-header-background: var(--color-accent)
+  --table-header-background: var(--color-accent);
+  --custom-color-accent-light: #a0a6a7;
+}
+
+.custom-color-accent-light-toggle.custom-color-accent-light .theme-light {
+  --color-accent: var(--custom-color-accent-light);
+}
+
+.custom-color-accent-dark-toggle.custom-color-accent-dark .theme-dark {
+  --color-accent: var(--custom-color-accent-dark);
 }
 
 /* Força aplicação da paleta de sintaxe no Preview Mode mesmo sem classes específicas */
@@ -1148,7 +1267,77 @@ settings:
 }
 
 /* ------------------------------------------ headers -------------------------------------------------- */
-.theme-dark {
+/* Live Preview (CodeMirror 6) */
+.colored-headers .markdown-source-view.mod-cm6 span.cm-header-1,
+.colored-headers .markdown-source-view.mod-cm6 span.cm-header-2,
+.colored-headers .markdown-source-view.mod-cm6 span.cm-header-3,
+.colored-headers .markdown-source-view.mod-cm6 span.cm-header-4,
+.colored-headers .markdown-source-view.mod-cm6 span.cm-header-5,
+.colored-headers .markdown-source-view.mod-cm6 span.cm-header-6 {
+  display: block;
+}
+
+.colored-headers .markdown-source-view.mod-cm6 span.cm-header-1 {
+  color: var(--header-1);
+}
+
+.colored-headers .markdown-source-view.mod-cm6 span.cm-header-2 {
+  color: var(--header-2);
+}
+
+.colored-headers .markdown-source-view.mod-cm6 span.cm-header-3 {
+  color: var(--header-3);
+}
+
+.colored-headers .markdown-source-view.mod-cm6 span.cm-header-4 {
+  color: var(--header-4);
+}
+
+.colored-headers .markdown-source-view.mod-cm6 span.cm-header-5 {
+  color: var(--header-5);
+}
+
+.colored-headers .markdown-source-view.mod-cm6 span.cm-header-6 {
+  color: var(--header-6);
+}
+
+/* Reading mode */
+.colored-headers .markdown-preview-view h1 {
+  color: var(--header-1);
+}
+
+.colored-headers .markdown-preview-view h2 {
+  color: var(--header-2);
+}
+
+.colored-headers .markdown-preview-view h3 {
+  color: var(--header-3);
+}
+
+.colored-headers .markdown-preview-view h4 {
+  color: var(--header-4);
+}
+
+.colored-headers .markdown-preview-view h5 {
+  color: var(--header-5);
+}
+
+.colored-headers .markdown-preview-view h6 {
+  color: var(--header-6);
+}
+
+/* presets */
+/* Grey headers */
+.colored-headers.colored-headers-grey.theme-light {
+  --header-1: #2C313A;
+  --header-2: #3D4450;
+  --header-3: #4F5867;
+  --header-4: #61707F;
+  --header-5: #7A8A99;
+  --header-6: #95A5B2;
+}
+
+.colored-headers.colored-headers-grey.theme-dark {
   --header-1: #474E5C;
   --header-2: #5E6573;
   --header-3: #787F8D;
@@ -1157,109 +1346,144 @@ settings:
   --header-6: #D8DCE6;
 }
 
-.theme-light {
-  --header-1:
-    --header-2: --header-3: --header-4: --header-5: --header-6:
+/* Blue headers */
+.colored-headers.colored-headers-blue.theme-light {
+  --header-1: #1E3A5F;
+  --header-2: #29527A;
+  --header-3: #356B95;
+  --header-4: #4184B0;
+  --header-5: #4C9DCC;
+  --header-6: #58B6E7;
 }
 
-/* live preview */
-span .cm-header.cm-header-1.colored-headers {
-  color: var(--header-1)
+.colored-headers.colored-headers-blue.theme-dark {
+  --header-1: #58B6E7;
+  --header-2: #4C9DCC;
+  --header-3: #4184B0;
+  --header-4: #356B95;
+  --header-5: #29527A;
+  --header-6: #1E3A5F;
 }
 
-span .cm-header.cm-header-2.colored-headers {
-  color: var(--header-2)
+/* Custom headers */
+.colored-headers.colored-headers-custom.theme-light {
+  --header-1-custom: #2C313A;
+  --header-2-custom: #3D4450;
+  --header-3-custom: #4F5867;
+  --header-4-custom: #61707F;
+  --header-5-custom: #7A8A99;
+  --header-6-custom: #95A5B2;
 }
 
-span .cm-header.cm-header-3.colored-headers {
-  color: var(--header-3)
+.colored-headers.colored-headers-custom.theme-dark {
+  --header-1-custom: #474E5C;
+  --header-2-custom: #5E6573;
+  --header-3-custom: #787F8D;
+  --header-4-custom: #979DAA;
+  --header-5-custom: #B7BCC9;
+  --header-6-custom: #D8DCE6;
 }
 
-span .cm-header.cm-header-4.colored-headers {
-  color: var(--header-4)
+.colored-headers.colored-headers-custom {
+  --header-1: var(--header-1-custom);
+  --header-2: var(--header-2-custom);
+  --header-3: var(--header-3-custom);
+  --header-4: var(--header-4-custom);
+  --header-5: var(--header-5-custom);
+  --header-6: var(--header-6-custom);
 }
 
-span .cm-header.cm-header-5.colored-headers {
-  color: var(--header-5)
+/* Purple headers */
+.colored-headers.colored-headers-purple.theme-light {
+  --header-1: #3D2C4F;
+  --header-2: #4E3A66;
+  --header-3: #5E4880;
+  --header-4: #6F5699;
+  --header-5: #8064B3;
+  --header-6: #9272CC;
 }
 
-span .cm-header.cm-header-6.colored-headers {
-  color: var(--header-6)
+.colored-headers.colored-headers-purple.theme-dark {
+  --header-1: #9272CC;
+  --header-2: #8064B3;
+  --header-3: #6F5699;
+  --header-4: #5E4880;
+  --header-5: #4E3A66;
+  --header-6: #3D2C4F;
 }
 
-/* reading mode */
-.markdown-preview-view h1 .colored-headers {
-  color: var(--header-1)
+/* Green headers */
+.colored-headers.colored-headers-green.theme-light {
+  --header-1: #2C4F3D;
+  --header-2: #3A664E;
+  --header-3: #48805E;
+  --header-4: #56996F;
+  --header-5: #64B380;
+  --header-6: #72CC92;
 }
 
-.markdown-preview-view h2 .colored-headers {
-  color: var(--header-2)
+.colored-headers.colored-headers-green.theme-dark {
+  --header-1: #72CC92;
+  --header-2: #64B380;
+  --header-3: #56996F;
+  --header-4: #48805E;
+  --header-5: #3A664E;
+  --header-6: #2C4F3D;
 }
 
-.markdown-preview-view h3 .colored-headers {
-  color: var(--header-3)
+/* Orange headers */
+.colored-headers.colored-headers-orange.theme-light {
+  --header-1: #4F392C;
+  --header-2: #664C3A;
+  --header-3: #805F48;
+  --header-4: #997256;
+  --header-5: #B38664;
+  --header-6: #CC9972;
 }
 
-.markdown-preview-view h4 .colored-headers {
-  color: var(--header-4)
+.colored-headers.colored-headers-orange.theme-dark {
+  --header-1: #CC9972;
+  --header-2: #B38664;
+  --header-3: #997256;
+  --header-4: #805F48;
+  --header-5: #664C3A;
+  --header-6: #4F392C;
 }
 
-.markdown-preview-view h5 .colored-headers {
-  color: var(--header-5)
+/* Red headers */
+.colored-headers.colored-headers-red.theme-light {
+  --header-1: #C1001F;
+  --header-2: #D90429;
+  --header-3: #F02C2C;
+  --header-4: #FF4141;
+  --header-5: #FF5C5C;
+  --header-6: #FF7B7B;
 }
 
-.markdown-preview-view h6 .colored-headers {
-  color: var(--header-6)
+.colored-headers.colored-headers-red.theme-dark {
+  --header-1: #FF5C5C;
+  --header-2: #FF4141;
+  --header-3: #F02C2C;
+  --header-4: #D90429;
+  --header-5: #C1001F;
+  --header-6: #960018;
 }
 
-/* @settings
-name: Colored Headers
-id: toggle-colored-headers
-settings:
-  - id: colored-headers
-    name: Enable Colored Headers?
-    type: class-toggle
-    default: false
-  - id: header-1-color
-    name: Header 1 Color
-    type: variable-themed-color
-    format: hex
-    default-dark: "#474E5C"
-    default-light:
-    variable: header-1
-  - id: header-2-color
-    name: Header 2 Color
-    type: variable-themed-color
-    format: hex
-    default-dark: "#5E6573"
-    default-light:
-    variable: header-2
-  - id: header-3-color
-    name: Header 3 Color
-    type: variable-themed-color
-    format: hex
-    default-dark: "#787F8D"
-    default-light:
-    variable: header-3
-  - id: header-4-color
-    name: Header 4 Color
-    type: variable-themed-color
-    format: hex
-    default-dark: "#979DAA"
-    default-light:
-    variable: header-4
-  - id: header-5-color
-    name: Header 5 Color
-    type: variable-themed-color
-    format: hex
-    default-dark: "#B7BCC9"
-    default-light:
-    variable: header-5
-  - id: header-6-color
-    name: Header 6 Color
-    type: variable-themed-color
-    format: hex
-    default-dark: "#D8DCE6"
-    default-light:
-    variable: header-6
-*/
+/* Pink headers */
+.colored-headers.colored-headers-pink.theme-light {
+  --header-1: #5F2C4F;
+  --header-2: #7A3966;
+  --header-3: #954680;
+  --header-4: #B05399;
+  --header-5: #CC60B3;
+  --header-6: #E76DCC;
+}
+
+.colored-headers.colored-headers-pink.theme-dark {
+  --header-1: #E76DCC;
+  --header-2: #CC60B3;
+  --header-3: #B05399;
+  --header-4: #954680;
+  --header-5: #7A3966;
+  --header-6: #5F2C4F;
+}
