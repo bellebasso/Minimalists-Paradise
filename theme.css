@@ -800,6 +800,8 @@ SOFTWARE.
   }
 }
 
+/* ======================================================================================================= */
+
 /* @settings
 name: Minimalists Paradise
 id: mp-theme
@@ -1038,7 +1040,6 @@ settings:
     default-dark: "#68686e"
     variable: citation-bg
 */
-/* ======================================================================================================= */
 .theme-dark {
   --background-default: #0c0c0c;
   --text-color: #ffffff;
@@ -1130,3 +1131,120 @@ settings:
   color: var(--syntax-property);
   font-style: italic;
 }
+
+/* ------------------------------------------ headers -------------------------------------------------- */
+.theme-dark {
+  --header-1: #474E5C;
+  --header-2: #5E6573;
+  --header-3: #787F8D;
+  --header-4: #979DAA;
+  --header-5: #B7BCC9;
+  --header-6: #D8DCE6;
+}
+
+.theme-light {
+  --header-1:
+    --header-2: --header-3: --header-4: --header-5: --header-6:
+}
+
+/* live preview */
+span .cm-header.cm-header-1.colored-headers {
+  color: var(--header-1)
+}
+
+span .cm-header.cm-header-2.colored-headers {
+  color: var(--header-2)
+}
+
+span .cm-header.cm-header-3.colored-headers {
+  color: var(--header-3)
+}
+
+span .cm-header.cm-header-4.colored-headers {
+  color: var(--header-4)
+}
+
+span .cm-header.cm-header-5.colored-headers {
+  color: var(--header-5)
+}
+
+span .cm-header.cm-header-6.colored-headers {
+  color: var(--header-6)
+}
+
+/* reading mode */
+.markdown-preview-view h1 .colored-headers {
+  color: var(--header-1)
+}
+
+.markdown-preview-view h2 .colored-headers {
+  color: var(--header-2)
+}
+
+.markdown-preview-view h3 .colored-headers {
+  color: var(--header-3)
+}
+
+.markdown-preview-view h4 .colored-headers {
+  color: var(--header-4)
+}
+
+.markdown-preview-view h5 .colored-headers {
+  color: var(--header-5)
+}
+
+.markdown-preview-view h6 .colored-headers {
+  color: var(--header-6)
+}
+
+/* @settings
+name: Colored Headers
+id: toggle-colored-headers
+settings:
+  - id: colored-headers
+    name: Enable Colored Headers?
+    type: class-toggle
+    default: false
+  - id: header-1-color
+    name: Header 1 Color
+    type: variable-themed-color
+    format: hex
+    default-dark: "#474E5C"
+    default-light:
+    variable: header-1
+  - id: header-2-color
+    name: Header 2 Color
+    type: variable-themed-color
+    format: hex
+    default-dark: "#5E6573"
+    default-light:
+    variable: header-2
+  - id: header-3-color
+    name: Header 3 Color
+    type: variable-themed-color
+    format: hex
+    default-dark: "#787F8D"
+    default-light:
+    variable: header-3
+  - id: header-4-color
+    name: Header 4 Color
+    type: variable-themed-color
+    format: hex
+    default-dark: "#979DAA"
+    default-light:
+    variable: header-4
+  - id: header-5-color
+    name: Header 5 Color
+    type: variable-themed-color
+    format: hex
+    default-dark: "#B7BCC9"
+    default-light:
+    variable: header-5
+  - id: header-6-color
+    name: Header 6 Color
+    type: variable-themed-color
+    format: hex
+    default-dark: "#D8DCE6"
+    default-light:
+    variable: header-6
+*/
