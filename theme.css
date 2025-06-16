@@ -1212,11 +1212,11 @@ settings:
   --custom-color-accent-light: #a0a6a7;
 }
 
-.custom-color-accent-light-toggle.custom-color-accent-light .theme-light {
+.theme-light.custom-color-accent-light-toggle {
   --color-accent: var(--custom-color-accent-light);
 }
 
-.custom-color-accent-dark-toggle.custom-color-accent-dark .theme-dark {
+.theme-dark.custom-color-accent-dark-toggle {
   --color-accent: var(--custom-color-accent-dark);
 }
 
