@@ -1,0 +1,17 @@
+# macOS
+.DS_Store
+# vscode configs (local)
+.vscode/
+# personal obsidian files
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/plugins/
+.obsidian/snippets/  # exceto se for subir snippets como parte oficial do tema
+# temporary files/backup
+*.log
+*.tmp
+*.bak
+*~
+# tweaks
+colored folders.css
+colored headers.css
