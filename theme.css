@@ -357,6 +357,12 @@ SOFTWARE.
     height: 100%;
   }
 
+  body.mod-mobile canvas {
+    width: 100%;
+    height: 100%;
+    background-color: var(--graph-bg);
+  }
+
   .workspace-leaf {
     /* painel lateral esquerdo cor */
     background-color: var(--color-panel);
@@ -526,6 +532,15 @@ SOFTWARE.
 
   .workspace-sidedock-vault-profile {
     /* vault profile */
+    padding: 0px;
+    margin: 0px;
+    background-color: var(--color-panel);
+    border: 1 px solid var(--card-border-color) !important;
+    border-radius: 0px 4px 4px 0px;
+  }
+
+  body.mod-mobile .workspace-sidedock-vault-profile {
+    /* vault profile mobile */
     padding: 0px;
     margin: 0px;
     background-color: var(--color-panel);
