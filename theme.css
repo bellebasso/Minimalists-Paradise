@@ -981,12 +981,12 @@ settings:
     variable: graph-line-color
 
   - id: syntax-colors
-    title: syntax colors </>
+    title: syntax colors
     type: heading
     level: 1
 
   - id: syntax-keyword
-    title: Palavras-chave (def, return, if...)
+    title: keywords (def, return, if...)
     type: variable-themed-color
     format: hex
     default-dark: "#552B79"
@@ -994,7 +994,7 @@ settings:
     variable: syntax-keyword
 
   - id: syntax-def
-    title: Definições (funções, etc)
+    title: definitions (funções, etc)
     type: variable-themed-color
     format: hex
     default-dark: "#69EED7"
@@ -1002,7 +1002,7 @@ settings:
     variable: syntax-def
 
   - id: syntax-variable
-    title: Variáveis padrão
+    title: default variables
     type: variable-themed-color
     format: hex
     default-dark: "#558FC7"
@@ -1010,7 +1010,7 @@ settings:
     variable: syntax-variable
 
   - id: syntax-variable-2
-    title: Parâmetros e argumentos
+    title: parameters and arguments
     type: variable-themed-color
     format: hex
     default-dark: "#4186B6"
@@ -1018,7 +1018,7 @@ settings:
     variable: syntax-variable-2
 
   - id: syntax-variable-3
-    title: Variáveis especiais/objetos
+    title: special variables and objects
     type: variable-themed-color
     format: hex
     default-dark: "#C689E3"
@@ -1026,7 +1026,7 @@ settings:
     variable: syntax-variable-3
 
   - id: syntax-string
-    title: Strings
+    title: strings
     type: variable-themed-color
     format: hex
     default-dark: "#BE4AA0"
@@ -1034,7 +1034,7 @@ settings:
     variable: syntax-string
 
   - id: syntax-number
-    title: Números
+    title: numbers
     type: variable-themed-color
     format: hex
     default-dark: "#9795EE"
@@ -1042,7 +1042,7 @@ settings:
     variable: syntax-number
 
   - id: syntax-comment
-    title: Comentários
+    title: comments
     type: variable-themed-color
     format: hex
     default-dark: "#16486D"
@@ -1050,7 +1050,7 @@ settings:
     variable: syntax-comment
 
   - id: syntax-builtin
-    title: Funções built-in (print, len...)
+    title: built-in functions (print, len...)
     type: variable-themed-color
     format: hex
     default-dark: "#2D76E9"
@@ -1058,7 +1058,7 @@ settings:
     variable: syntax-builtin
 
   - id: syntax-operator
-    title: Operadores (+, =, -...)
+    title: operators (+, =, -...)
     type: variable-themed-color
     format: hex
     default-dark: "#6852B3"
@@ -1066,7 +1066,7 @@ settings:
     variable: syntax-operator
 
   - id: syntax-property
-    title: Propriedades e métodos
+    title: properties (obj.metodo())
     type: variable-themed-color
     format: hex
     default-dark: "#4A6BDB"
@@ -1074,7 +1074,7 @@ settings:
     variable: syntax-property
 
   - id: syntax-default-text
-    title: Texto padrão em blocos de código
+    title: default text code color
     type: variable-themed-color
     format: hex
     default-dark: "#eeeeee"
@@ -1082,7 +1082,7 @@ settings:
     variable: syntax-default-text
 
   - id: syntax-border
-    title: Cor da borda de destaque em blocos de código
+    title: code block border color
     type: variable-themed-color
     format: hex
     default-dark: "#A0A6A7"
