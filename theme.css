@@ -1841,7 +1841,7 @@ settings:
   --tab-background-active: rgba(255, 255, 255, 0.1);
   --caret-color: var(--text-color);
   --table-header-background: var(--color-accent);
-  --custom-color-accent-light: #4C4554;
+  --custom-color-accent-light: #62497c;
   --icon-color: var(--card-border-color);
 }
 
