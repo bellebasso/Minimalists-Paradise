@@ -1,12 +1,5 @@
 # Minimalist's Paradise
 
-![License](https://img.shields.io/badge/license-MIT-69EED7?style=flat-square&logoColor=white)
-![Version](https://img.shields.io/badge/version-1.0.0-558FC7?style=flat-square&logoColor=white)
-![PRs Welcome](https://img.shields.io/badge/PRs-welcome-69EED7?style=flat-square&logoColor=white)
-![GitHub Stars](https://img.shields.io/github/stars/bellebasso/MinimalistsParadise?style=social)
-![Obsidian Theme](https://img.shields.io/badge/Made%20for-Obsidian-7E4DD2?logo=obsidian&logoColor=white&style=flat-square)
-![Downloads](https://img.shields.io/github/downloads/bellebasso/MinimalistsParadise/total-558FC7?style=flat-square)
-
 Minimal, but not too simple. Inspired by [AnuPpuccin](https://github.com/AnubisNekhet/AnuPpuccin) and [Border](https://github.com/Akifyss/obsidian-border), the main attraction of Minimalists Paradise is a card layout with customizable features via the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin. Never lose track with the safari tabs (inspired by [this snippet](https://github.com/gavinmn/obsidian-theme/blob/main/safaritabs.css)) which also match your color accent! Enable or disable colored headers with different preset options or create your own.
 
 **WARNING**: As of now, some things are not completely optimized for light mode (including some visual inconsistencies in reading mode), such as dataview tables styling and custom callouts. However, other features (such as vanilla callouts, markdown tables, blockquotes and citations, etc) work as expected in light mode in both reading and live mode.
