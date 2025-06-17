@@ -1355,7 +1355,7 @@ settings:
 .colored-headers .markdown-source-view.mod-cm6 span.cm-header-4,
 .colored-headers .markdown-source-view.mod-cm6 span.cm-header-5,
 .colored-headers .markdown-source-view.mod-cm6 span.cm-header-6 {
-  display: block;
+  display: inline;
 }
 
 .colored-headers .markdown-source-view.mod-cm6 span.cm-header-1 {
