@@ -24,10 +24,14 @@ Minimalist's Paradise is minimal, but not boring. Choose between different prese
 Customize colors, fonts, syntax highlighting and blockquotes. A little freedom, without being overwhelming.
 
 ## How to install?
+### Via the community themes store
 1. Go to Settings > Appearance > Themes > Manage
 2. Click on "Use community theme" > Browse
 3. Search for "Minimalists Paradise"
-(Or install manually by cloning this repo into your themes folder)
+### Manually
+1. Clone this repo into your .obsidian/themes folder
+2. If the theme does not show up in the Obsidian interface, check to see if the name of the folder is "MinimalistsParadise"(common issue). If that's the case, rename the folder ot "Minimalists Paradise"and refresh the app. This should solve the problem.
+3. (Any questions or issues feel free to contact me!)
 
 ## Contribute
 Any suggestions, feature requests, bug reports and pull requests are always welcome.
