@@ -36,7 +36,7 @@ Customize colors, fonts, syntax highlighting and blockquotes. A little freedom, 
 3. Search for "Minimalists Paradise"
 ### Manually
 1. Clone this repo into your .obsidian/themes folder
-2. If the theme does not show up in the Obsidian interface, check to see if the name of the folder is "MinimalistsParadise"(common issue). If that's the case, rename the folder ot "Minimalists Paradise"and refresh the app. This should solve the problem.
+2. If the theme does not show up in the Obsidian interface, check to see if the name of the folder is "MinimalistsParadise"(common issue). If that's the case, rename the folder to "Minimalists Paradise"and refresh the app. This should solve the problem.
 3. For updating with this method, navigate to your .obsidian/themes/Minimalists Paradise inside the terminal and execute git pull.
 4. (Any questions or issues feel free to contact me!)
 
