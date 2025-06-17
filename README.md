@@ -1,10 +1,6 @@
 # Minimalist's Paradise
 
-[![License](https://img.shields.io/badge/license-MIT-474E5C?style=plastic&logo=github&logoColor=white&labelColor=B7BCC9&color=474E5C)](LICENSE)
-[![Made for Obsidian](https://img.shields.io/badge/made%20for-Obsidian-5E6573?style=plastic&logo=obsidian&logoColor=white&labelColor=979DAA&color=5E6573)](https://obsidian.md)
-[![Version](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/bellebasso/MinimalistsParadise/main/manifest.json&query=$.version&label=version&style=plastic&logo=git&logoColor=white&colorA=61707F&colorB=787F8D)](https://github.com/bellebasso/MinimalistsParadise/releases)
-[![Last Commit](https://img.shields.io/github/last-commit/bellebasso/MinimalistsParadise?style=plastic&logo=git&logoColor=white&colorA=4F5867&colorB=979DAA)](https://github.com/bellebasso/MinimalistsParadise/commits/main)
-[![GitHub issues](https://img.shields.io/github/issues/bellebasso/MinimalistsParadise?style=plastic&logo=github&logoColor=white&colorA=3D4450&colorB=B7BCC9)](https://github.com/bellebasso/MinimalistsParadise/issues)
+[![License](https://img.shields.io/badge/license-MIT-474E5C?style=plastic&logo=github&logoColor=white&labelColor=B7BCC9&color=474E5C)](LICENSE) [![Made for Obsidian](https://img.shields.io/badge/made%20for-Obsidian-5E6573?style=plastic&logo=obsidian&logoColor=white&labelColor=979DAA&color=5E6573)](https://obsidian.md) [![Version](https://img.shields.io/badge/dynamic/json?url=https://raw.githubusercontent.com/bellebasso/MinimalistsParadise/main/manifest.json&query=$.version&label=version&style=plastic&logo=git&logoColor=white&colorA=61707F&colorB=787F8D)](https://github.com/bellebasso/MinimalistsParadise/releases) [![Last Commit](https://img.shields.io/github/last-commit/bellebasso/MinimalistsParadise?style=plastic&logo=git&logoColor=white&colorA=4F5867&colorB=979DAA)](https://github.com/bellebasso/MinimalistsParadise/commits/main) [![GitHub issues](https://img.shields.io/github/issues/bellebasso/MinimalistsParadise?style=plastic&logo=github&logoColor=white&colorA=3D4450&colorB=B7BCC9)](https://github.com/bellebasso/MinimalistsParadise/issues)
 
 
 
