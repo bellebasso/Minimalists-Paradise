@@ -168,6 +168,7 @@ SOFTWARE.
 
   /* for preview */
   .markdown-preview-view blockquote {
+    display: inline-block;
     border: 2px solid;
     border-color: var(--blockquote-border-color) !important;
     border-left-width: 2px !important;
@@ -214,6 +215,11 @@ SOFTWARE.
 
   /* ------------------------------------------------------------------------------------------------------- */
   /* ----------------------------------------------- fontes ------------------------------------------------ */
+
+  input.metadata-property-key-input {
+    color: var(--card-border-color);
+  }
+
   .cm-s-obsidian span.cm-inline-code,
   .markdown-preview-view code {
     font-family: var(--code-font) !important;
@@ -382,7 +388,6 @@ SOFTWARE.
 
   .workspace-leaf.workspace-leaf-content.view-content.canvas {
     background-color: var(--graph-bg) !important;
-    border: 1px solid var(--card-border-color);
     border-radius: 16px;
   }
 
@@ -406,22 +411,18 @@ SOFTWARE.
 
   body.mod-mobile .workspace-leaf-content[data-type="graph"] {
     background-color: var(--graph-bg) !important;
-    border: 1px solid var(--card-border-color);
   }
 
   body.mod-mobile .workspace-leaf-content[data-type="localgraph"] {
     background-color: var(--graph-bg) !important;
-    border: 1px solid var(--card-border-color);
   }
 
   .workspace-leaf-content[data-type="graph"] {
     background-color: var(--graph-bg) !important;
-    border: 1px solid var(--card-border-color);
   }
 
   .workspace-leaf-content[data-type="localgraph"] {
     background-color: var(--graph-bg) !important;
-    border: 1px solid var(--card-border-color);
   }
 
   .view-header {
@@ -658,7 +659,7 @@ SOFTWARE.
   }
 
   .markdown-reading-view {
-    background-color: var(--card-bg);
+    background-color: transparent !important;
   }
 
   body {
@@ -910,7 +911,6 @@ SOFTWARE.
   }
 
   .callout-content {
-    background-color: transparent;
     color: var(--text-color);
   }
 
@@ -934,7 +934,7 @@ SOFTWARE.
     color: var(--color-accent);
     text-shadow: var(--external-link-text-shadow);
     background-image: none;
-    padding-inline-end: none;
+    padding-inline-end: 0px;
   }
 
   a.external-link::after {
@@ -1055,6 +1055,60 @@ settings:
     default-dark: "#4d4d4f"
     variable: card-border-color
 
+  - id: extended-color-schemes-heading
+    title: extended color schemes
+    type: heading
+    level: 1
+    collapsed: true
+
+  - id: extended-dark-color-schemes-toggle
+    title: enable extended dark color schemes?
+    description: enabling this will override the default dark color scheme with the one choosen below.
+    type: class-toggle
+    default: false
+
+  - id: extended-dark-color-schemes
+    title: extended dark color schemes
+    type: class-select
+    condition:
+      - id: extended-dark-color-schemes-toggle
+        value: true
+    default: onyx
+    options:
+      - label: atlantic
+        value: atlantic
+      - label: abyss
+        value: abyss
+      - label: moss
+        value: moss
+      - label: onyx
+        value: onyx
+
+  - id: extended-light-color-schemes-toggle
+    title: enable extended light color schemes?
+    description: enabling this will override the default light color scheme with the one choosen below.
+    type: class-toggle
+    default: false
+
+  - id: extended-light-color-schemes
+    title: extended light color schemes
+    type: class-select
+    condition:
+      - id: extended-light-color-schemes-toggle
+        value: true
+    default: leaf
+    options:
+      - label: leaf
+        value: leaf
+      - label: sky
+        value: sky
+      - label: fog
+        value: fog
+      - label: red desert
+        value: red-desert
+      - label: violet haze
+        value: violet-haze
+
   - id: colored-headers-title
     title: colored headers
     type: heading
@@ -1066,6 +1120,16 @@ settings:
     type: class-toggle
     class: colored-headers
     default: false
+
+  - id: colored-headers-override-toggle
+    title: override extended color scheme header colors?
+    description: enabling this will override the predefined colored headers attached to the extended color themes with the set selected below.
+    type: class-toggle
+    class: colored-headers-override-toggle
+    default: false
+    condition:
+      - id: colored-headers
+        value: true
 
   - id: colored-headers-scheme
     title: header color scheme
@@ -1511,6 +1575,26 @@ settings:
 }
 
 /* presets */
+/* Default themes headers */
+
+body.colored-headers.theme-dark:not(.colored-headers-override-toggle) {
+  --header-1: #474E5C;
+  --header-2: #5E6573;
+  --header-3: #787F8D;
+  --header-4: #979DAA;
+  --header-5: #B7BCC9;
+  --header-6: #D8DCE6;
+}
+
+body.colored-headers.theme-light:not(.colored-headers-override-toggle) {
+  --header-1: #2C313A;
+  --header-2: #3D4450;
+  --header-3: #4F5867;
+  --header-4: #61707F;
+  --header-5: #7A8A99;
+  --header-6: #95A5B2;
+}
+
 /* Grey headers */
 .colored-headers.colored-headers-grey.theme-light {
   --header-1: #2C313A;
@@ -1672,63 +1756,98 @@ settings:
   --header-6: #5F2C4F;
 }
 
-/* ====================================================================================================== */
+/* Extended color schemes auto header presets */
+/* Violet Haze -> Purple Headers */
+.colored-headers.theme-light.extended-light-color-schemes-toggle.violet-haze:not(.colored-headers-override-toggle) {
+  --header-1: #3D2C4F;
+  --header-2: #4E3A66;
+  --header-3: #5E4880;
+  --header-4: #6F5699;
+  --header-5: #8064B3;
+  --header-6: #9272CC;
+}
+
+/* Red Desert -> Red Headers */
+.colored-headers.theme-light.extended-light-color-schemes-toggle.red-desert:not(.colored-headers-override-toggle) {
+  --header-1: #C1001F;
+  --header-2: #D90429;
+  --header-3: #F02C2C;
+  --header-4: #FF4141;
+  --header-5: #FF5C5C;
+  --header-6: #FF7B7B;
+}
+
+/* Atlantic -> Blue Headers */
+.colored-headers.theme-dark.extended-dark-color-schemes-toggle.atlantic:not(.colored-headers-override-toggle) {
+  --header-1: #1E3A5F;
+  --header-2: #29527A;
+  --header-3: #356B95;
+  --header-4: #4184B0;
+  --header-5: #4C9DCC;
+  --header-6: #58B6E7;
+}
+
+/* Moss -> Green Headers */
+.colored-headers.theme-dark.extended-dark-color-schemes-toggle.moss:not(.colored-headers-override-toggle) {
+  --header-1: #2C4F3D;
+  --header-2: #3A664E;
+  --header-3: #48805E;
+  --header-4: #56996F;
+  --header-5: #64B380;
+  --header-6: #72CC92;
+}
+
+/* Sky -> Blue Headers */
+.colored-headers.theme-light.extended-light-color-schemes-toggle.sky:not(.colored-headers-override-toggle) {
+  --header-1: #1E3A5F;
+  --header-2: #29527A;
+  --header-3: #356B95;
+  --header-4: #4184B0;
+  --header-5: #4C9DCC;
+  --header-6: #58B6E7;
+}
+
+/* Fog -> Grey Headers */
+.colored-headers.theme-light.extended-light-color-schemes-toggle.fog:not(.colored-headers-override-toggle) {
+  --header-1: #2C313A;
+  --header-2: #3D4450;
+  --header-3: #4F5867;
+  --header-4: #61707F;
+  --header-5: #7A8A99;
+  --header-6: #95A5B2;
+}
+
+/* Onyx -> Grey Headers */
+.colored-headers.theme-dark.extended-dark-color-schemes-toggle.onyx:not(.colored-headers-override-toggle) {
+  --header-1: #474E5C;
+  --header-2: #5E6573;
+  --header-3: #787F8D;
+  --header-4: #979DAA;
+  --header-5: #B7BCC9;
+  --header-6: #D8DCE6;
+}
+
+/* Abyss -> Purple Headers */
+.colored-headers.theme-dark.extended-dark-color-schemes-toggle.abyss:not(.colored-headers-override-toggle) {
+  --header-1: #9272CC;
+  --header-2: #8064B3;
+  --header-3: #6F5699;
+  --header-4: #5E4880;
+  --header-5: #4E3A66;
+  --header-6: #3D2C4F;
+}
+
+.colored-headers.theme-light.extended-light-color-schemes-toggle.leaf:not(.colored-headers-override-toggle) {
+  --header-1: #2C4F3D;
+  --header-2: #3A664E;
+  --header-3: #48805E;
+  --header-4: #56996F;
+  --header-5: #64B380;
+  --header-6: #72CC92;
+}
 
 
-
-/* --------------------------------------- extended color schemes --------------------------------------- */
-/* @settings
-name: Minimalists Paradise Extended Color Schemes
-id: extended-color-schemes-mp
-settings:
-  - id: extended-dark-color-schemes-toggle
-    title: enable extended dark color schemes?
-    description: enabling this will override the default dark color scheme with the one choosen below.
-    type: class-toggle
-    default: false
-
-  - id: extended-dark-color-schemes
-    title: extended dark color schemes
-    type: class-select
-    condition:
-      - id: extended-dark-color-schemes-toggle
-        value: true
-    default: onyx
-    options:
-      - label: atlantic
-        value: atlantic
-      - label: abyss
-        value: abyss
-      - label: moss
-        value: moss
-      - label: onyx
-        value: onyx
-
-  - id: extended-light-color-schemes-toggle
-    title: enable extended light color schemes?
-    description: enabling this will override the default light color scheme with the one choosen below.
-    type: class-toggle
-    default: false
-
-  - id: extended-light-color-schemes
-    title: extended light color schemes
-    type: class-select
-    condition:
-      - id: extended-light-color-schemes-toggle
-        value: true
-    default: leaf
-    options:
-      - label: leaf
-        value: leaf
-      - label: sky
-        value: sky
-      - label: fog
-        value: fog
-      - label: red desert
-        value: red-desert
-      - label: violet haze
-        value: violet-haze
-*/
+/* ---------------------------------------- (headers end) ------------------------------------------- */
 
 
 .theme-dark.extended-dark-color-schemes-toggle.abyss {
@@ -2633,16 +2752,14 @@ settings:
 
     body.mod-mobile .workspace-leaf-content[data-type="graph"] {
       background-color: var(--graph-bg) !important;
-      border: 1px solid var(--card-border-color);
     }
 
     .workspace-leaf-content[data-type="graph"] {
       background-color: var(--graph-bg) !important;
-      border: 1px solid var(--card-border-color);
     }
 
     .markdown-reading-view {
-      background-color: var(--card-bg);
+      background-color: transparent !important;
     }
 
     /* Live Preview (CodeMirror 6) */
