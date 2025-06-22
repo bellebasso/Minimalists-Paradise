@@ -7,9 +7,10 @@
 
 Minimal, but not too simple. Inspired by [AnuPpuccin](https://github.com/AnubisNekhet/AnuPpuccin) and [Border](https://github.com/Akifyss/obsidian-border), the main attraction of Minimalists Paradise is a card layout with customizable features via the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin. Never lose track with the safari tabs (inspired by [this snippet](https://github.com/gavinmn/obsidian-theme/blob/main/safaritabs.css)) which also match your color accent! Enable or disable colored headers with different preset options or create your own.
 
-**WARNING**: As of now, some things are not completely optimized for light mode (including some visual inconsistencies in reading mode), such as dataview tables styling and custom callouts. However, other features (such as vanilla callouts, markdown tables, blockquotes and citations, etc) work as expected in light mode in both reading and live mode.
+> **WARNING**: As of now, some things are not completely optimized for light mode (including some visual inconsistencies in reading mode), such as dataview tables styling and custom callouts. However, other features (such as markdown tables, blockquotes and citations, etc) work as expected in light mode in both reading and live mode.
 
 ## Showcases
+> **Disclaimer**: **ALL** showcases have the color accent override setting turned on, this works on a light mode/dark mode basis. This is totally optional, but, even though it takes away a little bit of freedom and customizability, it does make the color schemes look and feel more consistent (as shown below).
 ### Default Dark Mode
 <img width="700" alt="preview 1 dark" src="https://github.com/user-attachments/assets/2d03b7eb-8fb6-4de7-9616-aa93f7d06880" />
 <img width="700" alt="default dark showcase" src="https://github.com/user-attachments/assets/848203ea-5d76-4276-9480-f961b2ed5299" />
