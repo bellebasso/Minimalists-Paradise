@@ -9,12 +9,43 @@ Minimal, but not too simple. Inspired by [AnuPpuccin](https://github.com/AnubisN
 
 **WARNING**: As of now, some things are not completely optimized for light mode (including some visual inconsistencies in reading mode), such as dataview tables styling and custom callouts. However, other features (such as vanilla callouts, markdown tables, blockquotes and citations, etc) work as expected in light mode in both reading and live mode.
 
-## Showcase
-Default Dark Mode
+## Showcases
+### Default Dark Mode
 <img width="700" alt="preview 1 dark" src="https://github.com/user-attachments/assets/2d03b7eb-8fb6-4de7-9616-aa93f7d06880" />
+<img width="700" alt="default dark showcase" src="https://github.com/user-attachments/assets/848203ea-5d76-4276-9480-f961b2ed5299" />
 
-Default Light Mode
+### Default Light Mode
 <img width="700" alt="preview 1 light" src="https://github.com/user-attachments/assets/73cd326e-3e53-40a5-878e-aa76fa5775ec" />
+<img width="700" alt="default light showcase" src="https://github.com/user-attachments/assets/429421c9-bc92-498f-ac09-771af32c6712" />
+
+### Extended Light Modes
+#### Violet
+<img width="700" alt="violet preview" src="https://github.com/user-attachments/assets/07633428-a022-4215-9d7c-66bfa158e77d" />
+
+#### Sky
+<img width="700" alt="sky preview" src="https://github.com/user-attachments/assets/790aec91-58cb-42bf-bb3f-e91c17adad17" />
+
+#### Red Desert
+<img width="700" alt="red desert preview" src="https://github.com/user-attachments/assets/5c146ace-dd6c-4526-8624-2a145aa62de8" />
+
+#### Fog
+<img width="700" alt="fog preview" src="https://github.com/user-attachments/assets/a5d7abb0-869d-43c4-a774-4221d0843e90" />
+
+#### Leaf
+<img width="700" alt="leaf preview" src="https://github.com/user-attachments/assets/44fdd431-28a0-4d1e-983b-ad5293d1a69c" />
+
+### Extended Dark Modes
+#### Onyx
+<img width="700" alt="onyx preview" src="https://github.com/user-attachments/assets/df37420d-fc75-499c-9299-0e113fcaeb51" />
+
+#### Abyss
+<img width="700" alt="abyss preview" src="https://github.com/user-attachments/assets/202946be-14b0-46a1-82e0-fcda7f873bb9" />
+
+#### Atlantic
+<img width="700" alt="atlantic preview" src="https://github.com/user-attachments/assets/2375078d-aa21-435e-9194-8d637baac1a1" />
+
+#### Moss
+<img width="700" alt="moss preview" src="https://github.com/user-attachments/assets/923a9788-7734-46c6-8a6d-9cda7a70e06a" />
 
 # Features
 ## Colored Headers
