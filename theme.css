@@ -2123,7 +2123,7 @@ body.colored-headers.theme-light:not(.colored-headers-override-toggle) {
     }
 
     .graph-view.color-circle {
-      color: var(--graph-bg) !important;
+      color: var(--color-panel) !important;
     }
 
     .graph-view.color-line {
