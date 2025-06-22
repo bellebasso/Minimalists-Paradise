@@ -1769,12 +1769,12 @@ body.colored-headers.theme-light:not(.colored-headers-override-toggle) {
 
 /* Red Desert -> Red Headers */
 .colored-headers.theme-light.extended-light-color-schemes-toggle.red-desert:not(.colored-headers-override-toggle) {
-  --header-1: #C1001F;
-  --header-2: #D90429;
-  --header-3: #F02C2C;
-  --header-4: #FF4141;
-  --header-5: #FF5C5C;
-  --header-6: #FF7B7B;
+  --header-1: #4A404A;
+  --header-2: #594252;
+  --header-3: #68445A;
+  --header-4: #774662;
+  --header-5: #86486A;
+  --header-6: #954A72;
 }
 
 /* Atlantic -> Blue Headers */
