@@ -213,6 +213,15 @@ SOFTWARE.
     padding-right: 1em;
   }
 
+  .callout {
+    border-radius: 18px;
+    border: 1px solid var(--blockquote-border-color) !important;
+  }
+
+  .callout-content {
+    color: var(--text-color);
+  }
+
   /* ------------------------------------------------------------------------------------------------------- */
   /* ----------------------------------------------- fontes ------------------------------------------------ */
 
@@ -334,7 +343,7 @@ SOFTWARE.
     width: calc(100% - var(--card-margin-horizontal, 8px) * 2);
     max-width: var(--card-max-width, 2000px);
     /* limite de largura */
-    margin-bottom: 16px;
+    margin-bottom: 8px;
     margin-left: var(--card-margin-horizontal, 8px);
     margin-right: var(--card-margin-horizontal, 8px);
     padding: 0px;
@@ -642,6 +651,8 @@ SOFTWARE.
     box-sizing: border-box;
     width: calc(100% - 12px) !important;
     align-self: flex-end;
+    box-shadow: var(--card-shadow);
+    margin-bottom: 6px;
   }
 
   .workspace-drawer-vault-switcher {
@@ -905,14 +916,6 @@ SOFTWARE.
 
   /* ------------------------------------------------------------------------------------------------------- */
   /* ------------------------------------------- random tweaks ---------------------------------------------- */
-  .callout {
-    border-radius: 18px;
-    border: 1px solid var(--blockquote-border-color) !important;
-  }
-
-  .callout-content {
-    color: var(--text-color);
-  }
 
   .cm-def.cm-hmd-frontmatter {
     /* frontmatter */
