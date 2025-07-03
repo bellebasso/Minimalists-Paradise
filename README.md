@@ -30,6 +30,28 @@ Does your color accent look perfect in dark mode, but not that good in light mod
 
 > This setting works in a light mode/dark mode basis and is particularly useful for the Extended Color Schemes. There are a lot of things that rely on the color accent (such as table headers, active tabs, citations, highlights, all types of links and more). Therefore, it is recommended to keep this setting on for a better visual, specially regarding the Extended Color Schemes.
 
+## Infobox callouts
+Make your notes aesthetic and interactive with the infobox callouts (inspired by and adapted from [this snippet](https://github.com/Avyrra/Infobox-Callouts?tab=readme-ov-file)).
+
+> This is integrated to use the theme colors. If you prefere to use the original snippet with all the customization features, disable the infobox section via the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin.
+### How to use?
+
+> [!infobox] this is an infobox
+> ![[moon.png]]
+> infoboxes are callouts that can be used to create wike-like callouts
+> <div class="section"> this is a section</div>
+> <span class="label"> label</span> this is a label
+> <span class="label">info</span> the text below this
+> <span class="info">this is info</span>
+> 
+>  ---
+> 
+>these classes are added to allow for more formatting options
+## Tabbed callouts
+Create callouts with tabs for better navigation (inspired by and adpated from [this snippet](https://github.com/r-u-s-h-i-k-e-s-h/Obsidian-CSS-Snippets/blob/Collection/Snippets/Callout%20styling%20-%20Tabbed%20callout.md)).
+
+> This is integrated to use the theme colors. As of now **there's no way to disable this**, but I'm working on it :).
+
 ## Extended Color Schemes
 Minimalist's Paradise is minimal, but not boring. Choose between different presets for both light and dark mode, in an integrated interface via the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin. (This looks even better with the Color Accent Override turned on!)
 
