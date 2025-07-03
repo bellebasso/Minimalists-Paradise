@@ -55,7 +55,8 @@ Make your notes aesthetic and interactive with the infobox callouts (inspired by
 ## Tabbed callouts
 Create callouts with tabs for better navigation (inspired by and adpated from [this snippet](https://github.com/r-u-s-h-i-k-e-s-h/Obsidian-CSS-Snippets/blob/Collection/Snippets/Callout%20styling%20-%20Tabbed%20callout.md)).
 
-> This is integrated to use the theme colors. As of now **there's no way to disable this**, but I'm working on it :).
+> This is integrated to use the theme colors. If you prefere to use the original snippet, disable the tabbed callout section via the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin.
+
 ### How to use?
 ```markdown
 > [!tabbed]
