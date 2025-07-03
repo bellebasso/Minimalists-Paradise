@@ -1534,6 +1534,18 @@ settings:
     description: Some themes, snippets, or plugins may override these styles.
     type: info-text
     markdown: false
+  
+  - id: tabbed-callout-heading
+    title: tabbed callout
+    type: heading
+    level: 1
+    collapsed: true
+
+  - id: tabbed-callout-enable
+    title: enable tabbed callout
+    description: Toggle to enable or disable the Tabbed Callout styles.
+    type: class-toggle
+    default: true
 */
 .theme-dark {
   --background-default: #0c0c0c;
@@ -2462,7 +2474,7 @@ author: FireIsGood
 source: https://discord.com/channels/686053708261228577/702656734631821413/1092995965583114341
 */
 
-[data-callout="tabbed"] {
+.tabbed-callout-enable [data-callout="tabbed"] {
   position: relative !important;
   z-index: 10 !important;
   background-color: var(--alt-color) !important;
@@ -2470,7 +2482,7 @@ source: https://discord.com/channels/686053708261228577/702656734631821413/10929
   border-radius: 0.5rem;
 }
 
-[data-callout="tabbed"]>.callout-content {
+.tabbed-callout-enable [data-callout="tabbed"]>.callout-content {
   padding: 0.25rem;
 
   display: flex;
@@ -2481,19 +2493,19 @@ source: https://discord.com/channels/686053708261228577/702656734631821413/10929
   justify-content: space-evenly;
 }
 
-[data-callout="tabbed"]>.callout-title {
+.tabbed-callout-enable [data-callout="tabbed"]>.callout-title {
   display: none;
 }
 
-[data-callout="tabbed"]>.callout-content p {
+.tabbed-callout-enable [data-callout="tabbed"]>.callout-content p {
   margin: 0;
 }
 
-[data-callout="tabbed"]>.callout-content label>input {
+.tabbed-callout-enable [data-callout="tabbed"]>.callout-content label>input {
   display: none;
 }
 
-[data-callout="tabbed"]>.callout-content label {
+.tabbed-callout-enable [data-callout="tabbed"]>.callout-content label {
   width: 100%;
   display: inline-block;
   padding: 0.15rem 0.75ch;
@@ -2512,16 +2524,16 @@ source: https://discord.com/channels/686053708261228577/702656734631821413/10929
   border: 1px solid var(--card-border-color);
 }
 
-[data-callout="tabbed"]>.callout-content label:has(input:checked) {
+.tabbed-callout-enable [data-callout="tabbed"]>.callout-content label:has(input:checked) {
   color: white;
   background-color: var(--color-accent);
 }
 
-[data-callout="tabbed"]>.callout-content p:not(:has(label input:checked))+blockquote {
+.tabbed-callout-enable [data-callout="tabbed"]>.callout-content p:not(:has(label input:checked))+blockquote {
   display: none;
 }
 
-[data-callout="tabbed"]>.callout-content>blockquote {
+.tabbed-callout-enable [data-callout="tabbed"]>.callout-content>blockquote {
   order: 999;
   flex-basis: 100%;
   width: 100%;
