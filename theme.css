@@ -2442,6 +2442,7 @@ Enter information without a label using the info class. (i for short)
 .i {
   display: block;
   padding-left: calc(var(--ic-label-width) + var(--ic-label-padding));
+  font-style: italic;
 }
 
 .ic-infobox-enable .markdown-rendered .callout[data-callout="infobox"],
