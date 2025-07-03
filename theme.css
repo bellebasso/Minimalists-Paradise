@@ -1594,7 +1594,7 @@ settings:
   --icon-color: var(--text-muted);
   --file-title-color: var(--card-border-color);
   --graph-node-tag: var(--color-accent);
-  --alt-color: #656C7B;
+  --alt-color: #9096A4;
 }
 
 .theme-light.custom-color-accent-light-toggle {
@@ -2311,6 +2311,7 @@ SOFTWARE. */
   border-radius: var(--ic-round-corners);
   border: var(--ic-border) solid;
   border-color: var(--ic-border-color);
+  box-shadow: var(--card-shadow);
 }
 
 .ic-infobox-enable .callout[data-callout="infoboxleft"] {
@@ -2322,6 +2323,7 @@ SOFTWARE. */
   border-radius: var(--ic-round-corners);
   border: var(--ic-border) solid;
   border-color: var(--ic-border-color);
+  box-shadow: var(--card-shadow);
 }
 
 
