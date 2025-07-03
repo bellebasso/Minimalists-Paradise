@@ -1013,12 +1013,11 @@ settings:
       - id: custom-color-accent-light-toggle
         value: true
 
-    
   - id: custom-color-accent-dark-toggle
     title: enable dark theme color accent override?
     type: class-toggle
     default: false
-    
+
   - id: custom-color-accent-dark
     title: custom dark theme color accent
     type: variable-color
@@ -1115,7 +1114,7 @@ settings:
   - id: colored-headers-title
     title: colored headers
     type: heading
-    level: 1  
+    level: 1
     collapsed: true
 
   - id: colored-headers
@@ -1329,8 +1328,7 @@ settings:
     default-dark: "#A0A6A7"
     default-light: "#A0A6A7"
     variable: syntax-border
-  
-  # --- Font settings section ---
+
   - id: font-settings
     title: fonts
     type: heading
@@ -1358,7 +1356,7 @@ settings:
     step: 1
     format: px
     variable: default-font-size
-  
+
   - id: blockquote-styles
     title: blockquote styles
     type: heading
@@ -1406,6 +1404,136 @@ settings:
     default-light: "#68686e"
     default-dark: "#68686e"
     variable: citation-bg
+
+  - id: infobox-callouts-heading
+    title: infobox callouts
+    type: heading
+    level: 1
+    collapsed: true
+    
+  - id: ic-infobox-enable
+    title: Enable Infobox Callouts
+    description: Toggle to enable or disable the Infobox Callouts styles if you prefer using them as a separate snippet.
+    type: class-toggle
+    default: true
+
+  - id: ic-width
+    title: callout Width
+    type: variable-number
+    default: 300
+    format: px
+
+  - id: ic-outside-padding
+    title: outside padding
+    description: Distance between callout and surrounding content.
+    type: variable-number
+    default: 20
+    format: px
+
+  - id: ic-inside-padding
+    title: inside padding
+    description: Space inside the callout box.
+    type: variable-number
+    default: 24
+    format: px
+
+  - id: ic-round-corners
+    title: corner radius
+    type: variable-number
+    default: 8
+    format: px
+
+  - id: ic-border
+    title: border Width
+    type: variable-number
+    default: 1
+    format: px
+
+  - id: ic-horizontal-rule-size
+    title: horizontal Rule Thickness
+    type: variable-number
+    default: 1
+    format: px
+
+  - id: ic-infobox-title-heading
+    title: Infobox Title
+    type: heading
+    level: 2
+    collapsed: true
+
+  - id: ic-title-alignment
+    title: alignment
+    type: variable-select
+    default: Center
+    options:
+      - Left
+      - Center
+      - Right
+
+  - id: ic-title-size
+    title: font size
+    type: variable-number
+    default: 1.2
+    format: rem
+
+  - id: ic-title-margin
+    title: margin
+    type: variable-number
+    default: 0
+    format: rem
+
+  - id: ic-title-extended-typography
+    title: extended typography
+    type: heading
+    level: 3
+    collapsed: true
+
+  - id: ic-title-typography-toggle
+    title: enable extended typography
+    type: class-toggle
+
+  - id: ic-title-font
+    title: font family
+    type: variable-text
+    default: Times New Roman
+
+  - id: ic-title-stylistic-sets
+    title: stylistic set
+    type: variable-select
+    default: "\"ss00\""
+    options:
+      - label: Default
+        value: "\"ss00\""
+      - label: Set 1
+        value: "\"ss01\""
+      - label: Set 2
+        value: "\"ss02\""
+      - label: Set 3
+        value: "\"ss03\""
+      - label: Set 4
+        value: "\"ss04\""
+      - label: Set 5
+        value: "\"ss05\""
+      - label: Set 6
+        value: "\"ss06\""
+      - label: Set 7
+        value: "\"ss07\""
+      - label: Set 8
+        value: "\"ss08\""
+      - label: Set 9
+        value: "\"ss09\""
+      - label: Set 10
+        value: "\"ss10\""
+
+  - id: ic-title-smallcaps
+    title: enable small caps
+    type: class-toggle
+
+  - id: ic-typography-disclaimer
+    title: disclaimer
+    description: Some themes, snippets, or plugins may override these styles.
+    type: info-text
+    markdown: false
 */
 .theme-dark {
   --background-default: #0c0c0c;
@@ -2093,3 +2221,290 @@ body.colored-headers.theme-light:not(.colored-headers-override-toggle) {
   --file-title-color: var(--card-border-color);
   --alt-color: #8776A5;
 }
+
+/* ====================================== integrated snippets =========================================== */
+/* -------------------------------------- infobox callouts ---------------------------------------------- */
+:root {
+  --ic-width: 300px;
+  --ic-outside-padding: 20px;
+  --ic-inside-padding: 24px;
+  --ic-round-corners: 8px;
+  --ic-title-alignment: center;
+  --ic-title-size: 1.2rem;
+  --ic-title-margin: 0rem;
+  --ic-title-word-spacing: 0rem;
+  --ic-title-tracking: 1rem;
+  --ic-title-font: "Times New Roman";
+  --ic-border: 0px;
+  --ic-horizontal-rule-size: 1px;
+
+  --ic-section-size: 1rem;
+  --ic-section-weight: 700;
+  --ic-section-alignment: Center;
+  --ic-section-border: 0px;
+  --ic-section-corners: 0px;
+  --ic-section-horizontal-padding: 0rem;
+  --ic-section-vertical-padding: 0rem;
+
+  --ic-label-width: 80px;
+  --ic-label-padding: 0.5rem;
+  --ic-label-alignment: left;
+  --ic-image-border: 0px;
+
+  --ic-image-round-corners: 0px;
+
+  --ic-section-background-color: rgba(128, 128, 255, 0.1);
+}
+
+.theme-light {
+  --ic-infobox-color: var(--background-secondary);
+  --ic-border-color: var(--card-border-color) !important;
+  --ic-image-border-color: var(--card-border-color);
+  --ic-section-background-color: var(--color-accent);
+  --ic-section-border-color: var(--blockquote-border-color);
+  --ic-horizontal-rule-color: var(--card-border-color);
+  --ic-infobox-title-color: var(--color-accent);
+}
+
+.theme-dark {
+  --ic-infobox-color: var(--alt-color) !important;
+  --ic-border-color: var(--card-border-color) !important;
+  --ic-image-border-color: var(--card-border-color);
+  --ic-section-background-color: var(--color-accent) !important;
+  --ic-section-border-color: var(--blockquote-border-color);
+  --ic-horizontal-rule-color: var(--card-border-color);
+  --ic-infobox-title-color: var(--color-accent);
+}
+
+/* Infobox Callouts Styles (wrapped with .ic-infobox-enable) */
+.ic-infobox-enable .callout[data-callout="infobox"],
+.ic-infobox-enable .callout[data-callout="infoboxright"] {
+  float: right;
+  width: var(--ic-width);
+  margin-left: var(--ic-outside-padding);
+  background-color: var(--ic-infobox-color) !important;
+
+  padding: var(--ic-inside-padding);
+  border-radius: var(--ic-round-corners);
+  border: var(--ic-border) solid;
+  border-color: var(--ic-border-color);
+}
+
+.ic-infobox-enable .callout[data-callout="infoboxleft"] {
+  float: left;
+  width: var(--ic-width);
+  margin-right: var(--ic-outside-padding);
+  background-color: var(--ic-infobox-color);
+  padding: var(--ic-inside-padding);
+  border-radius: var(--ic-round-corners);
+  border: var(--ic-border) solid;
+  border-color: var(--ic-border-color);
+}
+
+
+/* Remove Icon */
+.ic-infobox-enable .callout[data-callout="infobox"] .callout-icon,
+.ic-infobox-enable .callout[data-callout="infoboxright"] .callout-icon,
+.ic-infobox-enable .callout[data-callout="infoboxleft"] .callout-icon {
+  display: none;
+}
+
+/* Infobox Title */
+.ic-infobox-enable .callout[data-callout="infobox"] .callout-title,
+.ic-infobox-enable .callout[data-callout="infoboxright"] .callout-title,
+.ic-infobox-enable .callout[data-callout="infoboxleft"] .callout-title {
+  all: unset;
+  display: block;
+  text-align: var(--ic-title-alignment);
+  font-size: var(--ic-title-size);
+  width: 100%;
+  margin: var(--ic-title-margin) 0;
+  color: var(--ic-infobox-title-color);
+}
+
+
+/*Extended Typography for Infobox Title*/
+.ic-infobox-enable.ic-title-typography-toggle .callout[data-callout="infobox"] .callout-title,
+.ic-infobox-enable.ic-title-typography-toggle .callout[data-callout="infoboxright"] .callout-title,
+.ic-infobox-enable.ic-title-typography-toggle .callout[data-callout="infoboxleft"] .callout-title {
+  font-family: var(--ic-title-font);
+  font-feature-settings: var(--ic-title-stylistic-sets);
+}
+
+.ic-infobox-enable.ic-title-typography-toggle.ic-title-smallcaps .callout[data-callout="infobox"] .callout-title,
+.ic-infobox-enable.ic-title-typography-toggle.ic-title-smallcaps .callout[data-callout="infoboxright"] .callout-title,
+.ic-infobox-enable.ic-title-typography-toggle.ic-title-smallcaps .callout[data-callout="infoboxleft"] .callout-title {
+  font-variant: small-caps;
+}
+
+
+/* Images */
+.ic-infobox-enable .callout[data-callout="infobox"] img {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  border-radius: var(--ic-image-round-corners);
+  border: var(--ic-image-border) solid;
+  border-color: var(--ic-image-border-color);
+}
+
+/* Horizontal Rule*/
+.ic-infobox-enable .callout[data-callout="infobox"] hr {
+  border: none;
+  border-top: var(--ic-horizontal-rule-size) solid var(--ic-horizontal-rule-color, #cccccc);
+  margin: 1rem 0;
+}
+
+/* Section Class */
+/*
+Insert a section with the following:
+<div class="section">Enter Section Name Here</div>
+
+You can use "s" instead of "section" optionally.
+
+Using <div> instead of <span> improves spacing in reading mode.
+IMPORTANT: Add a blank line after the div or Markdown won't render properly below it.
+*/
+
+
+.section,
+.s {
+  display: block;
+  text-align: var(--ic-section-alignment);
+  font-size: var(--ic-section-size);
+  font-weight: var(--ic-section-weight);
+  padding: var(--ic-section-vertical-padding) var(--ic-section-horizontal-padding);
+  border: var(--ic-section-border) solid;
+  border-radius: var(--ic-section-corners);
+  border-color: var(--ic-section-border-color);
+}
+
+.ic-section-background-toggle .section,
+.ic-section-background-toggle .s {
+  background-color: var(--ic-section-background-color);
+}
+
+.ic-section-typography-toggle .section,
+.ic-section-typography-toggle .s {
+  font-family: var(--ic-section-font);
+  font-feature-settings: var(--ic-section-stylistic-sets);
+}
+
+.ic-section-typography-toggle.ic-section-smallcaps .section,
+.ic-section-typography-toggle.ic-section-smallcaps .s {
+  font-variant: small-caps;
+}
+
+/* Label and Info */
+/*Enter by typing the following, inserting your label within the Span.
+The first line of information can be placed on the same line afterwards:
+
+<span class="label">Insert Label Here</span>Insert Information Here
+
+alternatively you can use "l" instead of "label"*/
+.label,
+.l {
+  font-weight: bold;
+  width: var(--ic-label-width);
+  display: inline-block;
+  margin-right: var(--ic-label-padding);
+  text-align: var(--ic-label-alignment);
+}
+
+/*
+Enter information without a label using the info class. (i for short)
+<span class="info"> Enter Information Here </span>
+*/
+.info,
+.i {
+  display: block;
+  padding-left: calc(var(--ic-label-width) + var(--ic-label-padding));
+}
+
+.ic-infobox-enable .markdown-rendered .callout[data-callout="infobox"],
+.ic-infobox-enable .markdown-reading-view .callout[data-callout="infobox"],
+.ic-infobox-enable .callout[data-callout="infobox"] {
+  background-color: var(--ic-infobox-color) !important;
+  border-color: var(--ic-border-color) !important;
+}
+
+/* -------------------------------------- end of infobox callouts --------------------------------------- */
+
+/* ------------------------------------------ tabbed callout -------------------------------------------- */
+/*
+author: FireIsGood
+source: https://discord.com/channels/686053708261228577/702656734631821413/1092995965583114341
+*/
+
+[data-callout="tabbed"] {
+  position: relative !important;
+  z-index: 10 !important;
+  background-color: var(--alt-color) !important;
+  outline: 1px solid var(--card-border-color);
+  border-radius: 0.5rem;
+}
+
+[data-callout="tabbed"]>.callout-content {
+  padding: 0.25rem;
+
+  display: flex;
+  /* troque grid por flex */
+  flex-wrap: wrap;
+  /* não deixa quebrar linha */
+  gap: 0 1rem;
+  justify-content: space-evenly;
+}
+
+[data-callout="tabbed"]>.callout-title {
+  display: none;
+}
+
+[data-callout="tabbed"]>.callout-content p {
+  margin: 0;
+}
+
+[data-callout="tabbed"]>.callout-content label>input {
+  display: none;
+}
+
+[data-callout="tabbed"]>.callout-content label {
+  width: 100%;
+  display: inline-block;
+  padding: 0.15rem 0.75ch;
+  border-radius: 8px;
+  position: relative;
+
+  white-space: nowrap;
+
+  color: var(--text-normal);
+  background-color: var(--color-panel);
+
+  text-align: center;
+  font-weight: bold;
+  font-size: 1.15rem;
+  cursor: pointer;
+  border: 1px solid var(--card-border-color);
+}
+
+[data-callout="tabbed"]>.callout-content label:has(input:checked) {
+  color: white;
+  background-color: var(--color-accent);
+}
+
+[data-callout="tabbed"]>.callout-content p:not(:has(label input:checked))+blockquote {
+  display: none;
+}
+
+[data-callout="tabbed"]>.callout-content>blockquote {
+  order: 999;
+  flex-basis: 100%;
+  width: 100%;
+  align-self: stretch;
+
+  background-color: transparent;
+  padding-left: 0;
+  border: 0;
+  text-align: center;
+}
+
+/* ------------------------------------- end of tabbed callout ------------------------------------------ */
