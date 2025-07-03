@@ -35,7 +35,7 @@ Make your notes aesthetic and interactive with the infobox callouts (inspired by
 
 > This is integrated to use the theme colors. If you prefere to use the original snippet with all the customization features, disable the infobox section via the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin.
 ### How to use?
-
+```markdown
 > [!infobox] this is an infobox
 > ![[moon.png]]
 > infoboxes are callouts that can be used to create wike-like callouts
@@ -47,10 +47,39 @@ Make your notes aesthetic and interactive with the infobox callouts (inspired by
 >  ---
 > 
 >these classes are added to allow for more formatting options
+```
+<img width="291" alt="Screenshot 2025-07-03 at 15 04 37" src="https://github.com/user-attachments/assets/e1888869-8a6e-414b-acd0-ad3132d95557" />
+<img width="291" alt="Screenshot 2025-07-03 at 15 04 19" src="https://github.com/user-attachments/assets/7fe82d9d-bd65-4345-94b5-c7d08a7f13ad" />
+
+
 ## Tabbed callouts
 Create callouts with tabs for better navigation (inspired by and adpated from [this snippet](https://github.com/r-u-s-h-i-k-e-s-h/Obsidian-CSS-Snippets/blob/Collection/Snippets/Callout%20styling%20-%20Tabbed%20callout.md)).
 
 > This is integrated to use the theme colors. As of now **there's no way to disable this**, but I'm working on it :).
+### How to use?
+```markdown
+> [!tabbed]
+>
+> <label>First<input type="radio" name="test" />l</label>
+>
+> > Lorem, ipsum dolor sit amet consectetur, adipisicing elit. (First)
+> > [[Obsidian CSS|Internal Link]] > > **bold** _italic_
+>
+> <label>Second<input type="radio" name="test" /></label>
+>
+> > Lorem, ipsum dolor sit amet consectetur, adipisicing elit. (Second)
+> > [External Link](https://google.com) > > $\LaTeX$
+>
+> <label>Third<input type="radio" name="test" />l</label>
+>
+> > Lorem, ipsum dolor sit amet consectetur, adipisicing elit. (Third)
+> >
+> > - bullet item
+> > - [ ] checkbox
+> > - [x] #tag
+```
+<img width="652" alt="Screenshot 2025-07-03 at 14 58 27" src="https://github.com/user-attachments/assets/51bcf6c9-b3d1-4a0a-b85b-45b48377b478" />
+<img width="652" alt="Screenshot 2025-07-03 at 14 57 53" src="https://github.com/user-attachments/assets/d63239ef-ae0d-4e08-861e-c34e152b4794" />
 
 ## Extended Color Schemes
 Minimalist's Paradise is minimal, but not boring. Choose between different presets for both light and dark mode, in an integrated interface via the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin. (This looks even better with the Color Accent Override turned on!)
