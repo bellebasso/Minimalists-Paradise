@@ -33,7 +33,7 @@ Does your color accent look perfect in dark mode, but not that good in light mod
 ## Infobox callouts
 Make your notes aesthetic and interactive with the infobox callouts (inspired by and adapted from [this snippet](https://github.com/Avyrra/Infobox-Callouts?tab=readme-ov-file)).
 
-> This is integrated to use the theme colors. If you prefere to use the original snippet with all the customization features, disable the infobox section via the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin.
+> This is integrated to use the theme colors. If you prefer to use the original snippet with all the customization features, disable the infobox section via the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin.
 ### How to use?
 ```markdown
 > [!infobox] this is an infobox
@@ -55,7 +55,7 @@ Make your notes aesthetic and interactive with the infobox callouts (inspired by
 ## Tabbed callouts
 Create callouts with tabs for better navigation (inspired by and adpated from [this snippet](https://github.com/r-u-s-h-i-k-e-s-h/Obsidian-CSS-Snippets/blob/Collection/Snippets/Callout%20styling%20-%20Tabbed%20callout.md)).
 
-> This is integrated to use the theme colors. If you prefere to use the original snippet, disable the tabbed callout section via the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin.
+> This is integrated to use the theme colors. If you prefer to use the original snippet, disable the tabbed callout section via the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin.
 
 ### How to use?
 ```markdown
