@@ -30,7 +30,6 @@ SOFTWARE.
 /* =============================================== global =================================================*/
 :root {
   padding-bottom: 24px;
-  --default-font: 'Times New Roman', Times, serif;
   --default-font-size: 16px;
   --code-font: 'Fira Code', 'JetBrains Mono', monospace;
   --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -43,18 +42,6 @@ SOFTWARE.
   --button-padding: 4px 4px;
   --button-margin: 0px 3px 0px 0px;
   --card-radius: 16px;
-
-  .markdown-source-view.mod-cm6,
-  .markdown-source-view.mod-cm6 .cm-scroller,
-  .cm-s-obsidian {
-    font-family: var(--default-font, 'Times New Roman', Times, serif) !important;
-    font-size: var(--default-font-size);
-  }
-
-  .markdown-preview-view {
-    font-family: var(--default-font, 'Times New Roman', Times, serif) !important;
-    font-size: var(--default-font-size);
-  }
 
   body.mod-mobile .graph-view.color-fill {
     background-color: var(--graph-bg) !important;
@@ -224,10 +211,6 @@ SOFTWARE.
 
   /* ------------------------------------------------------------------------------------------------------- */
   /* ----------------------------------------------- fontes ------------------------------------------------ */
-
-  input.metadata-property-key-input {
-    color: var(--card-border-color);
-  }
 
   .cm-s-obsidian span.cm-inline-code,
   .markdown-preview-view code {
@@ -922,9 +905,19 @@ SOFTWARE.
     color: var(--text-color);
   }
 
+  input.metadata-property-key-input {
+    color: var(--card-border-color);
+  }
+
   a.internal-link {
     text-decoration: none;
     color: var(--color-accent);
+  }
+
+  a.internal-link:hover {
+    text-decoration: underline;
+    color: var(--color-accent);
+    opacity: 0.8
   }
 
   a.internal-link.is-unresolved {
@@ -940,19 +933,30 @@ SOFTWARE.
     padding-inline-end: 0px;
   }
 
-  a.external-link::after {
-    display: none !important;
-  }
-
   span .cm-hmd.internal-link {
     color: var(--color-accent);
     text-decoration: none;
+  }
+
+  span .cm-hmd.internal-link:hover {
+    color: var(--color-accent);
+    text-decoration: underline;
+    opacity: 0.8;
   }
 
   span .cm-hmd.internal-link.is-unresolved {
     color: var(--color-accent);
     text-decoration: none;
     opacity: 0.8;
+  }
+
+  .cm-s-obsidian span.cm-formatting-link.cm-url,
+  .cm-s-obsidian span.cm-url {
+    color: var(--color-accent);
+    text-shadow: var(--external-link-text-shadow);
+    background-image: none;
+    padding-inline-end: 0px;
+    display: inline;
   }
 
   .markdown-source-view.mod-cm6.is-live-preview .cm-hashtag.cm-meta,
@@ -973,11 +977,6 @@ SOFTWARE.
   }
 
   span .cm-hmd.external-link::after {
-    display: none !important;
-  }
-
-  span .cm-s-obsidian span.cm-formatting-link.cm-url,
-  .cm-s-obsidian span.cm-url {
     display: none !important;
   }
 
@@ -1329,34 +1328,6 @@ settings:
     default-light: "#A0A6A7"
     variable: syntax-border
 
-  - id: font-settings
-    title: fonts
-    type: heading
-    level: 1
-    collapsed: true
-
-  - id: default-font
-    title: default font
-    type: variable-text
-    default: "'Times New Roman', Times, serif"
-    variable: default-font
-
-  - id: code-font
-    title: code font
-    type: variable-text
-    default: "'Fira Code', 'JetBrains Mono', monospace"
-    variable: code-font
-
-  - id: default-font-size
-    title: font size
-    type: variable-number-slider
-    default: 16
-    min: 10
-    max: 24
-    step: 1
-    format: px
-    variable: default-font-size
-
   - id: blockquote-styles
     title: blockquote styles
     type: heading
@@ -1577,6 +1548,7 @@ settings:
   --file-title-color: var(--card-border-color);
   --graph-node-tag: var(--color-accent);
   --alt-color: #313435A6;
+  --text-accent: var(--card-border-color);
 }
 
 .theme-light {
@@ -1607,6 +1579,7 @@ settings:
   --file-title-color: var(--card-border-color);
   --graph-node-tag: var(--color-accent);
   --alt-color: #9096A4;
+  --text-accent: var(--card-border-color);
 }
 
 .theme-light.custom-color-accent-light-toggle {
@@ -2025,6 +1998,8 @@ body.colored-headers.theme-light:not(.colored-headers-override-toggle) {
   --icon-color: var(--card-border-color);
   --file-title-color: var(--card-border-color);
   --alt-color: #190D31;
+  --graph-node-tag: var(--color-accent);
+  --text-accent: var(--card-border-color);
 }
 
 .theme-dark.extended-dark-color-schemes-toggle.atlantic {
@@ -2053,6 +2028,8 @@ body.colored-headers.theme-light:not(.colored-headers-override-toggle) {
   --icon-color: var(--card-border-color);
   --file-title-color: var(--card-border-color);
   --alt-color: #15243C;
+  --graph-node-tag: var(--color-accent);
+  --text-accent: var(--card-border-color);
 }
 
 .theme-dark.extended-dark-color-schemes-toggle.moss {
@@ -2081,6 +2058,8 @@ body.colored-headers.theme-light:not(.colored-headers-override-toggle) {
   --icon-color: var(--card-border-color);
   --file-title-color: var(--card-border-color);
   --alt-color: #1B3720;
+  --graph-node-tag: var(--color-accent);
+  --text-accent: var(--card-border-color);
 }
 
 .theme-dark.extended-dark-color-schemes-toggle.onyx {
@@ -2108,6 +2087,8 @@ body.colored-headers.theme-light:not(.colored-headers-override-toggle) {
   --icon-color: var(--card-border-color);
   --file-title-color: var(--card-border-color);
   --alt-color: #1E2C34;
+  --text-accent: var(--card-border-color);
+  --graph-node-tag: var(--color-accent);
 }
 
 .theme-light.extended-light-color-schemes-toggle.leaf {
@@ -2134,6 +2115,8 @@ body.colored-headers.theme-light:not(.colored-headers-override-toggle) {
   --icon-color: var(--card-border-color);
   --file-title-color: var(--card-border-color);
   --alt-color: #627F7D;
+  --graph-node-tag: var(--color-accent);
+  --text-accent: var(--card-border-color);
 }
 
 .theme-light.extended-light-color-schemes-toggle.sky {
@@ -2160,6 +2143,8 @@ body.colored-headers.theme-light:not(.colored-headers-override-toggle) {
   --icon-color: var(--card-border-color);
   --file-title-color: var(--card-border-color);
   --alt-color: #495B6E;
+  --graph-node-tag: var(--color-accent);
+  --text-accent: var(--card-border-color);
 }
 
 .theme-light.extended-light-color-schemes-toggle.fog {
@@ -2184,6 +2169,8 @@ body.colored-headers.theme-light:not(.colored-headers-override-toggle) {
   --icon-color: var(--card-border-color);
   --file-title-color: var(--card-border-color);
   --alt-color: #4c555d;
+  --graph-node-tag: var(--color-accent);
+  --text-accent: var(--card-border-color);
 }
 
 .theme-light.extended-light-color-schemes-toggle.red-desert {
@@ -2208,6 +2195,8 @@ body.colored-headers.theme-light:not(.colored-headers-override-toggle) {
   --icon-color: var(--card-border-color);
   --file-title-color: var(--card-border-color);
   --alt-color: #5A505A;
+  --graph-node-tag: var(--color-accent);
+  --text-accent: var(--card-border-color);
 }
 
 .theme-light.extended-light-color-schemes-toggle.violet-haze {
@@ -2232,6 +2221,8 @@ body.colored-headers.theme-light:not(.colored-headers-override-toggle) {
   --icon-color: var(--card-border-color);
   --file-title-color: var(--card-border-color);
   --alt-color: #8776A5;
+  --graph-node-tag: var(--color-accent);
+  --text-accent: var(--card-border-color);
 }
 
 /* ====================================== integrated snippets =========================================== */
