@@ -168,6 +168,14 @@ SOFTWARE.
     width: 100%;
   }
 
+  blockquote hr {
+    margin-right: 25px;
+  }
+
+  blockquote .callout {
+    margin-right: 25px;
+  }
+
   /* if paraphrasing, wrap your quote in <blockquote class=paraphrase>text</blockquote> */
 
   .markdown-preview-view blockquote.paraphrase:after {
@@ -323,12 +331,12 @@ SOFTWARE.
     /* paineis */
     position: initial;
     display: block;
-    width: calc(100% - var(--card-margin-horizontal, 8px) * 2);
+    width: calc(100% - var(--card-margin-horizontal, 6px) * 2);
     max-width: var(--card-max-width, 2000px);
     /* limite de largura */
     margin-bottom: 8px;
-    margin-left: var(--card-margin-horizontal, 8px);
-    margin-right: var(--card-margin-horizontal, 8px);
+    margin-left: var(--card-margin-horizontal, 6px);
+    margin-right: var(--card-margin-horizontal, 6px);
     padding: 0px;
     align-self: center;
     box-sizing: border-box;
@@ -344,12 +352,12 @@ SOFTWARE.
     /* paineis */
     position: initial;
     display: block;
-    width: calc(100% - var(--card-margin-horizontal, 8px) * 2);
+    width: calc(100% - var(--card-margin-horizontal, 6px) * 2);
     max-width: var(--card-max-width, 2000px);
     /* limite de largura */
     margin-bottom: 16px;
-    margin-left: var(--card-margin-horizontal, 8px);
-    margin-right: var(--card-margin-horizontal, 8px);
+    margin-left: var(--card-margin-horizontal, 6px);
+    margin-right: var(--card-margin-horizontal, 6px);
     padding: 0px;
     align-self: center;
     box-sizing: border-box;
@@ -517,7 +525,9 @@ SOFTWARE.
   .workspace-tab-header[data-type="pdf"],
   .workspace-tab-header[data-type="folder-overview-view"],
   .workspace-tab-header[data-type="webviewer"],
-  .workspace-tab-header[data-type="copilot-chat-view"] {
+  .workspace-tab-header[data-type="copilot-chat-view"],
+  .workspace-tab-header[data-type="split-diff-view"],
+  .workspace-tab-header[data-type="git-view"] {
     max-width: 100%;
     display: flex;
     flex-grow: 1;
@@ -540,7 +550,9 @@ SOFTWARE.
   .workspace-tab-header[data-type="pdf"].is-active.mod-active,
   .workspace-tab-header[data-type="folder-overview-view"].is-active.mod-active,
   .workspace-tab-header[data-type="webviewer"].is-active.mod-active,
-  .workspace-tab-header[data-type="copilot-chat-view"].is-active.mod-active {
+  .workspace-tab-header[data-type="copilot-chat-view"].is-active.mod-active,
+  .workspace-tab-header[data-type="split-diff-view"].is-active.mod-active,
+  .workspace-tab-header[data-type="git-view"].is-active.mod-active {
     flex-grow: 2;
     max-width: 250px;
     background-color: var(--color-accent);
@@ -620,22 +632,46 @@ SOFTWARE.
     left: 0;
     right: 0;
     position: fixed;
-    bottom: 2px;
     background-color: transparent;
   }
 
   .workspace-sidedock-vault-profile {
     /* vault profile */
-    padding: 4px !important;
-    margin-right: 8px !important;
-    border: 1px solid var(--card-border-color) !important;
-    border-radius: var(--card-radius);
-    background-color: var(--color-panel) !important;
+    padding: 8px !important;
+    margin-right: 6px !important;
+    border-top: 1px solid var(--card-border-color) !important;
+    border-radius: 0px 0px var(--card-radius) var(--card-radius);
     box-sizing: border-box;
-    width: calc(100% - 12px) !important;
+    width: calc(100% - 15px) !important;
     align-self: flex-end;
     box-shadow: var(--card-shadow);
-    margin-bottom: 6px;
+    margin-bottom: 10px;
+  }
+
+  body:not(.is-mobile) .workspace-split.mod-left-split {
+    position: relative;
+  }
+
+  body:not(.is-mobile) .workspace-split.mod-left-split .workspace-tabs:last-of-type .workspace-tab-container {
+    padding-bottom: 44px;
+  }
+
+  body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+    padding: 6px;
+    background-color: transparent;
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+    height: 44px;
+  }
+
+  body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher {
+    height: 32px;
+    cursor: pointer;
+  }
+
+  body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-actions {
+    gap: var(--size-2-1);
   }
 
   .workspace-drawer-vault-switcher {
