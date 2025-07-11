@@ -334,7 +334,6 @@ SOFTWARE.
     width: calc(100% - var(--card-margin-horizontal, 6px) * 2);
     max-width: var(--card-max-width, 2000px);
     /* limite de largura */
-    margin-bottom: 8px;
     margin-left: var(--card-margin-horizontal, 6px);
     margin-right: var(--card-margin-horizontal, 6px);
     padding: 0px;
@@ -367,10 +366,6 @@ SOFTWARE.
     background-color: var(--color-panel);
     border-radius: var(--card-radius);
     box-shadow: var(--card-shadow);
-  }
-
-  .mod-top-left-space .workspace-tab-container {
-    margin-bottom: 8px;
   }
 
   .workspace-fake-target-overlay:not(.is-in-sidebar) .workspace-tabs .workspace-leaf,
@@ -625,6 +620,7 @@ SOFTWARE.
   }
 
   .status-bar {
+    padding: 0px 8px 0px 0px;
     /* status bar */
     border: none !important;
     width: 100vw;
@@ -633,6 +629,7 @@ SOFTWARE.
     right: 0;
     position: fixed;
     background-color: transparent;
+    min-height: 16px;
   }
 
   .workspace-sidedock-vault-profile {
@@ -644,8 +641,6 @@ SOFTWARE.
     box-sizing: border-box;
     width: calc(100% - 15px) !important;
     align-self: flex-end;
-    box-shadow: var(--card-shadow);
-    margin-bottom: 10px;
   }
 
   body:not(.is-mobile) .workspace-split.mod-left-split {
@@ -690,6 +685,14 @@ SOFTWARE.
     background-color: var(--color-panel);
     border: 1 px solid var(--card-border-color) !important;
     border-radius: 0px 4px 4px 0px;
+  }
+
+  .sidebar-toggle-button {
+    --tab-container-background: transparent !important;
+  }
+
+  body.is-focused .sidebar-toggle-button {
+    --tab-container-background: transparent !important;
   }
 
   body {
@@ -1019,6 +1022,10 @@ SOFTWARE.
   svg .svg-icon {
     /* Ícones SVG */
     fill: var(--text-color);
+  }
+
+  .inline-title {
+    margin-bottom: 4px;
   }
 }
 
@@ -1412,14 +1419,20 @@ settings:
     default-dark: "#68686e"
     variable: citation-bg
 
-  - id: infobox-callouts-heading
-    title: infobox callouts
+  - id: snippets-section
+    title: integrated snippets
     type: heading
     level: 1
     collapsed: true
+
+  - id: infobox-callouts-heading
+    title: infobox callouts
+    type: heading
+    level: 2
+    collapsed: true
     
   - id: ic-infobox-enable
-    title: Enable Infobox Callouts
+    title: enable infobox callouts
     description: Toggle to enable or disable the Infobox Callouts styles if you prefer using them as a separate snippet.
     type: class-toggle
     default: true
@@ -1465,7 +1478,7 @@ settings:
   - id: ic-infobox-title-heading
     title: Infobox Title
     type: heading
-    level: 2
+    level: 3
     collapsed: true
 
   - id: ic-title-alignment
@@ -1492,7 +1505,7 @@ settings:
   - id: ic-title-extended-typography
     title: extended typography
     type: heading
-    level: 3
+    level: 4
     collapsed: true
 
   - id: ic-title-typography-toggle
@@ -1545,7 +1558,7 @@ settings:
   - id: tabbed-callout-heading
     title: tabbed callout
     type: heading
-    level: 1
+    level: 2
     collapsed: true
 
   - id: tabbed-callout-enable
@@ -1553,6 +1566,51 @@ settings:
     description: Toggle to enable or disable the Tabbed Callout styles.
     type: class-toggle
     default: true
+
+  - id: hover-properties-heading
+    title: hover properties
+    type: heading
+    level: 2
+    collapsed: true
+
+  - id: toggle-hover-properties
+    title: enable hover on properties
+    description: by enabling this your properties will be collapsed by default and will be shown by hovering over the "properties" label.
+    type: class-toggle
+    default: true
+  
+  - id: hider-heading
+    title: hider
+    description: 'automatically hide certain UI elements and expose them on hover. huge thanks to the Border Theme for the inspiration and this feature.'
+    type: heading
+    level: 2
+    collapsed: true
+  - id: tab-autohide
+    title: auto hide tab bar
+    description: Mac users can adjust the position of the traffic light using the 'Electron Window Tweaker' plugin
+    type: class-toggle
+    default: false
+  - id: status-bar-autohide
+    title: auto hide status bar
+    type: class-toggle
+    default: false
+  - id: Ribbon-autohide
+    title: auto hide left ribbon menu
+    type: class-toggle
+    default: false
+  - id: nav-header-autohide
+    title: auto hide header icons in sidepane
+    type: class-toggle
+    default: false
+  - id: tab-title-bar-autohide
+    title: auto hide tab title bar
+    type: class-toggle
+    default: false
+  - id: vault-profile-autohide
+    title: auto hide vault profile
+    type: class-toggle
+    default: false
+
 */
 .theme-dark {
   --background-default: #0c0c0c;
@@ -2573,3 +2631,444 @@ source: https://discord.com/channels/686053708261228577/702656734631821413/10929
 }
 
 /* ------------------------------------- end of tabbed callout ------------------------------------------ */
+/* ------------------------------ hide properties and show on hover ------------------------------------- */
+.toggle-hover-properties .metadata-container {
+  max-height: 2.7rem;
+  opacity: 0.6;
+  overflow: hidden;
+  transition: max-height 250ms ease-in-out, opacity 250ms;
+  margin-bottom: 0;
+}
+
+.toggle-hover-properties .metadata-container:hover,
+.toggle-hover-properties .metadata-container:focus-within {
+  max-height: 1000px;
+  opacity: 1;
+  transition: max-height 300ms ease-in-out, opacity 300ms;
+}
+
+/* --------------------------------- end hide properties and show on hover ----------------------------- */
+/* ----------------------------------------------- hider ----------------------------------------------- */
+/* MIT License
+
+Copyright (c) 2022 Akifyss
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE. */
+
+body {
+  --anim-speed: 1;
+  --anim-duration-superfast: calc(75ms / var(--anim-speed));
+  --anim-duration-fast: calc(150ms / var(--anim-speed));
+  --anim-duration-moderate: calc(300ms / var(--anim-speed));
+  --anim-duration-slow: calc(600ms / var(--anim-speed));
+  --anim-in: var(--anim-duration-fast) var(--anim-duration-superfast) var(--anim-motion-swing);
+  --anim-out: var(--anim-duration-moderate) var(--anim-duration-slow) var(--anim-motion-swing);
+}
+
+/*autohide transition*/
+body:not(.is-mobile) .workspace::before {
+  transition: width var(--anim-out), height var(--anim-out);
+}
+
+body:not(.is-mobile):has(.mod-top>.workspace-tab-header-container:hover, .titlebar-button-container:hover, .status-bar:hover) .workspace::before {
+  transition: width var(--anim-out), height var(--anim-in);
+}
+
+body:not(.is-mobile):has(.workspace-ribbon.side-dock-ribbon:hover) .workspace::before {
+  transition: width var(--anim-in), height var(--anim-out);
+}
+
+/*tab autohide*/
+
+body:not(.is-mobile).tab-autohide .workspace-tabs {
+  gap: 0px;
+  transition: gap var(--anim-out);
+}
+
+body:not(.is-mobile).tab-autohide :has(.workspace-tab-header-container:hover) .workspace-tabs:hover {
+  gap: 4px;
+  transition: gap var(--anim-in);
+}
+
+body:not(.is-mobile).tab-autohide .workspace-tab-header-container {
+  height: 16px;
+  opacity: 0;
+  transition: height var(--anim-out), opacity var(--anim-out);
+}
+
+body:not(.is-mobile).tab-autohide .workspace-tab-header-container:hover {
+  height: 40px;
+  opacity: 1;
+  transition: height var(--anim-in), opacity var(--anim-in);
+}
+
+body:not(.is-mobile).tab-autohide .workspace-tab-header-container-inner {
+  transform: translateY(-22px);
+  opacity: 0;
+  transition: transform var(--anim-out), opacity var(--anim-out);
+}
+
+body:not(.is-mobile).tab-autohide .workspace-tab-header-container:hover .workspace-tab-header-container-inner,
+body:not(.is-mobile).tab-autohide:has(.mod-top>.workspace-tab-header-container:hover, .titlebar-button-container:hover) .mod-top .workspace-tab-header-container-inner {
+  transform: translateY(0px);
+  opacity: 1;
+  transition: transform var(--anim-in), opacity var(--anim-in);
+}
+
+body:not(.is-mobile).tab-autohide:not(.card-layout-open-light).theme-light .workspace-tabs:not(.mod-top) .workspace-tab-container>.workspace-leaf,
+body:not(.is-mobile).tab-autohide:not(.card-layout-open-dark).theme-dark .workspace-tabs:not(.mod-top) .workspace-tab-container>.workspace-leaf {
+  box-shadow: inset 0px 1px 0px transparent;
+  transition: box-shadow var(--anim-out);
+}
+
+body:not(.is-mobile).tab-autohide:not(.card-layout-open-light).theme-light :has(.workspace-tab-header-container:hover) .workspace-tabs:not(.mod-top):hover .workspace-tab-container>.workspace-leaf,
+body:not(.is-mobile).tab-autohide:not(.card-layout-open-dark).theme-dark :has(.workspace-tab-header-container:hover) .workspace-tabs:not(.mod-top):hover .workspace-tab-container>.workspace-leaf {
+  box-shadow: inset 0px 1px 0px var(--workspace-divider-color);
+  transition: box-shadow var(--anim-in);
+}
+
+body:not(.is-mobile).tab-autohide.is-hidden-frameless .titlebar-button {
+  height: 100%;
+}
+
+body:not(.is-mobile).tab-autohide:has(.mod-top>.workspace-tab-header-container:hover, .titlebar-button-container:hover) .titlebar-button {
+  height: 44px;
+}
+
+/*tab autohide mod-top*/
+
+body:not(.is-mobile).tab-autohide .workspace-split.mod-vertical>*>.workspace-leaf-resize-handle,
+body:not(.is-mobile).tab-autohide .workspace-split.mod-left-split>.workspace-leaf-resize-handle,
+body:not(.is-mobile).tab-autohide .workspace-split.mod-right-split>.workspace-leaf-resize-handle {
+  height: calc(var(--divider-vertical-height) + 24px);
+  transition: height var(--anim-out), background-color 200ms ease-in-out, border-color 200ms ease-in-out, opacity 200ms ease-in-out;
+}
+
+body:not(.is-mobile).tab-autohide.status-bar-autohide:has(.status-bar:hover) .workspace-split.mod-vertical>*>.workspace-leaf-resize-handle,
+body:not(.is-mobile).tab-autohide.status-bar-autohide:has(.status-bar:hover) .workspace-split.mod-left-split>.workspace-leaf-resize-handle,
+body:not(.is-mobile).tab-autohide.status-bar-autohide:has(.status-bar:hover) .workspace-split.mod-right-split>.workspace-leaf-resize-handle {
+  transition: height var(--anim-in), background-color 200ms ease-in-out, border-color 200ms ease-in-out, opacity 200ms ease-in-out;
+}
+
+body:not(.is-mobile).tab-autohide:has(.mod-top>.workspace-tab-header-container:hover, .titlebar-button-container:hover) .workspace-split.mod-vertical>*>.workspace-leaf-resize-handle,
+body:not(.is-mobile).tab-autohide:has(.mod-top>.workspace-tab-header-container:hover, .titlebar-button-container:hover) .workspace-split.mod-left-split>.workspace-leaf-resize-handle,
+body:not(.is-mobile).tab-autohide:has(.mod-top>.workspace-tab-header-container:hover, .titlebar-button-container:hover) .workspace-split.mod-right-split>.workspace-leaf-resize-handle {
+  height: calc(var(--divider-vertical-height) - 4px);
+  transition: height var(--anim-in), background-color 200ms ease-in-out, border-color 200ms ease-in-out, opacity 200ms ease-in-out;
+}
+
+body:not(.is-mobile).tab-autohide.is-hidden-frameless .workspace-split.mod-vertical>*>.workspace-leaf-resize-handle,
+body:not(.is-mobile).tab-autohide.is-hidden-frameless .workspace-split.mod-left-split>.workspace-leaf-resize-handle,
+body:not(.is-mobile).tab-autohide.is-hidden-frameless .workspace-split.mod-right-split>.workspace-leaf-resize-handle {
+  height: calc(var(--divider-vertical-height) - 16px);
+  transition: height var(--anim-out), background-color 200ms ease-in-out, border-color 200ms ease-in-out, opacity 200ms ease-in-out;
+}
+
+body:not(.is-mobile).tab-autohide.status-bar-autohide:has(.status-bar:hover).is-hidden-frameless .workspace-split.mod-vertical>*>.workspace-leaf-resize-handle,
+body:not(.is-mobile).tab-autohide.status-bar-autohide:has(.status-bar:hover).is-hidden-frameless .workspace-split.mod-left-split>.workspace-leaf-resize-handle,
+body:not(.is-mobile).tab-autohide.status-bar-autohide:has(.status-bar:hover).is-hidden-frameless .workspace-split.mod-right-split>.workspace-leaf-resize-handle {
+  transition: height var(--anim-in), background-color 200ms ease-in-out, border-color 200ms ease-in-out, opacity 200ms ease-in-out;
+}
+
+body:not(.is-mobile).tab-autohide.is-hidden-frameless:has(.mod-top>.workspace-tab-header-container:hover, .titlebar-button-container:hover) .workspace-split.mod-vertical>*>.workspace-leaf-resize-handle,
+body:not(.is-mobile).tab-autohide.is-hidden-frameless:has(.mod-top>.workspace-tab-header-container:hover, .titlebar-button-container:hover) .workspace-split.mod-left-split>.workspace-leaf-resize-handle,
+body:not(.is-mobile).tab-autohide.is-hidden-frameless:has(.mod-top>.workspace-tab-header-container:hover, .titlebar-button-container:hover) .workspace-split.mod-right-split>.workspace-leaf-resize-handle {
+  height: calc(var(--divider-vertical-height) - var(--header-height) - 4px);
+  transition: height var(--anim-in), background-color 200ms ease-in-out, border-color 200ms ease-in-out, opacity 200ms ease-in-out;
+}
+
+/*---*/
+
+body:not(.is-mobile).tab-autohide .workspace-tabs.mod-top {
+  gap: 0px;
+  transition: gap var(--anim-out);
+}
+
+body:not(.is-mobile).tab-autohide.status-bar-autohide:has(.status-bar:hover) .workspace-tabs.mod-top {
+  transition: gap var(--anim-in);
+}
+
+body:not(.is-mobile).tab-autohide:has(.mod-top>.workspace-tab-header-container:hover, .titlebar-button-container:hover) .workspace-tabs.mod-top {
+  gap: 4px;
+  transition: gap var(--anim-in);
+}
+
+body:not(.is-mobile).tab-autohide .workspace::before {
+  height: calc(100% - 16px);
+}
+
+body:not(.is-mobile).tab-autohide:has(.mod-top>.workspace-tab-header-container:hover, .titlebar-button-container:hover) .workspace::before {
+  height: calc(100% - 44px);
+}
+
+body:not(.is-mobile).tab-autohide.is-hidden-frameless .titlebar-button-container,
+body:not(.is-mobile).tab-autohide .mod-top .workspace-tab-header-container {
+  height: 16px;
+  opacity: 0;
+  transition: height var(--anim-out), opacity var(--anim-out);
+}
+
+body:not(.is-mobile).tab-autohide:has(.mod-top>.workspace-tab-header-container:hover, .titlebar-button-container:hover) .mod-top .workspace-tab-header-container {
+  height: 40px;
+  opacity: 1;
+  transition: height var(--anim-in), opacity var(--anim-in);
+}
+
+body:not(.is-mobile).tab-autohide:has(.mod-top>.workspace-tab-header-container:hover, .titlebar-button-container:hover).is-hidden-frameless .titlebar-button-container {
+  height: 44px;
+  opacity: 1;
+  transition: height var(--anim-in), opacity var(--anim-in);
+}
+
+body:not(.is-mobile).tab-autohide.status-bar-autohide:has(.status-bar:hover).is-hidden-frameless .titlebar-button-container,
+body:not(.is-mobile).tab-autohide.status-bar-autohide:has(.status-bar:hover) .mod-top .workspace-tab-header-container {
+  transition: height var(--anim-in), opacity var(--anim-in);
+}
+
+
+/*status bar autohide*/
+body:not(.is-mobile).status-bar-autohide .status-bar {
+  opacity: 0;
+  height: 16px;
+  transition: height var(--anim-out), opacity var(--anim-out);
+}
+
+body:not(.is-mobile).status-bar-autohide .status-bar:hover {
+  opacity: 1;
+  height: 24px;
+  transition: height var(--anim-in), opacity var(--anim-in);
+}
+
+body:not(.is-mobile).status-bar-autohide .horizontal-main-container {
+  transition: padding-bottom var(--anim-out);
+}
+
+body:not(.is-mobile).status-bar-autohide:has(.status-bar:hover) .horizontal-main-container {
+  padding-bottom: 6px;
+  transition: padding-bottom var(--anim-in);
+}
+
+/*ribbon autohide*/
+body:not(.is-mobile).Ribbon-autohide.show-ribbon .workspace-ribbon.side-dock-ribbon.mod-left {
+  --ribbon-width: 16px;
+  transition: all var(--anim-out);
+}
+
+body:not(.is-mobile).Ribbon-autohide.show-ribbon .workspace-ribbon.side-dock-ribbon.mod-left:hover {
+  --ribbon-width: 44px;
+  transition: all var(--anim-in);
+}
+
+body:not(.is-mobile).Ribbon-autohide.show-ribbon .workspace-ribbon.side-dock-ribbon.mod-left>* {
+  opacity: 0;
+  transition: all var(--anim-out);
+}
+
+body:not(.is-mobile).Ribbon-autohide.show-ribbon .workspace-ribbon.side-dock-ribbon.mod-left:hover>* {
+  opacity: 1;
+  transition: all var(--anim-in);
+}
+
+body:not(.is-mobile).Ribbon-autohide.show-ribbon .workspace::before {
+  width: calc(100% - 16px);
+}
+
+body:not(.is-mobile).Ribbon-autohide.show-ribbon:has(.workspace-ribbon.side-dock-ribbon:hover) .workspace::before {
+  width: calc(100% - 44px);
+}
+
+/* macos autohide fix*/
+body:not(.is-mobile):not(.is-popout-window).Ribbon-autohide.show-ribbon.mod-macos.is-hidden-frameless:not(.is-fullscreen) .mod-left-split .mod-top-left-space .workspace-tab-header-container,
+body:not(.is-mobile):not(.is-popout-window).Ribbon-autohide.show-ribbon.mod-macos.is-hidden-frameless:not(.is-fullscreen) .workspace:not(.is-left-sidedock-open) .sidebar-toggle-button.mod-left {
+  margin-left: 28px;
+}
+
+body:not(.is-mobile):not(.is-popout-window).Ribbon-autohide.show-ribbon.mod-macos.is-hidden-frameless:not(.is-fullscreen):has(.workspace-ribbon.side-dock-ribbon:hover) .mod-left-split .mod-top-left-space .workspace-tab-header-container,
+body:not(.is-mobile):not(.is-popout-window).Ribbon-autohide.show-ribbon.mod-macos.is-hidden-frameless:not(.is-fullscreen):has(.workspace-ribbon.side-dock-ribbon:hover) .workspace:not(.is-left-sidedock-open) .sidebar-toggle-button.mod-left {
+  margin-left: 0px;
+}
+
+body:not(.is-mobile):not(.is-popout-window).Ribbon-autohide.show-ribbon.mod-macos.is-hidden-frameless:not(.is-fullscreen) .mod-left-split .mod-top-left-space .workspace-tab-header-container,
+body:not(.is-mobile):not(.is-popout-window).Ribbon-autohide.show-ribbon.mod-macos.is-hidden-frameless:not(.is-fullscreen) .workspace:not(.is-left-sidedock-open) .sidebar-toggle-button.mod-left,
+body:not(.is-mobile):not(.is-popout-window).tab-autohide.mod-macos.is-hidden-frameless:not(.is-fullscreen) .mod-left-split .mod-top-left-space .workspace-tab-header-container,
+body:not(.is-mobile):not(.is-popout-window).tab-autohide.mod-macos.is-hidden-frameless:not(.is-fullscreen) .workspace:not(.is-left-sidedock-open) .sidebar-toggle-button.mod-left {
+  transition: height var(--anim-out), opacity var(--anim-out), margin-left var(--anim-out);
+}
+
+body:not(.is-mobile):not(.is-popout-window).Ribbon-autohide.show-ribbon.mod-macos.is-hidden-frameless:not(.is-fullscreen):has(.workspace-ribbon.side-dock-ribbon:hover) .mod-left-split .mod-top-left-space .workspace-tab-header-container,
+body:not(.is-mobile):not(.is-popout-window).Ribbon-autohide.show-ribbon.mod-macos.is-hidden-frameless:not(.is-fullscreen):has(.workspace-ribbon.side-dock-ribbon:hover) .workspace:not(.is-left-sidedock-open) .sidebar-toggle-button.mod-left {
+  transition: height var(--anim-out), opacity var(--anim-out), margin-left var(--anim-in);
+}
+
+body:not(.is-mobile):not(.is-popout-window).tab-autohide.mod-macos.is-hidden-frameless:not(.is-fullscreen):has(.mod-top>.workspace-tab-header-container:hover, .titlebar-button-container:hover) .mod-left-split .mod-top-left-space .workspace-tab-header-container,
+body:not(.is-mobile):not(.is-popout-window).tab-autohide.mod-macos.is-hidden-frameless:not(.is-fullscreen):has(.mod-top>.workspace-tab-header-container:hover, .titlebar-button-container:hover) .workspace:not(.is-left-sidedock-open) .sidebar-toggle-button.mod-left {
+  transition: height var(--anim-in), opacity var(--anim-in), margin-left var(--anim-out);
+}
+
+/* hider plugin*/
+.hider-sidebar-buttons.mod-macos .sidebar-toggle-button.mod-left {
+  display: unset;
+  -webkit-app-region: drag;
+}
+
+.hider-sidebar-buttons.mod-macos .sidebar-toggle-button.mod-left>.clickable-icon {
+  display: none;
+}
+
+/*nav header autohide*/
+body:not(.is-mobile).nav-header-autohide :is(.workspace-leaf-content, .view-content)>.nav-header .nav-buttons-container {
+  height: 8px;
+  opacity: 0;
+  transition: height var(--anim-out), opacity var(--anim-out);
+}
+
+body:not(.is-mobile).nav-header-autohide :is(.workspace-leaf-content, .view-content)>.nav-header:hover .nav-buttons-container,
+body:not(.is-mobile).nav-header-autohide .workspace-tab-header-container:hover~.workspace-tab-container :is(.workspace-leaf-content, .view-content)>.nav-header .nav-buttons-container,
+body:not(.is-mobile).tab-title-bar-autohide.nav-header-autohide .mod-root .workspace-leaf-content[data-type="backlink"] .view-header:hover~.view-content>.nav-header .nav-buttons-container {
+  height: 32px;
+  opacity: 1;
+  transition: height var(--anim-in), opacity var(--anim-in);
+}
+
+body:not(.is-mobile).nav-header-autohide :is(.workspace-leaf-content, .view-content)>.nav-header .search-input-container {
+  height: 0px;
+  opacity: 0;
+  margin: 0px auto 0px;
+  transition: height var(--anim-out), opacity var(--anim-out), margin var(--anim-out);
+}
+
+body:not(.is-mobile).nav-header-autohide :is(.workspace-leaf-content, .view-content)>.nav-header:hover .search-input-container,
+body:not(.is-mobile).nav-header-autohide .workspace-tab-header-container:hover~.workspace-tab-container :is(.workspace-leaf-content, .view-content)>.nav-header .search-input-container,
+body:not(.is-mobile).tab-title-bar-autohide.nav-header-autohide .mod-root .workspace-leaf-content[data-type="backlink"] .view-header:hover~.view-content>.nav-header .search-input-container {
+  height: 30px;
+  opacity: 1;
+  margin: 6px auto 4px;
+  transition: height var(--anim-in), opacity var(--anim-in), margin var(--anim-in);
+  ;
+}
+
+/*view-header autohide */
+
+body:not(.is-mobile).tab-title-bar-autohide .view-header::after {
+  width: 100%;
+  content: " ";
+  background-color: transparent;
+  height: var(--size-4-4);
+  position: absolute;
+  z-index: -9;
+  top: 1px;
+  right: 0;
+}
+
+body:not(.is-mobile).tab-title-bar-autohide .workspace-leaf .view-header {
+  height: 0;
+  margin-top: -1px;
+  opacity: 0;
+  transition: height var(--anim-out), margin var(--anim-out), opacity var(--anim-out);
+}
+
+body:not(.is-mobile).tab-title-bar-autohide .workspace-leaf .view-header:focus-within,
+body:not(.is-mobile).tab-title-bar-autohide .workspace-leaf .view-header:hover,
+body:not(.is-mobile).tab-title-bar-autohide .workspace-tab-header-container:hover~.workspace-tab-container .view-header {
+  height: var(--header-height);
+  margin-top: 0px;
+  opacity: 1;
+  transition: height var(--anim-in), margin var(--anim-in), opacity var(--anim-in);
+}
+
+/*view-header*/
+
+body:not(.is-mobile) .view-header {
+  padding: 0 6px;
+  border: 0;
+}
+
+body:not(.is-mobile) .view-header>* {
+  padding-top: var(--size-2-3);
+  padding-bottom: var(--size-2-1);
+  --icon-size: var(--icon-m);
+  --icon-stroke: var(--icon-m-stroke-width);
+}
+
+/*view-header surfing*/
+body:not(.is-mobile) .workspace-leaf-content[data-type="empty"]:has(.wb-bookmark-bar) .view-header {
+  margin-top: 0px !important;
+  height: var(--header-height) !important;
+}
+
+body:not(.is-mobile) .workspace-leaf-content[data-type="empty"]:has(.wb-bookmark-bar) :is(.view-actions, .view-header-nav-buttons, .view-header-title-container) {
+  opacity: 1;
+}
+
+
+/* vault profile */
+
+body:not(.is-mobile) .workspace-split.mod-left-split {
+  position: relative;
+}
+
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-tabs:last-of-type .workspace-tab-container {
+  padding-bottom: 44px;
+}
+
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+  padding: 6px;
+  background-color: transparent;
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  height: 44px;
+}
+
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher {
+  height: 32px;
+  cursor: pointer;
+}
+
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-actions {
+  gap: var(--size-2-1);
+}
+
+
+/* vault profile autohide*/
+body:not(.is-mobile).vault-profile-autohide .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+  height: 16px;
+  border-top: 0 solid transparent;
+  opacity: 0;
+  transition: height var(--anim-out), border-top var(--anim-out), opacity var(--anim-out);
+}
+
+body:not(.is-mobile).vault-profile-autohide .workspace-split.mod-left-split .workspace-sidedock-vault-profile:hover {
+  height: 44px;
+  border-top: var(--tab-outline-width) solid var(--tab-outline-color);
+  opacity: 1;
+  transition: height var(--anim-in), border-top var(--anim-in), opacity var(--anim-in);
+}
+
+body:not(.is-mobile).vault-profile-autohide .workspace-split.mod-left-split .workspace-tabs:last-of-type .workspace-tab-container {
+  padding-bottom: 0px;
+  transition: padding-bottom var(--anim-out);
+}
+
+body:not(.is-mobile).vault-profile-autohide:has(.workspace-sidedock-vault-profile:hover) .workspace-split.mod-left-split .workspace-tabs:last-of-type .workspace-tab-container {
+  padding-bottom: 44px;
+  transition: padding-bottom var(--anim-in);
+}
+
+/* -------------------------------------------- end of hider -------------------------------------------- */
