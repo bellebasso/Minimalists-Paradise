@@ -9,6 +9,8 @@ Minimal, but not too simple. Inspired by [AnuPpuccin](https://github.com/AnubisN
 
 > **WARNING**: As of now, some things are not completely optimized for light mode (including some visual inconsistencies in reading mode), such as dataview tables styling and custom callouts. However, other features (such as markdown tables, blockquotes and citations, etc) work as expected in light mode in both reading and live mode.
 
+> For a full showcase of all the different features, color schemes and such please refer to the [documentation](https://minimalists-paradise-docs.vercel.app)
+
 ## Showcases
 > **Disclaimer**: **ALL** showcases have the color accent override setting turned on, this works on a light mode/dark mode basis. This is totally optional, but, even though it takes away a little bit of freedom and customizability, it does make the color schemes look and feel more consistent (as shown below).
 ### Default Dark Mode
@@ -34,53 +36,21 @@ Does your color accent look perfect in dark mode, but not that good in light mod
 Make your notes aesthetic and interactive with the infobox callouts (inspired by and adapted from [this snippet](https://github.com/Avyrra/Infobox-Callouts?tab=readme-ov-file)).
 
 > This is integrated to use the theme colors. If you prefer to use the original snippet with all the customization features, disable the infobox section via the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin.
-### How to use?
-```markdown
-> [!infobox] this is an infobox
-> ![[moon.png]]
-> infoboxes are callouts that can be used to create wike-like callouts
-> <div class="section"> this is a section</div>
-> <span class="label"> label</span> this is a label
-> <span class="label">info</span> the text below this
-> <span class="info">this is info</span>
-> 
->  ---
-> 
->these classes are added to allow for more formatting options
-```
+
 <img width="291" alt="Screenshot 2025-07-03 at 15 04 37" src="https://github.com/user-attachments/assets/e1888869-8a6e-414b-acd0-ad3132d95557" />
 <img width="291" alt="Screenshot 2025-07-03 at 15 04 19" src="https://github.com/user-attachments/assets/7fe82d9d-bd65-4345-94b5-c7d08a7f13ad" />
 
+> For more information on how to use this feature, please refer to the [documentation](https://minimalists-paradise-docs.vercel.app/Features/Infobox%20Callouts/) or the original [snippet repo](https://github.com/Avyrra/Infobox-Callouts?tab=readme-ov-file).
 
 ## Tabbed callouts
 Create callouts with tabs for better navigation (inspired by and adpated from [this snippet](https://github.com/r-u-s-h-i-k-e-s-h/Obsidian-CSS-Snippets/blob/Collection/Snippets/Callout%20styling%20-%20Tabbed%20callout.md)).
 
 > This is integrated to use the theme colors. If you prefer to use the original snippet, disable the tabbed callout section via the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin.
 
-### How to use?
-```markdown
-> [!tabbed]
->
-> <label>First<input type="radio" name="test" />l</label>
->
-> > Lorem, ipsum dolor sit amet consectetur, adipisicing elit. (First)
-> > [[Obsidian CSS|Internal Link]] > > **bold** _italic_
->
-> <label>Second<input type="radio" name="test" /></label>
->
-> > Lorem, ipsum dolor sit amet consectetur, adipisicing elit. (Second)
-> > [External Link](https://google.com) > > $\LaTeX$
->
-> <label>Third<input type="radio" name="test" />l</label>
->
-> > Lorem, ipsum dolor sit amet consectetur, adipisicing elit. (Third)
-> >
-> > - bullet item
-> > - [ ] checkbox
-> > - [x] #tag
-```
 <img width="652" alt="Screenshot 2025-07-03 at 14 58 27" src="https://github.com/user-attachments/assets/51bcf6c9-b3d1-4a0a-b85b-45b48377b478" />
 <img width="652" alt="Screenshot 2025-07-03 at 14 57 53" src="https://github.com/user-attachments/assets/d63239ef-ae0d-4e08-861e-c34e152b4794" />
+
+> For more information on how to use this feature, please refer to the [documentation](https://minimalists-paradise-docs.vercel.app/Features/Tabbed%20Callouts/) or the original [snippet repo](https://github.com/r-u-s-h-i-k-e-s-h/Obsidian-CSS-Snippets/blob/Collection/Snippets/Callout%20styling%20-%20Tabbed%20callout.md).
 
 ## Extended Color Schemes
 Minimalist's Paradise is minimal, but not boring. Choose between different presets for both light and dark mode, in an integrated interface via the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin. (This looks even better with the Color Accent Override turned on!)
