@@ -55,45 +55,11 @@ Create callouts with tabs for better navigation (inspired by and adpated from [t
 ## Extended Color Schemes
 Minimalist's Paradise is minimal, but not boring. Choose between different presets for both light and dark mode, in an integrated interface via the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin. (This looks even better with the Color Accent Override turned on!)
 
-### Extended Light Modes
-> **Disclaimer**: ALL extender color schemes showcases have both the enable colored headers and the color accent override settings turned on.
-#### Violet
-<img width="700" alt="violet preview" src="https://github.com/user-attachments/assets/07633428-a022-4215-9d7c-66bfa158e77d" />
-<img width="700" alt="Screenshot 2025-06-22 at 20 25 00" src="https://github.com/user-attachments/assets/ef3261d9-e462-407d-8e7e-b912d173cf3a" />
+<img width="734" height="419" alt="Extended Color Schemes" src="https://github.com/user-attachments/assets/53978432-ca37-4a93-99eb-ede985b34a8f" />
 
-#### Sky
-<img width="700" alt="sky preview" src="https://github.com/user-attachments/assets/790aec91-58cb-42bf-bb3f-e91c17adad17" />
-<img width="700" alt="Screenshot 2025-06-22 at 20 24 34" src="https://github.com/user-attachments/assets/78f4b94a-27a5-4dca-bbee-d645c267e71a" />
 
-#### Red Desert
-<img width="700" alt="red desert preview" src="https://github.com/user-attachments/assets/5c146ace-dd6c-4526-8624-2a145aa62de8" />
-<img width="700" alt="Screenshot 2025-06-22 at 20 24 53" src="https://github.com/user-attachments/assets/cb68176b-31f3-449c-9e70-6bbe3887a2c1" />
+> For a complete showcase of each individual extended color scheme please refer to the [documentation](https://minimalists-paradise-docs.vercel.app/Features/Extended%20Color%20Schemes/).
 
-#### Fog
-<img width="700" alt="fog preview" src="https://github.com/user-attachments/assets/a5d7abb0-869d-43c4-a774-4221d0843e90" />
-<img width="700" alt="Screenshot 2025-06-22 at 20 24 46" src="https://github.com/user-attachments/assets/b3eb41b9-c620-4f03-8d64-814e61adde21" />
-
-#### Leaf
-<img width="700" alt="leaf preview" src="https://github.com/user-attachments/assets/44fdd431-28a0-4d1e-983b-ad5293d1a69c" />
-<img width="700" alt="Screenshot 2025-06-22 at 20 24 22" src="https://github.com/user-attachments/assets/85ae9461-d288-4286-9538-f9e137cb84de" />
-
-### Extended Dark Modes
-> **Disclaimer**: ALL extender color schemes showcases have both the enable colored headers and the color accent override settings turned on.
-#### Onyx
-<img width="700" alt="onyx preview" src="https://github.com/user-attachments/assets/df37420d-fc75-499c-9299-0e113fcaeb51" />
-<img width="700" alt="Screenshot 2025-06-22 at 20 24 03" src="https://github.com/user-attachments/assets/6a985f7c-c2d1-4dac-8917-70469a16b46e" />
-
-#### Abyss
-<img width="700" alt="abyss preview" src="https://github.com/user-attachments/assets/202946be-14b0-46a1-82e0-fcda7f873bb9" />
-<img width="700" alt="Screenshot 2025-06-22 at 20 23 47" src="https://github.com/user-attachments/assets/1866baeb-7fa9-4a80-b31c-983a687f54cd" />
-
-#### Atlantic
-<img width="700" alt="atlantic preview" src="https://github.com/user-attachments/assets/2375078d-aa21-435e-9194-8d637baac1a1" />
-<img width="700" alt="Screenshot 2025-06-22 at 20 23 38" src="https://github.com/user-attachments/assets/952373e3-73d9-425c-b496-349703d42774" />
-
-#### Moss
-<img width="700" alt="moss preview" src="https://github.com/user-attachments/assets/923a9788-7734-46c6-8a6d-9cda7a70e06a" />
-<img width="700" alt="Screenshot 2025-06-22 at 20 23 56" src="https://github.com/user-attachments/assets/5dc21292-832f-4f52-b388-4e92237318e7" />
 
 ## Customizable Features
 Customize colors, fonts, syntax highlighting and blockquotes. A little freedom, without being overwhelming.
