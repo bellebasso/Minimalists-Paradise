@@ -55,7 +55,8 @@ Create callouts with tabs for better navigation (inspired by and adpated from [t
 ## Extended Color Schemes
 Minimalist's Paradise is minimal, but not boring. Choose between different presets for both light and dark mode, in an integrated interface via the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin. (This looks even better with the Color Accent Override turned on!)
 
-<img width="1400" height="800" alt="Extended Color Schemes" src="https://github.com/user-attachments/assets/92217c5f-620b-4a6d-b6b6-0bb247c70843" />
+<img width="734" height="419" alt="Extended Color Schemes" src="https://github.com/user-attachments/assets/53978432-ca37-4a93-99eb-ede985b34a8f" />
+
 
 > For a complete showcase of each individual extended color scheme please refer to the [documentation](https://minimalists-paradise-docs.vercel.app/Features/Extended%20Color%20Schemes/).
 
