@@ -441,7 +441,7 @@ SOFTWARE.
 
   span .view-header-title-parent .view-header-breadcrumb {
     /* breadcrumb */
-    color: var(--text-faint) !important;
+    color: var(--color-accent) !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -449,7 +449,7 @@ SOFTWARE.
   }
 
   .view-header-title-parent {
-    color: var(--text-faint)
+    color: var(--color-accent)
   }
 
   .view-header-title-container.mod-at-start.mod-fade {
