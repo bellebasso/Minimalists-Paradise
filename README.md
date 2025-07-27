@@ -7,8 +7,6 @@
 
 Minimal, but not too simple. Inspired by [AnuPpuccin](https://github.com/AnubisNekhet/AnuPpuccin) and [Border](https://github.com/Akifyss/obsidian-border), the main attraction of Minimalists Paradise is a card layout with customizable features via the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin. Never lose track with the safari tabs (inspired by [this snippet](https://github.com/gavinmn/obsidian-theme/blob/main/safaritabs.css)) which also match your color accent! Enable or disable colored headers with different preset options or create your own.
 
-> **WARNING**: As of now, some things are not completely optimized for light mode (including some visual inconsistencies in reading mode), such as dataview tables styling and custom callouts. However, other features (such as markdown tables, blockquotes and citations, etc) work as expected in light mode in both reading and live mode.
-
 > For a full showcase of all the different features, color schemes and such please refer to the [documentation](https://minimalists-paradise-docs.vercel.app)
 
 ## Showcases
@@ -18,10 +16,20 @@ Minimal, but not too simple. Inspired by [AnuPpuccin](https://github.com/AnubisN
 <img width="700" alt="default dark showcase" src="https://github.com/user-attachments/assets/848203ea-5d76-4276-9480-f961b2ed5299" />
 
 ### Default Light Mode
+> **WARNING**: As of now, some things are not completely optimized for light mode (including some visual inconsistencies in reading mode), such as dataview tables styling and custom callouts. However, other features (such as markdown tables, blockquotes and citations, etc) work as expected in light mode in both reading and live mode.
 <img width="700" alt="preview 1 default light mode" src="https://github.com/user-attachments/assets/1f9d34f4-203e-49de-8372-dc150da26b1c" />
 <img width="700" alt="default light showcase" src="https://github.com/user-attachments/assets/429421c9-bc92-498f-ac09-771af32c6712" />
 
 # Features
+## Extended Color Schemes
+Minimalist's Paradise is minimal, but not boring. Choose between different presets for both light and dark mode, in an integrated interface via the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin. (This looks even better with the Color Accent Override turned on!)
+
+<img width="734" height="419" alt="Extended Color Schemes" src="https://github.com/user-attachments/assets/53978432-ca37-4a93-99eb-ede985b34a8f" />
+
+
+> For a complete showcase of each individual extended color scheme please refer to the [documentation](https://minimalists-paradise-docs.vercel.app/Features/Extended%20Color%20Schemes/).
+
+
 ## Colored Headers
 Give your notes a little color with the colored headers! Choose between different presets or create your own custom combinations.
 <img width="700" alt="Screenshot 2025-06-22 at 20 23 11" src="https://github.com/user-attachments/assets/d08ef94e-4ec5-4f7e-8d8d-6abd3fdf06a8" />
@@ -51,15 +59,6 @@ Create callouts with tabs for better navigation (inspired by and adpated from [t
 <img width="652" alt="Screenshot 2025-07-03 at 14 57 53" src="https://github.com/user-attachments/assets/d63239ef-ae0d-4e08-861e-c34e152b4794" />
 
 > For more information on how to use this feature, please refer to the [documentation](https://minimalists-paradise-docs.vercel.app/Features/Tabbed%20Callouts/) or the original [snippet repo](https://github.com/r-u-s-h-i-k-e-s-h/Obsidian-CSS-Snippets/blob/Collection/Snippets/Callout%20styling%20-%20Tabbed%20callout.md).
-
-## Extended Color Schemes
-Minimalist's Paradise is minimal, but not boring. Choose between different presets for both light and dark mode, in an integrated interface via the [Style Settings](https://github.com/mgmeyers/obsidian-style-settings) plugin. (This looks even better with the Color Accent Override turned on!)
-
-<img width="734" height="419" alt="Extended Color Schemes" src="https://github.com/user-attachments/assets/53978432-ca37-4a93-99eb-ede985b34a8f" />
-
-
-> For a complete showcase of each individual extended color scheme please refer to the [documentation](https://minimalists-paradise-docs.vercel.app/Features/Extended%20Color%20Schemes/).
-
 
 ## Customizable Features
 Customize colors, fonts, syntax highlighting and blockquotes. A little freedom, without being overwhelming.
