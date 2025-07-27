@@ -210,7 +210,7 @@ SOFTWARE.
 
   .callout {
     border-radius: 18px;
-    border: 1px solid var(--blockquote-border-color) !important;
+    border: 1px solid var(--blockquote-border-color);
   }
 
   .callout-content {
@@ -347,6 +347,47 @@ SOFTWARE.
     box-shadow: var(--card-shadow);
   }
 
+  .workspace-split {
+    background-color: transparent !important;
+    ;
+  }
+
+  /* Left & Right Side Panels on Mobile */
+  .is-mobile .workspace-drawer.mod-left-split,
+  .is-mobile .workspace-drawer.mod-right-split {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--card-border-color) !important;
+    /* change to your preferred color */
+  }
+
+  /* The actual panel content */
+  .is-mobile .workspace-drawer.mod-left-split .workspace-drawer-content,
+  .is-mobile .workspace-drawer.mod-right-split .workspace-drawer-content {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--card-border-color) !important;
+    /* same color as above or different */
+  }
+
+  /* Fallback for some mobile themes */
+  .is-mobile .workspace-split.mod-left-split,
+  .is-mobile .workspace-split.mod-right-split {
+    background-color: var(--card-bg) !important;
+    border: 1px solid var(--card-border-color) !important;
+  }
+
+  .is-mobile .workspace-drawer {
+    border-left: none !important;
+    border-right: none !important;
+  }
+
+  .is-mobile .workspace-drawer:nth-of-type(1) {
+    border-right: 1px solid var(--card-border-color) !important;
+  }
+
+  .is-mobile .workspace-drawer:nth-of-type(2) {
+    border-left: 1px solid var(--card-border-color) !important;
+  }
+
   body.mod-mobile .workspace-tab-container {
     /* paineis */
     position: initial;
@@ -369,7 +410,7 @@ SOFTWARE.
   }
 
   .workspace-ribbon {
-    background-color: transparent;
+    background-color: transparent !important;
   }
 
   .workspace-fake-target-overlay:not(.is-in-sidebar) .workspace-tabs .workspace-leaf,
@@ -605,8 +646,7 @@ SOFTWARE.
   .mod-left-split .workspace-tab-header-container .is-active,
   .mod-right-split .workspace-tab-header-container .is-active {
     /* botões da direita e esquerda em cima ativos */
-    opacity: 0.8;
-    background-color: var(--color-accent, );
+    background-color: var(--color-accent);
     box-sizing: border-box;
     border: none;
   }
@@ -946,7 +986,7 @@ SOFTWARE.
 
   .cm-def.cm-hmd-frontmatter {
     /* frontmatter */
-    color: var(--text-color);
+    color: var(--color-accent) !important;
   }
 
   input.metadata-property-key-input {
@@ -1620,12 +1660,9 @@ settings:
 .theme-dark {
   --background-default: #0c0c0c;
   --text-color: #ffffff;
-  --color-base-00: #000000;
-  --color-base-10: var(--color-base-00);
-  --color-base-20: var(--color-base-00);
-  --background-primary: var(--color-base-00);
-  --background-primary-alt: var(--background-primary);
-  --background-secondary: var(--color-base-20);
+  --background-primary: #000000;
+  --background-primary-alt: var(--background-primary) !important;
+  --background-secondary: var(--background-primary);
   --background-secondary-alt: var(--background-primary);
   --card-bg: #000000;
   --card-border-color: #59595984;
@@ -1653,8 +1690,7 @@ settings:
 .theme-light {
   --background-default: #A5AAAE;
   --text-color: #000000;
-  --color-base-00: #9096A4;
-  --background-primary: var(--color-base-00);
+  --background-primary: #9096A4;
   --background-primary-alt: var(--background-primary);
   --background-secondary: var(--background-primary);
   --background-secondary-alt: var(--background-primary);
@@ -2715,6 +2751,7 @@ body:not(.is-mobile).tab-autohide .workspace-tab-header-container {
   height: 16px;
   opacity: 0;
   transition: height var(--anim-out), opacity var(--anim-out);
+  padding: 0px 8px 5px 8px;
 }
 
 body:not(.is-mobile).tab-autohide .workspace-tab-header-container:hover {
@@ -2727,12 +2764,13 @@ body:not(.is-mobile).tab-autohide .workspace-tab-header-container-inner {
   transform: translateY(-22px);
   opacity: 0;
   transition: transform var(--anim-out), opacity var(--anim-out);
+  padding: 6px 8px 4px 6px !important;
+  margin-top: 2px;
 }
 
 body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
   height: calc(var(--header-height) + 4px);
   margin: 0px;
-  padding: 6px 8px 4px 6px;
 }
 
 body:not(.is-mobile).tab-autohide .workspace-tab-header-container:hover .workspace-tab-header-container-inner,
