@@ -254,7 +254,7 @@ SOFTWARE.
 
   .theme-light .markdown-preview-view mark,
   .theme-dark .markdown-preview-view mark {
-    background-color: var(--color-accent) !important;
+    background-color: var(--color-accent);
     border-radius: 8px;
     padding: 0.075em 0.2em;
     color: inherit;
