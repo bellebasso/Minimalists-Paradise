@@ -2146,7 +2146,7 @@ body.colored-headers.theme-light:not(.colored-headers-override-toggle) {
   --caret-color: var(--text-color);
   --color-panel: #10081E;
   --table-header-background: var(--color-accent);
-  --custom-color-accent-dark: #341961;
+  --custom-color-accent-dark: #4f288e;
   --icon-color: var(--card-border-color);
   --file-title-color: var(--card-border-color);
   --alt-color: #190D31;
@@ -2768,7 +2768,6 @@ body:not(.is-mobile).tab-autohide .workspace-tab-header-container {
   height: 16px;
   opacity: 0;
   transition: height var(--anim-out), opacity var(--anim-out);
-  padding: 0px 8px 5px 8px;
 }
 
 body:not(.is-mobile).tab-autohide .workspace-tab-header-container:hover {
@@ -2781,13 +2780,12 @@ body:not(.is-mobile).tab-autohide .workspace-tab-header-container-inner {
   transform: translateY(-22px);
   opacity: 0;
   transition: transform var(--anim-out), opacity var(--anim-out);
-  padding: 6px 8px 4px 6px !important;
-  margin-top: 2px;
 }
 
 body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
-  height: fit-content;
+  height: calc(var(--header-height) + 4px);
   margin: 0px;
+  padding: 6px 8px 4px 6px;
 }
 
 body:not(.is-mobile).tab-autohide .workspace-tab-header-container:hover .workspace-tab-header-container-inner,
