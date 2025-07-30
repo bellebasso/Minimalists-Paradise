@@ -63,14 +63,14 @@ Create callouts with tabs for better navigation (inspired by and adpated from [t
 ## Hover Properties
 Declutter your notes by enabling the Hover Properties Feature. The properties view will stay collapsed by default while still accessible by simple hovering over the "properties" label. This way, your notes will always look clean while your properties are still accessible and functional.
 
-https://github.com/user-attachments/assets/dd26e4ca-e97b-4236-bb1a-0add9cc04a69
+![hover properties](previews/hover-properties.gif)
 
 > For more information on this feature, please refer to the [documentation](https://minimalists-paradise-docs.vercel.app/Features/Hover%20Properties/)
 
 ## Hider
 Automatically hides multiple UI elements, including the tab bar, ribbon, status bar, sidepane headers, and vault profile — for a cleaner, distraction-free workspace. These elements smoothly reveal themselves when hovered, allowing you to keep a minimalist layout without sacrificing quick navigation.
 
-https://github.com/user-attachments/assets/1863aa76-9f56-4aca-97f8-87e8f7ef7ebb
+![hider](previews/hider.gif)
 
 > For more information on this feature, please refer to the [documentation](https://minimalists-paradise-docs.vercel.app/Features/Hider/).
 
