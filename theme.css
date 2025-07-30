@@ -578,7 +578,7 @@ SOFTWARE.
     align-items: center;
     /* parte de cima da interface*/
     position: relative;
-    padding-bottom: 5px;
+    padding-bottom: 0px;
     background-color: transparent;
     border-bottom: 1px solid var(--card-bg);
   }
@@ -942,7 +942,7 @@ SOFTWARE.
   }
 
   .markdown-preview-view code.language-python span:contains("'"),
-  .markdown-preview-view code.language-python span:contains('"') {
+  .markdown-preview-view code.language-python span:contains("\"") {
     color: var(--syntax-string);
   }
 
@@ -2765,19 +2765,19 @@ body:not(.is-mobile).tab-autohide :has(.workspace-tab-header-container:hover) .w
 }
 
 body:not(.is-mobile).tab-autohide .workspace-tab-header-container {
-  height: 16px;
+  height: 40px;
   opacity: 0;
-  transition: height var(--anim-out), opacity var(--anim-out);
+  transition: opacity var(--anim-out);
 }
 
 body:not(.is-mobile).tab-autohide .workspace-tab-header-container:hover {
   height: 40px;
   opacity: 1;
-  transition: height var(--anim-in), opacity var(--anim-in);
+  transition: opacity var(--anim-in);
 }
 
 body:not(.is-mobile).tab-autohide .workspace-tab-header-container-inner {
-  transform: translateY(-22px);
+  transform: translateY(0px);
   opacity: 0;
   transition: transform var(--anim-out), opacity var(--anim-out);
 }
