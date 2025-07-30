@@ -60,8 +60,15 @@ Create callouts with tabs for better navigation (inspired by and adpated from [t
 
 > For more information on how to use this feature, please refer to the [documentation](https://minimalists-paradise-docs.vercel.app/Features/Tabbed%20Callouts/) or the original [snippet repo](https://github.com/r-u-s-h-i-k-e-s-h/Obsidian-CSS-Snippets/blob/Collection/Snippets/Callout%20styling%20-%20Tabbed%20callout.md).
 
-## Customizable Features
-Customize colors, fonts, syntax highlighting and blockquotes. A little freedom, without being overwhelming.
+## Hover Properties
+Declutter your notes by enabling the Hover Properties Feature. The properties view will stay collapsed by default while still accessible by simple hovering over the "properties" label. This way, your notes will always look clean while your properties are still accessible and functional.
+
+> For more information on this feature, please refer to the [documentation](https://minimalists-paradise-docs.vercel.app/Features/Hover%20Properties/)
+
+## Hider
+Automatically hides multiple UI elements, including the tab bar, ribbon, status bar, sidepane headers, and vault profile — for a cleaner, distraction-free workspace. These elements smoothly reveal themselves when hovered, allowing you to keep a minimalist layout without sacrificing quick navigation.
+
+> For more information on this feature, please refer to the [documentation](https://minimalists-paradise-docs.vercel.app/Features/Hider/).
 
 ## How to install?
 ### Via the community themes store
