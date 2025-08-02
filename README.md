@@ -17,6 +17,7 @@ Minimal, but not too simple. Inspired by [AnuPpuccin](https://github.com/AnubisN
 
 ### Default Light Mode
 > **WARNING**: As of now, some things are not completely optimized for light mode (including some visual inconsistencies in reading mode), such as dataview tables styling and custom callouts. However, other features (such as markdown tables, blockquotes and citations, etc) work as expected in light mode in both reading and live mode.
+
 <img width="700" alt="preview 1 default light mode" src="https://github.com/user-attachments/assets/1f9d34f4-203e-49de-8372-dc150da26b1c" />
 <img width="700" alt="default light showcase" src="https://github.com/user-attachments/assets/429421c9-bc92-498f-ac09-771af32c6712" />
 
