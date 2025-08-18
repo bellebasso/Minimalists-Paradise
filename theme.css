@@ -2332,6 +2332,7 @@ body.colored-headers.theme-light:not(.colored-headers-override-toggle) {
   --alt-color: #4c555d;
   --graph-node-tag: var(--color-accent);
   --text-accent: var(--card-border-color);
+  --link-color: #768493;
 }
 
 .theme-light.extended-light-color-schemes-toggle.red-desert {
