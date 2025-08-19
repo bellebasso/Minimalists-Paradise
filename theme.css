@@ -40,6 +40,7 @@ body:not(.is-mobile) .horizontal-main-container {
   --card-max-width: 10000px;
   --card-width: 100%;
   --card-margin: 0px 8px 0px 8px;
+  --cards-gap: 16px;
   --card-padding: 16px;
   --divider-width: 1px;
   --divider-color: #4d4d4f;
@@ -48,16 +49,8 @@ body:not(.is-mobile) .horizontal-main-container {
   --card-radius: 16px;
   --header-height: 35px;
 
-  body.mod-mobile .graph-view.color-fill {
-    background-color: var(--graph-bg) !important;
-  }
-
   body.mod-mobile .graph-view.color-line {
     color: var(--graph-line-color) !important;
-  }
-
-  .graph-view.color-fill {
-    background-color: var(--graph-bg) !important;
   }
 
   .graph-view.color-fill .graph-view-node {
@@ -322,6 +315,7 @@ body:not(.is-mobile) .horizontal-main-container {
     justify-self: center;
     max-width: 100%;
     height: calc(var(--header-height) + 4px);
+    gap: 4px;
   }
 
   .workspace-leaf-resize-handle {
@@ -333,15 +327,21 @@ body:not(.is-mobile) .horizontal-main-container {
   }
 
   /* --------------------------------------------------------------------------------------------------------*/
+  body:not(.is-mobile) .workspace {
+    position: relative;
+    overflow: visible;
+    margin-right: var(--cards-gap);
+  }
+
   .workspace-tab-container {
     /* paineis */
     position: initial;
     display: block;
-    width: calc(100% - var(--card-margin-horizontal, 8px) * 2);
+    width: 100%;
     max-width: var(--card-max-width, 2000px);
     /* limite de largura */
-    margin-left: var(--card-margin-horizontal, 6px);
-    margin-right: 22px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 0px;
     align-self: center;
     box-sizing: border-box;
@@ -358,6 +358,14 @@ body:not(.is-mobile) .horizontal-main-container {
     ;
   }
 
+  .workspace.is-left-sidedock-open .workspace-split.mod-horizontal.mod-left-split {
+    margin-right: var(--cards-gap) !important;
+  }
+
+  .workspace.is-right-sidedock-open .workspace-split.mod-horizontal.mod-right-split {
+    margin-left: var(--cards-gap) !important;
+  }
+
   body.is-mobile {
     --interactive-normal: var(--background-primary);
     --tab-switcher-menubar-background: var(--color-panel);
@@ -366,7 +374,7 @@ body:not(.is-mobile) .horizontal-main-container {
   /* Left & Right Side Panels on Mobile */
   body.is-mobile .workspace-drawer.mod-left-split,
   body.is-mobile .workspace-drawer.mod-right-split {
-    background-color: var(--card-bg) !important;
+    background-color: var(--color-panel) !important;
     border: 1px solid var(--card-border-color) !important;
     /* change to your preferred color */
   }
@@ -374,7 +382,7 @@ body:not(.is-mobile) .horizontal-main-container {
   /* The actual panel content */
   body.is-mobile .workspace-drawer.mod-left-split .workspace-drawer-content,
   body.is-mobile .workspace-drawer.mod-right-split .workspace-drawer-content {
-    background-color: var(--card-bg) !important;
+    background-color: var(--color-panel) !important;
     border: 1px solid var(--card-border-color) !important;
     /* same color as above or different */
   }
@@ -382,7 +390,7 @@ body:not(.is-mobile) .horizontal-main-container {
   /* Fallback for some mobile themes */
   body.is-mobile .workspace-split.mod-left-split,
   body.is-mobile .workspace-split.mod-right-split {
-    background-color: var(--card-bg) !important;
+    background-color: var(--color-panel) !important;
     border: 1px solid var(--card-border-color) !important;
   }
 
@@ -403,7 +411,7 @@ body:not(.is-mobile) .horizontal-main-container {
     /* paineis */
     position: initial;
     display: block;
-    width: calc(100% - var(--card-margin-horizontal, 6px) * 2);
+    width: 100%;
     max-width: var(--card-max-width, 2000px);
     /* limite de largura */
 
@@ -422,12 +430,8 @@ body:not(.is-mobile) .horizontal-main-container {
   /* Phones only (up to 767px) */
   @media (max-width: 767px) {
 
-    .workspace-split.mod-horizontal,
-    .workspace-leaf-content,
-    .view-content,
-    .workspace-tab-container {
-      margin-right: auto !important;
-      margin-left: auto !important;
+    .workspace-tab-container,
+    .workspace-split.mod-horizontal {
       overflow-x: hidden !important;
       max-width: 100% !important;
     }
@@ -435,16 +439,17 @@ body:not(.is-mobile) .horizontal-main-container {
     body {
       overflow-x: hidden !important;
     }
+
+    body.is-mobile .workspace {
+      margin-right: calc(var(--cards-gap) / 2) !important;
+      margin-left: calc(var(--cards-gap) / 2);
+    }
   }
 
   @media (min-width: 768px) and (max-width: 1366px) {
 
-    .workspace-split.mod-horizontal,
-    .workspace-leaf-content,
-    .view-content,
-    .workspace-tab-container {
-      margin-left: auto !important;
-      margin-right: auto !important;
+    .workspace-tab-container,
+    .workspace-split.mod-horizontal {
       overflow-x: hidden !important;
       max-width: 100% !important;
       box-sizing: border-box !important;
@@ -452,6 +457,12 @@ body:not(.is-mobile) .horizontal-main-container {
 
     body {
       overflow-x: hidden !important;
+    }
+
+    body.is-mobile .workspace-tabs {
+      padding-left: calc(var(--cards-gap) / 2);
+      padding-right: calc(var(--cards-gap) / 2);
+      padding-bottom: calc(var(--cards-gap) / 2);
     }
   }
 
@@ -469,47 +480,14 @@ body:not(.is-mobile) .horizontal-main-container {
     height: 100%;
   }
 
-  .canvas-container {
-    background-color: red !important;
-  }
-
-  .workspace-leaf.workspace-leaf-content.view-content.canvas {
-    background-color: var(--graph-bg) !important;
-    border-radius: 16px;
-  }
-
   body.mod-mobile canvas {
     width: 100%;
     height: 100%;
   }
 
-  body.mod-mobile .canvas-container {
-    background-color: var(--graph-bg) !important;
-  }
-
   .workspace-leaf {
     /* painel lateral esquerdo cor */
     background-color: var(--color-panel);
-  }
-
-  body.mod-mobile .workspace-leaf {
-    background-color: var(--color-panel);
-  }
-
-  body.mod-mobile .workspace-leaf-content[data-type="graph"] {
-    background-color: var(--graph-bg) !important;
-  }
-
-  body.mod-mobile .workspace-leaf-content[data-type="localgraph"] {
-    background-color: var(--graph-bg) !important;
-  }
-
-  .workspace-leaf-content[data-type="graph"] {
-    background-color: var(--graph-bg) !important;
-  }
-
-  .workspace-leaf-content[data-type="localgraph"] {
-    background-color: var(--graph-bg) !important;
   }
 
   .view-header {
@@ -712,11 +690,11 @@ body:not(.is-mobile) .horizontal-main-container {
   .workspace-sidedock-vault-profile {
     /* vault profile */
     padding: 8px !important;
-    margin-right: 16px !important;
+    margin-right: auto !important;
     border-top: 1px solid var(--card-border-color) !important;
     border-radius: 0px 0px var(--card-radius) var(--card-radius);
     box-sizing: border-box;
-    width: calc(100% - 15px) !important;
+    width: 100%;
     align-self: flex-end;
   }
 
