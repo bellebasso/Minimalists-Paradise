@@ -33,7 +33,7 @@ body:not(.is-mobile) .horizontal-main-container {
   padding-bottom: 24px !important;
 }
 
-:root {
+body {
   --default-font-size: 16px;
   --code-font: 'Fira Code', 'JetBrains Mono', monospace;
   --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
@@ -48,1004 +48,1036 @@ body:not(.is-mobile) .horizontal-main-container {
   --button-margin: 0px 3px 0px 0px;
   --card-radius: 16px;
   --header-height: 35px;
-
-  body.mod-mobile .graph-view.color-line {
-    color: var(--graph-line-color) !important;
-  }
-
-  .graph-view.color-fill .graph-view-node {
-    color: var(--card-border-color) !important;
-  }
-
-  .graph-view.color-circle {
-    color: var(--graph-bg) !important;
-  }
-
-  .graph-view.color-line {
-    color: var(--graph-line-color) !important;
-  }
-
-  /* tables */
-  .markdown-preview-view table {
-    /* preview */
-    border-collapse: separate;
-    border-spacing: 0;
-    border: 1px solid var(--background-modifier-border);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-
-  .cm-s-obsidian .cm-table,
-  .cm-s-obsidian table {
-    /* live view */
-    border-collapse: separate;
-    border-spacing: 0;
-    width: fit-content;
-    border: 1px solid var(--background-modifier-border);
-    border-radius: 10px;
-    overflow: hidden;
-  }
-
-  .markdown-preview-view table thead {
-    /* table header preview mode */
-    background-color: var(--color-accent);
-    color: var(--text-color);
-    padding: 0.5em;
-    border: 1px solid var(--card-border-color);
-  }
-
-  .markdown-source-view.mod-cm6 table thead {
-    /* table header live mode */
-    background-color: var(--color-accent);
-    color: var(--text-color);
-    border: 1px solid var(--card-border-color);
-  }
-
-  /* dataview tables */
-  table .dataview .dataview-table {
-    width: 100%;
-  }
-
-  .dataview .dataview-table {
-    border-collapse: separate;
-    border-spacing: 0;
-    border: 1px solid var(--background-modifier-border);
-    border-radius: 10px;
-    overflow: hidden;
-    width: 100%;
-  }
-
-  /* Optional: vertical lines between columns */
-  .table-view-table .table-view-td,
-  .table-view-table .table-view-th {
-    border-right: 2px solid var(--card-border-color);
-    border-bottom: 2px solid var(--card-border-color);
-    padding: 6px 10px;
-  }
-
-  /* Remove last column's right border for visual polish */
-  .table-view-tr> :last-child {
-    border-right: none;
-  }
-
-  svg .svg-icon {
-    /* Ícones SVG */
-    fill: var(--icon-color);
-  }
-
-  .clickable-icon {
-    color: var(--icon-color)
-  }
-
-  .clickable-icon.side-dock-ribbon-action .svg-icon,
-  .mod-left-split .workspace-tab-header-inner-icon .svg-icon,
-  .mod-right-split .workspace-tab-header-inner-icon .svg-icon {
-    color: var(--icon-color);
-  }
-
-  /* ----------------------------------------------- quotes ------------------------------------------------ */
   --blockquote-radius: 8px;
-
-  /* for editor */
-  .cm-quote {
-    color: var(--text-normal) !important;
-  }
-
-  /* for preview */
-  .markdown-preview-view blockquote {
-    display: inline-block;
-    border: 2px solid;
-    border-color: var(--blockquote-border-color) !important;
-    border-left-width: 2px !important;
-    border-radius: var(--blockquote-radius);
-    font-size: inherit;
-    line-height: 1.5em;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    padding-inline-end: var(--size-4-6);
-    background-color: var(--blockquote-bg);
-    width: 100%;
-  }
-
-
-
-  /* if paraphrasing, wrap your quote in <blockquote class=paraphrase>text</blockquote> */
-
-  .markdown-preview-view blockquote.paraphrase:after {
-    display: none;
-  }
-
-  /* for citations */
-
-  cite {
-    background-color: var(--color-accent);
-    border-radius: 6px;
-    color: var(--blockquote-text);
-    margin-left: -10px;
-    margin-right: -10px;
-    padding-left: 10px;
-    padding-right: 10px;
-    text-align: right;
-    display: block;
-    position: relative;
-  }
-
-  cite a:link {
-    color: white;
-  }
-
-  cite {
-    color: var(--text-color);
-    text-align: end;
-    display: block;
-    padding-right: 1em;
-  }
-
-  .callout {
-    border-radius: 18px;
-    border: 1px solid var(--blockquote-border-color);
-  }
-
-  .callout-content {
-    color: var(--text-color);
-  }
-
-  /* ------------------------------------------------------------------------------------------------------- */
-  /* ----------------------------------------------- fontes ------------------------------------------------ */
-
-  .cm-s-obsidian span.cm-inline-code,
-  .markdown-preview-view code {
-    font-family: var(--code-font) !important;
-  }
-
-  .markdown-preview-view pre code,
-  .cm-s-obsidian pre,
-  .cm-s-obsidian code[class*="language-"] {
-    font-family: var(--code-font) !important;
-  }
-
-  .cm-s-obsidian span.cm-inline-code,
-  .markdown-preview-view code {
-    font-family: var(--code-font, 'Fira Code', monospace) !important;
-  }
-
-  .markdown-preview-view pre code,
-  .cm-s-obsidian pre,
-  .cm-s-obsidian code[class*="language-"] {
-    font-family: var(--code-font, 'Fira Code', monospace) !important;
-    font-size: 0.95rem;
-  }
-
-  span.cm-highlight {
-    background-color: var(--color-accent);
-    /* cor do destaque */
-    display: inline;
-    border-radius: 8px;
-    padding: 0.075em 0.2em;
-    /* espaçamento interno */
-  }
-
-  .theme-light .markdown-preview-view mark,
-  .theme-dark .markdown-preview-view mark {
-    background-color: var(--color-accent);
-    border-radius: 8px;
-    padding: 0.075em 0.2em;
-    color: inherit;
-  }
-
-  .markdown-rendered mark {
-    background-color: var(--color-accent);
-    border-radius: 8px;
-    padding: 0.075em 0.2em;
-    color: inherit;
-  }
-
-  mark {
-    background-color: var(--color-accent);
-    border-radius: 8px;
-    padding: 0.075em 0.2em;
-    color: inherit;
-  }
-
-  /* ------------------------------------------------------------------------------------------------------- */
-  /* ---------------------------------------- bordas transparentes ------------------------------------------*/
-  .workspace-split.mod-horizontal>.workspace-leaf-resize-handle,
-  .workspace-split.mod-vertical>.workspace-leaf-resize-handle {
-    border: none !important;
-  }
-
-  .pane-view {
-    border: none !important;
-  }
-
-  .mod-left {
-    border: none !important;
-    border-right: none !important;
-    border-bottom: none !important;
-    border-top: none !important;
-  }
-
-  .mod-left::before {
-    border: none !important;
-  }
-
-  .mod-right {
-    border-left: none !important;
-  }
-
-  .workspace-leaf {
-    border: none !important;
-  }
-
-  .view-content {
-    border: none !important;
-    background-color: transparent !important;
-  }
-
-  .workspace-tab-header-container-inner {
-    border: none !important;
-    align-items: center !important;
-    align-content: center !important;
-    justify-content: center;
-    justify-self: center;
-    max-width: 100%;
-    height: calc(var(--header-height) + 4px);
-    gap: 4px;
-  }
-
-  .workspace-leaf-resize-handle {
-    border: none !important;
-  }
-
-  .workspace-tab-header-container {
-    border-bottom: none !important;
-  }
-
-  /* --------------------------------------------------------------------------------------------------------*/
-  body:not(.is-mobile) .workspace {
-    position: relative;
-    overflow: visible;
-    margin-right: var(--cards-gap);
-  }
-
-  .workspace-tab-container {
-    /* paineis */
-    position: initial;
-    display: block;
-    width: 100%;
-    max-width: var(--card-max-width, 2000px);
-    /* limite de largura */
-    margin-left: auto;
-    margin-right: auto;
-    padding: 0px;
-    align-self: center;
-    box-sizing: border-box;
-    border: 1px solid var(--card-border-color);
-
-    /* Visual de card */
-    background-color: var(--color-panel);
-    border-radius: var(--card-radius);
-    box-shadow: var(--card-shadow);
-  }
-
-  body.is-mobile .workspace-tab-container {
-    background-color: var(--card-bg) !important;
-  }
-
-  body.is-mobile .workspace-drawer-inner {
-    background-color: var(--color-panel);
-    border: 1px solid var(--card-border-color);
-    border-radius: var(--card-radius);
-    padding-top: 10px;
-  }
-
-  body.is-mobile .workspace-drawer-active-tab-container {
-    background-color: transparent;
-  }
-
-  body.is-mobile .workspace-drawer .nav-header {
-    border: none;
-  }
-
-  .workspace-split {
-    background-color: transparent !important;
-    ;
-  }
-
-  .workspace.is-left-sidedock-open .workspace-split.mod-horizontal.mod-left-split {
-    margin-right: var(--cards-gap) !important;
-  }
-
-  .workspace.is-right-sidedock-open .workspace-split.mod-horizontal.mod-right-split {
-    margin-left: var(--cards-gap) !important;
-  }
-
-  body:not(.is-mobile) .workspace-split.mod-vertical.mod-root {
-    gap: var(--cards-gap) !important;
-  }
-
-  body.is-mobile {
-    --interactive-normal: var(--background-primary);
-    --tab-switcher-menubar-background: var(--color-panel);
-  }
-
-
-  /* Phones only (up to 767px) */
-  @media (max-width: 767px) {
-
-    .workspace-tab-container,
-    .workspace-split.mod-horizontal {
-      overflow-x: hidden !important;
-      max-width: 100% !important;
-    }
-
-    body {
-      overflow-x: hidden !important;
-    }
-
-    body.is-mobile .workspace {
-      margin-right: calc(var(--cards-gap) / 2) !important;
-      margin-left: calc(var(--cards-gap) / 2);
-    }
-  }
-
-  @media (min-width: 768px) and (max-width: 1366px) {
-
-    .workspace-tab-container,
-    .workspace-split.mod-horizontal {
-      overflow-x: hidden !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-    }
-
-    body {
-      overflow-x: hidden !important;
-    }
-
-    body.is-mobile .workspace-tabs {
-      padding-left: calc(var(--cards-gap) / 2);
-      padding-right: calc(var(--cards-gap) / 2);
-      padding-bottom: calc(var(--cards-gap) / 2);
-    }
-  }
-
-  .workspace-fake-target-overlay:not(.is-in-sidebar) .workspace-tabs .workspace-leaf,
-  .mod-root .workspace-tabs .workspace-leaf {
-    background-color: var(--color-panel);
-  }
-
-  canvas {
-    width: 100%;
-    height: 100%;
-  }
-
-  body.mod-mobile canvas {
-    width: 100%;
-    height: 100%;
-  }
-
-  .workspace-leaf {
-    /* painel lateral esquerdo cor */
-    background-color: var(--color-panel);
-  }
-
-  .view-header {
-    /* header da parte do meio */
-    background-color: transparent !important;
-    border-bottom: 1px dashed var(--card-border-color);
-    border-radius: 16px 16px 0px 0px;
-    align-self: auto;
-    margin: 0px;
-    box-shadow: none;
-  }
-
-  .view-header-title {
-    color: var(--text-color);
-  }
-
-  span .view-header-title-parent .view-header-breadcrumb {
-    /* breadcrumb */
-    color: var(--color-accent) !important;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0px 8px;
-  }
-
-  .view-header-title-parent {
-    color: var(--color-accent)
-  }
-
-  .view-header-title-container.mod-at-start.mod-fade {
-    /* fade título do header */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0px 8px;
-    color: var(--text-color);
-  }
-
-  .mod-fade:not(.mod-at-end):after {
-    display: none;
-  }
-
-  .view-header-title-container {
-    /* título do header */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0px 8px;
-    color: var(--text-color);
-    align-items: center;
-    justify-content: center;
-  }
-
-  .view-header-breadcrumb-separator {
-    /* separador do breadcrumb */
-    color: var(--text-color);
-  }
-
-  .nav-file-title,
-  .nav-folder-title {
-    color: var(--file-title-color);
-  }
-
-  .collapse-icon {
-    color: var(--file-title-color) !important;
-  }
-
-  .collapse-icon svg.svg-icon.right-triangle {
-    color: var(--file-title-color);
-  }
-
-  .tree-item-icon.collapse-icon {
-    color: var(--card-border-color)
-  }
-
-  .workspace-tab-header-container {
-    align-items: center;
-    /* parte de cima da interface*/
-    position: relative;
-    padding-bottom: 0px;
-    background-color: transparent;
-    border-bottom: 1px solid var(--card-bg);
-    height: var(--header-height);
-  }
-
-  html body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
-    margin-bottom: 0px;
-    margin-top: 4px !important;
-    gap: 8px;
-    width: fit-content;
-    height: calc(var(--header-height) + 4px);
-  }
-
-  /* Regras para TODAS as tabs */
-  .workspace-tab-header {
-    max-width: 100%;
-    display: flex;
-    flex-grow: 1;
-    border-radius: 6px;
-    padding: 0 !important;
-    box-shadow: none !important;
-    transition: flex-grow 0.5s ease-in-out, background-color 0.5s ease !important;
-    background: var(--card-bg);
-    box-sizing: border-box;
-    color: var(--text-normal);
-    overflow: hidden;
-  }
-
-  /* Regras para tab ativa */
-  .workspace-tab-header.is-active.mod-active {
-    flex-grow: 2 !important;
-    max-width: 250px;
-    background-color: var(--color-accent);
-    box-sizing: border-box;
-    border: none;
-  }
-
-
-  .workspace-tab-header .is-active {
-    max-width: 200px;
-    background-color: var(--color-accent);
-    box-sizing: border-box;
-    border: none;
-  }
-
-  .workspace-tab-header-inner::after {
-    box-sizing: border-box;
-    display: none;
-  }
-
-  .workspace-tab-header::after,
-  .workspace-tab-header::before {
-    box-sizing: border-box;
-    display: none;
-  }
-
-  .workspace-tab-header:not(.is-active) .workspace-tab-header-inner-close-button {
-    box-sizing: border-box;
-    display: none;
-  }
-
-  .workspace-tab-header:hover .workspace-tab-header-inner-close-button {
-    box-sizing: border-box;
-    display: flex;
-  }
-
-  .workspace-tab-header-tab-list {
-    box-sizing: border-box;
-    display: none !important;
-  }
-
-  .mod-left-split .workspace-tab-header-container-inner,
-  .mod-right-split .workspace-tab-header-container-inner {
-    /* botões da direita e esquerda em cima */
-    padding: 4px 4px;
-    margin-top: 4px;
-    margin-bottom: 0px;
-    box-sizing: border-box;
-  }
-
-  .mod-left-split .workspace-tab-header-container .is-active,
-  .mod-right-split .workspace-tab-header-container .is-active {
-    /* botões da direita e esquerda em cima ativos */
-    background-color: var(--color-accent);
-    box-sizing: border-box;
-    border: none;
-  }
-
-  .mod-left-split .workspace-tab-header-inner,
-  .mod-right-split .workspace-tab-header-inner {
-    padding: 2px;
-    box-sizing: border-box;
-    height: 100%;
-  }
-
-  .mod-left-split .workspace-tab-header-container-inner,
-  .mod-right-split .workspace-tab-header-container-inner {
-    justify-content: left;
-    justify-self: left;
-    box-sizing: border-box;
-  }
-
-  .mod-root .workspace-tab-header-status-icon {
-    color: var(--tab-text-color-focused-active);
-  }
-
-  .status-bar {
-    padding: 0px 8px 0px 0px;
-    /* status bar */
-    border: none !important;
-    width: 100vw;
-    /* Ocupa toda a largura da viewport */
-    left: 0;
-    right: 0;
-    position: fixed;
-    background-color: transparent;
-    min-height: 16px;
-  }
-
-  .workspace-sidedock-vault-profile {
-    /* vault profile */
-    padding: 8px !important;
-    margin-right: auto !important;
-    border-top: 1px solid var(--card-border-color) !important;
-    border-radius: 0px 0px var(--card-radius) var(--card-radius);
-    box-sizing: border-box;
-    width: 100%;
-    align-self: flex-end;
-  }
-
-  body:not(.is-mobile) .workspace-split.mod-left-split {
-    position: relative;
-  }
-
-  body:not(.is-mobile) .workspace-split.mod-left-split .workspace-tabs:last-of-type .workspace-tab-container {
-    padding-bottom: 44px;
-  }
-
-  body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
-    padding: 6px;
-    background-color: transparent;
-    position: absolute;
-    bottom: 0;
-    z-index: 10;
-    height: 44px;
-  }
-
-  body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher {
-    height: 32px;
-    cursor: pointer;
-  }
-
-  body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-actions {
-    gap: var(--size-2-1);
-  }
-
-  .workspace-drawer-vault-switcher {
-    padding: 4px 2px !important;
-  }
-
-  .workspace-drawer-vault-actions .clickable-icon {
-    padding: 4px !important;
-  }
-
-
-  body.mod-mobile .workspace-sidedock-vault-profile {
-    /* vault profile mobile */
-    padding: 0px;
-    margin: 0px;
-    background-color: var(--color-panel);
-    border: 1 px solid var(--card-border-color) !important;
-    border-radius: 0px 4px 4px 0px;
-  }
-
-  .sidebar-toggle-button {
-    background-color: transparent !important;
-  }
-
-  body.is-focused .sidebar-toggle-button {
-    background-color: transparent !important;
+  --input-radius: 8px;
+}
+
+body.mod-mobile .graph-view.color-line {
+  color: var(--graph-line-color) !important;
+}
+
+.graph-view.color-fill .graph-view-node {
+  color: var(--card-border-color) !important;
+}
+
+.graph-view.color-circle {
+  color: var(--graph-bg) !important;
+}
+
+.graph-view.color-line {
+  color: var(--graph-line-color) !important;
+}
+
+/* tables */
+.markdown-preview-view table {
+  /* preview */
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cm-s-obsidian .cm-table,
+.cm-s-obsidian table {
+  /* live view */
+  border-collapse: separate;
+  border-spacing: 0;
+  width: fit-content;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.markdown-preview-view table thead {
+  /* table header preview mode */
+  background-color: var(--color-accent);
+  color: var(--text-color);
+  padding: 0.5em;
+  border: 1px solid var(--card-border-color);
+}
+
+.markdown-source-view.mod-cm6 table thead {
+  /* table header live mode */
+  background-color: var(--color-accent);
+  color: var(--text-color);
+  border: 1px solid var(--card-border-color);
+}
+
+/* dataview tables */
+table .dataview .dataview-table {
+  width: 100%;
+}
+
+.dataview .dataview-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 10px;
+  overflow: hidden;
+  width: 100%;
+}
+
+/* Optional: vertical lines between columns */
+.table-view-table .table-view-td,
+.table-view-table .table-view-th {
+  border-right: 2px solid var(--card-border-color);
+  border-bottom: 2px solid var(--card-border-color);
+  padding: 6px 10px;
+}
+
+/* Remove last column's right border for visual polish */
+.table-view-tr> :last-child {
+  border-right: none;
+}
+
+svg .svg-icon {
+  /* Ícones SVG */
+  fill: var(--icon-color);
+}
+
+.clickable-icon {
+  color: var(--icon-color)
+}
+
+.clickable-icon.side-dock-ribbon-action .svg-icon,
+.mod-left-split .workspace-tab-header-inner-icon .svg-icon,
+.mod-right-split .workspace-tab-header-inner-icon .svg-icon {
+  color: var(--icon-color);
+}
+
+/* ----------------------------------------------- quotes ------------------------------------------------ */
+
+/* for editor */
+.cm-quote {
+  color: var(--text-normal) !important;
+}
+
+/* for preview */
+.markdown-preview-view blockquote {
+  display: inline-block;
+  border: 2px solid;
+  border-color: var(--blockquote-border-color) !important;
+  border-left-width: 2px !important;
+  border-radius: var(--blockquote-radius);
+  font-size: inherit;
+  line-height: 1.5em;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-inline-end: var(--size-4-6);
+  background-color: var(--blockquote-bg);
+  width: 100%;
+}
+
+
+
+/* if paraphrasing, wrap your quote in <blockquote class=paraphrase>text</blockquote> */
+
+.markdown-preview-view blockquote.paraphrase:after {
+  display: none;
+}
+
+/* for citations */
+
+cite {
+  background-color: var(--color-accent);
+  border-radius: 6px;
+  color: var(--blockquote-text);
+  margin-left: -10px;
+  margin-right: -10px;
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: right;
+  display: block;
+  position: relative;
+}
+
+cite a:link {
+  color: white;
+}
+
+cite {
+  color: var(--text-color);
+  text-align: end;
+  display: block;
+  padding-right: 1em;
+}
+
+.callout {
+  border-radius: 18px;
+  border: 1px solid var(--blockquote-border-color);
+}
+
+.callout-content {
+  color: var(--text-color);
+}
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* ----------------------------------------------- fontes ------------------------------------------------ */
+
+.cm-s-obsidian span.cm-inline-code,
+.markdown-preview-view code {
+  font-family: var(--code-font) !important;
+}
+
+.markdown-preview-view pre code,
+.cm-s-obsidian pre,
+.cm-s-obsidian code[class*="language-"] {
+  font-family: var(--code-font) !important;
+}
+
+.cm-s-obsidian span.cm-inline-code,
+.markdown-preview-view code {
+  font-family: var(--code-font, 'Fira Code', monospace) !important;
+}
+
+.markdown-preview-view pre code,
+.cm-s-obsidian pre,
+.cm-s-obsidian code[class*="language-"] {
+  font-family: var(--code-font, 'Fira Code', monospace) !important;
+  font-size: 0.95rem;
+}
+
+span.cm-highlight {
+  background-color: var(--color-accent);
+  /* cor do destaque */
+  display: inline;
+  border-radius: 8px;
+  padding: 0.075em 0.2em;
+  /* espaçamento interno */
+}
+
+.theme-light .markdown-preview-view mark,
+.theme-dark .markdown-preview-view mark {
+  background-color: var(--color-accent);
+  border-radius: 8px;
+  padding: 0.075em 0.2em;
+  color: inherit;
+}
+
+.markdown-rendered mark {
+  background-color: var(--color-accent);
+  border-radius: 8px;
+  padding: 0.075em 0.2em;
+  color: inherit;
+}
+
+mark {
+  background-color: var(--color-accent);
+  border-radius: 8px;
+  padding: 0.075em 0.2em;
+  color: inherit;
+}
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* ---------------------------------------- bordas transparentes ------------------------------------------*/
+.workspace-split.mod-horizontal>.workspace-leaf-resize-handle,
+.workspace-split.mod-vertical>.workspace-leaf-resize-handle {
+  border: none !important;
+}
+
+.pane-view {
+  border: none !important;
+}
+
+.mod-left {
+  border: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+  border-top: none !important;
+}
+
+.mod-left::before {
+  border: none !important;
+}
+
+.mod-right {
+  border-left: none !important;
+}
+
+.workspace-leaf {
+  border: none !important;
+}
+
+.view-content {
+  border: none !important;
+  background-color: transparent !important;
+}
+
+.workspace-tab-header-container-inner {
+  border: none !important;
+  align-items: center !important;
+  align-content: center !important;
+  justify-content: center;
+  justify-self: center;
+  max-width: 100%;
+  height: calc(var(--header-height) + 4px);
+  gap: 4px;
+}
+
+.workspace-leaf-resize-handle {
+  border: none !important;
+}
+
+.workspace-tab-header-container {
+  border-bottom: none !important;
+}
+
+/* --------------------------------------------------------------------------------------------------------*/
+body:not(.is-mobile) .workspace {
+  position: relative;
+  overflow: visible;
+  margin-right: var(--cards-gap);
+}
+
+.workspace-tab-container {
+  /* paineis */
+  position: initial;
+  display: block;
+  width: 100%;
+  max-width: var(--card-max-width, 2000px);
+  /* limite de largura */
+  margin-left: auto;
+  margin-right: auto;
+  padding: 0px;
+  align-self: center;
+  box-sizing: border-box;
+  border: 1px solid var(--card-border-color);
+
+  /* Visual de card */
+  background-color: var(--color-panel);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+}
+
+@starting-style {
+  /* animation for modals and prompts */
+
+  .modal,
+  .prompt {
+    opacity: 0;
+    filter: blur(4px);
+    transform: scale(0.95) rotateX(-1deg)
+  }
+}
+
+.modal,
+/* animation for modals and prompts */
+.prompt {
+  transition: var(--anim-duration-moderate) var(--anim-motion);
+}
+
+.horizontal-tab-nav-item,
+.vertical-tab-nav-item {
+  border-radius: var(--input-radius);
+}
+
+body.is-mobile .workspace-drawer .nav-header {
+  border: none;
+}
+
+.workspace-split {
+  background-color: transparent !important;
+  ;
+}
+
+.workspace.is-left-sidedock-open .workspace-split.mod-horizontal.mod-left-split {
+  margin-right: var(--cards-gap) !important;
+}
+
+.workspace.is-right-sidedock-open .workspace-split.mod-horizontal.mod-right-split {
+  margin-left: var(--cards-gap) !important;
+}
+
+body:not(.is-mobile) .workspace-split.mod-vertical.mod-root {
+  gap: var(--cards-gap) !important;
+}
+
+/* mobile optimization */
+body.is-mobile .workspace-tab-container {
+  background-color: var(--card-bg) !important;
+}
+
+body.is-mobile .workspace-drawer-inner {
+  background-color: var(--color-panel);
+  /* sets color for the vault switcher and ribbon for mobile */
+  border: 1px solid var(--card-border-color);
+  border-radius: var(--card-radius);
+  padding-top: 10px;
+}
+
+body.is-mobile .workspace-drawer-active-tab-container {
+  background-color: transparent;
+}
+
+body.is-tablet .workspace-drawer:not(.is-pinned) {
+  margin: 59px 16px 34px;
+  padding-top: 8px;
+  border-radius: var(--card-radius);
+}
+
+body.is-mobile {
+  --interactive-normal: var(--background-primary);
+  --tab-switcher-menubar-background: var(--color-panel);
+}
+
+
+/* Phones only (up to 767px) */
+@media (max-width: 767px) {
+
+  .workspace-tab-container,
+  .workspace-split.mod-horizontal {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
   }
 
   body {
-    --syntax-keyword: #552B79;
-    --syntax-def: #69EED7;
-    --syntax-variable: #558FC7;
-    --syntax-variable-2: #4186B6;
-    --syntax-variable-3: #C689E3;
-    --syntax-string: #BE4AA0;
-    --syntax-number: #9795EE;
-    --syntax-comment: #16486D;
-    --syntax-builtin: #2D76E9;
-    --syntax-operator: #6852B3;
-    --syntax-property: #4A6BDB;
-    --syntax-default-text: #eeeeee;
-    --syntax-border: #A0A6A7;
+    overflow-x: hidden !important;
   }
 
-  /* ----------------------------------------------- syntax ------------------------------------------------ */
-  .cm-s-obsidian span.cm-keyword {
-    color: var(--syntax-keyword);
-    /* palavras-chave: def, return, if */
-  }
-
-  .cm-s-obsidian span.cm-def {
-    color: var(--syntax-def);
-    /* nomes de funções e definições */
-  }
-
-  .cm-s-obsidian span.cm-variable {
-    color: var(--syntax-variable);
-    /* variáveis padrão */
-  }
-
-  .cm-s-obsidian span.cm-variable-2 {
-    color: var(--syntax-variable-2);
-    /* parâmetros e argumentos */
-  }
-
-  .cm-s-obsidian span.cm-variable-3 {
-    color: var(--syntax-variable-3);
-    /* variáveis especiais ou objetos */
-  }
-
-  .cm-s-obsidian span.cm-string {
-    color: var(--syntax-string);
-    /* strings */
-  }
-
-  .cm-s-obsidian span.cm-number {
-    color: var(--syntax-number);
-    /* números */
-  }
-
-  .cm-s-obsidian span.cm-comment {
-    color: var(--syntax-comment);
-    /* comentários */
-    font-style: italic;
-    opacity: 0.85;
-  }
-
-  .cm-s-obsidian span.cm-builtin {
-    color: var(--syntax-builtin);
-    /* funções built-in: print, len, etc. */
-  }
-
-  .cm-s-obsidian span.cm-operator {
-    color: var(--syntax-operator);
-    /* operadores como +, =, -, etc. */
-  }
-
-  .cm-s-obsidian span.cm-property {
-    color: var(--syntax-property);
-    /* métodos chamados via obj.metodo() */
-    font-style: italic;
-  }
-
-  /* Ajustes visuais gerais para blocos de código */
-
-  .cm-s-obsidian code[class*="language-python"] {
-    font-family: 'Fira Code', 'JetBrains Mono', monospace;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    background-color: rgba(255, 255, 255, 0.02);
-    /* sutil no escuro */
-    border-left: 2px solid var(--syntax-border) !important;
-    padding-left: 0.5em;
-    border-radius: 6px;
-    color: var(--syntax-default-text);
-    /* cor de texto padrão para escuro */
-  }
-
-  .markdown-preview-view code.language-python {
-    font-family: 'Fira Code', 'JetBrains Mono', monospace;
-    font-size: 0.95rem;
-    line-height: 1.5;
-    background-color: rgba(255, 255, 255, 0.02);
-    border-left: 2px solid var(--syntax-border);
-    padding-left: 0.5em;
-    border-radius: 6px;
-    color: var(--syntax-default-text);
-    display: block;
-    white-space: pre;
-  }
-
-  .markdown-preview-view code.language-python .cm-keyword {
-    color: var(--syntax-keyword);
-    font-weight: bold;
-  }
-
-  .markdown-preview-view code.language-python .cm-def {
-    color: var(--syntax-def);
-  }
-
-  .markdown-preview-view code.language-python .cm-variable {
-    color: var(--syntax-variable);
-  }
-
-  .markdown-preview-view code.language-python .cm-variable-2 {
-    color: var(--syntax-variable-2);
-  }
-
-  .markdown-preview-view code.language-python .cm-variable-3 {
-    color: var(--syntax-variable-3);
-  }
-
-  .markdown-preview-view code.language-python .cm-string {
-    color: var(--syntax-string);
-  }
-
-  .markdown-preview-view code.language-python .cm-number {
-    color: var(--syntax-number);
-  }
-
-  .markdown-preview-view code.language-python .cm-comment {
-    color: var(--syntax-comment);
-    font-style: italic;
-    opacity: 0.85;
-  }
-
-  .markdown-preview-view code.language-python .cm-builtin {
-    color: var(--syntax-builtin);
-    font-weight: bold;
-  }
-
-  .markdown-preview-view code.language-python .cm-operator {
-    color: var(--syntax-operator);
-  }
-
-  .markdown-preview-view code.language-python .cm-property {
-    color: var(--syntax-property);
-    font-style: italic;
-  }
-
-  /* Highlight basic Python syntax in Preview Mode without plugins */
-  .markdown-preview-view code.language-python {
-    white-space: pre-wrap;
-    word-break: break-word;
-  }
-
-  .markdown-preview-view code.language-python span {
-    font-family: 'Fira Code', 'JetBrains Mono', monospace;
-  }
-
-  /* Manual highlighting using data-token or keyword-based targeting */
-  .markdown-preview-view code.language-python span:has(> .token-keyword),
-  .markdown-preview-view code.language-python span:contains("def"),
-  .markdown-preview-view code.language-python span:contains("return"),
-  .markdown-preview-view code.language-python span:contains("if"),
-  .markdown-preview-view code.language-python span:contains("else"),
-  .markdown-preview-view code.language-python span:contains("elif"),
-  .markdown-preview-view code.language-python span:contains("while"),
-  .markdown-preview-view code.language-python span:contains("for"),
-  .markdown-preview-view code.language-python span:contains("in") {
-    color: var(--syntax-keyword);
-    font-weight: bold;
-  }
-
-  .markdown-preview-view code.language-python span:contains("print"),
-  .markdown-preview-view code.language-python span:contains("len"),
-  .markdown-preview-view code.language-python span:contains("range"),
-  .markdown-preview-view code.language-python span:contains("str"),
-  .markdown-preview-view code.language-python span:contains("int") {
-    color: var(--syntax-builtin);
-  }
-
-  .markdown-preview-view code.language-python span:contains("'"),
-  .markdown-preview-view code.language-python span:contains("\"") {
-    color: var(--syntax-string);
-  }
-
-  .markdown-preview-view code.language-python span:contains("#") {
-    color: var(--syntax-comment);
-    font-style: italic;
-    opacity: 0.85;
-  }
-
-  /* Força aplicação da paleta de sintaxe no Preview Mode mesmo sem classes específicas */
-  .markdown-preview-view code.language-python span {
-    font-family: 'Fira Code', 'JetBrains Mono', monospace;
-  }
-
-  .markdown-preview-view code.language-python span:has(> .token-keyword),
-  .markdown-preview-view code.language-python span[class*="token-keyword"],
-  .markdown-preview-view code.language-python span[class*="keyword"] {
-    color: var(--syntax-keyword);
-  }
-
-  .markdown-preview-view code.language-python span[class*="def"],
-  .markdown-preview-view code.language-python span[class*="function"] {
-    color: var(--syntax-def);
-  }
-
-  .markdown-preview-view code.language-python span[class*="string"] {
-    color: var(--syntax-string);
-  }
-
-  .markdown-preview-view code.language-python span[class*="number"] {
-    color: var(--syntax-number);
-  }
-
-  .markdown-preview-view code.language-python span[class*="comment"] {
-    color: var(--syntax-comment);
-    font-style: italic;
-    opacity: 0.85;
-  }
-
-  .markdown-preview-view code.language-python span[class*="builtin"],
-  .markdown-preview-view code.language-python span:contains("print"),
-  .markdown-preview-view code.language-python span:contains("len"),
-  .markdown-preview-view code.language-python span:contains("range") {
-    color: var(--syntax-builtin);
-  }
-
-  .markdown-preview-view code.language-python span[class*="operator"] {
-    color: var(--syntax-operator);
-  }
-
-  .markdown-preview-view code.language-python span[class*="property"] {
-    color: var(--syntax-property);
-    font-style: italic;
-  }
-
-  /* ------------------------------------------------------------------------------------------------------- */
-  /* ------------------------------------------- random tweaks ---------------------------------------------- */
-
-  .cm-def.cm-hmd-frontmatter {
-    /* frontmatter */
-    color: var(--color-accent) !important;
-  }
-
-  input.metadata-property-key-input {
-    color: var(--card-border-color);
-  }
-
-  a.internal-link {
-    text-decoration: none;
-    color: var(--link-color);
-  }
-
-  a.internal-link:hover {
-    text-decoration: underline;
-    color: var(--link-color);
-    opacity: 0.8
-  }
-
-  a.internal-link.is-unresolved {
-    text-decoration: none;
-    color: var(--link-color);
-    opacity: 0.8;
-  }
-
-  a.external-link {
-    color: var(--link-color);
-    text-shadow: var(--external-link-text-shadow);
-    background-image: none;
-    padding-inline-end: 0px;
-  }
-
-  span .cm-hmd.internal-link {
-    color: var(--link-color);
-    text-decoration: none;
-  }
-
-  span .cm-hmd.internal-link:hover {
-    color: var(--link-color);
-    text-decoration: underline;
-    opacity: 0.8;
-  }
-
-  span .cm-hmd.internal-link.is-unresolved {
-    color: var(--link-color);
-    text-decoration: none;
-    opacity: 0.8;
-  }
-
-  .cm-s-obsidian span.cm-formatting-link.cm-url,
-  .cm-s-obsidian span.cm-url {
-    color: var(--link-color);
-    text-shadow: var(--external-link-text-shadow);
-    background-image: none;
-    padding-inline-end: 0px;
-    display: inline;
-  }
-
-  .markdown-source-view.mod-cm6 .is-live-preview .cm-hashtag.cm-meta,
-  .markdown-source-view.mod-cm6 .cm-hmd-internal-link .cm-underline {
-    color: var(--link-color);
-    text-decoration: none;
-  }
-
-  .markdown-source-view.mod-cm6 .cm-link.cm-underline,
-  .markdown-source-view.mod-cm6 .cm-url .cm-underline {
-    color: var(--link-color);
-    text-shadow: var(--external-link-text-shadow)
-  }
-
-  a.cm-underline {
-    color: var(--link-color);
-  }
-
-  span .cm-hmd.external-link {
-    color: var(--link-color);
-    text-shadow: var(--external-link-text-shadow);
-  }
-
-  span .cm-hmd.external-link::after {
-    display: none !important;
-  }
-
-  svg .svg-icon {
-    /* Ícones SVG */
-    fill: var(--text-color);
-  }
-
-  .inline-title {
-    margin-bottom: 4px;
+  body.is-mobile .workspace {
+    margin-right: calc(var(--cards-gap) / 2) !important;
+    margin-left: calc(var(--cards-gap) / 2);
   }
 }
+
+@media (min-width: 768px) and (max-width: 1366px) {
+
+  .workspace-tab-container,
+  .workspace-split.mod-horizontal {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  body {
+    overflow-x: hidden !important;
+  }
+
+  body.is-mobile .workspace-tabs {
+    padding-left: calc(var(--cards-gap) / 2);
+    padding-right: calc(var(--cards-gap) / 2);
+    padding-bottom: calc(var(--cards-gap) / 2);
+  }
+}
+
+.workspace-fake-target-overlay:not(.is-in-sidebar) .workspace-tabs .workspace-leaf,
+.mod-root .workspace-tabs .workspace-leaf {
+  background-color: var(--color-panel);
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+body.mod-mobile canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.workspace-leaf {
+  /* painel lateral esquerdo cor */
+  background-color: var(--color-panel);
+}
+
+.view-header {
+  /* header da parte do meio */
+  background-color: transparent !important;
+  border-bottom: 1px dashed var(--card-border-color);
+  border-radius: 16px 16px 0px 0px;
+  align-self: auto;
+  margin: 0px;
+  box-shadow: none;
+}
+
+.view-header-title {
+  color: var(--text-color);
+}
+
+span .view-header-title-parent .view-header-breadcrumb {
+  /* breadcrumb */
+  color: var(--color-accent) !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 8px;
+}
+
+.view-header-title-parent {
+  color: var(--color-accent)
+}
+
+.view-header-title-container.mod-at-start.mod-fade {
+  /* fade título do header */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 8px;
+  color: var(--text-color);
+}
+
+.mod-fade:not(.mod-at-end):after {
+  display: none;
+}
+
+.view-header-title-container {
+  /* título do header */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0px 8px;
+  color: var(--text-color);
+  align-items: center;
+  justify-content: center;
+}
+
+.view-header-breadcrumb-separator {
+  /* separador do breadcrumb */
+  color: var(--text-color);
+}
+
+.nav-file-title,
+.nav-folder-title {
+  color: var(--file-title-color);
+}
+
+.collapse-icon {
+  color: var(--file-title-color) !important;
+}
+
+.collapse-icon svg.svg-icon.right-triangle {
+  color: var(--file-title-color);
+}
+
+.tree-item-icon.collapse-icon {
+  color: var(--card-border-color)
+}
+
+.workspace-tab-header-container {
+  align-items: center;
+  /* parte de cima da interface*/
+  position: relative;
+  padding-bottom: 0px;
+  background-color: transparent;
+  border-bottom: 1px solid var(--card-bg);
+  height: var(--header-height);
+}
+
+html body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
+  margin-bottom: 0px;
+  margin-top: 4px !important;
+  gap: 8px;
+  width: fit-content;
+  height: calc(var(--header-height) + 4px);
+}
+
+/* Regras para TODAS as tabs */
+.workspace-tab-header {
+  max-width: 100%;
+  display: flex;
+  flex-grow: 1;
+  border-radius: 6px;
+  padding: 0 !important;
+  box-shadow: none !important;
+  transition: flex-grow 0.5s ease-in-out, background-color 0.5s ease !important;
+  background: var(--card-bg);
+  box-sizing: border-box;
+  color: var(--text-normal);
+  overflow: hidden;
+}
+
+/* Regras para tab ativa */
+.workspace-tab-header.is-active.mod-active {
+  flex-grow: 2 !important;
+  max-width: 250px;
+  background-color: var(--color-accent);
+  box-sizing: border-box;
+  border: none;
+}
+
+
+.workspace-tab-header .is-active {
+  max-width: 200px;
+  background-color: var(--color-accent);
+  box-sizing: border-box;
+  border: none;
+}
+
+.workspace-tab-header-inner::after {
+  box-sizing: border-box;
+  display: none;
+}
+
+.workspace-tab-header::after,
+.workspace-tab-header::before {
+  box-sizing: border-box;
+  display: none;
+}
+
+.workspace-tab-header:not(.is-active) .workspace-tab-header-inner-close-button {
+  box-sizing: border-box;
+  display: none;
+}
+
+.workspace-tab-header:hover .workspace-tab-header-inner-close-button {
+  box-sizing: border-box;
+  display: flex;
+}
+
+.workspace-tab-header-tab-list {
+  box-sizing: border-box;
+  display: none !important;
+}
+
+.mod-left-split .workspace-tab-header-container-inner,
+.mod-right-split .workspace-tab-header-container-inner {
+  /* botões da direita e esquerda em cima */
+  padding: 4px 4px;
+  margin-top: 4px;
+  margin-bottom: 0px;
+  box-sizing: border-box;
+}
+
+.mod-left-split .workspace-tab-header-container .is-active,
+.mod-right-split .workspace-tab-header-container .is-active {
+  /* botões da direita e esquerda em cima ativos */
+  background-color: var(--color-accent);
+  box-sizing: border-box;
+  border: none;
+}
+
+.mod-left-split .workspace-tab-header-inner,
+.mod-right-split .workspace-tab-header-inner {
+  padding: 2px;
+  box-sizing: border-box;
+  height: 100%;
+}
+
+.mod-left-split .workspace-tab-header-container-inner,
+.mod-right-split .workspace-tab-header-container-inner {
+  justify-content: left;
+  justify-self: left;
+  box-sizing: border-box;
+}
+
+.mod-root .workspace-tab-header-status-icon {
+  color: var(--tab-text-color-focused-active);
+}
+
+.status-bar {
+  padding: 0px 8px 0px 0px;
+  /* status bar */
+  border: none !important;
+  width: 100vw;
+  /* Ocupa toda a largura da viewport */
+  left: 0;
+  right: 0;
+  position: fixed;
+  background-color: transparent;
+  min-height: 16px;
+}
+
+.workspace-sidedock-vault-profile {
+  /* vault profile */
+  padding: 8px !important;
+  margin-right: auto !important;
+  border-top: 1px solid var(--card-border-color) !important;
+  border-radius: 0px 0px var(--card-radius) var(--card-radius);
+  box-sizing: border-box;
+  width: 100%;
+  align-self: flex-end;
+}
+
+body:not(.is-mobile) .workspace-split.mod-left-split {
+  position: relative;
+}
+
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-tabs:last-of-type .workspace-tab-container {
+  padding-bottom: 44px;
+}
+
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+  padding: 6px;
+  background-color: transparent;
+  position: absolute;
+  bottom: 0;
+  z-index: 10;
+  height: 44px;
+}
+
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher {
+  height: 32px;
+  cursor: pointer;
+}
+
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-actions {
+  gap: var(--size-2-1);
+}
+
+.workspace-drawer-vault-switcher {
+  padding: 4px 2px !important;
+}
+
+.workspace-drawer-vault-actions .clickable-icon {
+  padding: 4px !important;
+}
+
+
+body.mod-mobile .workspace-sidedock-vault-profile {
+  /* vault profile mobile */
+  padding: 0px;
+  margin: 0px;
+  background-color: var(--color-panel);
+  border: 1 px solid var(--card-border-color) !important;
+  border-radius: 0px 4px 4px 0px;
+}
+
+.sidebar-toggle-button {
+  background-color: transparent !important;
+}
+
+body.is-focused .sidebar-toggle-button {
+  background-color: transparent !important;
+}
+
+body {
+  --syntax-keyword: #552B79;
+  --syntax-def: #69EED7;
+  --syntax-variable: #558FC7;
+  --syntax-variable-2: #4186B6;
+  --syntax-variable-3: #C689E3;
+  --syntax-string: #BE4AA0;
+  --syntax-number: #9795EE;
+  --syntax-comment: #16486D;
+  --syntax-builtin: #2D76E9;
+  --syntax-operator: #6852B3;
+  --syntax-property: #4A6BDB;
+  --syntax-default-text: #eeeeee;
+  --syntax-border: #A0A6A7;
+}
+
+/* ----------------------------------------------- syntax ------------------------------------------------ */
+.cm-s-obsidian span.cm-keyword {
+  color: var(--syntax-keyword);
+  /* palavras-chave: def, return, if */
+}
+
+.cm-s-obsidian span.cm-def {
+  color: var(--syntax-def);
+  /* nomes de funções e definições */
+}
+
+.cm-s-obsidian span.cm-variable {
+  color: var(--syntax-variable);
+  /* variáveis padrão */
+}
+
+.cm-s-obsidian span.cm-variable-2 {
+  color: var(--syntax-variable-2);
+  /* parâmetros e argumentos */
+}
+
+.cm-s-obsidian span.cm-variable-3 {
+  color: var(--syntax-variable-3);
+  /* variáveis especiais ou objetos */
+}
+
+.cm-s-obsidian span.cm-string {
+  color: var(--syntax-string);
+  /* strings */
+}
+
+.cm-s-obsidian span.cm-number {
+  color: var(--syntax-number);
+  /* números */
+}
+
+.cm-s-obsidian span.cm-comment {
+  color: var(--syntax-comment);
+  /* comentários */
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.cm-s-obsidian span.cm-builtin {
+  color: var(--syntax-builtin);
+  /* funções built-in: print, len, etc. */
+}
+
+.cm-s-obsidian span.cm-operator {
+  color: var(--syntax-operator);
+  /* operadores como +, =, -, etc. */
+}
+
+.cm-s-obsidian span.cm-property {
+  color: var(--syntax-property);
+  /* métodos chamados via obj.metodo() */
+  font-style: italic;
+}
+
+/* Ajustes visuais gerais para blocos de código */
+
+.cm-s-obsidian code[class*="language-python"] {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  background-color: rgba(255, 255, 255, 0.02);
+  /* sutil no escuro */
+  border-left: 2px solid var(--syntax-border) !important;
+  padding-left: 0.5em;
+  border-radius: 6px;
+  color: var(--syntax-default-text);
+  /* cor de texto padrão para escuro */
+}
+
+.markdown-preview-view code.language-python {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+  font-size: 0.95rem;
+  line-height: 1.5;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-left: 2px solid var(--syntax-border);
+  padding-left: 0.5em;
+  border-radius: 6px;
+  color: var(--syntax-default-text);
+  display: block;
+  white-space: pre;
+}
+
+.markdown-preview-view code.language-python .cm-keyword {
+  color: var(--syntax-keyword);
+  font-weight: bold;
+}
+
+.markdown-preview-view code.language-python .cm-def {
+  color: var(--syntax-def);
+}
+
+.markdown-preview-view code.language-python .cm-variable {
+  color: var(--syntax-variable);
+}
+
+.markdown-preview-view code.language-python .cm-variable-2 {
+  color: var(--syntax-variable-2);
+}
+
+.markdown-preview-view code.language-python .cm-variable-3 {
+  color: var(--syntax-variable-3);
+}
+
+.markdown-preview-view code.language-python .cm-string {
+  color: var(--syntax-string);
+}
+
+.markdown-preview-view code.language-python .cm-number {
+  color: var(--syntax-number);
+}
+
+.markdown-preview-view code.language-python .cm-comment {
+  color: var(--syntax-comment);
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.markdown-preview-view code.language-python .cm-builtin {
+  color: var(--syntax-builtin);
+  font-weight: bold;
+}
+
+.markdown-preview-view code.language-python .cm-operator {
+  color: var(--syntax-operator);
+}
+
+.markdown-preview-view code.language-python .cm-property {
+  color: var(--syntax-property);
+  font-style: italic;
+}
+
+/* Highlight basic Python syntax in Preview Mode without plugins */
+.markdown-preview-view code.language-python {
+  white-space: pre-wrap;
+  word-break: break-word;
+}
+
+.markdown-preview-view code.language-python span {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+}
+
+/* Manual highlighting using data-token or keyword-based targeting */
+.markdown-preview-view code.language-python span:has(> .token-keyword),
+.markdown-preview-view code.language-python span:contains("def"),
+.markdown-preview-view code.language-python span:contains("return"),
+.markdown-preview-view code.language-python span:contains("if"),
+.markdown-preview-view code.language-python span:contains("else"),
+.markdown-preview-view code.language-python span:contains("elif"),
+.markdown-preview-view code.language-python span:contains("while"),
+.markdown-preview-view code.language-python span:contains("for"),
+.markdown-preview-view code.language-python span:contains("in") {
+  color: var(--syntax-keyword);
+  font-weight: bold;
+}
+
+.markdown-preview-view code.language-python span:contains("print"),
+.markdown-preview-view code.language-python span:contains("len"),
+.markdown-preview-view code.language-python span:contains("range"),
+.markdown-preview-view code.language-python span:contains("str"),
+.markdown-preview-view code.language-python span:contains("int") {
+  color: var(--syntax-builtin);
+}
+
+.markdown-preview-view code.language-python span:contains("'"),
+.markdown-preview-view code.language-python span:contains("\"") {
+  color: var(--syntax-string);
+}
+
+.markdown-preview-view code.language-python span:contains("#") {
+  color: var(--syntax-comment);
+  font-style: italic;
+  opacity: 0.85;
+}
+
+/* Força aplicação da paleta de sintaxe no Preview Mode mesmo sem classes específicas */
+.markdown-preview-view code.language-python span {
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+}
+
+.markdown-preview-view code.language-python span:has(> .token-keyword),
+.markdown-preview-view code.language-python span[class*="token-keyword"],
+.markdown-preview-view code.language-python span[class*="keyword"] {
+  color: var(--syntax-keyword);
+}
+
+.markdown-preview-view code.language-python span[class*="def"],
+.markdown-preview-view code.language-python span[class*="function"] {
+  color: var(--syntax-def);
+}
+
+.markdown-preview-view code.language-python span[class*="string"] {
+  color: var(--syntax-string);
+}
+
+.markdown-preview-view code.language-python span[class*="number"] {
+  color: var(--syntax-number);
+}
+
+.markdown-preview-view code.language-python span[class*="comment"] {
+  color: var(--syntax-comment);
+  font-style: italic;
+  opacity: 0.85;
+}
+
+.markdown-preview-view code.language-python span[class*="builtin"],
+.markdown-preview-view code.language-python span:contains("print"),
+.markdown-preview-view code.language-python span:contains("len"),
+.markdown-preview-view code.language-python span:contains("range") {
+  color: var(--syntax-builtin);
+}
+
+.markdown-preview-view code.language-python span[class*="operator"] {
+  color: var(--syntax-operator);
+}
+
+.markdown-preview-view code.language-python span[class*="property"] {
+  color: var(--syntax-property);
+  font-style: italic;
+}
+
+/* ------------------------------------------------------------------------------------------------------- */
+/* ------------------------------------------- random tweaks ---------------------------------------------- */
+
+.cm-def.cm-hmd-frontmatter {
+  /* frontmatter */
+  color: var(--color-accent) !important;
+}
+
+input.metadata-property-key-input {
+  color: var(--card-border-color);
+}
+
+a.internal-link {
+  text-decoration: none;
+  color: var(--link-color);
+}
+
+a.internal-link:hover {
+  text-decoration: underline;
+  color: var(--link-color);
+  opacity: 0.8
+}
+
+a.internal-link.is-unresolved {
+  text-decoration: none;
+  color: var(--link-color);
+  opacity: 0.8;
+}
+
+a.external-link {
+  color: var(--link-color);
+  text-shadow: var(--external-link-text-shadow);
+  background-image: none;
+  padding-inline-end: 0px;
+}
+
+span .cm-hmd.internal-link {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+span .cm-hmd.internal-link:hover {
+  color: var(--link-color);
+  text-decoration: underline;
+  opacity: 0.8;
+}
+
+span .cm-hmd.internal-link.is-unresolved {
+  color: var(--link-color);
+  text-decoration: none;
+  opacity: 0.8;
+}
+
+.cm-s-obsidian span.cm-formatting-link.cm-url,
+.cm-s-obsidian span.cm-url {
+  color: var(--link-color);
+  text-shadow: var(--external-link-text-shadow);
+  background-image: none;
+  padding-inline-end: 0px;
+  display: inline;
+}
+
+.markdown-source-view.mod-cm6 .is-live-preview .cm-hashtag.cm-meta,
+.markdown-source-view.mod-cm6 .cm-hmd-internal-link .cm-underline {
+  color: var(--link-color);
+  text-decoration: none;
+}
+
+.markdown-source-view.mod-cm6 .cm-link.cm-underline,
+.markdown-source-view.mod-cm6 .cm-url .cm-underline {
+  color: var(--link-color);
+  text-shadow: var(--external-link-text-shadow)
+}
+
+a.cm-underline {
+  color: var(--link-color);
+}
+
+span .cm-hmd.external-link {
+  color: var(--link-color);
+  text-shadow: var(--external-link-text-shadow);
+}
+
+span .cm-hmd.external-link::after {
+  display: none !important;
+}
+
+svg .svg-icon {
+  /* Ícones SVG */
+  fill: var(--text-color);
+}
+
+.inline-title {
+  margin-bottom: 4px;
+}
+
 
 .markdown-source-view.mod-cm6 .is-live-preview .cm-hashtag.cm-meta,
 .markdown-source-view.mod-cm6 .cm-hmd-internal-link .cm-underline {
@@ -2743,6 +2775,7 @@ body {
   --anim-duration-fast: calc(150ms / var(--anim-speed));
   --anim-duration-moderate: calc(300ms / var(--anim-speed));
   --anim-duration-slow: calc(600ms / var(--anim-speed));
+  --anim-motion: cubic-bezier(0.1, 0, 0.1, 1.25);
   --anim-in: var(--anim-duration-fast) var(--anim-duration-superfast) var(--anim-motion-swing);
   --anim-out: var(--anim-duration-moderate) var(--anim-duration-slow) var(--anim-motion-swing);
 }
