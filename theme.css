@@ -478,7 +478,7 @@ body.mod-mobile canvas {
 
 .workspace-leaf {
   /* painel lateral esquerdo cor */
-  background-color: var(--color-panel);
+  background-color: var(--color-panel) !important;
 }
 
 .view-header {
