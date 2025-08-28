@@ -1169,7 +1169,7 @@ html body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
   gap: 8px;
   width: fit-content;
   height: calc(var(--header-height) + 4px);
-  padding: 6px 8px 4px 6px;
+  padding: 6px 8px 8px 6px;
 }
 
 .workspace-tab-header {
