@@ -406,6 +406,12 @@ settings:
     level: 1
     collapsed: true
 
+  - id: spotlight
+    title: spotlight
+    description: dim all inactive markdown panes.
+    type: class-toggle
+    default: false
+
   - id: infobox-callouts-heading
     title: infobox callouts
     type: heading
@@ -742,7 +748,7 @@ body:not(.is-mobile) .horizontal-main-container {
   --text-accent: var(--card-border-color);
   --link-color: #BE99FF;
   --link-external-color: var(--link-color);
-  --bases-table-border-color: var(--card-border-color);
+  --bases-table-border-color: var(--card-border-color) !important;
 }
 
 .theme-dark.extended-dark-color-schemes-toggle.atlantic {
@@ -1376,6 +1382,10 @@ body.is-mobile .workspace-drawer .nav-header {
   border: none;
 }
 
+body.is-mobile .mod-root .workspace-tab-header-container-inner {
+  padding-bottom: 6px;
+}
+
 /* Phones only (up to 767px) */
 @media (max-width: 767px) {
 
@@ -1899,6 +1909,17 @@ mark {
   border-radius: 8px;
   padding: 0.075em 0.2em;
   color: inherit;
+}
+
+/* Bases */
+@supports (color: color-mix(in srgb, white 50%, black)) {
+  .callout {
+    --bases-table-header-background: transparent;
+    --bases-table-header-background-hover: rgba(var(--callout-color), 0.1);
+    --bases-embed-border-color: var(--card-border-color);
+    --bases-table-border-color: var(--card-border-color);
+    --table-border-color: var(--card-border-color);
+  }
 }
 
 /* ========================================================================== */
@@ -2507,6 +2528,22 @@ input.metadata-property-key-input {
   max-height: 1000px;
   opacity: 1;
   transition: max-height 300ms ease-in-out, opacity 300ms;
+}
+
+/* Spotlight */
+/* Give the parent element a background color so overlapping panes don't show through */
+.spotlight .workspace-leaf {
+  background-color: inherit;
+}
+
+/* Dim non-active markdown panes */
+.spotlight .workspace-leaf:not(.mod-active) .workspace-leaf-content[data-type='markdown'] {
+  opacity: 0.5
+}
+
+/* Apply opacity transition to all panes */
+.spotlight .workspace-leaf .workspace-leaf-content[data-type='markdown'] {
+  transition: opacity 0.25s ease-out;
 }
 
 /* -------------------------------------------------------------------------- */
