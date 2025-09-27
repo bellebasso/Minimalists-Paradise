@@ -385,7 +385,7 @@ settings:
   - id: blockquote-radius
     title: blockquote border radius
     type: variable-number-slider
-    default: 8
+    default: 16
     min: 0
     max: 20
     step: 1
@@ -429,7 +429,7 @@ settings:
     description: make the mobile navigation bar float above the content.
     type: class-toggle
     default: false
-  
+
 
 
   - id: highlight-nav
@@ -632,7 +632,7 @@ body {
   --button-margin: 0px 3px 0px 0px;
   --card-radius: 16px;
   --header-height: 35px;
-  --blockquote-radius: 8px;
+  --blockquote-radius: 16px;
   --input-radius: 8px;
   --modal-border-color: var(--card-border-color);
   --prompt-border-color: var(--card-border-color);
@@ -2163,6 +2163,15 @@ mark {
   color: inherit;
 }
 
+/* Checkboxes */
+input[type="checkbox"] {
+  border-radius: var(--card-radius);
+}
+
+/* ========================================================================== */
+/* --- Plugins Styling --- */
+/* ========================================================================== */
+
 /* Bases */
 @supports (color: color-mix(in srgb, white 50%, black)) {
   .callout {
@@ -2171,7 +2180,67 @@ mark {
     --bases-embed-border-color: var(--card-border-color);
     --bases-table-border-color: var(--card-border-color);
     --table-border-color: var(--card-border-color);
+    --bases-embed-border-radius: var(--card-radius);
   }
+}
+
+.bases-cards-item {
+  border-radius: var(--card-radius);
+}
+
+/* Notebook Navigator */
+body {
+  --nn-theme-nav-bg: var(--background-default);
+  --nn-theme-nav-header-bg: var(--background-default);
+  --nn-theme-list-bg: var(--background-default);
+  --nn-theme-list-header-bg: var(--background-default);
+  --nn-theme-mobile-nav-bg: var(--background-default);
+  --nn-theme-mobile-list-header-bg: var(--background-default);
+  --nn-theme-mobile-toolbar-bg: var(--background-default);
+}
+
+.nn-search-bar-container.nn-search-bar-visible,
+.notebook-navigator-mobile .nn-search-bar-container.nn-search-bar-visible {
+  border-bottom: none;
+}
+
+.nn-mobile-toolbar {
+  border-top: none;
+  padding: 4px 8px;
+}
+
+.nn-file-extension-badge {
+  background-color: var(--background-default);
+}
+
+body.is-mobile.floating-mobile-nav .nn-mobile .nn-mobile-toolbar {
+  position: absolute;
+  align-self: center;
+  background-color: var(--background-primary);
+  gap: calc(var(--cards-gap) / 4);
+  z-index: var(--layer-status-bar);
+  margin: 0 auto max(var(--safe-area-inset-bottom), 16px);
+  border: 1px solid var(--card-border-color);
+  border-radius: calc(var(--card-radius) * 2);
+  padding: 4px 8px;
+  max-width: fit-content;
+  overflow: hidden;
+  pointer-events: auto;
+  bottom: 0;
+}
+
+.nn-navitem {
+  border-radius: calc(var(--card-radius) / 2);
+}
+
+.nn-mobile-toolbar-button {
+  width: var(--icon-size);
+  height: calc(var(--icon-size) * 2);
+  border-radius: calc(var(--card-radius));
+}
+
+.notebook-navigator-mobile .nn-search-input {
+  border-radius: var(--input-radius);
 }
 
 /* ========================================================================== */
@@ -2503,6 +2572,13 @@ input.metadata-property-key-input {
   margin-bottom: 4px;
 }
 
+.metadata-content {
+  background-color: var(--background-secondary);
+  border-radius: var(--card-radius);
+  border: 0.5px solid var(--card-border-color);
+  padding: 4px;
+}
+
 /* ========================================================================== */
 /* --- Integrated Snippets --- */
 /* ========================================================================== */
@@ -2702,7 +2778,6 @@ SOFTWARE.
   --ic-width: 300px;
   --ic-outside-padding: 20px;
   --ic-inside-padding: 24px;
-  --ic-round-corners: 8px;
   --ic-title-alignment: center;
   --ic-title-size: 1.2rem;
   --ic-title-margin: 0rem;
@@ -2753,7 +2828,7 @@ SOFTWARE.
   margin-left: var(--ic-outside-padding);
   background-color: var(--ic-infobox-color) !important;
   padding: var(--ic-inside-padding);
-  border-radius: var(--ic-round-corners);
+  border-radius: var(--card-radius);
   border: var(--ic-border) solid;
   border-color: var(--ic-border-color);
   box-shadow: var(--card-shadow);
@@ -2765,7 +2840,7 @@ SOFTWARE.
   margin-right: var(--ic-outside-padding);
   background-color: var(--ic-infobox-color);
   padding: var(--ic-inside-padding);
-  border-radius: var(--ic-round-corners);
+  border-radius: var(--card-radius);
   border: var(--ic-border) solid;
   border-color: var(--ic-border-color);
   box-shadow: var(--card-shadow);
@@ -2878,7 +2953,7 @@ SOFTWARE.
   z-index: 10 !important;
   background-color: var(--alt-color) !important;
   outline: 1px solid var(--card-border-color);
-  border-radius: 0.5rem;
+  border-radius: var(--card-radius);
 }
 
 .tabbed-callout-enable [data-callout="tabbed"]>.callout-content {
@@ -2905,7 +2980,7 @@ SOFTWARE.
   width: 100%;
   display: inline-block;
   padding: 0.15rem 0.75ch;
-  border-radius: 8px;
+  border-radius: calc(var(--card-radius) / 2);
   position: relative;
   white-space: nowrap;
   color: var(--text-normal);
