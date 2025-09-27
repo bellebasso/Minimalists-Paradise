@@ -2206,7 +2206,9 @@ body {
 
 .nn-mobile-toolbar {
   border-top: none;
-  padding: 4px 8px;
+  padding: var(--size-2-2);
+  height: auto;
+  min-height: auto;
 }
 
 .nn-file-extension-badge {
@@ -2222,7 +2224,6 @@ body.is-mobile.floating-mobile-nav .nn-mobile .nn-mobile-toolbar {
   margin: 0 auto max(var(--safe-area-inset-bottom), 16px);
   border: 1px solid var(--card-border-color);
   border-radius: calc(var(--card-radius) * 2);
-  padding: 4px 8px;
   max-width: fit-content;
   overflow: hidden;
   pointer-events: auto;
@@ -2237,6 +2238,8 @@ body.is-mobile.floating-mobile-nav .nn-mobile .nn-mobile-toolbar {
   width: var(--icon-size);
   height: calc(var(--icon-size) * 2);
   border-radius: calc(var(--card-radius));
+  min-width: auto;
+  min-height: auto;
 }
 
 .notebook-navigator-mobile .nn-search-input {
