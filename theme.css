@@ -426,15 +426,7 @@ settings:
 
   - id: floating-mobile-nav
     title: floating mobile navigation
-    description: make the mobile navigation bar float above the content.
-    type: class-toggle
-    default: false
-
-
-
-  - id: highlight-nav
-    title: highlight nav
-    description: highlight the navigation buttons and header icons with a background.
+    description: make the mobile navigation bar and the toolbar float above the content.
     type: class-toggle
     default: false
 
@@ -650,6 +642,12 @@ body {
   --modal-radius: var(--card-radius);
   --side-padding: 20px;
   --mobile-toolbar-height: auto;
+  --toolbar-option-width: var(--mobile-toolbar-height);
+  --input-radius: var(--card-radius);
+  --shadow-base: inset 1px 1.5px 1px -1px rgba(255, 255, 255, 0.2), inset -1px -1.5px 1px -1px rgba(255, 255, 255, 0.15), inset 0 4px 16px rgba(255, 255, 255, 0.025);
+  --shadow-xs: inset 0 8px 64px rgba(255, 255, 255, 0.125), var(--shadow-base);
+  --blur-s: blur(4px) saturate(1.5) brightness(1.025);
+  --blur-s-alt: blur(4px) saturate(1.5) brightness(0.75);
 }
 
 body:not(.is-mobile) .horizontal-main-container {
@@ -1078,11 +1076,10 @@ body:not(.is-mobile) .horizontal-main-container {
 }
 
 /* Nav Header */
-.highlight-nav .nav-buttons-container {
+.nav-buttons-container {
   padding: var(--size-2-2);
-  background-color: var(--card-bg);
+  background-color: var(--background-primary);
   border-radius: calc(var(--card-radius) / 2);
-  box-shadow: var(--card-shadow);
   border: 1px solid var(--card-border-color);
 }
 
@@ -1213,7 +1210,7 @@ html body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
   padding: 0 !important;
   box-shadow: none !important;
   transition: flex-grow 0.5s ease-in-out, background-color 0.5s ease !important;
-  background: var(--card-bg);
+  background: var(--background-primary);
   box-sizing: border-box;
   color: var(--text-normal);
   overflow: hidden;
@@ -1223,6 +1220,8 @@ html body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
   flex-grow: 2 !important;
   max-width: 250px;
   background-color: var(--color-accent);
+  box-shadow: var(--shadow-xs) !important;
+  backdrop-filter: var(--blur-s);
   box-sizing: border-box;
   border: none;
 }
@@ -1261,6 +1260,8 @@ html body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
   background-color: var(--color-accent);
   box-sizing: border-box;
   border: none;
+  box-shadow: var(--shadow-xs) !important;
+  backdrop-filter: var(--blur-s);
 }
 
 .mod-left-split .workspace-tab-header-inner-icon,
@@ -1363,6 +1364,10 @@ body.is-focused .sidebar-toggle-button {
   }
 }
 
+.modal-container {
+  perspective: 240px
+}
+
 .modal,
 .prompt {
   transition: var(--anim-duration-moderate) var(--anim-motion);
@@ -1375,6 +1380,22 @@ body.is-focused .sidebar-toggle-button {
 
 .vertical-tab-nav-item.is-active {
   border-radius: var(--card-radius);
+}
+
+@starting-style {
+
+  .menu,
+  .suggestion-container {
+    opacity: 0;
+    filter: blur(4px);
+    transform: translateY(-8px)
+  }
+}
+
+.menu,
+.suggestion-container {
+  transition: var(--anim-duration-moderate) var(--anim-motion);
+  padding: 0
 }
 
 /* ========================================================================== */
@@ -1526,7 +1547,7 @@ body.is-phone .modal.mod-sidebar-layout .vertical-tab-content {
   padding-left: var(--cards-gap);
 }
 
-/* floating mobile nav */
+/* Floating mobile nav */
 @starting-style {
 
   body.is-phone.floating-mobile-nav .mobile-navbar,
@@ -1560,10 +1581,8 @@ body.is-phone:not(.hide-cursor).floating-mobile-nav .mod-root .workspace-leaf-co
 body.is-mobile.floating-mobile-nav .mobile-navbar {
   transition: var(--anim-duration-moderate);
   max-width: calc(100% - 48px - 8px);
-  background-color: var(--background-primary);
+  background-color: transparent;
   pointer-events: none;
-  border-radius: calc(var(--card-radius) * 2);
-  border: 1px solid var(--card-border-color) !important;
   padding-top: 0px;
   padding-bottom: 0px;
 }
@@ -1573,8 +1592,9 @@ body.is-mobile.floating-mobile-nav .workspace-drawer .nav-buttons-container {
   --icon-size: var(--icon-l);
   --icon-color: var(--text-normal);
   gap: 0px;
-  box-shadow: var(--shadow-xs) !important;
+  box-shadow: var(--shadow-xs);
   backdrop-filter: var(--blur-s);
+  background-color: var(--background-primary);
   justify-content: flex-start;
   max-width: fit-content;
   border-radius: calc(var(--card-radius) * 2);
@@ -1585,8 +1605,8 @@ body.is-mobile.floating-mobile-nav .workspace-drawer .nav-buttons-container {
 
 body.is-mobile.floating-mobile-nav .mobile-navbar-actions .clickable-icon,
 body.is-mobile.floating-mobile-nav .workspace-drawer .nav-buttons-container .clickable-icon {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   padding: 0;
 }
 
@@ -1684,7 +1704,68 @@ body.is-phone.floating-mobile-nav .mobile-tab .close-button {
   height: 32px;
 }
 
+/* Floating Mobile Toolbar */
+/* Inspired by and adapted from the Cupertino Theme MIT License Copyright (c) 2025 aaaaalexis https://github.com/aaaaalexis/obsidian-cupertino */
 
+body.floating-mobile-nav .mobile-toolbar-spacer {
+  display: none;
+}
+
+body.is-mobile.floating-mobile-nav .mobile-toolbar-options-list {
+  --icon-size: var(--icon-l);
+  --icon-color: var(--text-normal);
+  gap: 8px;
+  box-shadow: var(--shadow-xs) !important;
+  backdrop-filter: var(--blur-s);
+  background-color: var(--background-primary);
+  justify-content: flex-start;
+  max-width: fit-content;
+  border-radius: var(--clickable-icon-radius);
+  padding: 0 8px;
+  pointer-events: auto;
+  overflow: hidden;
+  transition: var(--anim-duration-moderate);
+}
+
+body.is-mobile.floating-mobile-nav .mobile-toolbar-options-list .clickable-icon {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+}
+
+body.is-mobile.floating-mobile-nav .mobile-toolbar-option {
+  --icon-size: var(--icon-l);
+  --icon-stroke: var(--icon-l-stroke-width);
+  padding: 12px;
+}
+
+body.is-mobile.floating-mobile-nav .mobile-toolbar-options-container {
+  gap: 8px;
+}
+
+body.is-mobile.floating-mobile-nav .mobile-toolbar {
+  transition: var(--anim-duration-moderate) var(--anim-motion);
+  background-color: transparent;
+  overflow: visible;
+  padding: 0 var(--side-padding) var(--side-padding) !important;
+}
+
+body.is-mobile.floating-mobile-nav .mobile-toolbar-options-list {
+  gap: 4px;
+  overflow: scroll;
+  border-radius: var(--card-radius);
+}
+
+body.is-mobile.floating-mobile-nav .mobile-toolbar {
+  position: fixed;
+  right: 0;
+  bottom: max(var(--keyboard-height), 0px);
+  left: 0;
+  z-index: var(--layer-status-bar);
+  border: none;
+  padding: 0 28px max(var(--safe-area-inset-bottom), 16px);
+  top: calc(100vh - calc(var(--mobile-toolbar-height) * 1.45));
+}
 
 /* ========================================================================== */
 /* --- Typography and Text Elements --- */
@@ -1704,6 +1785,14 @@ body.is-phone.floating-mobile-nav .mobile-tab .close-button {
 }
 
 /* Headers */
+
+body :is(.markdown-preview-view, .markdown-rendered) h1,
+
+body .markdown-source-view.is-live-preview .HyperMD-header.HyperMD-header-1.cm-line {
+  display: flow-root;
+  border-bottom: 2px solid var(--card-border-color);
+}
+
 .colored-headers .markdown-source-view.mod-cm6 span.cm-header-1,
 .colored-headers .markdown-source-view.mod-cm6 span.cm-header-2,
 .colored-headers .markdown-source-view.mod-cm6 span.cm-header-3,
@@ -2190,6 +2279,7 @@ input[type="checkbox"] {
 
 /* Notebook Navigator */
 body {
+  --icon-color: var(--text-normal);
   --nn-theme-nav-bg: var(--background-default);
   --nn-theme-nav-header-bg: var(--background-default);
   --nn-theme-list-bg: var(--background-default);
@@ -2197,6 +2287,7 @@ body {
   --nn-theme-mobile-nav-bg: var(--background-default);
   --nn-theme-mobile-list-header-bg: var(--background-default);
   --nn-theme-mobile-toolbar-bg: var(--background-default);
+  --nn-theme-mobile-toolbar-button-icon-color: var(--icon-color);
 }
 
 .nn-search-bar-container.nn-search-bar-visible,
@@ -2221,10 +2312,13 @@ body.is-mobile.floating-mobile-nav .nn-mobile .nn-mobile-toolbar {
   background-color: var(--background-primary);
   gap: calc(var(--cards-gap) / 4);
   z-index: var(--layer-status-bar);
-  margin: 0 auto max(var(--safe-area-inset-bottom), 16px);
+  margin: 0 auto max(calc(var(--safe-area-inset-bottom) + var(--size-4-2)), 16px);
   border: 1px solid var(--card-border-color);
   border-radius: calc(var(--card-radius) * 2);
+  box-shadow: var(--shadow-xs);
+  backdrop-filter: var(--blur-s);
   max-width: fit-content;
+  max-height: fit-content;
   overflow: hidden;
   pointer-events: auto;
   bottom: 0;
@@ -2235,15 +2329,55 @@ body.is-mobile.floating-mobile-nav .nn-mobile .nn-mobile-toolbar {
 }
 
 .nn-mobile-toolbar-button {
-  width: var(--icon-size);
+  --icon-stroke: var(--icon-l-stroke-width);
+  stroke-width: 5px;
+  width: calc(var(--icon-size) * 2);
   height: calc(var(--icon-size) * 2);
   border-radius: calc(var(--card-radius));
   min-width: auto;
   min-height: auto;
+  padding: 0px !important;
+  opacity: var(--icon-opacity);
+}
+
+.nn-mobile-toolbar-button svg {
+  stroke-width: var(--icon-l-stroke-width);
+}
+
+.is-phone .nn-mobile-toolbar-button {
+  width: calc(var(--icon-size) * 2);
+  height: calc(var(--icon-size) * 2);
+  border-radius: var(--card-radius);
 }
 
 .notebook-navigator-mobile .nn-search-input {
   border-radius: var(--input-radius);
+}
+
+.nn-split-container.nn-desktop.nn-single-pane .nn-navigation-pane .nn-navigation-pane-scroller,
+.nn-split-container.nn-desktop.nn-single-pane .nn-navigation-pane .nn-pane-header {
+  border-right: none;
+}
+
+/* Kanban */
+.kanban-plugin__lane {
+  border-radius: var(--card-radius);
+}
+
+.kanban-plugin__lane-header-wrapper {
+  border-bottom: none;
+}
+
+.kanban-plugin__item-button-wrapper {
+  border-top: none;
+}
+
+button.kanban-plugin__new-item-button {
+  background-color: var(--background-default);
+}
+
+.kanban-plugin__table-wrapper table {
+  background-color: var(--background-primary);
 }
 
 /* ========================================================================== */
@@ -2826,6 +2960,7 @@ SOFTWARE.
 
 .ic-infobox-enable .callout[data-callout="infobox"],
 .ic-infobox-enable .callout[data-callout="infoboxright"] {
+  position: relative;
   float: right;
   width: var(--ic-width);
   margin-left: var(--ic-outside-padding);
