@@ -36,6 +36,114 @@ SOFTWARE.
 name: Minimalists Paradise
 id: mp-theme
 settings:
+  - id: layout-heading
+    title: layout
+    type: heading
+    level: 1
+    collapsed: true
+
+  - id: frosted-glass
+    title: frosted glass interface
+    description: apply a frosted glass effect to the main componenets of the interface.
+    type: class-toggle
+    default: false
+
+  - id: frosted-glass-type
+    title: frosted glass type
+    type: class-select
+    condition:
+      - id: frosted-glass
+        value: true
+    default: frosted-glass
+    options:
+      - label: frosted glass
+        value: frosted-glass
+      - label: ice glass
+        value: ice-glass
+      - label: frozen glass
+        value: frozen-glass
+
+  - id: cards-gap
+    title: cards gap
+    type: variable-number-slider
+    default: 16
+    min: 0
+    max: 50
+    step: 1
+    format: px
+    variable: cards-gap
+
+  - id: divider-width
+    title: divider width
+    type: variable-number-slider
+    default: 1
+    min: 0
+    max: 10
+    step: 1
+    format: px
+    variable: divider-width
+
+  - id: default-radius
+    title: default radius
+    type: variable-number-slider
+    description: this variable is used as the default radius for other radius variables, such as card-radius, input-radius and modal-radius. changing it change them all at once, but you can also change them individually.
+    default: 16
+    min: 0
+    max: 50
+    step: 1
+    format: px
+    variable: default radius
+
+  - id: card-radius
+    title: card radius
+    type: variable-number-slider
+    default: 16
+    min: 0
+    max: 50
+    step: 1
+    format: px
+    variable: card-radius
+
+  - id: button-radius
+    title: button radius
+    type: variable-number-slider
+    default: 6
+    min: 0
+    max: 50
+    step: 1
+    format: px
+    variable: button-radius
+
+  - id: input-radius
+    title: input radius
+    type: variable-number-slider
+    default: 8
+    min: 0
+    max: 50
+    step: 1
+    format: px
+    variable: input-radius
+
+  - id: modal-radius
+    title: modal radius
+    type: variable-number-slider
+    default: 16
+    min: 0
+    max: 50
+    step: 1
+    format: px
+    variable: modal-radius
+
+  - id: tab-radius
+    title: tab radius
+    type: variable-number-slider
+    default: 6
+    min: 0
+    max: 50
+    step: 1
+    format: px
+    variable: tab-radius
+
   - id: color-accent-theme
     title: theme color accent override
     type: heading
@@ -100,11 +208,141 @@ settings:
     default-dark: "#4d4d4f"
     variable: card-border-color
 
+  - id: interactive-elements-heading
+    title: interactive elements
+    type: heading
+    level: 2
+    collapsed: true
+
+  - id: text-selection
+    title: text selection color
+    type: variable-themed-color
+    format: hex
+    default-light: "#a5aab680"
+    default-dark: "#a5aab680"
+    variable: text-selection
+
+  - id: scrollbar-thumb-bg
+    title: scrollbar thumb color
+    type: variable-themed-color
+    format: hex
+    default-light: "#00000050"
+    default-dark: "#ffffff50"
+    variable: scrollbar-thumb-bg
+
+  - id: scrollbar-bg
+    title: scrollbar background color
+    type: variable-themed-color
+    format: hex
+    default-light: "#00000010"
+    default-dark: "#ffffff10"
+    variable: scrollbar-bg
+
+  - id: interactive-accent
+    title: interactive accent color
+    type: variable-themed-color
+    format: hex
+    default-light: "#a5aab680"
+    default-dark: "#a5aab680"
+    variable: interactive-accent
+
+  - id: interactive-accent-hover
+    title: interactive accent hover color
+    type: variable-themed-color
+    format: hex
+    default-light: "#a5aab640"
+    default-dark: "#a5aab640"
+    variable: interactive-accent-hover
+
+  - id: extended-colors-heading
+    title: extended colors
+    type: heading
+    level: 2
+    collapsed: true
+
+  - id: color-red
+    title: red
+    type: variable-themed-color
+    format: hex
+    default-light: '#e93147'
+    default-dark: '#fb464c'
+
+  - id: color-orange
+    title: orange
+    type: variable-themed-color
+    format: hex
+    default-light: '#ec7500'
+    default-dark: '#e9973f'
+
+  - id: color-yellow
+    title: yellow
+    type: variable-themed-color
+    format: hex
+    default-light: '#e0ac00'
+    default-dark: '#e0de71'
+
+  - id: color-green
+    title: green
+    type: variable-themed-color
+    format: hex
+    default-light: '#08b94e'
+    default-dark: '#44cf6e'
+
+  - id: color-cyan
+    title: cyan
+    type: variable-themed-color
+    format: hex
+    default-light: '#00bfbc'
+    default-dark: '#53dfdd'
+
+  - id: color-blue
+    title: blue
+    type: variable-themed-color
+    format: hex
+    default-light: '#086ddd'
+    default-dark: '#027aff'
+
+  - id: color-purple
+    title: purple
+    type: variable-themed-color
+    format: hex
+    default-light: '#7852ee'
+    default-dark: '#a882ff'
+
+  - id: color-pink
+    title: pink
+    type: variable-themed-color
+    format: hex
+    default-light: '#d53984'
+    default-dark: '#fa99cd'
+
+
   - id: extended-color-schemes-heading
     title: extended color schemes
     type: heading
     level: 1
     collapsed: true
+
+  - id: frosted-glass
+    title: frosted glass interface
+    description: apply a frosted glass effect to the main componenets of the interface.
+    type: class-toggle
+    default: false
+
+  - id: frosted-glass-type
+    title: frosted glass type
+    type: class-select
+    condition:
+      - id: frosted-glass
+        value: true
+    default: frosted-glass
+    options:
+      - label: frosted glass
+        value: frosted-glass
+      - label: ice glass
+        value: ice-glass
+      - label: frozen glass
+        value: frozen-glass
 
   - id: extended-dark-color-schemes-toggle
     title: enable extended dark color schemes?
@@ -187,8 +425,6 @@ settings:
         value: colored-headers-grey
       - label: blue headers
         value: colored-headers-blue
-      - label: custom headers
-        value: colored-headers-custom
       - label: purple headers
         value: colored-headers-purple
       - label: green headers
@@ -200,162 +436,140 @@ settings:
       - label: pink headers
         value: colored-headers-pink
 
-  - id: colored-headers-custom-configs
-    title: custom header colors
+  - id: typography-heading
+    title: typography
+    type: heading
+    level: 1
+    collapsed: true
+
+  - id: inline-title-color
+    title: inline title color
+    type: variable-themed-color
+    format: hex
+    default-light: "#000000"
+    default-dark: "#ffffff"
+    variable: inline-title-color
+
+  - id: inline-title-size
+    title: inline title size
+    type: variable-number-slider
+    default: 2
+    min: 1
+    max: 5
+    step: 0.1
+    format: em
+    variable: inline-title-size
+
+  - id: link-color
+    title: link color
+    type: variable-themed-color
+    format: hex
+    default-light: "#5f6369"
+    default-dark: "#9FA0A4"
+    variable: link-color
+
+  - id: link-external-color
+    title: external link color
+    type: variable-themed-color
+    format: hex
+    default-light: "#5f6369"
+    default-dark: "#9FA0A4"
+    variable: link-external-color
+
+  - id: link-unresolved-color
+    title: unresolved link color
+    type: variable-themed-color
+    format: hex
+    default-light: "#5f6369"
+    default-dark: "#9FA0A4"
+    variable: link-unresolved-color
+
+  - id: hr-color
+    title: horizontal rule color
+    type: variable-themed-color
+    format: hex
+    default-light: "#252525"
+    default-dark: "#595959"
+    variable: hr-color
+
+  - id: hr-thickness
+    title: horizontal rule thickness
+    type: variable-number-slider
+    default: 1
+    min: 1
+    max: 5
+    step: 1
+    format: px
+    variable: hr-thickness
+
+  - id: p-spacing
+    title: paragraph spacing
+    type: variable-number-slider
+    default: 4
+    min: 0
+    max: 20
+    step: 1
+    format: px
+    variable: p-spacing
+
+  - id: headings-heading
+    title: headings
     type: heading
     level: 2
     collapsed: true
-    condition:
-      - id: colored-headers-scheme
-        value: colored-headers-custom
-      - id: colored-headers-toggle
-        value: true
-    settings:
-      - id: header-1-custom
-        title: header 1 color
-        type: variable-themed-color
-        default-dark: #474E5C
-        default-light: #2C313A
-      - id: header-2-custom
-        title: header 2 color
-        type: variable-themed-color
-        default-dark: #5E6573
-        default-light: #3D4450
-      - id: header-3-custom
-        title: header 3 color
-        type: variable-themed-color
-        default-dark: #787F8D
-        default-light: #4F5867
-      - id: header-4-custom
-        title: header 4 color
-        type: variable-themed-color
-        default-dark: #979DAA
-        default-light: #61707F
-      - id: header-5-custom
-        title: header 5 color
-        type: variable-themed-color
-        default-dark: #B7BCC9
-        default-light: #7A8A99
-      - id: header-6-custom
-        title: header 6 color
-        type: variable-themed-color
-        default-dark: #D8DCE6
-        default-light: #95A5B2
 
-  - id: syntax-colors
-    title: syntax colors
+  - id: h1-color
+    title: H1 color
+    type: variable-themed-color
+    format: hex
+    default-light: "#000000"
+    default-dark: "#ffffff"
+    variable: h1-color
+
+  - id: h2-color
+    title: H2 color
+    type: variable-themed-color
+    format: hex
+    default-light: "#000000"
+    default-dark: "#ffffff"
+    variable: h2-color
+
+  - id: h3-color
+    title: H3 color
+    type: variable-themed-color
+    format: hex
+    default-light: "#000000"
+    default-dark: "#ffffff"
+    variable: h3-color
+
+  - id: h4-color
+    title: H4 color
+    type: variable-themed-color
+    format: hex
+    default-light: "#000000"
+    default-dark: "#ffffff"
+    variable: h4-color
+
+  - id: h5-color
+    title: H5 color
+    type: variable-themed-color
+    format: hex
+    default-light: "#000000"
+    default-dark: "#ffffff"
+    variable: h5-color
+
+  - id: h6-color
+    title: H6 color
+    type: variable-themed-color
+    format: hex
+    default-light: "#000000"
+    default-dark: "#ffffff"
+    variable: h6-color
+
+  - id: blockquote-heading
+    title: blockquotes
     type: heading
-    level: 1
-    collapsed: true
-
-  - id: syntax-keyword
-    title: keywords (def, return, if...)
-    type: variable-themed-color
-    format: hex
-    default-dark: "#552B79"
-    default-light: "#552B79"
-    variable: syntax-keyword
-
-  - id: syntax-def
-    title: definitions (functions, etc)
-    type: variable-themed-color
-    format: hex
-    default-dark: "#69EED7"
-    default-light: "#69EED7"
-    variable: syntax-def
-
-  - id: syntax-variable
-    title: default variables
-    type: variable-themed-color
-    format: hex
-    default-dark: "#558FC7"
-    default-light: "#558FC7"
-    variable: syntax-variable
-
-  - id: syntax-variable-2
-    title: parameters and arguments
-    type: variable-themed-color
-    format: hex
-    default-dark: "#4186B6"
-    default-light: "#4186B6"
-    variable: syntax-variable-2
-
-  - id: syntax-variable-3
-    title: special variables and objects
-    type: variable-themed-color
-    format: hex
-    default-dark: "#C689E3"
-    default-light: "#C689E3"
-    variable: syntax-variable-3
-
-  - id: syntax-string
-    title: strings
-    type: variable-themed-color
-    format: hex
-    default-dark: "#BE4AA0"
-    default-light: "#BE4AA0"
-    variable: syntax-string
-
-  - id: syntax-number
-    title: numbers
-    type: variable-themed-color
-    format: hex
-    default-dark: "#9795EE"
-    default-light: "#9795EE"
-    variable: syntax-number
-
-  - id: syntax-comment
-    title: comments
-    type: variable-themed-color
-    format: hex
-    default-dark: "#16486D"
-    default-light: "#16486D"
-    variable: syntax-comment
-
-  - id: syntax-builtin
-    title: built-in functions (print, len...)
-    type: variable-themed-color
-    format: hex
-    default-dark: "#2D76E9"
-    default-light: "#2D76E9"
-    variable: syntax-builtin
-
-  - id: syntax-operator
-    title: operators (+, =, -...)
-    type: variable-themed-color
-    format: hex
-    default-dark: "#6852B3"
-    default-light: "#6852B3"
-    variable: syntax-operator
-
-  - id: syntax-property
-    title: properties (obj.method())
-    type: variable-themed-color
-    format: hex
-    default-dark: "#4A6BDB"
-    default-light: "#4A6BDB"
-    variable: syntax-property
-
-  - id: syntax-default-text
-    title: default text code color
-    type: variable-themed-color
-    format: hex
-    default-dark: "#eeeeee"
-    default-light: "#eeeeee"
-    variable: syntax-default-text
-
-  - id: syntax-border
-    title: code block border color
-    type: variable-themed-color
-    format: hex
-    default-dark: "#A0A6A7"
-    default-light: "#A0A6A7"
-    variable: syntax-border
-
-  - id: blockquote-styles
-    title: blockquote styles
-    type: heading
-    level: 1
+    level: 2
     collapsed: true
 
   - id: blockquote-bg
@@ -399,6 +613,108 @@ settings:
     default-light: "#68686e"
     default-dark: "#68686e"
     variable: citation-bg
+
+  - id: syntax-highlighting-heading
+    title: syntax highlighting
+    type: heading
+    level: 2
+    collapsed: true
+
+  - id: code-keyword
+    title: keywords (def, return, if...)
+    type: variable-themed-color
+    format: hex
+    default-dark: "#552B79"
+    default-light: "#552B79"
+    variable: code-keyword
+
+  - id: code-function
+    title: definitions (functions, etc)
+    type: variable-themed-color
+    format: hex
+    default-dark: "#69EED7"
+    default-light: "#69EED7"
+    variable: code-function
+
+  - id: code-punctuation
+    title: default variables
+    type: variable-themed-color
+    format: hex
+    default-dark: "#558FC7"
+    default-light: "#558FC7"
+    variable: code-punctuation
+
+  - id: code-important
+    title: darameters and arguments
+    type: variable-themed-color
+    format: hex
+    default-dark: "#4186B6"
+    default-light: "#4186B6"
+    variable: code-important
+
+  - id: code-string
+    title: strings
+    type: variable-themed-color
+    format: hex
+    default-dark: "#BE4AA0"
+    default-light: "#BE4AA0"
+    variable: code-string
+
+  - id: code-value
+    title: numbers
+    type: variable-themed-color
+    format: hex
+    default-dark: "#9795EE"
+    default-light: "#9795EE"
+    variable: code-value
+
+  - id: code-comment
+    title: comments
+    type: variable-themed-color
+    format: hex
+    default-dark: "#16486D"
+    default-light: "#16486D"
+    variable: code-comment
+
+  - id: code-tag
+    title: built-in functions (print, len...)
+    type: variable-themed-color
+    format: hex
+    default-dark: "#2D76E9"
+    default-light: "#2D76E9"
+    variable: code-tag
+
+  - id: code-operator
+    title: operators (+, =, -...)
+    type: variable-themed-color
+    format: hex
+    default-dark: "#6852B3"
+    default-light: "#6852B3"
+    variable: code-operator
+
+  - id: code-property
+    title: properties (obj.method())
+    type: variable-themed-color
+    format: hex
+    default-dark: "#4A6BDB"
+    default-light: "#4A6BDB"
+    variable: code-property
+
+  - id: code-normal
+    title: default text code color
+    type: variable-themed-color
+    format: hex
+    default-dark: "#eeeeee"
+    default-light: "#eeeeee"
+    variable: code-normal
+
+  - id: code-background
+    title: Code Background Color
+    type: variable-themed-color
+    format: hex
+    default-light: "#f2f2f2"
+    default-dark: "#0d0d0d"
+    variable: code-background
 
   - id: snippets-section
     title: integrated snippets
@@ -469,19 +785,19 @@ settings:
     format: px
 
   - id: ic-border
-    title: border Width
+    title: border width
     type: variable-number
     default: 1
     format: px
 
   - id: ic-horizontal-rule-size
-    title: horizontal Rule Thickness
+    title: horizontal rule thickness
     type: variable-number
     default: 1
     format: px
 
   - id: ic-infobox-title-heading
-    title: Infobox Title
+    title: infobox title
     type: heading
     level: 3
     collapsed: true
@@ -556,7 +872,7 @@ settings:
 
   - id: ic-typography-disclaimer
     title: disclaimer
-    description: Some themes, snippets, or plugins may override these styles.
+    description: some themes, snippets, or plugins may override these styles.
     type: info-text
     markdown: false
   
@@ -604,6 +920,21 @@ settings:
     type: class-toggle
     default: false
 
+  - id: misc-heading
+    title: miscellaneous
+    type: heading
+    level: 1
+    collapsed: true
+
+  - id: anim-speed
+    title: animation speed
+    type: variable-number-slider
+    default: 1
+    min: 0.5
+    max: 5
+    step: 0.1
+    variable: anim-speed
+
 */
 
 /* ========================================================================== */
@@ -611,21 +942,17 @@ settings:
 /* ========================================================================== */
 
 body {
-  --code-font: 'Fira Code', 'JetBrains Mono', monospace;
   --card-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-  --card-max-width: 10000px;
-  --card-width: 100%;
-  --card-margin: 0px 8px 0px 8px;
   --cards-gap: 16px;
   --card-padding: 16px;
   --divider-color: var(--card-border-color);
+  --inline-title-color: var(--color-accent);
   --divider-width: 1px;
-  --button-padding: 4px 4px;
-  --button-margin: 0px 3px 0px 0px;
-  --card-radius: 16px;
+  --default-radius: 16px;
+  --card-radius: var(--default-radius);
   --header-height: 35px;
-  --blockquote-radius: 16px;
-  --input-radius: 8px;
+  --blockquote-radius: var(--default-radius);
+  --input-radius: calc(var(--default-radius) / 2);
   --modal-border-color: var(--card-border-color);
   --prompt-border-color: var(--card-border-color);
   --mobile-sidebar-background: var(--background-primary);
@@ -638,20 +965,72 @@ body {
   --anim-in: var(--anim-duration-fast) var(--anim-duration-superfast) var(--anim-motion-swing);
   --anim-out: var(--anim-duration-moderate) var(--anim-duration-slow) var(--anim-motion-swing);
   --p-spacing: 4px;
-  --input-radius: var(--card-radius);
-  --modal-radius: var(--card-radius);
+  --input-radius: var(--default-radius);
+  --modal-radius: var(--default-radius);
+  --checkbox-radius: var(--default-radius);
   --side-padding: 20px;
   --mobile-toolbar-height: auto;
   --toolbar-option-width: var(--mobile-toolbar-height);
-  --input-radius: var(--card-radius);
-  --shadow-base: inset 1px 1.5px 1px -1px rgba(255, 255, 255, 0.2), inset -1px -1.5px 1px -1px rgba(255, 255, 255, 0.15), inset 0 4px 16px rgba(255, 255, 255, 0.025);
+  --shadow-base: inset 1px 1px 2px rgba(255, 255, 255, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.5), inset 0 4px 16px rgba(255, 255, 255, 0.025);
   --shadow-xs: inset 0 8px 64px rgba(255, 255, 255, 0.125), var(--shadow-base);
   --blur-s: blur(4px) saturate(1.5) brightness(1.025);
   --blur-s-alt: blur(4px) saturate(1.5) brightness(0.75);
+  --tab-radius: calc(var(--default-radius) / 2.5);
+  --text-highlight-bg: var(--color-accent);
+}
+
+.theme-light {
+  --color-red: #e93147;
+  --color-orange: #ec7500;
+  --color-yellow: #e0ac00;
+  --color-green: #08b94e;
+  --color-cyan: #00bfbc;
+  --color-blue: #086ddd;
+  --color-purple: #7852ee;
+  --color-pink: #d53984;
+
+  --color-red-rgb: 233, 49, 71;
+  --color-orange-rgb: 236, 117, 0;
+  --color-yellow-rgb: 224, 172, 0;
+  --color-green-rgb: 8, 185, 78;
+  --color-cyan-rgb: 0, 191, 188;
+  --color-blue-rgb: 8, 109, 221;
+  --color-purple-rgb: 120, 82, 238;
+  --color-pink-rgb: 213, 57, 132;
+}
+
+.theme-dark {
+  --color-red: #fb464c;
+  --color-orange: #e9973f;
+  --color-yellow: #e0de71;
+  --color-green: #44cf6e;
+  --color-cyan: #53dfdd;
+  --color-blue: #027aff;
+  --color-purple: #a882ff;
+  --color-pink: #fa99cd;
+
+  --color-red-rgb: 251, 70, 76;
+  --color-orange-rgb: 233, 151, 63;
+  --color-yellow-rgb: 224, 222, 113;
+  --color-green-rgb: 68, 207, 110;
+  --color-cyan-rgb: 83, 223, 221;
+  --color-blue-rgb: 2, 122, 255;
+  --color-purple-rgb: 168, 130, 255;
+  --color-pink-rgb: 250, 153, 205;
 }
 
 body:not(.is-mobile) .horizontal-main-container {
   padding-bottom: 24px !important;
+}
+
+::-webkit-scrollbar {
+  background-color: var(--scrollbar-bg);
+  border-radius: var(--default-radius);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-bg);
+  border-radius: var(--default-radius);
 }
 
 /* ========================================================================== */
@@ -674,6 +1053,7 @@ body:not(.is-mobile) .horizontal-main-container {
   --citation-bg: var(--color-accent);
   --card-shadow: 0 3px 8px rgba(97, 97, 97, 0.15);
   --graph-bg: var(--color-panel);
+  --graph-node: var(--card-border-color);
   --graph-line-color: #595959;
   --tab-background-active: rgba(255, 255, 255, 0.1);
   --caret-color: var(--text-color);
@@ -689,6 +1069,12 @@ body:not(.is-mobile) .horizontal-main-container {
   --link-color: #9FA0A4;
   --link-external-color: var(--link-color);
   --bases-table-border-color: var(--card-border-color);
+  --link-unresolved-color: var(--link-color);
+  --hr-color: var(--card-border-color);
+  --text-selection: #a5aab680;
+  --scrollbar-thumb-bg: #ffffff50;
+  --scrollbar-bg: #ffffff10;
+  --code-background: #0d0d0d;
 }
 
 .theme-light {
@@ -722,6 +1108,15 @@ body:not(.is-mobile) .horizontal-main-container {
   --link-color: #5F6369;
   --link-external-color: var(--link-color);
   --bases-table-border-color: var(--card-border-color);
+  --link-unresolved-color: var(--link-color);
+  --hr-color: var(--card-border-color);
+  --graph-node: var(--card-border-color);
+  --text-selection: #a5aab680;
+  --scrollbar-thumb-bg: #00000050;
+  --scrollbar-bg: #00000010;
+  --interactive-accent: #a5aab680;
+  --interactive-accent-hover: #a5aab640;
+  --code-background: #f2f2f2;
 }
 
 .theme-light.custom-color-accent-light-toggle {
@@ -764,6 +1159,8 @@ body:not(.is-mobile) .horizontal-main-container {
   --link-color: #BE99FF;
   --link-external-color: var(--link-color);
   --bases-table-border-color: var(--card-border-color) !important;
+  --link-unresolved-color: var(--link-color);
+  --graph-node: var(--card-border-color);
 }
 
 .theme-dark.extended-dark-color-schemes-toggle.atlantic {
@@ -797,6 +1194,8 @@ body:not(.is-mobile) .horizontal-main-container {
   --link-color: #88AAC1;
   --link-external-color: var(--link-color);
   --bases-table-border-color: var(--card-border-color);
+  --link-unresolved-color: var(--link-color);
+  --graph-node: var(--card-border-color);
 }
 
 .theme-dark.extended-dark-color-schemes-toggle.moss {
@@ -830,6 +1229,8 @@ body:not(.is-mobile) .horizontal-main-container {
   --link-color: #B4FAC1;
   --link-external-color: var(--link-color);
   --bases-table-border-color: var(--card-border-color);
+  --link-unresolved-color: var(--link-color);
+  --graph-node: var(--card-border-color);
 }
 
 .theme-dark.extended-dark-color-schemes-toggle.onyx {
@@ -862,6 +1263,8 @@ body:not(.is-mobile) .horizontal-main-container {
   --link-color: #9DB6C2;
   --link-external-color: var(--link-color);
   --bases-table-border-color: var(--card-border-color);
+  --link-unresolved-color: var(--link-color);
+  --graph-node: var(--card-border-color);
 }
 
 /* Extended Light Color Schemes */
@@ -894,6 +1297,8 @@ body:not(.is-mobile) .horizontal-main-container {
   --link-color: #AEDCD7;
   --link-external-color: var(--link-color);
   --bases-table-border-color: var(--card-border-color);
+  --link-unresolved-color: var(--link-color);
+  --graph-node: var(--card-border-color);
 }
 
 .theme-light.extended-light-color-schemes-toggle.sky {
@@ -925,6 +1330,8 @@ body:not(.is-mobile) .horizontal-main-container {
   --link-color: #95B5D7;
   --link-external-color: var(--link-color);
   --bases-table-border-color: var(--card-border-color);
+  --link-unresolved-color: var(--link-color);
+  --graph-node: var(--card-border-color);
 }
 
 .theme-light.extended-light-color-schemes-toggle.fog {
@@ -954,6 +1361,8 @@ body:not(.is-mobile) .horizontal-main-container {
   --link-color: #768493;
   --link-external-color: var(--link-color);
   --bases-table-border-color: var(--card-border-color);
+  --link-unresolved-color: var(--link-color);
+  --graph-node: var(--card-border-color);
 }
 
 .theme-light.extended-light-color-schemes-toggle.red-desert {
@@ -983,6 +1392,8 @@ body:not(.is-mobile) .horizontal-main-container {
   --link-color: #968896;
   --link-external-color: var(--link-color);
   --bases-table-border-color: var(--card-border-color);
+  --link-unresolved-color: var(--link-color);
+  --graph-node: var(--card-border-color);
 }
 
 .theme-light.extended-light-color-schemes-toggle.violet-haze {
@@ -1012,6 +1423,8 @@ body:not(.is-mobile) .horizontal-main-container {
   --link-color: #D2C5DF;
   --link-external-color: var(--link-color);
   --bases-table-border-color: var(--card-border-color);
+  --link-unresolved-color: var(--link-color);
+  --graph-node: var(--card-border-color);
 }
 
 .theme-light.extended-light-color-schemes-toggle.feather {
@@ -1040,6 +1453,8 @@ body:not(.is-mobile) .horizontal-main-container {
   --link-color: #47557B;
   --link-external-color: var(--link-color);
   --bases-table-border-color: var(--card-border-color);
+  --link-unresolved-color: var(--link-color);
+  --graph-node: var(--card-border-color);
 }
 
 /* ========================================================================== */
@@ -1182,6 +1597,16 @@ span .view-header-title-parent .view-header-breadcrumb {
   color: var(--text-color);
 }
 
+/* Buttons */
+
+.button {
+  background-color: var(--interactive-accent);
+}
+
+.button:hover {
+  background-color: var(--interactive-accent-hover);
+}
+
 /* Tabs */
 
 .workspace-tab-header-container {
@@ -1206,7 +1631,7 @@ html body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
   max-width: 100%;
   display: flex;
   flex-grow: 1;
-  border-radius: 6px;
+  border-radius: var(--tab-radius);
   padding: 0 !important;
   box-shadow: none !important;
   transition: flex-grow 0.5s ease-in-out, background-color 0.5s ease !important;
@@ -1214,14 +1639,14 @@ html body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
   box-sizing: border-box;
   color: var(--text-normal);
   overflow: hidden;
+  min-height: 20px;
+  align-items: center;
 }
 
 .workspace-tab-header.is-active.mod-active {
   flex-grow: 2 !important;
   max-width: 250px;
   background-color: var(--color-accent);
-  box-shadow: var(--shadow-xs) !important;
-  backdrop-filter: var(--blur-s);
   box-sizing: border-box;
   border: none;
 }
@@ -1242,7 +1667,6 @@ html body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
 
 .workspace-tab-header:not(.is-active) .workspace-tab-header-inner-close-button {
   box-sizing: border-box;
-  display: none;
 }
 
 .workspace-tab-header:hover .workspace-tab-header-inner-close-button {
@@ -1260,8 +1684,12 @@ html body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
   background-color: var(--color-accent);
   box-sizing: border-box;
   border: none;
-  box-shadow: var(--shadow-xs) !important;
-  backdrop-filter: var(--blur-s);
+  border-radius: var(--tab-radius);
+}
+
+.mod-left-split .workspace-tab-header,
+.mod-right-split .workspace-tab-header {
+  border-radius: var(--tab-radius);
 }
 
 .mod-left-split .workspace-tab-header-inner-icon,
@@ -1283,7 +1711,7 @@ html body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
 
 .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header.is-active {
   background-color: var(--color-accent) !important;
-  border-radius: calc(var(--card-radius) / 2);
+  border-radius: calc(var(--default-radius) / 2);
 }
 
 /* Status Bar */
@@ -1352,6 +1780,11 @@ body.is-focused .sidebar-toggle-button {
   background-color: transparent !important;
 }
 
+/* Ribbon */
+.side-dock-ribbon-action {
+  padding: var(--size-2-2);
+}
+
 /* Modals and Prompts */
 /* MIT License Copyright (c) 2025 aaaaalexis */
 @starting-style {
@@ -1379,7 +1812,7 @@ body.is-focused .sidebar-toggle-button {
 }
 
 .vertical-tab-nav-item.is-active {
-  border-radius: var(--card-radius);
+  border-radius: var(--default-radius);
 }
 
 @starting-style {
@@ -1507,7 +1940,7 @@ body.is-mobile .mod-root .workspace-tab-header-container-inner {
 
 /* collapse icon for mobile */
 body.obsidian-app.fn-whitespace-stop-collapsing.is-mobile .nav-files-container .collapse-icon {
-  border-radius: calc(var(--card-radius) * 2);
+  border-radius: calc(var(--default-radius) * 2);
   background-color: var(--background-primary);
   width: 24px;
   height: 24px;
@@ -1526,7 +1959,7 @@ body.obsidian-app.fn-whitespace-stop-collapsing .nav-files-container .collapse-i
 
 body.is-phone .vertical-tab-header .vertical-tab-header-group .vertical-tab-header-group-items {
   border: 1px solid var(--card-border-color);
-  border-radius: calc(var(--card-radius) * 2);
+  border-radius: calc(var(--modal-radius) * 2);
   background-color: var(--background-default);
   overflow: hidden;
 }
@@ -1597,7 +2030,7 @@ body.is-mobile.floating-mobile-nav .workspace-drawer .nav-buttons-container {
   background-color: var(--background-primary);
   justify-content: flex-start;
   max-width: fit-content;
-  border-radius: calc(var(--card-radius) * 2);
+  border-radius: calc(var(--default-radius) * 2);
   padding: var(--size-2-2);
   pointer-events: auto;
   overflow: hidden;
@@ -1673,7 +2106,7 @@ body.is-phone.floating-mobile-nav .mobile-tab-switcher-menu-button {
   z-index: 2;
   flex: 1;
   height: var(--input-height);
-  border-radius: calc(var(--card-radius) * 2);
+  border-radius: calc(var(--default-radius) * 2);
   box-shadow: var(--shadow-l);
   justify-content: center;
 }
@@ -1753,7 +2186,7 @@ body.is-mobile.floating-mobile-nav .mobile-toolbar {
 body.is-mobile.floating-mobile-nav .mobile-toolbar-options-list {
   gap: 4px;
   overflow: scroll;
-  border-radius: var(--card-radius);
+  border-radius: var(--default-radius);
 }
 
 body.is-mobile.floating-mobile-nav .mobile-toolbar {
@@ -1774,14 +2207,15 @@ body.is-mobile.floating-mobile-nav .mobile-toolbar {
 /* Fonts */
 .cm-s-obsidian span.cm-inline-code,
 .markdown-preview-view code {
-  font-family: var(--code-font) !important;
+  font-family: var(--font-monospace) !important;
 }
 
 .markdown-preview-view pre code,
 .cm-s-obsidian pre,
 .cm-s-obsidian code[class*="language-"] {
-  font-family: var(--code-font) !important;
+  font-family: var(--font-monospace) !important;
   font-size: 0.95rem;
+  background-color: var(--code-background);
 }
 
 /* Headers */
@@ -1903,33 +2337,6 @@ body.colored-headers.theme-light:not(.colored-headers-override-toggle) {
   --header-4: #356B95;
   --header-5: #29527A;
   --header-6: #1E3A5F;
-}
-
-.colored-headers.colored-headers-custom.theme-light {
-  --header-1-custom: #2C313A;
-  --header-2-custom: #3D4450;
-  --header-3-custom: #4F5867;
-  --header-4-custom: #61707F;
-  --header-5-custom: #7A8A99;
-  --header-6-custom: #95A5B2;
-}
-
-.colored-headers.colored-headers-custom.theme-dark {
-  --header-1-custom: #474E5C;
-  --header-2-custom: #5E6573;
-  --header-3-custom: #787F8D;
-  --header-4-custom: #979DAA;
-  --header-5-custom: #B7BCC9;
-  --header-6-custom: #D8DCE6;
-}
-
-.colored-headers.colored-headers-custom {
-  --header-1: var(--header-1-custom);
-  --header-2: var(--header-2-custom);
-  --header-3: var(--header-3-custom);
-  --header-4: var(--header-4-custom);
-  --header-5: var(--header-5-custom);
-  --header-6: var(--header-6-custom);
 }
 
 .colored-headers.colored-headers-purple.theme-light {
@@ -2171,7 +2578,7 @@ a.internal-link:hover {
 
 a.internal-link.is-unresolved {
   text-decoration: none;
-  color: var(--link-color);
+  color: var(--link-unresolved-color);
   opacity: 0.8;
 }
 
@@ -2194,7 +2601,7 @@ span .cm-hmd.internal-link:hover {
 }
 
 span .cm-hmd.internal-link.is-unresolved {
-  color: var(--link-color);
+  color: var(--link-unresolved-color);
   text-decoration: none;
   opacity: 0.8;
 }
@@ -2236,7 +2643,6 @@ span .cm-hmd.external-link::after {
 /* Highlights */
 .cm-s-obsidian span.cm-formatting-highlight,
 .cm-s-obsidian span.cm-highlight {
-  background-color: var(--color-accent);
   display: inline;
   border-radius: 8px;
   padding: 0.075em 0.2em;
@@ -2246,7 +2652,6 @@ span .cm-hmd.external-link::after {
 .theme-dark .markdown-preview-view mark,
 .markdown-rendered mark,
 mark {
-  background-color: var(--color-accent);
   border-radius: 8px;
   padding: 0.075em 0.2em;
   color: inherit;
@@ -2254,7 +2659,7 @@ mark {
 
 /* Checkboxes */
 input[type="checkbox"] {
-  border-radius: var(--card-radius);
+  border-radius: var(--checkbox-radius);
 }
 
 /* ========================================================================== */
@@ -2269,12 +2674,12 @@ input[type="checkbox"] {
     --bases-embed-border-color: var(--card-border-color);
     --bases-table-border-color: var(--card-border-color);
     --table-border-color: var(--card-border-color);
-    --bases-embed-border-radius: var(--card-radius);
+    --bases-embed-border-radius: var(--default-radius);
   }
 }
 
 .bases-cards-item {
-  border-radius: var(--card-radius);
+  border-radius: var(--default-radius);
 }
 
 /* Notebook Navigator */
@@ -2314,7 +2719,7 @@ body.is-mobile.floating-mobile-nav .nn-mobile .nn-mobile-toolbar {
   z-index: var(--layer-status-bar);
   margin: 0 auto max(calc(var(--safe-area-inset-bottom) + var(--size-4-2)), 16px);
   border: 1px solid var(--card-border-color);
-  border-radius: calc(var(--card-radius) * 2);
+  border-radius: calc(var(--default-radius) * 2);
   box-shadow: var(--shadow-xs);
   backdrop-filter: var(--blur-s);
   max-width: fit-content;
@@ -2325,7 +2730,7 @@ body.is-mobile.floating-mobile-nav .nn-mobile .nn-mobile-toolbar {
 }
 
 .nn-navitem {
-  border-radius: calc(var(--card-radius) / 2);
+  border-radius: calc(var(--default-radius) / 2);
 }
 
 .nn-mobile-toolbar-button {
@@ -2333,7 +2738,7 @@ body.is-mobile.floating-mobile-nav .nn-mobile .nn-mobile-toolbar {
   stroke-width: 5px;
   width: calc(var(--icon-size) * 2);
   height: calc(var(--icon-size) * 2);
-  border-radius: calc(var(--card-radius));
+  border-radius: calc(var(--default-radius));
   min-width: auto;
   min-height: auto;
   padding: 0px !important;
@@ -2347,7 +2752,7 @@ body.is-mobile.floating-mobile-nav .nn-mobile .nn-mobile-toolbar {
 .is-phone .nn-mobile-toolbar-button {
   width: calc(var(--icon-size) * 2);
   height: calc(var(--icon-size) * 2);
-  border-radius: var(--card-radius);
+  border-radius: var(--default-radius);
 }
 
 .notebook-navigator-mobile .nn-search-input {
@@ -2361,7 +2766,7 @@ body.is-mobile.floating-mobile-nav .nn-mobile .nn-mobile-toolbar {
 
 /* Kanban */
 .kanban-plugin__lane {
-  border-radius: var(--card-radius);
+  border-radius: var(--default-radius);
 }
 
 .kanban-plugin__lane-header-wrapper {
@@ -2385,210 +2790,17 @@ button.kanban-plugin__new-item-button {
 /* ========================================================================== */
 
 body {
-  --syntax-keyword: #552B79;
-  --syntax-def: #69EED7;
-  --syntax-variable: #558FC7;
-  --syntax-variable-2: #4186B6;
-  --syntax-variable-3: #C689E3;
-  --syntax-string: #BE4AA0;
-  --syntax-number: #9795EE;
-  --syntax-comment: #16486D;
-  --syntax-builtin: #2D76E9;
-  --syntax-operator: #6852B3;
-  --syntax-property: #4A6BDB;
-  --syntax-default-text: #eeeeee;
-  --syntax-border: #A0A6A7;
-}
-
-.cm-s-obsidian span.cm-keyword {
-  color: var(--syntax-keyword);
-}
-
-.cm-s-obsidian span.cm-def {
-  color: var(--syntax-def);
-}
-
-.cm-s-obsidian span.cm-variable {
-  color: var(--syntax-variable);
-}
-
-.cm-s-obsidian span.cm-variable-2 {
-  color: var(--syntax-variable-2);
-}
-
-.cm-s-obsidian span.cm-variable-3 {
-  color: var(--syntax-variable-3);
-}
-
-.cm-s-obsidian span.cm-string {
-  color: var(--syntax-string);
-}
-
-.cm-s-obsidian span.cm-number {
-  color: var(--syntax-number);
-}
-
-.cm-s-obsidian span.cm-comment {
-  color: var(--syntax-comment);
-  font-style: italic;
-  opacity: 0.85;
-}
-
-.cm-s-obsidian span.cm-builtin {
-  color: var(--syntax-builtin);
-}
-
-.cm-s-obsidian span.cm-operator {
-  color: var(--syntax-operator);
-}
-
-.cm-s-obsidian span.cm-property {
-  color: var(--syntax-property);
-  font-style: italic;
-}
-
-.cm-s-obsidian code[class*="language-python"],
-.markdown-preview-view code.language-python {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
-  font-size: 0.95rem;
-  line-height: 1.5;
-  background-color: rgba(255, 255, 255, 0.02);
-  border-left: 2px solid var(--syntax-border) !important;
-  padding-left: 0.5em;
-  border-radius: 6px;
-  color: var(--syntax-default-text);
-}
-
-.markdown-preview-view code.language-python {
-  display: block;
-  white-space: pre;
-}
-
-.markdown-preview-view code.language-python .cm-keyword {
-  color: var(--syntax-keyword);
-  font-weight: bold;
-}
-
-.markdown-preview-view code.language-python .cm-def {
-  color: var(--syntax-def);
-}
-
-.markdown-preview-view code.language-python .cm-variable {
-  color: var(--syntax-variable);
-}
-
-.markdown-preview-view code.language-python .cm-variable-2 {
-  color: var(--syntax-variable-2);
-}
-
-.markdown-preview-view code.language-python .cm-variable-3 {
-  color: var(--syntax-variable-3);
-}
-
-.markdown-preview-view code.language-python .cm-string {
-  color: var(--syntax-string);
-}
-
-.markdown-preview-view code.language-python .cm-number {
-  color: var(--syntax-number);
-}
-
-.markdown-preview-view code.language-python .cm-comment {
-  color: var(--syntax-comment);
-  font-style: italic;
-  opacity: 0.85;
-}
-
-.markdown-preview-view code.language-python .cm-builtin {
-  color: var(--syntax-builtin);
-  font-weight: bold;
-}
-
-.markdown-preview-view code.language-python .cm-operator {
-  color: var(--syntax-operator);
-}
-
-.markdown-preview-view code.language-python .cm-property {
-  color: var(--syntax-property);
-  font-style: italic;
-}
-
-.markdown-preview-view code.language-python {
-  white-space: pre-wrap;
-  word-break: break-word;
-}
-
-.markdown-preview-view code.language-python span {
-  font-family: 'Fira Code', 'JetBrains Mono', monospace;
-}
-
-.markdown-preview-view code.language-python span:has(> .token-keyword),
-.markdown-preview-view code.language-python span:contains("def"),
-.markdown-preview-view code.language-python span:contains("return"),
-.markdown-preview-view code.language-python span:contains("if"),
-.markdown-preview-view code.language-python span:contains("else"),
-.markdown-preview-view code.language-python span:contains("elif"),
-.markdown-preview-view code.language-python span:contains("while"),
-.markdown-preview-view code.language-python span:contains("for"),
-.markdown-preview-view code.language-python span:contains("in") {
-  color: var(--syntax-keyword);
-  font-weight: bold;
-}
-
-.markdown-preview-view code.language-python span:contains("print"),
-.markdown-preview-view code.language-python span:contains("len"),
-.markdown-preview-view code.language-python span:contains("range"),
-.markdown-preview-view code.language-python span:contains("str"),
-.markdown-preview-view code.language-python span:contains("int") {
-  color: var(--syntax-builtin);
-}
-
-.markdown-preview-view code.language-python span:contains("'"),
-.markdown-preview-view code.language-python span:contains("\"") {
-  color: var(--syntax-string);
-}
-
-.markdown-preview-view code.language-python span:contains("#") {
-  color: var(--syntax-comment);
-  font-style: italic;
-  opacity: 0.85;
-}
-
-.markdown-preview-view code.language-python span[class*="token-keyword"],
-.markdown-preview-view code.language-python span[class*="keyword"] {
-  color: var(--syntax-keyword);
-}
-
-.markdown-preview-view code.language-python span[class*="def"],
-.markdown-preview-view code.language-python span[class*="function"] {
-  color: var(--syntax-def);
-}
-
-.markdown-preview-view code.language-python span[class*="string"] {
-  color: var(--syntax-string);
-}
-
-.markdown-preview-view code.language-python span[class*="number"] {
-  color: var(--syntax-number);
-}
-
-.markdown-preview-view code.language-python span[class*="comment"] {
-  color: var(--syntax-comment);
-  font-style: italic;
-  opacity: 0.85;
-}
-
-.markdown-preview-view code.language-python span[class*="builtin"] {
-  color: var(--syntax-builtin);
-}
-
-.markdown-preview-view code.language-python span[class*="operator"] {
-  color: var(--syntax-operator);
-}
-
-.markdown-preview-view code.language-python span[class*="property"] {
-  color: var(--syntax-property);
-  font-style: italic;
+  --code-normal: #eeeeee;
+  --code-comment: #16486D;
+  --code-function: #69EED7;
+  --code-important: #4186B6;
+  --code-keyword: #552B79;
+  --code-operator: #6852B3;
+  --code-property: #4A6BDB;
+  --code-punctuation: #558FC7;
+  --code-string: #BE4AA0;
+  --code-tag: #2D76E9;
+  --code-value: #9795EE;
 }
 
 /* ========================================================================== */
@@ -2652,21 +2864,6 @@ body {
 }
 
 /* Graph View */
-body.mod-mobile .graph-view.color-line {
-  color: var(--graph-line-color) !important;
-}
-
-.graph-view.color-fill .graph-view-node {
-  color: var(--card-border-color) !important;
-}
-
-.graph-view.color-circle {
-  color: var(--graph-bg) !important;
-}
-
-.graph-view.color-line {
-  color: var(--graph-line-color);
-}
 
 canvas {
   width: 100%;
@@ -2711,7 +2908,7 @@ input.metadata-property-key-input {
 
 .metadata-content {
   background-color: var(--background-secondary);
-  border-radius: var(--card-radius);
+  border-radius: var(--default-radius);
   border: 0.5px solid var(--card-border-color);
   padding: 4px;
 }
@@ -3609,4 +3806,79 @@ body.labeled-nav.tab-autohide .mod-left-split .mod-top .workspace-tab-header .wo
 
 body.labeled-nav.tab-autohide .mod-left-split .mod-top .workspace-tab-header.is-active {
   background-color: var(--color-accent) !important;
+}
+
+/* ----------------------------------------------- Liquid Glass ----------------------------------------------- */
+body {
+  --shadow-xxs: inset 0 6px 50px rgba(255, 255, 255, 0.08), var(--shadow-base);
+  --shadow-border: 0 0 1px 0 rgba(0, 0, 0, 0.4);
+  --shadow-s: var(--shadow-base), inset 0 0 1px 1px white, var(--shadow-border), 0 8px 15px 0 rgba(0, 0, 0, 0.2);
+  --shadow-l: var(--shadow-border), inset 0 0 1px 1px white, 0 18px 60px 0 rgba(0, 0, 0, 0.3);
+  --blur-m: blur(8px) saturate(1.5) brightness(1.025);
+  --blur-l: blur(16px) saturate(1.5) brightness(1.025);
+}
+
+.frosted-glass.ice-glass .nav-buttons-container {
+  background-color: transparent;
+  box-shadow: var(--shadow-xxs);
+  backdrop-filter: var(--blur-s-alt);
+}
+
+.frosted-glass.frosted-glass .workspace-leaf {
+  box-shadow: var(--shadow-xxs) !important;
+  backdrop-filter: var(--blur-l);
+  background-color: transparent !important;
+}
+
+.frosted-glass.frosted-glass .nn-navigation-pane,
+.frosted-glass.frosted-glass .nn-list-pane {
+  box-shadow: var(--shadow-xxs) !important;
+  backdrop-filter: var(--blur-l);
+  background-color: transparent !important;
+}
+
+body:not(.is-mobile).frosted-glass.frosted-glass .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+  box-shadow: var(--shadow-xxs) !important;
+  backdrop-filter: var(--blur-l);
+}
+
+.frosted-glass.frosted-glass .workspace-tab-header.is-active.mod-active {
+  flex-grow: 2 !important;
+  max-width: 250px;
+  background-color: var(--color-accent);
+  box-shadow: var(--shadow-xs) !important;
+  backdrop-filter: var(--blur-s);
+  box-sizing: border-box;
+  border: none;
+}
+
+.frosted-glass.frosted-glass .mod-left-split .workspace-tab-header-container .is-active,
+.frosted-glass.frosted-glass .mod-right-split .workspace-tab-header-container .is-active {
+  background-color: var(--color-accent);
+  box-sizing: border-box;
+  border: none;
+  box-shadow: var(--shadow-xs) !important;
+  backdrop-filter: var(--blur-s);
+}
+
+.frosted-glass.ice-glass .workspace-tab-header {
+  box-shadow: var(--shadow-xs) !important;
+  backdrop-filter: var(--blur-s);
+}
+
+.frosted-glass.frozen-glass .workspace-tab-header {
+  box-shadow: var(--shadow-xs) !important;
+  backdrop-filter: var(--blur-s);
+}
+
+.frosted-glass.frozen-glass .nav-buttons-container {
+  background-color: transparent;
+  box-shadow: var(--shadow-xs);
+  backdrop-filter: var(--blur-s-alt);
+}
+
+.frosted-glass.frozen-glass .side-dock-ribbon-action {
+  border-radius: var(--tab-radius);
+  box-shadow: var(--shadow-xs);
+  backdrop-filter: var(--blur-s);
 }
