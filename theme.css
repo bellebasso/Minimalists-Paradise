@@ -3924,7 +3924,9 @@ body:not(.is-mobile).frosted-glass-toggle.frosted-glass .workspace-split.mod-lef
   backdrop-filter: var(--blur-s);
 }
 
-.labeled-nav.frosted-glass-toggle.frosted-glass .mod-left-split .mod-top .workspace-tab-header-container .workspace-tab-header-container-inner {
+.labeled-nav.frosted-glass-toggle.frosted-glass .mod-left-split .mod-top .workspace-tab-header-container .workspace-tab-header-container-inner,
+.labeled-nav.frosted-glass-toggle.ice-glass .mod-left-split .mod-top .workspace-tab-header-container .workspace-tab-header-container-inner,
+.labeled-nav.frosted-glass-toggle.frozen-glass .mod-left-split .mod-top .workspace-tab-header-container .workspace-tab-header-container-inner {
   padding: var(--size-4-2) var(--size-4-2);
   flex-direction: column !important;
   margin-top: var(--labeled-nav-top-margin);
