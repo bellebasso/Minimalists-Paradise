@@ -3854,6 +3854,18 @@ body {
   background-color: transparent !important;
 }
 
+.frosted-glass-toggle.ice-glass .workspace-leaf-content {
+  box-shadow: var(--shadow-xxs) !important;
+  backdrop-filter: var(--blur-l);
+  background-color: transparent !important;
+}
+
+.frosted-glass-toggle.frozen-glass .workspace-leaf-content {
+  box-shadow: var(--shadow-xxs) !important;
+  backdrop-filter: var(--blur-l);
+  background-color: transparent !important;
+}
+
 body.is-mobile.frosted-glass-toggle.frosted-glass .workspace-drawer-inner {
   box-shadow: var(--shadow-xxs) !important;
   backdrop-filter: var(--blur-s-alt);
