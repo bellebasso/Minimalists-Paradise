@@ -553,6 +553,12 @@ settings:
     default-dark: "#ffffff"
     variable: h1-color
 
+  - id: disable-h1-divider
+    title: disable H1 divider
+    description: remove the bottom border from H1 headers.
+    type: class-toggle
+    default: false
+
   - id: h2-color
     title: H2 color
     type: variable-themed-color
@@ -2627,11 +2633,15 @@ body.is-phone.floating-mobile-nav .mod-root .workspace-leaf-content[data-mode=so
 
 /* Headers */
 
-body :is(.markdown-preview-view, .markdown-rendered) h1,
-
-body .markdown-source-view.is-live-preview .HyperMD-header.HyperMD-header-1.cm-line {
+.markdown-preview-view h1,
+.markdown-source-view.is-live-preview .HyperMD-header.HyperMD-header-1.cm-line {
   display: flow-root;
   border-bottom: 2px solid var(--divider-color);
+}
+
+.disable-h1-divider .markdown-preview-view h1,
+.disable-h1-divider .markdown-source-view.is-live-preview .HyperMD-header.HyperMD-header-1.cm-line {
+  border-bottom: none;
 }
 
 .colored-headers .markdown-source-view.mod-cm6 span.cm-header-1,
