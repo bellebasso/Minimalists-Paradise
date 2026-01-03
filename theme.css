@@ -2159,6 +2159,9 @@ body.is-mobile .workspace-drawer-inner {
   background-color: var(--color-panel);
   border: 1px solid var(--divider-color);
   border-radius: var(--mobile-card-radius);
+}
+
+body.is-tablet .workspace-drawer-inner {
   padding-top: 10px;
 }
 
