@@ -2112,7 +2112,8 @@ body:not(.is-mobile) .menu .menu-separator {
 }
 
 /* Inspired by and adapted from the Cupertino Theme MIT License Copyright (c) 2025 aaaaalexis https://github.com/aaaaalexis/obsidian-cupertino */
-
+/* broken by 1.11.03 update */
+/*
 body:not(.is-phone) .modal.mod-sidebar-layout .installed-plugins-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -2124,7 +2125,7 @@ body.is-tablet .modal.mod-sidebar-layout .installed-plugins-container {
   gap: calc(var(--cards-gap) / 2);
 }
 
-body:not(.is-phone) .modal.mod-sidebar-layout .installed-plugins-container .setting-item {
+body:not(.is-phone) .modal.mod-sidebar-layout .installed-plugins-container .setting-item .setting-items {
   display: flex;
   flex-direction: column;
   border: 0.5px solid var(--background-modifier-border);
@@ -2133,7 +2134,7 @@ body:not(.is-phone) .modal.mod-sidebar-layout .installed-plugins-container .sett
   padding: 16px;
   margin: 0 !important;
 }
-
+*/
 /* ========================================================================== */
 /* --- Mobile and Tablet Specific Styles --- */
 /* ========================================================================== */
