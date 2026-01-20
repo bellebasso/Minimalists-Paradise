@@ -64,6 +64,12 @@ settings:
       - label: frozen glass
         value: frozen-glass
 
+  - id: mode-switcher-off
+    title: disable mode switcher styling
+    description: disable the custom styles for the mode switcher button on mobile devices.
+    type: class-toggle
+    default: false
+
   - id: cards-gap
     title: cards gap
     type: variable-number-slider
@@ -1034,6 +1040,7 @@ body {
   --shadow-xs: inset 0 8px 64px rgba(255, 255, 255, 0.125), var(--shadow-base);
   --blur-s: blur(4px) saturate(1.5) brightness(1.025);
   --blur-s-alt: blur(4px) saturate(1.5) brightness(0.75);
+  --blur-m: blur(4px) saturate(1.5) brightness(1.025);
   --tab-radius: calc(var(--default-radius) / 2.5);
   --text-highlight-bg: var(--color-accent);
   --tab-size: 20px;
@@ -2036,10 +2043,6 @@ body:not(.empty-state-off).is-tablet .empty-state-action:first-child {
   border-radius: var(--modal-radius);
 }
 
-.prompt {
-  background: color-mix(in srgb, var(--prompt-background) var(--blur-translucency-m), transparent);
-}
-
 body:not(.is-phone) {
   --menu-padding: 4px;
 }
@@ -2113,6 +2116,33 @@ body.is-tablet .modal.mod-sidebar-layout .installed-plugins-container {
 .is-mobile.theme-dark,
 .is-mobile.theme-light {
   --mobile-sidebar-background: var(--background-default);
+  --mobile-sidebar-width: 96.5%;
+  --navbar-side-padding: var(--safe-area-inset-side);
+  --safe-area-inset-side: 16px;
+  --navbar-bottom-padding: max(var(--safe-area-inset-bottom), 28px);
+  --touch-size-l: 48px;
+}
+
+/* toggle read and edit button position for phone */
+
+body.is-phone:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type=markdown] .view-actions button:nth-last-child(2) {
+  position: fixed;
+  transition: var(--anim-duration-moderate), background-color var(--anim-duration-moderate);
+  right: var(--navbar-side-padding);
+  bottom: var(--navbar-bottom-padding);
+  margin-bottom: 0;
+  border-radius: 100%;
+  height: var(--navbar-height);
+}
+
+body.is-phone:not(.mode-switcher-off) .mobile-navbar {
+  max-width: calc(100% - 8px - var(--navbar-side-padding) * 2);
+  inset: auto calc(var(--navbar-side-padding) * 3.75) var(--navbar-bottom-padding);
+  overflow: hidden;
+  padding: 4px;
+  margin: 0;
+  transition: var(--anim-duration-moderate), background-color var(--anim-duration-moderate);
+  will-change: bottom;
 }
 
 body.is-tablet .workspace-tab-container {
@@ -3030,6 +3060,10 @@ body .nn-navitem-content {
   min-height: auto;
   padding: 0px !important;
   opacity: var(--icon-opacity);
+}
+
+.nn-icon-button {
+  border-radius: calc(var(--default-radius) / 2);
 }
 
 .nn-mobile-toolbar-button svg {
