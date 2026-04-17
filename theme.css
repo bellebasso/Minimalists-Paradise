@@ -523,6 +523,12 @@ settings:
     format: px
     variable: hr-thickness
 
+  - id: checkbox-style
+    title: checkbox style
+    type: class-toggle
+    variable: checkbox-style
+    default: true
+
   - id: checkbox-radius
     title: checkbox radius
     type: variable-number-slider
@@ -2056,7 +2062,21 @@ body:not(.is-mobile) .menu .menu-separator {
 }
 
 .menu-item {
-  border-radius: var(--clickable-icon-radius);
+  border-radius: 0px;
+}
+
+.menu-group .menu-item:first-child {
+  border-top-left-radius: calc(var(--clickable-icon-radius) / 2);
+  border-top-right-radius: calc(var(--clickable-icon-radius) / 2);
+}
+
+.menu-group .menu-item:last-child {
+  border-bottom-left-radius: calc(var(--clickable-icon-radius) / 2);
+  border-bottom-right-radius: calc(var(--clickable-icon-radius) / 2);
+}
+
+.menu-group .menu-item:not(:last-child) {
+  border-bottom: none;
 }
 
 /* Settings Modal */
@@ -2124,7 +2144,7 @@ body.is-tablet .modal.mod-sidebar-layout .installed-plugins-container {
 }
 
 /* toggle read and edit button position for phone */
-
+/*
 body.is-phone:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type=markdown] .view-actions button:nth-last-child(2) {
   position: fixed;
   transition: var(--anim-duration-moderate), background-color var(--anim-duration-moderate);
@@ -2144,7 +2164,7 @@ body.is-phone:not(.mode-switcher-off) .mobile-navbar {
   transition: var(--anim-duration-moderate), background-color var(--anim-duration-moderate);
   will-change: bottom;
 }
-
+*/
 body.is-tablet .workspace-tab-container {
   border-radius: var(--mobile-card-radius);
 }
@@ -2979,6 +2999,31 @@ input[type="checkbox"] {
   border-radius: var(--checkbox-radius);
 }
 
+.checkbox-style .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="x"] {
+  opacity: 0.2;
+  text-decoration: line-through;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.checkbox-style .markdown-source-view.mod-cm6 .HyperMD-task-line[data-task="x"]:hover {
+  opacity: 0.8;
+}
+
+.checkbox-style .markdown-preview-view li.task-list-item.is-checked {
+  opacity: 0.2;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.checkbox-style .markdown-preview-view li.task-list-item.is-checked:hover {
+  opacity: 0.8;
+}
+
+/* optional: ensure text is struck through */
+.checkbox-style .markdown-preview-view li.task-list-item.is-checked p {
+  text-decoration: line-through;
+}
+
+
 /* ========================================================================== */
 /* --- Plugins Styling --- */
 /* ========================================================================== */
@@ -3083,6 +3128,11 @@ body .nn-navitem-content {
 .nn-split-container.nn-desktop.nn-single-pane .nn-navigation-pane .nn-navigation-pane-scroller,
 .nn-split-container.nn-desktop.nn-single-pane .nn-navigation-pane .nn-pane-header {
   border-right: none;
+}
+
+.plugin-tasks-toolbar label input {
+  border-radius: calc(var(--default-radius) / 2);
+  border: 1px solid var(--divider-color);
 }
 
 /* Kanban */
