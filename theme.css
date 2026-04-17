@@ -64,6 +64,7 @@ settings:
       - label: frozen glass
         value: frozen-glass
 
+
   - id: mode-switcher-off
     title: disable mode switcher styling
     description: disable the custom styles for the mode switcher button on mobile devices.
@@ -99,6 +100,12 @@ settings:
     step: 1
     format: px
     variable: divider-width
+
+  - id: radius-heading
+    title: radius
+    type: heading
+    level: 2
+    collapsed: true
 
   - id: default-radius
     title: default radius
@@ -180,6 +187,55 @@ settings:
     step: 1
     format: px
     variable: clickable-icon-radius
+
+  - id: workspace-transparency-heading
+    title: workspace transparency
+    description: adjust note, sidebar and ribbon backgrounds so custom workspace wallpapers can show through without fading the content itself.
+    type: heading
+    level: 2
+    collapsed: true
+
+  - id: workspace-background-translucent
+    title: translucent workspace background
+    description: change the background color when translucent mode is enable
+    type: variable-color
+    format: hex
+
+  - id: workspace-note-opacity
+    title: note background opacity
+    type: variable-number-slider
+    default: 1
+    min: 0
+    max: 1
+    step: 0.1
+    variable: workspace-note-opacity
+
+  - id: workspace-sidebar-opacity
+    title: sidebar background opacity
+    type: variable-number-slider
+    default: 1
+    min: 0
+    max: 1
+    step: 0.1
+    variable: workspace-sidebar-opacity
+
+  - id: workspace-ribbon-opacity
+    title: ribbon background opacity
+    type: variable-number-slider
+    default: 1
+    min: 0
+    max: 1
+    step: 0.1
+    variable: workspace-ribbon-opacity
+
+  - id: workspace-tab-opacity
+    title: tab background opacity
+    type: variable-number-slider
+    default: 0.9
+    min: 0
+    max: 1
+    step: 0.1
+    variable: workspace-tab-opacity
 
   - id: color-accent-theme
     title: theme color accent override
@@ -808,7 +864,7 @@ settings:
     type: heading
     level: 2
     collapsed: true
-    
+
   - id: ic-infobox-enable
     title: enable infobox callouts
     description: Toggle to enable or disable the Infobox Callouts styles if you prefer using them as a separate snippet.
@@ -932,7 +988,7 @@ settings:
     description: some themes, snippets, or plugins may override these styles.
     type: info-text
     markdown: false
-  
+
   - id: tabbed-callout-heading
     title: tabbed callout
     type: heading
@@ -944,7 +1000,7 @@ settings:
     description: Toggle to enable or disable the Tabbed Callout styles.
     type: class-toggle
     default: true
-  
+
   - id: hider-heading
     title: hider
     description: 'automatically hide certain UI elements and expose them on hover. huge thanks to the Border Theme for the inspiration and this feature.'
@@ -1042,6 +1098,18 @@ body {
   --side-padding: 20px;
   --mobile-toolbar-height: auto;
   --toolbar-option-width: var(--mobile-toolbar-height);
+  --workspace-note-opacity: 1;
+  --workspace-sidebar-opacity: 1;
+  --workspace-ribbon-opacity: 1;
+  --workspace-tab-opacity: 0.9;
+  --workspace-note-bg: color-mix(in srgb, var(--color-panel) calc(var(--workspace-note-opacity) * 100%), transparent);
+  --workspace-sidebar-bg: color-mix(in srgb, var(--color-panel) calc(var(--workspace-sidebar-opacity) * 100%), transparent);
+  --workspace-ribbon-bg: color-mix(in srgb, var(--background-primary) calc(var(--workspace-ribbon-opacity) * 100%), transparent);
+  --workspace-tab-bg: color-mix(in srgb, var(--background-primary) calc(var(--workspace-tab-opacity) * 100%), transparent);
+  --workspace-note-border: color-mix(in srgb, var(--divider-color) calc(var(--workspace-note-opacity) * 100%), transparent);
+  --workspace-sidebar-border: color-mix(in srgb, var(--divider-color) calc(var(--workspace-sidebar-opacity) * 100%), transparent);
+  --workspace-ribbon-border: color-mix(in srgb, var(--divider-color) calc(var(--workspace-ribbon-opacity) * 100%), transparent);
+  --workspace-tab-border: color-mix(in srgb, var(--divider-color) calc(var(--workspace-tab-opacity) * 100%), transparent);
   --shadow-base: inset 1px 1px 2px rgba(255, 255, 255, 0.5), inset -1px -1px 2px rgba(255, 255, 255, 0.5), inset 0 4px 16px rgba(255, 255, 255, 0.025);
   --shadow-xs: inset 0 8px 64px rgba(255, 255, 255, 0.125), var(--shadow-base);
   --blur-s: blur(4px) saturate(1.5) brightness(1.025);
@@ -1535,9 +1603,9 @@ body:not(.is-mobile) .horizontal-main-container {
 /* Nav Header */
 .nav-buttons-container {
   padding: var(--size-2-2);
-  background-color: var(--background-primary);
+  background-color: var(--workspace-note-bg);
   border-radius: calc(var(--card-radius) / 2);
-  border: 1px solid var(--divider-color);
+  border: 1px solid var(--workspace-note-border);
 }
 
 /* Workspace */
@@ -1545,7 +1613,8 @@ body:not(.is-mobile) .horizontal-main-container {
 body:not(.is-mobile) .workspace {
   position: relative;
   overflow: visible;
-  margin-right: var(--cards-gap);
+  padding-right: var(--cards-gap);
+  background-color: transparent !important;
 }
 
 body:not(.is-phone) .workspace-tab-container {
@@ -1558,8 +1627,8 @@ body:not(.is-phone) .workspace-tab-container {
   padding: 0px;
   align-self: center;
   box-sizing: border-box;
-  border: 1px solid var(--divider-color);
-  background-color: var(--color-panel);
+  border: 1px solid var(--workspace-note-border);
+  background-color: var(--workspace-note-bg);
   border-radius: var(--card-radius);
   box-shadow: var(--card-shadow);
 }
@@ -1582,17 +1651,17 @@ body:not(.is-mobile) .workspace-split.mod-vertical.mod-root {
 
 .workspace-fake-target-overlay:not(.is-in-sidebar) .workspace-tabs .workspace-leaf,
 .mod-root .workspace-tabs .workspace-leaf {
-  background-color: var(--color-panel);
+  background-color: transparent !important;
 }
 
 .workspace-leaf {
-  background-color: var(--color-panel) !important;
+  background-color: var(--workspace-note-bg) !important;
 }
 
 /* Header */
 .view-header {
   background-color: transparent !important;
-  border-bottom: 1px dashed var(--divider-color);
+  border-bottom: 1px dashed var(--workspace-note-border);
   border-radius: 16px 16px 0px 0px;
   align-self: auto;
   margin: 0px;
@@ -1657,7 +1726,7 @@ span .view-header-title-parent .view-header-breadcrumb {
   position: relative;
   padding-bottom: 0px;
   background-color: transparent;
-  border-bottom: 1px solid var(--card-bg);
+  border-bottom: 1px solid var(--workspace-tab-border);
   height: var(--header-height);
 }
 
@@ -1677,7 +1746,7 @@ html body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
   border-radius: var(--tab-radius);
   padding: 0 !important;
   box-shadow: none !important;
-  background: var(--background-primary);
+  background: var(--workspace-tab-bg);
   box-sizing: border-box;
   color: var(--text-normal);
   overflow: hidden;
@@ -1694,7 +1763,7 @@ html body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
   padding: 0 !important;
   box-shadow: none !important;
   transition: flex-grow 0.5s ease-in-out, background-color 0.4s ease-in-out !important;
-  background: var(--background-primary);
+  background: var(--workspace-tab-bg);
   box-sizing: border-box;
   color: var(--text-normal);
   overflow: hidden;
@@ -1750,13 +1819,14 @@ body:not(.is-mobile) .workspace-tab-header.is-active.mod-active {
 .mod-right-split .workspace-tab-header-container .is-active {
   background-color: var(--color-accent);
   box-sizing: border-box;
-  border: none;
+  border: 1px solid var(--workspace-sidebar-border);
   border-radius: var(--tab-radius);
 }
 
 .mod-left-split .workspace-tab-header,
 .mod-right-split .workspace-tab-header {
-  border-radius: var(--tab-radius);
+  background: color-mix(in srgb, var(--background-primary) calc(var(--workspace-tab-opacity) * 100%), transparent);
+  border-radius: var(--tab-radius) !important;
 }
 
 .mod-left-split .workspace-tab-header-inner-icon,
@@ -1797,7 +1867,7 @@ body:not(.is-mobile) .workspace-tab-header.is-active.mod-active {
 .workspace-sidedock-vault-profile {
   padding: 8px !important;
   margin-right: auto !important;
-  border-top: 1px solid var(--divider-color) !important;
+  border-top: 1px solid var(--workspace-sidebar-border) !important;
   border-radius: 0px 0px var(--card-radius) var(--card-radius);
   box-sizing: border-box;
   width: 100%;
@@ -1818,11 +1888,20 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-tabs:last-of-typ
 
 body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
   padding: 6px;
-  background-color: transparent;
+  background-color: var(--workspace-sidebar-bg);
   position: absolute;
   bottom: 0;
   z-index: 10;
   height: 44px;
+}
+
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-tab-container,
+body:not(.is-mobile) .workspace-split.mod-right-split .workspace-tab-container,
+body:not(.is-mobile) .workspace-split.mod-left-split .workspace-leaf,
+body:not(.is-mobile) .workspace-split.mod-right-split .workspace-leaf,
+body:not(.is-mobile) .workspace-split.mod-left-split .nav-buttons-container,
+body:not(.is-mobile) .workspace-split.mod-right-split .nav-buttons-container {
+  background-color: var(--workspace-sidebar-bg) !important;
 }
 
 body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher {
@@ -1852,8 +1931,16 @@ body.is-focused .sidebar-toggle-button {
 }
 
 /* Ribbon */
+.workspace-ribbon.side-dock-ribbon {
+  background-color: var(--workspace-ribbon-bg);
+  border-right: 1px solid var(--workspace-ribbon-border);
+}
+
 .side-dock-ribbon-action {
   padding: var(--size-2-2);
+  background-color: var(--workspace-ribbon-bg);
+  border: none;
+  border-radius: var(--tab-radius);
 }
 
 /* Empty State */
@@ -2001,6 +2088,7 @@ body:not(.empty-state-off).is-tablet .empty-state-action:first-child {
   .modal,
   .prompt {
     opacity: 0;
+    background-color: transparent;
     filter: blur(4px);
     transform: scale(0.95) rotateX(-1deg);
   }
@@ -2030,6 +2118,7 @@ body:not(.empty-state-off).is-tablet .empty-state-action:first-child {
   .menu,
   .suggestion-container {
     opacity: 0;
+    background-color: transparent;
     filter: blur(4px);
     transform: translateY(-8px)
   }
@@ -2170,7 +2259,7 @@ body.is-tablet .workspace-tab-container {
 }
 
 body.is-mobile .workspace-tab-container {
-  background-color: var(--card-bg) !important;
+  background-color: var(--workspace-note-bg) !important;
 }
 
 body.is-mobile .workspace-drawer {
@@ -2178,8 +2267,8 @@ body.is-mobile .workspace-drawer {
 }
 
 body.is-mobile .workspace-drawer-inner {
-  background-color: var(--color-panel);
-  border: 1px solid var(--divider-color);
+  background-color: var(--workspace-sidebar-bg);
+  border: 1px solid var(--workspace-sidebar-border);
   border-radius: var(--mobile-card-radius);
 }
 
@@ -2202,7 +2291,7 @@ body.is-mobile .workspace-tab-header {
 }
 
 body.is-phone .nav-buttons-container:after {
-  background: linear-gradient(to top, var(--color-panel), transparent);
+  background: linear-gradient(to top, var(--workspace-sidebar-bg), transparent);
 }
 
 body.is-mobile .workspace-drawer-active-tab-container {
@@ -2233,8 +2322,8 @@ body.is-tablet .workspace-drawer.is-pinned {
 body.is-mobile .workspace-sidedock-vault-profile {
   padding: 0px;
   margin: 0px;
-  background-color: var(--color-panel);
-  border: 1px solid var(--divider-color) !important;
+  background-color: var(--workspace-sidebar-bg);
+  border: 1px solid var(--workspace-sidebar-border) !important;
   border-radius: 0px 4px 4px 0px;
 }
 
@@ -3047,13 +3136,13 @@ input[type="checkbox"] {
 /* Notebook Navigator */
 body {
   --icon-color: var(--text-normal);
-  --nn-theme-nav-bg: var(--background-default);
-  --nn-theme-nav-header-bg: var(--background-default);
-  --nn-theme-list-bg: var(--background-default);
-  --nn-theme-list-header-bg: var(--background-default);
-  --nn-theme-mobile-nav-bg: var(--background-default);
-  --nn-theme-mobile-list-header-bg: var(--background-default);
-  --nn-theme-mobile-toolbar-bg: var(--background-default);
+  --nn-theme-nav-bg: var(--workspace-sidebar-bg);
+  --nn-theme-nav-header-bg: var(--workspace-sidebar-bg);
+  --nn-theme-list-bg: var(--workspace-sidebar-bg);
+  --nn-theme-list-header-bg: var(--workspace-sidebar-bg);
+  --nn-theme-mobile-nav-bg: var(--workspace-sidebar-bg);
+  --nn-theme-mobile-list-header-bg: var(--workspace-sidebar-bg);
+  --nn-theme-mobile-toolbar-bg: var(--workspace-sidebar-bg);
   --nn-theme-mobile-toolbar-button-icon-color: var(--icon-color);
   --nn-theme-navitem-border-radius: var(--default-radius);
 }
@@ -3411,10 +3500,10 @@ SOFTWARE.
   flex-direction: column !important;
   margin-top: var(--labeled-nav-top-margin);
   margin-bottom: var(--cards-gap);
-  background-color: var(--background-default);
+  background-color: var(--workspace-sidebar-bg);
   align-items: flex-start !important;
   width: 100%;
-  border: 1px solid var(--divider-color) !important;
+  border: 1px solid var(--workspace-sidebar-border) !important;
   border-radius: var(--card-radius);
 }
 
