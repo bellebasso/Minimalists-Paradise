@@ -222,6 +222,12 @@ settings:
     level: 2
     collapsed: true
 
+  - id: transparency-info
+    title: WARNING
+    description: this feature is highly experimental, may cause readability issues and weird visual bugs. it's not recommended to use this feature alongside stacked tabs and frosted glass.
+    type: info-text
+    markdown: true
+
   - id: workspace-background-translucent
     title: translucent workspace background
     description: change the background color when translucent mode is enable, this will only work if the setting translucent window is applied.
@@ -331,6 +337,7 @@ settings:
     default-light: "#A5AAAE"
     default-dark: "#000000"
     variable: background-primary
+    opacity: true
 
   - id: color-panel
     title: cards background
@@ -339,6 +346,7 @@ settings:
     default-light: "#a5aab6"
     default-dark: "#0c0c0c"
     variable: color-panel
+    opacity: true
 
   - id: card-border-color
     title: card border color
@@ -347,6 +355,7 @@ settings:
     default-light: "#252525c3"
     default-dark: "#4d4d4f"
     variable: card-border-color
+    opacity: true
 
   - id: color-accent-theme
     title: theme color accent override
@@ -367,6 +376,7 @@ settings:
     condition:
       - id: custom-color-accent-light-toggle
         value: true
+    opacity: true
 
   - id: custom-color-accent-dark-toggle
     title: enable dark theme color accent override?
@@ -381,6 +391,7 @@ settings:
     condition:
       - id: custom-color-accent-dark-toggle
         value: true
+    opacity: true
 
   - id: interactive-elements-heading
     title: interactive elements
@@ -1238,6 +1249,11 @@ body.is-translucent {
   var(--background-primary) calc(100% - var(--translucency-mix)),
   var(--workspace-background-translucent, var(--background-primary)) var(--translucency-mix)
 );
+--tab-active-bg: color-mix(
+  in srgb,
+  var(--color-accent) calc(100% - var(--translucency-mix)),
+  var(--workspace-background-translucent, var(--color-panel)) var(--translucency-mix)
+);
 }
 
 .theme-light {
@@ -1700,7 +1716,7 @@ body:not(.is-mobile) .horizontal-main-container {
 }
 
 .view-content {
-  background-color: transparent !important;
+  background-color: var(--workspace-note-bg) !important;
 }
 
 .workspace-tab-header-container-inner {
@@ -1898,23 +1914,23 @@ html body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
 
 body:not(.is-mobile).toggle-tab-animations .workspace-tab-header.is-active.mod-active {
   flex-grow: 2 !important;
-  max-width: var(--tab-max-width, 250px);
-  background-color: var(--color-accent);
+  max-width: var(--tab-max-width);
+  background-color: var(--tab-active-bg);
   box-sizing: border-box;
   border: none;
 }
 
 body:not(.is-mobile) .workspace-tab-header.is-active.mod-active {
   flex-grow: 2 !important;
-  max-width: 250px;
+  max-width: var(--tab-max-width);
   background-color: var(--color-accent);
   box-sizing: border-box;
   border: none;
 }
 
 .workspace-tab-header .is-active {
-  max-width: 200px;
-  background-color: var(--color-accent);
+  max-width: var(--tab-max-width);
+  background-color: var(--tab-active-bg);
   box-sizing: border-box;
   border: none;
 }
@@ -3269,6 +3285,17 @@ body {
   --nn-theme-navitem-border-radius: var(--default-radius);
 }
 
+body.is-translucent,
+body.frosted-glass-toggle{
+  --nn-theme-nav-bg: transparent;
+  --nn-theme-nav-header-bg: transparent;
+  --nn-theme-list-bg: transparent;
+  --nn-theme-list-header-bg: transparent;
+  --nn-theme-mobile-nav-bg: transparent;
+  --nn-theme-mobile-list-header-bg: transparent;
+  --nn-theme-mobile-toolbar-bg: transparent;
+}
+
 body .nn-navitem-content {
   border-radius: var(--default-radius);
 }
@@ -4453,7 +4480,6 @@ body {
 .frosted-glass-toggle.frozen-glass .workspace-tab-container,
 .frosted-glass-toggle.frosted-glass .workspace-tab-container,
 .frosted-glass-toggle.ice-glass .workspace-tab-container {
-  background-color: var(--workspace-note-glass-bg) !important;
   border-color: var(--glass-edge-highlight) !important;
   box-shadow: var(--shadow-xxs) !important;
   backdrop-filter: var(--blur-l);
@@ -4478,7 +4504,6 @@ body {
 
 .frosted-glass-toggle.frozen-glass .workspace-ribbon.side-dock-ribbon,
 .frosted-glass-toggle.frozen-glass .side-dock-ribbon-action {
-  background-color: var(--workspace-ribbon-glass-bg) !important;
   border-color: var(--glass-edge-highlight) !important;
 }
 
@@ -4489,10 +4514,13 @@ body {
   background-color: var(--workspace-ribbon-glass-bg) !important;
 }
 .frosted-glass-toggle.frozen-glass .workspace-leaf,
-.frosted-glass-toggle.frozen-glass .workspace-leaf-content,
-.frosted-glass-toggle.frozen-glass .view-content {
+.frosted-glass-toggle.frozen-glass .workspace-leaf-content {
   background-color: transparent !important;
   box-shadow: none !important;
+}
+
+.frosted-glass-toggle .view-content, .frosted-glass-toggle .view-content {
+  background-color: var(--workspace-note-bg);
 }
 
 body.is-mobile.frosted-glass-toggle.frozen-glass .workspace-drawer-inner {
