@@ -185,6 +185,15 @@ settings:
     type: class-toggle
     default: true
 
+  - id: tab-background-active
+    title: active tab background color
+    type: variable-themed-color
+    format: hex
+    default-light: "#A0A6A7"
+    default-dark: "#68686e"
+    variable: tab-background-active
+    opacity: true
+
   - id: tab-size
     title: tab size
     type: variable-number-slider
@@ -1249,7 +1258,7 @@ body.is-translucent {
   var(--background-primary) calc(100% - var(--translucency-mix)),
   var(--workspace-background-translucent, var(--background-primary)) var(--translucency-mix)
 );
---tab-active-bg: color-mix(
+--tab-background-active: color-mix(
   in srgb,
   var(--color-accent) calc(100% - var(--translucency-mix)),
   var(--workspace-background-translucent, var(--color-panel)) var(--translucency-mix)
@@ -1328,7 +1337,6 @@ body:not(.is-mobile) .horizontal-main-container {
   --graph-bg: var(--color-panel);
   --graph-node: var(--color-accent);
   --graph-line: var(--divider-color);
-  --tab-background-active: rgba(255, 255, 255, 0.1);
   --caret-color: var(--text-color);
   --color-panel: #0c0c0c;
   --table-header-background: var(--color-accent);
@@ -1915,7 +1923,7 @@ html body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
 body:not(.is-mobile).toggle-tab-animations .workspace-tab-header.is-active.mod-active {
   flex-grow: 2 !important;
   max-width: var(--tab-max-width);
-  background-color: var(--tab-active-bg);
+  background-color: var(--tab-background-active);
   box-sizing: border-box;
   border: none;
 }
@@ -1930,7 +1938,7 @@ body:not(.is-mobile) .workspace-tab-header.is-active.mod-active {
 
 .workspace-tab-header .is-active {
   max-width: var(--tab-max-width);
-  background-color: var(--tab-active-bg);
+  background-color: var(--tab-background-active);
   box-sizing: border-box;
   border: none;
 }
