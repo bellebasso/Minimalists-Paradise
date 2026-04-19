@@ -2016,7 +2016,7 @@ body:not(.is-mobile) .workspace-tab-header.is-active.mod-active {
 .workspace-sidedock-vault-profile {
   padding: 8px !important;
   margin-right: auto !important;
-  border-top: 1px solid var(--workspace-sidebar-border) !important;
+  border: 1px solid var(--workspace-sidebar-border) !important;
   border-radius: 0px 0px var(--card-radius) var(--card-radius);
   box-sizing: border-box;
   width: 100%;
