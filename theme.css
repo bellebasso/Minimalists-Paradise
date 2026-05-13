@@ -1195,7 +1195,6 @@ body {
   --anim-in: var(--anim-duration-fast) var(--anim-duration-superfast) var(--anim-motion-swing);
   --anim-out: var(--anim-duration-moderate) var(--anim-duration-slow) var(--anim-motion-swing);
   --p-spacing: 4px;
-  --input-radius: var(--default-radius);
   --modal-radius: var(--card-radius);
   --checkbox-radius: var(--default-radius);
   --bases-embed-radius: var(--default-radius);
@@ -1340,7 +1339,6 @@ body:not(.is-mobile) .horizontal-main-container {
   --blockquote-background-color: var(--interactive-normal);
   --blockquote-text: inherit;
   --citation-bg: var(--color-accent);
-  --card-shadow: 0 3px 8px rgb(97 97 97 / 15%);
   --graph-bg: var(--color-panel);
   --graph-node: var(--color-accent);
   --graph-line: var(--divider-color);
@@ -1384,7 +1382,6 @@ body:not(.is-mobile) .horizontal-main-container {
   --blockquote-background-color: var(--interactive-normal);
   --citation-bg: var(--color-accent);
   --graph-bg: var(--background-default);
-  --tab-background-active: rgb(255 255 255 / 10%);
   --caret-color: var(--text-color);
   --icon-color: var(--text-muted);
   --file-title-color: color-mix(in srgb, var(--color-accent) 60%, var(--text-normal) 40%);
@@ -1537,7 +1534,6 @@ body:not(.is-mobile) .horizontal-main-container {
   --divider-color: #4d687684;
   --color-panel: #0F161A;
   --table-header-background: var(--color-accent);
-  --text-color: #F0F0F0;
   --custom-color-accent-dark: #2F424C;
   --icon-color: var(--divider-color);
   --file-title-color: var(--divider-color);
@@ -2037,6 +2033,8 @@ body:not(.is-mobile) .workspace-tab-header.is-active.mod-active {
 
 body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher {
   border-radius: var(--default-radius);
+  height: 32px;
+  cursor: pointer;
 }
 
 body:not(.is-mobile) .workspace-split.mod-left-split {
@@ -2065,10 +2063,6 @@ body:not(.is-mobile) .workspace-split.mod-right-split .nav-buttons-container {
   background-color: var(--workspace-sidebar-bg) !important;
 }
 
-body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-switcher {
-  height: 32px;
-  cursor: pointer;
-}
 
 body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-profile .workspace-drawer-vault-actions {
   gap: var(--size-2-1);
@@ -2425,6 +2419,7 @@ body.is-mobile .workspace-tab-container {
 
 body.is-mobile .workspace-drawer {
   border-radius: var(--mobile-card-radius);
+  background-color: transparent !important;
 }
 
 body.is-mobile .workspace-drawer-inner {
@@ -2470,11 +2465,6 @@ body.is-tablet .workspace-drawer:not(.is-pinned).mod-right {
   padding-top: 0;
   border-radius: var(--card-radius);
 }
-
-body.is-mobile .workspace-drawer {
-  background-color: transparent !important;
-}
-
 
 body.is-tablet .workspace-drawer.is-pinned {
   margin-top: 20px
@@ -2687,12 +2677,6 @@ body.is-mobile .mobile-toolbar {
   overflow: visible;
   padding: 0 var(--side-padding) var(--side-padding) !important;
   box-shadow: none;
-}
-
-body.is-mobile .mobile-toolbar-options-list {
-  gap: 4px;
-  overflow: scroll;
-  border-radius: var(--default-radius);
 }
 
 body.is-tablet .mobile-toolbar {
@@ -3130,7 +3114,6 @@ cite {
   text-align: right;
   display: block;
   position: relative;
-  color: var(--text-color);
   padding-left: 1em;
   padding-right: 1em;
 }
@@ -3656,7 +3639,8 @@ SOFTWARE.
 }
 
 .labeled-nav .mod-left-split .mod-top .workspace-tab-header-container {
-  position: relative;
+  border: none;
+  padding: 0;
   flex-direction: column-reverse !important;
   height: auto;
   width: 100%;
@@ -3737,12 +3721,6 @@ SOFTWARE.
   color: var(--text-normal);
 }
 
-.labeled-nav .mod-left-split .mod-top .workspace-tab-header-container {
-  border: none;
-  padding: 0
-}
-
-.labeled-nav.mod-macos .mod-left-split .mod-top .workspace-tab-header-container::before,
 .labeled-nav.mod-macos.is-hidden-frameless:not(.is-fullscreen) .mod-left-split .mod-top .workspace-tab-header-container::before {
   -webkit-app-region: drag;
   position: absolute;
@@ -3851,7 +3829,6 @@ SOFTWARE.
 .ic-infobox-enable .callout[data-callout="infobox"] .callout-title,
 .ic-infobox-enable .callout[data-callout="infoboxright"] .callout-title,
 .ic-infobox-enable .callout[data-callout="infoboxleft"] .callout-title {
-  all: unset;
   display: block;
   text-align: var(--ic-title-alignment);
   font-size: var(--ic-title-size);
@@ -4282,6 +4259,7 @@ body:not(.is-mobile, .is-popout-window).Ribbon-autohide.show-ribbon.mod-macos.is
 body:not(.is-mobile, .is-popout-window).Ribbon-autohide.show-ribbon.mod-macos.is-hidden-frameless:not(.is-fullscreen):has(.workspace-ribbon.side-dock-ribbon:hover) .mod-left-split .mod-top-left-space .workspace-tab-header-container,
 body:not(.is-mobile, .is-popout-window).Ribbon-autohide.show-ribbon.mod-macos.is-hidden-frameless:not(.is-fullscreen):has(.workspace-ribbon.side-dock-ribbon:hover) .workspace:not(.is-left-sidedock-open) .sidebar-toggle-button.mod-left {
   margin-left: 0;
+  transition: height var(--anim-out), opacity var(--anim-out), margin-left var(--anim-in);
 }
 
 body:not(.is-mobile, .is-popout-window).Ribbon-autohide.show-ribbon.mod-macos.is-hidden-frameless:not(.is-fullscreen) .mod-left-split .mod-top-left-space .workspace-tab-header-container,
@@ -4291,10 +4269,6 @@ body:not(.is-mobile, .is-popout-window).tab-autohide.mod-macos.is-hidden-framele
   transition: height var(--anim-out), opacity var(--anim-out), margin-left var(--anim-out);
 }
 
-body:not(.is-mobile, .is-popout-window).Ribbon-autohide.show-ribbon.mod-macos.is-hidden-frameless:not(.is-fullscreen):has(.workspace-ribbon.side-dock-ribbon:hover) .mod-left-split .mod-top-left-space .workspace-tab-header-container,
-body:not(.is-mobile, .is-popout-window).Ribbon-autohide.show-ribbon.mod-macos.is-hidden-frameless:not(.is-fullscreen):has(.workspace-ribbon.side-dock-ribbon:hover) .workspace:not(.is-left-sidedock-open) .sidebar-toggle-button.mod-left {
-  transition: height var(--anim-out), opacity var(--anim-out), margin-left var(--anim-in);
-}
 
 body:not(.is-mobile, .is-popout-window).tab-autohide.mod-macos.is-hidden-frameless:not(.is-fullscreen):has(.mod-top > .workspace-tab-header-container:hover, .titlebar-button-container:hover) .mod-left-split .mod-top-left-space .workspace-tab-header-container,
 body:not(.is-mobile, .is-popout-window).tab-autohide.mod-macos.is-hidden-frameless:not(.is-fullscreen):has(.mod-top > .workspace-tab-header-container:hover, .titlebar-button-container:hover) .workspace:not(.is-left-sidedock-open) .sidebar-toggle-button.mod-left {
@@ -4569,7 +4543,7 @@ body {
   box-shadow: none !important;
 }
 
-.frosted-glass-toggle .view-content, .frosted-glass-toggle .view-content {
+.frosted-glass-toggle .view-content {
   background-color: var(--workspace-note-bg);
 }
 
