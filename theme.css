@@ -1616,10 +1616,10 @@ body:not(.is-mobile) .horizontal-main-container {
 }
 
 .theme-light.extended-light-color-schemes-toggle.fog {
-  --background-default: #5E6871;
-  --background-primary: #4C555D;
-  --card-bg: #4C555D;
-  --color-panel: #5E6871;
+  --background-default: #858F99;
+  --background-primary: #7A8590;
+  --card-bg: #7A8590;
+  --color-panel: #9BA4AB;
   --text-color: #101010;
   --background-primary-alt: var(--background-primary);
   --background-secondary-alt: var(--background-secondary);
@@ -1632,13 +1632,13 @@ body:not(.is-mobile) .horizontal-main-container {
   --graph-line: #1010102c;
   --caret-color: var(--text-color);
   --table-header-background: var(--color-accent);
-  --custom-color-accent-light: #3C444C;
+  --custom-color-accent-light: #6C7A89;
   --icon-color: var(--divider-color);
   --file-title-color: var(--divider-color);
-  --interactive-normal: #4c555d;
+  --interactive-normal: #848F9A;
   --graph-node-tag: var(--color-accent);
   --text-accent: var(--divider-color);
-  --link-color: #768493;
+  --link-color: #5A6672;
   --link-external-color: var(--link-color);
   --bases-table-border-color: var(--divider-color);
   --link-unresolved-color: var(--link-color);
