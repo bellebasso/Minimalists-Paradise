@@ -3826,7 +3826,6 @@ SOFTWARE.
 .ic-infobox-enable .callout[data-callout="infobox"] .callout-title,
 .ic-infobox-enable .callout[data-callout="infoboxright"] .callout-title,
 .ic-infobox-enable .callout[data-callout="infoboxleft"] .callout-title {
-  all: unset;
   display: block;
   text-align: var(--ic-title-alignment);
   font-size: var(--ic-title-size);
