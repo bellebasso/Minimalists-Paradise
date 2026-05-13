@@ -1,0 +1,9 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "no-duplicate-selectors": true,
+    "selector-class-pattern": "^[a-z][a-z0-9-]*$",
+    "color-hex-length": "long",
+    "declaration-block-trailing-semicolon": "always"
+  }
+}

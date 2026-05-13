@@ -6,17 +6,28 @@
 .obsidian/workspace.json
 .obsidian/workspace-mobile.json
 .obsidian/plugins/
-.obsidian/snippets/  # exceto se for subir snippets como parte oficial do tema
+.obsidian/snippets/
 # temporary files/backup
 *.log
 *.tmp
 *.bak
 *~
+node_modules/
+.map
 # tweaks
 colored folders.css
 colored headers.css
 custom color accent.css
 extended color schemes.css
 
-Minimalists Paradise/previews/
+.claude
+.cursorrules
+.cursorignore
+.github/copilot-instructions.md
+AGENTS.md
+CLAUDE.md
+GEMINI.md
+
+.release.lock
+
 Minimalists Paradise/local config sheets/
