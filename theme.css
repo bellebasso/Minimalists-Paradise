@@ -565,8 +565,8 @@ settings:
         value: sky
       - label: fog
         value: fog
-      - label: red desert
-        value: red-desert
+      - label: rose desert
+        value: rose-desert
       - label: violet haze
         value: violet-haze
 
@@ -1647,11 +1647,11 @@ body:not(.is-mobile) .horizontal-main-container {
   --tab-background-active: var(--color-accent);
 }
 
-.theme-light.extended-light-color-schemes-toggle.red-desert {
-  --background-default: #6A5F6A;
-  --background-primary: #5A505A;
-  --card-bg: #5A505A;
-  --color-panel: #6A5F6A;
+.theme-light.extended-light-color-schemes-toggle.rose-desert {
+  --background-default: #C5BFC5;
+  --background-primary: #9E949E;
+  --card-bg: #9E949E;
+  --color-panel: #C5BFC5;
   --text-color: #101010;
   --background-primary-alt: var(--background-primary);
   --background-secondary-alt: var(--background-secondary);
@@ -1664,13 +1664,13 @@ body:not(.is-mobile) .horizontal-main-container {
   --graph-line: #1010102c;
   --caret-color: var(--text-color);
   --table-header-background: var(--color-accent);
-  --custom-color-accent-light: #443C44;
+  --custom-color-accent-light: #827382;
   --icon-color: var(--divider-color);
   --file-title-color: var(--divider-color);
-  --interactive-normal: #5A505A;
+  --interactive-normal: #8C7D8C;
   --graph-node-tag: var(--color-accent);
   --text-accent: var(--divider-color);
-  --link-color: #968896;
+  --link-color: #615661;
   --link-external-color: var(--link-color);
   --bases-table-border-color: var(--divider-color);
   --link-unresolved-color: var(--link-color);
@@ -2987,7 +2987,7 @@ body.colored-headers.theme-light:not(.colored-headers-override-toggle) {
   --header-6: #9272CC;
 }
 
-.colored-headers.theme-light.extended-light-color-schemes-toggle.red-desert:not(.colored-headers-override-toggle) {
+.colored-headers.theme-light.extended-light-color-schemes-toggle.rose-desert:not(.colored-headers-override-toggle) {
   --header-1: #4A404A;
   --header-2: #594252;
   --header-3: #68445A;
