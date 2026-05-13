@@ -1348,7 +1348,7 @@ body:not(.is-mobile) .horizontal-main-container {
   --custom-color-accent-dark: #68686e;
   --external-link-text-shadow: 1px 1px 2px var(--color-accent);
   --icon-color: var(--text-muted);
-  --file-title-color: var(--divider-color);
+  --file-title-color: color-mix(in srgb, var(--color-accent) 60%, var(--text-normal) 40%);
   --graph-node-tag: var(--color-accent);
   --interactive-normal: #313435A6;
   --text-accent: var(--divider-color);
@@ -1363,6 +1363,8 @@ body:not(.is-mobile) .horizontal-main-container {
   --code-background: var(--background-default);
   --background-modifier-hover: color-mix(in srgb, var(--background-primary) 70%, white 30%);
   --tab-background-active: var(--color-accent);
+  --tag-background: color-mix(in srgb, var(--color-accent) 30%, var(--color-panel) 70%);
+  --tag-color: var(--color-accent);
 }
 
 .theme-light {
@@ -1382,7 +1384,7 @@ body:not(.is-mobile) .horizontal-main-container {
   --graph-bg: var(--background-default);
   --caret-color: var(--text-color);
   --icon-color: var(--text-muted);
-  --file-title-color: var(--divider-color);
+  --file-title-color: color-mix(in srgb, var(--color-accent) 60%, var(--text-normal) 40%);
   --graph-node-tag: var(--color-accent);
   --text-accent: var(--divider-color);
   --custom-color-accent-light: #A9B1C7;
@@ -1395,6 +1397,8 @@ body:not(.is-mobile) .horizontal-main-container {
   --background-modifier-hover: color-mix(in srgb, var(--background-primary) 90%, black 10%);
   --ribbon-background: var(--background-primary);
   --tab-background-active: var(--color-accent);
+  --tag-background: color-mix(in srgb, var(--color-accent) 30%, var(--color-panel) 70%);
+  --tag-color: var(--color-accent);
 }
 
 .theme-light.custom-color-accent-light-toggle {
@@ -3107,7 +3111,6 @@ body.colored-headers.theme-light:not(.colored-headers-override-toggle) {
 cite {
   background-color: var(--color-accent);
   border-radius: var(--citation-radius);
-  color: var(--blockquote-text);
   text-align: right;
   display: block;
   position: relative;
