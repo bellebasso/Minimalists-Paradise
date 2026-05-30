@@ -1170,6 +1170,7 @@ settings:
 
 /* ========================================================================== */
 
+/* START IMPORT: ./foundation/variables.css */
 /* --- GLOBAL VARIABLES ------------------------------------------- */
 
 /* ========================================================================== */
@@ -1248,6 +1249,33 @@ body {
   --divider-color: var(--divider-color);
   --nav-item-radius: var(--default-radius);
   --translucency-mix: 15%;
+  --icon-color: var(--text-normal);
+  --nn-theme-nav-bg: var(--workspace-sidebar-bg);
+  --nn-theme-nav-header-bg: var(--workspace-sidebar-bg);
+  --nn-theme-list-bg: var(--workspace-sidebar-bg);
+  --nn-theme-list-header-bg: var(--workspace-sidebar-bg);
+  --nn-theme-mobile-nav-bg: var(--workspace-sidebar-bg);
+  --nn-theme-mobile-list-header-bg: var(--workspace-sidebar-bg);
+  --nn-theme-mobile-toolbar-bg: var(--workspace-sidebar-bg);
+  --nn-theme-mobile-toolbar-button-icon-color: var(--icon-color);
+  --nn-theme-navitem-border-radius: var(--default-radius);
+  --code-normal: #eeeeee;
+  --code-comment: #16486D;
+  --code-function: #69EED7;
+  --code-important: #4186B6;
+  --code-keyword: #552B79;
+  --code-operator: #6852B3;
+  --code-property: #4A6BDB;
+  --code-punctuation: #558FC7;
+  --code-string: #BE4AA0;
+  --code-tag: #2D76E9;
+  --code-value: #9795EE;
+  --shadow-xxs: inset 0 6px 50px rgb(255 255 255 / 8%), var(--shadow-base);
+  --shadow-border: 0 0 1px 0 rgb(0 0 0 / 40%);
+  --shadow-s: var(--shadow-base), inset 0 0 1px 1px white, var(--shadow-border), 0 8px 15px 0 rgb(0 0 0 / 20%);
+  --shadow-l: var(--shadow-border), inset 0 0 1px 1px white, 0 18px 60px 0 rgb(0 0 0 / 30%);
+  --blur-m: blur(var(--frosted-glass-blur)) saturate(1.5) brightness(1.025);
+  --blur-l: blur(calc(var(--frosted-glass-blur) * 2)) saturate(1.5) brightness(1.025);
 }
 
 body.is-translucent {
@@ -1295,6 +1323,45 @@ body.is-translucent {
   --color-blue-rgb: 8, 109, 221;
   --color-purple-rgb: 120, 82, 238;
   --color-pink-rgb: 213, 57, 132;
+  --background-default: #CED3DF;
+  --background-primary: #DCE0E8;
+  --card-bg: var(--background-primary);
+  --color-panel: var(--background-default);
+  --text-normal: #101010;
+  --background-primary-alt: var(--background-primary);
+  --background-secondary: var(--background-primary);
+  --background-secondary-alt: var(--background-secondary);
+  --background-modifier-border: var(--divider-color);
+  --divider-color: #70707084;
+  --blockquote-border-color: #101010;
+  --blockquote-background-color: var(--interactive-normal);
+  --citation-bg: var(--color-accent);
+  --graph-bg: var(--background-default);
+  --caret-color: color-mix(in srgb, var(--text-normal) 40%, var(--color-accent) 60%);
+  --icon-color: var(--text-muted);
+  --file-title-color: color-mix(in srgb, var(--color-accent) 60%, var(--text-normal) 40%);
+  --graph-node-tag: var(--color-accent);
+  --text-accent: var(--divider-color);
+  --custom-color-accent-light: #A9B1C7;
+  --interactive-normal: #b5becf;
+  --link-color: #47557B;
+  --link-external-color: var(--link-color);
+  --bases-table-border-color: var(--divider-color);
+  --link-unresolved-color: var(--link-color);
+  --graph-node: var(--divider-color);
+  --background-modifier-hover: color-mix(in srgb, var(--background-primary) 90%, black 10%);
+  --ribbon-background: var(--background-primary);
+  --tab-background-active: var(--color-accent);
+  --tag-background: color-mix(in srgb, var(--color-accent) 30%, var(--color-panel) 70%);
+  --tag-color: var(--color-accent);
+  --ic-infobox-color: var(--interactive-normal) !important;
+  --ic-border-color: var(--divider-color) !important;
+  --ic-image-border-color: var(--divider-color);
+  --ic-section-background-color: var(--color-accent);
+  --ic-section-border-color: var(--blockquote-border-color);
+  --ic-horizontal-rule-color: var(--divider-color);
+  --ic-infobox-title-color: var(--color-accent);
+  --callout-color: var(--ic-infobox-color);
 }
 
 .theme-dark {
@@ -1314,25 +1381,6 @@ body.is-translucent {
   --color-blue-rgb: 2, 122, 255;
   --color-purple-rgb: 168, 130, 255;
   --color-pink-rgb: 250, 153, 205;
-}
-
-body:not(.is-mobile) .horizontal-main-container {
-  padding-bottom: 24px !important;
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: var(--scrollbar-thumb-bg);
-  border-radius: var(--default-radius);
-  width: 2px;
-}
-
-/* ========================================================================== */
-
-/* --- THEMES & COLOR SCHEMES ----------------------------------- */
-
-/* ========================================================================== */
-
-.theme-dark {
   --card-shadow: 0 4px 12px rgb(0 0 0 / 30%);
   --background-default: #0c0c0c;
   --text-normal: #ffffff;
@@ -1373,41 +1421,31 @@ body:not(.is-mobile) .horizontal-main-container {
   --tab-background-active: var(--color-accent);
   --tag-background: color-mix(in srgb, var(--color-accent) 30%, var(--color-panel) 70%);
   --tag-color: var(--color-accent);
+  --ic-infobox-color: var(--interactive-normal) !important;
+  --ic-border-color: var(--divider-color) !important;
+  --ic-image-border-color: var(--divider-color);
+  --ic-section-background-color: var(--color-accent) !important;
+  --ic-section-border-color: var(--blockquote-border-color);
+  --ic-horizontal-rule-color: var(--divider-color);
+  --ic-infobox-title-color: var(--color-accent);
+  --callout-color: var(--ic-infobox-color);
 }
 
-.theme-light {
-  --background-default: #CED3DF;
-  --background-primary: #DCE0E8;
-  --card-bg: var(--background-primary);
-  --color-panel: var(--background-default);
-  --text-normal: #101010;
-  --background-primary-alt: var(--background-primary);
-  --background-secondary: var(--background-primary);
-  --background-secondary-alt: var(--background-secondary);
-  --background-modifier-border: var(--divider-color);
-  --divider-color: #70707084;
-  --blockquote-border-color: #101010;
-  --blockquote-background-color: var(--interactive-normal);
-  --citation-bg: var(--color-accent);
-  --graph-bg: var(--background-default);
-  --caret-color: color-mix(in srgb, var(--text-normal) 40%, var(--color-accent) 60%);
-  --icon-color: var(--text-muted);
-  --file-title-color: color-mix(in srgb, var(--color-accent) 60%, var(--text-normal) 40%);
-  --graph-node-tag: var(--color-accent);
-  --text-accent: var(--divider-color);
-  --custom-color-accent-light: #A9B1C7;
-  --interactive-normal: #b5becf;
-  --link-color: #47557B;
-  --link-external-color: var(--link-color);
-  --bases-table-border-color: var(--divider-color);
-  --link-unresolved-color: var(--link-color);
-  --graph-node: var(--divider-color);
-  --background-modifier-hover: color-mix(in srgb, var(--background-primary) 90%, black 10%);
-  --ribbon-background: var(--background-primary);
-  --tab-background-active: var(--color-accent);
-  --tag-background: color-mix(in srgb, var(--color-accent) 30%, var(--color-panel) 70%);
-  --tag-color: var(--color-accent);
+body:not(.is-mobile) .horizontal-main-container {
+  padding-bottom: 24px !important;
 }
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-bg);
+  border-radius: var(--default-radius);
+  width: 2px;
+}
+
+/* ========================================================================== */
+
+/* --- THEMES & COLOR SCHEMES ----------------------------------- */
+
+/* ========================================================================== */
 
 .theme-light.custom-color-accent-light-toggle {
   --color-accent: var(--custom-color-accent-light);
@@ -1721,6 +1759,9 @@ body:not(.is-mobile) .horizontal-main-container {
 
 /* ========================================================================== */
 
+
+/* END IMPORT: ./foundation/variables.css */
+/* START IMPORT: ./app/workspace.css */
 /* --- LAYOUT & STRUCTURE -------------------------------------- */
 
 /* ========================================================================== */
@@ -2245,144 +2286,9 @@ body:not(.empty-state-off).is-tablet .empty-state-action:first-child {
   padding-top: 8px;
 }
 
-/* Modals and Prompts */
 
-/* MIT License Copyright (c) 2025 aaaaalexis */
-@starting-style {
-  .modal,
-  .prompt {
-    opacity: 0;
-    background-color: transparent;
-    filter: blur(4px);
-    transform: scale(0.95) rotateX(-1deg);
-  }
-}
-
-.modal-container {
-  perspective: 240px
-}
-
-.modal,
-.prompt {
-  transition: var(--anim-duration-moderate) var(--anim-motion);
-}
-
-.vertical-tab-header-group-items {
-  display: flex;
-  flex-direction: column;
-}
-
-.vertical-tab-nav-item,
-.vertical-tab-nav-item.is-active {
-  border-radius: var(--default-radius);
-}
-
-@starting-style {
-  .menu,
-  .suggestion-container {
-    opacity: 0;
-    background-color: transparent;
-    filter: blur(4px);
-    transform: translateY(-8px)
-  }
-}
-
-.menu,
-.suggestion-container {
-  transition: var(--anim-duration-moderate) var(--anim-motion);
-  padding: 0
-}
-
-.prompt,
-.modal,
-.menu,
-.suggestion-container,
-.suggestion-item.is-selected {
-  border-radius: var(--modal-radius);
-}
-
-body:not(.is-phone) {
-  --menu-padding: 4px;
-}
-
-body:not(.is-mobile) .menu .menu-separator {
-  margin: 6px 8px;
-}
-
-.suggestion-item.is-selected {
-  background-color: var(--background-modifier-hover);
-}
-
-.menu-item {
-  border-radius: 0;
-}
-
-.menu-group .menu-item:first-child {
-  border-top-left-radius: calc(var(--clickable-icon-radius) / 2);
-  border-top-right-radius: calc(var(--clickable-icon-radius) / 2);
-}
-
-.menu-group .menu-item:last-child {
-  border-bottom-left-radius: calc(var(--clickable-icon-radius) / 2);
-  border-bottom-right-radius: calc(var(--clickable-icon-radius) / 2);
-}
-
-.menu-group .menu-item:not(:last-child) {
-  border-bottom: none;
-}
-
-/* Settings Modal */
-
-.setting-item {
-  border: none;
-}
-
-.modal-setting-nav-bar {
-  border-bottom: none;
-}
-
-.community-item {
-  border-radius: var(--card-radius);
-}
-
-/* Inspired by and adapted from the Cupertino Theme MIT License Copyright (c) 2025 aaaaalexis https://github.com/aaaaalexis/obsidian-cupertino */
-
-
-body:not(.is-phone) .modal.mod-settings .installed-plugins-container .setting-items {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-auto-rows: 1fr;
-  gap: var(--cards-gap)
-}
-
-body:not(.is-phone) .modal.mod-settings .installed-plugins-container .setting-items .setting-item {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid var(--background-modifier-border);
-  border-radius: var(--card-radius);
-  background-color: var(--color-panel);
-  padding: 16px !important;
-  margin: 0 !important
-}
-
-body:not(.is-phone) .modal.mod-settings .installed-plugins-container .setting-items .setting-item-info {
-  margin-inline-end: 0;
-  width: 100%
-}
-
-body:not(.is-phone) .modal.mod-settings .installed-plugins-container .setting-items .setting-item-description>div:last-child {
-  display: -webkit-box;
-  overflow: hidden;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical
-}
-
-body.is-tablet .modal.mod-sidebar-layout .installed-plugins-container {
-  gap: calc(var(--cards-gap) / 2);
-}
-
-/* ========================================================================== */
-
+/* END IMPORT: ./app/workspace.css */
+/* START IMPORT: ./app/mobile.css */
 /* --- MOBILE & TABLET STYLES ---------------------------------- */
 
 .is-mobile.theme-dark,
@@ -2731,6 +2637,150 @@ body.is-phone .mod-root .workspace-leaf-content[data-mode="source"] .view-action
 
 /* ========================================================================== */
 
+
+/* END IMPORT: ./app/mobile.css */
+/* START IMPORT: ./app/modals.css */
+/* Modals and Prompts */
+
+/* MIT License Copyright (c) 2025 aaaaalexis */
+@starting-style {
+  .modal,
+  .prompt {
+    opacity: 0;
+    background-color: transparent;
+    filter: blur(4px);
+    transform: scale(0.95) rotateX(-1deg);
+  }
+}
+
+.modal-container {
+  perspective: 240px
+}
+
+.modal,
+.prompt {
+  transition: var(--anim-duration-moderate) var(--anim-motion);
+}
+
+.vertical-tab-header-group-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.vertical-tab-nav-item,
+.vertical-tab-nav-item.is-active {
+  border-radius: var(--default-radius);
+}
+
+@starting-style {
+  .menu,
+  .suggestion-container {
+    opacity: 0;
+    background-color: transparent;
+    filter: blur(4px);
+    transform: translateY(-8px)
+  }
+}
+
+.menu,
+.suggestion-container {
+  transition: var(--anim-duration-moderate) var(--anim-motion);
+  padding: 0
+}
+
+.prompt,
+.modal,
+.menu,
+.suggestion-container,
+.suggestion-item.is-selected {
+  border-radius: var(--modal-radius);
+}
+
+body:not(.is-phone) {
+  --menu-padding: 4px;
+}
+
+body:not(.is-mobile) .menu .menu-separator {
+  margin: 6px 8px;
+}
+
+.suggestion-item.is-selected {
+  background-color: var(--background-modifier-hover);
+}
+
+.menu-item {
+  border-radius: 0;
+}
+
+.menu-group .menu-item:first-child {
+  border-top-left-radius: calc(var(--clickable-icon-radius) / 2);
+  border-top-right-radius: calc(var(--clickable-icon-radius) / 2);
+}
+
+.menu-group .menu-item:last-child {
+  border-bottom-left-radius: calc(var(--clickable-icon-radius) / 2);
+  border-bottom-right-radius: calc(var(--clickable-icon-radius) / 2);
+}
+
+.menu-group .menu-item:not(:last-child) {
+  border-bottom: none;
+}
+
+/* Settings Modal */
+
+.setting-item {
+  border: none;
+}
+
+.modal-setting-nav-bar {
+  border-bottom: none;
+}
+
+.community-item {
+  border-radius: var(--card-radius);
+}
+
+/* Inspired by and adapted from the Cupertino Theme MIT License Copyright (c) 2025 aaaaalexis https://github.com/aaaaalexis/obsidian-cupertino */
+
+
+body:not(.is-phone) .modal.mod-settings .installed-plugins-container .setting-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: var(--cards-gap)
+}
+
+body:not(.is-phone) .modal.mod-settings .installed-plugins-container .setting-items .setting-item {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--card-radius);
+  background-color: var(--color-panel);
+  padding: 16px !important;
+  margin: 0 !important
+}
+
+body:not(.is-phone) .modal.mod-settings .installed-plugins-container .setting-items .setting-item-info {
+  margin-inline-end: 0;
+  width: 100%
+}
+
+body:not(.is-phone) .modal.mod-settings .installed-plugins-container .setting-items .setting-item-description>div:last-child {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical
+}
+
+body.is-tablet .modal.mod-sidebar-layout .installed-plugins-container {
+  gap: calc(var(--cards-gap) / 2);
+}
+
+/* ========================================================================== */
+
+
+/* END IMPORT: ./app/modals.css */
+/* START IMPORT: ./foundation/typography.css */
 /* --- TYPOGRAPHY -------------------------------------------- */
 
 /* Fonts */
@@ -3272,6 +3322,130 @@ input[type="checkbox"] {
 
 /* ========================================================================== */
 
+
+/* END IMPORT: ./foundation/typography.css */
+/* START IMPORT: ./features/ui-elements.css */
+/* --- UI ELEMENTS ------------------------------------------ */
+
+/* ========================================================================== */
+
+/* Icons */
+
+
+/* Tables */
+.markdown-preview-view table,
+.cm-s-obsidian .cm-table,
+.cm-s-obsidian table,
+.dataview .dataview-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cm-s-obsidian .cm-table,
+.cm-s-obsidian table {
+  width: fit-content;
+}
+
+.markdown-preview-view table thead,
+.markdown-source-view.mod-cm6 table thead {
+  background-color: var(--color-accent);
+  color: var(--text-normal);
+  border: 1px solid var(--divider-color);
+}
+
+.markdown-preview-view table thead {
+  padding: 0.5em;
+}
+
+.dataview .dataview-table {
+  width: 100%;
+}
+
+.table-view-table .table-view-td,
+.table-view-table .table-view-th {
+  border-right: 2px solid var(--divider-color);
+  border-bottom: 2px solid var(--divider-color);
+  padding: 6px 10px;
+}
+
+.table-view-tr> :last-child {
+  border-right: none;
+}
+
+/* Callouts */
+
+.callout {
+  box-shadow: var(--shadow-tactile);
+  background: linear-gradient(rgb(var(--callout-color), 0.2), rgb(var(--callout-color), 0.3));
+  border-radius: var(--blockquote-radius);
+}
+
+.callout-content {
+  color: var(--text-normal);
+}
+
+/* Graph View */
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+body.mod-mobile canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.graph-controls:not(.is-close) {
+  border-radius: var(--modal-radius);
+}
+
+/* File and Folder Titles */
+.nav-file-title,
+.nav-folder-title {
+  color: var(--file-title-color);
+}
+
+.collapse-icon {
+  color: var(--file-title-color) !important;
+}
+
+.collapse-icon svg.svg-icon.right-triangle {
+  color: var(--file-title-color);
+}
+
+.tree-item-icon.collapse-icon {
+  color: var(--divider-color);
+}
+
+/* Frontmatter */
+.cm-def.cm-hmd-frontmatter {
+  color: var(--color-accent) !important;
+}
+
+input.metadata-property-key-input {
+  color: var(--color-accent);
+}
+
+.inline-title {
+  margin-bottom: 4px;
+}
+
+.metadata-content {
+  background-color: var(--background-secondary);
+  border-radius: calc(var(--default-radius) * 1.5);
+  border: 0.5px solid var(--divider-color);
+  padding: 4px;
+}
+
+/* ========================================================================== */
+
+
+/* END IMPORT: ./features/ui-elements.css */
+/* START IMPORT: ./plugins/misc.css */
 /* --- PLUGINS STYLING --------------------------------------- */
 
 /* Bases */
@@ -3291,18 +3465,6 @@ input[type="checkbox"] {
 }
 
 /* Notebook Navigator */
-body {
-  --icon-color: var(--text-normal);
-  --nn-theme-nav-bg: var(--workspace-sidebar-bg);
-  --nn-theme-nav-header-bg: var(--workspace-sidebar-bg);
-  --nn-theme-list-bg: var(--workspace-sidebar-bg);
-  --nn-theme-list-header-bg: var(--workspace-sidebar-bg);
-  --nn-theme-mobile-nav-bg: var(--workspace-sidebar-bg);
-  --nn-theme-mobile-list-header-bg: var(--workspace-sidebar-bg);
-  --nn-theme-mobile-toolbar-bg: var(--workspace-sidebar-bg);
-  --nn-theme-mobile-toolbar-button-icon-color: var(--icon-color);
-  --nn-theme-navitem-border-radius: var(--default-radius);
-}
 
 body.is-translucent,
 body.frosted-glass-toggle{
@@ -3422,140 +3584,11 @@ button.kanban-plugin__new-item-button {
 
 /* --- SYNTAX HIGHLIGHTING ------------------------------------ */
 
-body {
-  --code-normal: #eeeeee;
-  --code-comment: #16486D;
-  --code-function: #69EED7;
-  --code-important: #4186B6;
-  --code-keyword: #552B79;
-  --code-operator: #6852B3;
-  --code-property: #4A6BDB;
-  --code-punctuation: #558FC7;
-  --code-string: #BE4AA0;
-  --code-tag: #2D76E9;
-  --code-value: #9795EE;
-}
-
 /* ========================================================================== */
 
-/* --- UI ELEMENTS ------------------------------------------ */
 
-/* ========================================================================== */
-
-/* Icons */
-
-
-/* Tables */
-.markdown-preview-view table,
-.cm-s-obsidian .cm-table,
-.cm-s-obsidian table,
-.dataview .dataview-table {
-  border-collapse: separate;
-  border-spacing: 0;
-  border: 1px solid var(--background-modifier-border);
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.cm-s-obsidian .cm-table,
-.cm-s-obsidian table {
-  width: fit-content;
-}
-
-.markdown-preview-view table thead,
-.markdown-source-view.mod-cm6 table thead {
-  background-color: var(--color-accent);
-  color: var(--text-normal);
-  border: 1px solid var(--divider-color);
-}
-
-.markdown-preview-view table thead {
-  padding: 0.5em;
-}
-
-.dataview .dataview-table {
-  width: 100%;
-}
-
-.table-view-table .table-view-td,
-.table-view-table .table-view-th {
-  border-right: 2px solid var(--divider-color);
-  border-bottom: 2px solid var(--divider-color);
-  padding: 6px 10px;
-}
-
-.table-view-tr> :last-child {
-  border-right: none;
-}
-
-/* Callouts */
-
-.callout {
-  box-shadow: var(--shadow-tactile);
-  background: linear-gradient(rgb(var(--callout-color), 0.2), rgb(var(--callout-color), 0.3));
-  border-radius: var(--blockquote-radius);
-}
-
-.callout-content {
-  color: var(--text-normal);
-}
-
-/* Graph View */
-
-canvas {
-  width: 100%;
-  height: 100%;
-}
-
-body.mod-mobile canvas {
-  width: 100%;
-  height: 100%;
-}
-
-.graph-controls:not(.is-close) {
-  border-radius: var(--modal-radius);
-}
-
-/* File and Folder Titles */
-.nav-file-title,
-.nav-folder-title {
-  color: var(--file-title-color);
-}
-
-.collapse-icon {
-  color: var(--file-title-color) !important;
-}
-
-.collapse-icon svg.svg-icon.right-triangle {
-  color: var(--file-title-color);
-}
-
-.tree-item-icon.collapse-icon {
-  color: var(--divider-color);
-}
-
-/* Frontmatter */
-.cm-def.cm-hmd-frontmatter {
-  color: var(--color-accent) !important;
-}
-
-input.metadata-property-key-input {
-  color: var(--color-accent);
-}
-
-.inline-title {
-  margin-bottom: 4px;
-}
-
-.metadata-content {
-  background-color: var(--background-secondary);
-  border-radius: calc(var(--default-radius) * 1.5);
-  border: 0.5px solid var(--divider-color);
-  padding: 4px;
-}
-
-/* ========================================================================== */
-
+/* END IMPORT: ./plugins/misc.css */
+/* START IMPORT: ./features/snippets.css */
 /* --- INTEGRATED SNIPPETS ----------------------------------- */
 
 /* ========================================================================== */
@@ -3778,28 +3811,6 @@ SOFTWARE.
   --ic-image-border: 0px;
   --ic-image-round-corners: 0px;
   --ic-section-background-color: rgb(128 128 255 / 10%);
-}
-
-.theme-light {
-  --ic-infobox-color: var(--interactive-normal) !important;
-  --ic-border-color: var(--divider-color) !important;
-  --ic-image-border-color: var(--divider-color);
-  --ic-section-background-color: var(--color-accent);
-  --ic-section-border-color: var(--blockquote-border-color);
-  --ic-horizontal-rule-color: var(--divider-color);
-  --ic-infobox-title-color: var(--color-accent);
-  --callout-color: var(--ic-infobox-color);
-}
-
-.theme-dark {
-  --ic-infobox-color: var(--interactive-normal) !important;
-  --ic-border-color: var(--divider-color) !important;
-  --ic-image-border-color: var(--divider-color);
-  --ic-section-background-color: var(--color-accent) !important;
-  --ic-section-border-color: var(--blockquote-border-color);
-  --ic-horizontal-rule-color: var(--divider-color);
-  --ic-infobox-title-color: var(--color-accent);
-  --callout-color: var(--ic-infobox-color);
 }
 
 .ic-infobox-enable .markdown-rendered blockquote::before {
@@ -4483,15 +4494,10 @@ body.labeled-nav.tab-autohide .mod-left-split .mod-top .workspace-tab-header.is-
 
 /* ========================================================================== */
 
+
+/* END IMPORT: ./features/snippets.css */
+/* START IMPORT: ./features/frosted-glass.css */
 /* --- FROSTED GLASS / LIQUID GLASS ------------------------- */
-body {
-  --shadow-xxs: inset 0 6px 50px rgb(255 255 255 / 8%), var(--shadow-base);
-  --shadow-border: 0 0 1px 0 rgb(0 0 0 / 40%);
-  --shadow-s: var(--shadow-base), inset 0 0 1px 1px white, var(--shadow-border), 0 8px 15px 0 rgb(0 0 0 / 20%);
-  --shadow-l: var(--shadow-border), inset 0 0 1px 1px white, 0 18px 60px 0 rgb(0 0 0 / 30%);
-  --blur-m: blur(var(--frosted-glass-blur)) saturate(1.5) brightness(1.025);
-  --blur-l: blur(calc(var(--frosted-glass-blur) * 2)) saturate(1.5) brightness(1.025);
-}
 
 .frosted-glass-toggle.frosted-glass .prompt, .frosted-glass-toggle.frosted-glass .modal, .frosted-glass-toggle.frosted-glass .menu,
 .frosted-glass-toggle.ice-glass .prompt, .frosted-glass-toggle.ice-glass .modal, .frosted-glass-toggle.ice-glass .menu,
@@ -4657,3 +4663,5 @@ body:not(.is-mobile).frosted-glass-toggle.frosted-glass .workspace-split.mod-lef
   overflow: hidden;
   background-clip: padding-box;
 }
+
+/* END IMPORT: ./features/frosted-glass.css */

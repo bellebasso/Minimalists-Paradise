@@ -1,0 +1,118 @@
+/* --- UI ELEMENTS ------------------------------------------ */
+
+/* ========================================================================== */
+
+/* Icons */
+
+
+/* Tables */
+.markdown-preview-view table,
+.cm-s-obsidian .cm-table,
+.cm-s-obsidian table,
+.dataview .dataview-table {
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.cm-s-obsidian .cm-table,
+.cm-s-obsidian table {
+  width: fit-content;
+}
+
+.markdown-preview-view table thead,
+.markdown-source-view.mod-cm6 table thead {
+  background-color: var(--color-accent);
+  color: var(--text-normal);
+  border: 1px solid var(--divider-color);
+}
+
+.markdown-preview-view table thead {
+  padding: 0.5em;
+}
+
+.dataview .dataview-table {
+  width: 100%;
+}
+
+.table-view-table .table-view-td,
+.table-view-table .table-view-th {
+  border-right: 2px solid var(--divider-color);
+  border-bottom: 2px solid var(--divider-color);
+  padding: 6px 10px;
+}
+
+.table-view-tr> :last-child {
+  border-right: none;
+}
+
+/* Callouts */
+
+.callout {
+  box-shadow: var(--shadow-tactile);
+  background: linear-gradient(rgb(var(--callout-color), 0.2), rgb(var(--callout-color), 0.3));
+  border-radius: var(--blockquote-radius);
+}
+
+.callout-content {
+  color: var(--text-normal);
+}
+
+/* Graph View */
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+body.mod-mobile canvas {
+  width: 100%;
+  height: 100%;
+}
+
+.graph-controls:not(.is-close) {
+  border-radius: var(--modal-radius);
+}
+
+/* File and Folder Titles */
+.nav-file-title,
+.nav-folder-title {
+  color: var(--file-title-color);
+}
+
+.collapse-icon {
+  color: var(--file-title-color) !important;
+}
+
+.collapse-icon svg.svg-icon.right-triangle {
+  color: var(--file-title-color);
+}
+
+.tree-item-icon.collapse-icon {
+  color: var(--divider-color);
+}
+
+/* Frontmatter */
+.cm-def.cm-hmd-frontmatter {
+  color: var(--color-accent) !important;
+}
+
+input.metadata-property-key-input {
+  color: var(--color-accent);
+}
+
+.inline-title {
+  margin-bottom: 4px;
+}
+
+.metadata-content {
+  background-color: var(--background-secondary);
+  border-radius: calc(var(--default-radius) * 1.5);
+  border: 0.5px solid var(--divider-color);
+  padding: 4px;
+}
+
+/* ========================================================================== */
+

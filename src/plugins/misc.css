@@ -1,0 +1,140 @@
+/* --- PLUGINS STYLING --------------------------------------- */
+
+/* Bases */
+@supports (color: color-mix(in srgb, white 50%, black)) {
+  .callout {
+    --bases-table-header-background: transparent;
+    --bases-table-header-background-hover: rgb(var(--callout-color), 0.1);
+    --bases-embed-border-color: var(--divider-color);
+    --bases-table-border-color: var(--divider-color);
+    --table-border-color: var(--divider-color);
+    --bases-embed-border-radius: calc(var(--default-radius) * 1.5);
+  }
+}
+
+.bases-cards-item {
+  border-radius: var(--default-radius);
+}
+
+/* Notebook Navigator */
+
+body.is-translucent,
+body.frosted-glass-toggle{
+  --nn-theme-nav-bg: transparent;
+  --nn-theme-nav-header-bg: transparent;
+  --nn-theme-list-bg: transparent;
+  --nn-theme-list-header-bg: transparent;
+  --nn-theme-mobile-nav-bg: transparent;
+  --nn-theme-mobile-list-header-bg: transparent;
+  --nn-theme-mobile-toolbar-bg: transparent;
+}
+
+body .nn-navitem-content {
+  border-radius: var(--default-radius);
+}
+
+.nn-search-bar-container.nn-search-bar-visible,
+.notebook-navigator-mobile .nn-search-bar-container.nn-search-bar-visible {
+  border-bottom: none;
+}
+
+.nn-mobile-toolbar {
+  border-top: none;
+  padding: var(--size-2-2);
+  height: auto;
+  min-height: auto;
+}
+
+.nn-file-extension-badge {
+  background-color: var(--background-default);
+}
+
+.nn-navitem {
+  border-radius: var(--default-radius);
+}
+
+.nn-file.nn-selected .nn-file-content::before,
+.nn-navitem.nn-selected::after {
+  background-color: var(--color-accent);
+}
+
+.nn-file.nn-selected .nn-file-content::before {
+  border-radius: var(--default-radius);
+}
+
+.nn-navitem.nn-selected::after {
+  border-radius: var(--default-radius);
+}
+
+.nn-mobile-toolbar-button {
+  --icon-stroke: var(--icon-l-stroke-width);
+
+  stroke-width: 5px;
+  width: calc(var(--icon-size) * 2);
+  height: calc(var(--icon-size) * 2);
+  border-radius: calc(var(--default-radius));
+  min-width: auto;
+  min-height: auto;
+  padding: 0 !important;
+  opacity: var(--icon-opacity);
+}
+
+.nn-icon-button {
+  border-radius: calc(var(--default-radius) / 2);
+}
+
+.nn-mobile-toolbar-button svg {
+  stroke-width: var(--icon-l-stroke-width);
+}
+
+.is-phone .nn-mobile-toolbar-button {
+  width: calc(var(--icon-size) * 2);
+  height: calc(var(--icon-size) * 2);
+  border-radius: var(--default-radius);
+}
+
+.notebook-navigator-mobile .nn-search-input {
+  border-radius: var(--input-radius);
+}
+
+.nn-split-container.nn-desktop.nn-single-pane .nn-navigation-pane .nn-navigation-pane-scroller,
+.nn-split-container.nn-desktop.nn-single-pane .nn-navigation-pane .nn-pane-header {
+  border-right: none;
+}
+
+.plugin-tasks-toolbar label input {
+  border-radius: calc(var(--default-radius) / 2);
+  border: 1px solid var(--divider-color);
+}
+
+/* Kanban */
+.kanban-plugin__lane {
+  border-radius: var(--default-radius);
+}
+
+.kanban-plugin__lane-header-wrapper {
+  border-bottom: none;
+}
+
+.kanban-plugin__item-button-wrapper {
+  border-top: none;
+}
+
+button.kanban-plugin__new-item-button {
+  background-color: var(--background-default);
+}
+
+.kanban-plugin__table-wrapper table {
+  background-color: var(--background-primary);
+}
+
+.various-complements__suggestion-item.is-selected {
+  background-color: var(--color-accent);
+}
+
+/* ========================================================================== */
+
+/* --- SYNTAX HIGHLIGHTING ------------------------------------ */
+
+/* ========================================================================== */
+
