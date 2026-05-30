@@ -1,0 +1,586 @@
+/* --- GLOBAL VARIABLES ------------------------------------------- */
+
+/* ========================================================================== */
+
+body {
+  --cards-gap: 16px;
+  --card-padding: 16px;
+  --inline-title-color: var(--color-accent);
+  --nn-selected-file-bg-color: var(--color-accent);
+  --divider-width: 1px;
+  --default-radius: 16px;
+  --card-radius: var(--default-radius);
+  --mobile-card-radius: calc(var(--card-radius) * 2);
+  --mobile-sidebar-radius: var(--mobile-card-radius);
+  --clickable-icon-radius: calc(var(--default-radius) / 2);
+  --header-height: 35px;
+  --blockquote-radius: var(--default-radius);
+  --citation-radius: calc(var(--default-radius) / 2);
+  --input-radius: calc(var(--default-radius) / 2);
+  --modal-border-color: var(--divider-color);
+  --menu-padding: 32px 16px;
+  --prompt-border-color: var(--divider-color);
+  --mobile-sidebar-background: var(--background-primary);
+  --anim-speed: 1;
+  --anim-duration-superfast: calc(75ms / var(--anim-speed));
+  --anim-duration-fast: calc(150ms / var(--anim-speed));
+  --anim-duration-moderate: calc(300ms / var(--anim-speed));
+  --anim-duration-slow: calc(600ms / var(--anim-speed));
+  --anim-motion: cubic-bezier(0.1, 0, 0.1, 1.25);
+  --anim-in: var(--anim-duration-fast) var(--anim-duration-superfast) var(--anim-motion-swing);
+  --anim-out: var(--anim-duration-moderate) var(--anim-duration-slow) var(--anim-motion-swing);
+  --p-spacing: 4px;
+  --modal-radius: var(--card-radius);
+  --checkbox-radius: var(--default-radius);
+  --bases-embed-radius: var(--default-radius);
+  --side-padding: 20px;
+  --mobile-toolbar-height: auto;
+  --toolbar-option-width: var(--mobile-toolbar-height);
+  --workspace-note-opacity: 1;
+  --workspace-sidebar-opacity: 1;
+  --workspace-ribbon-opacity: 1;
+  --workspace-tab-opacity: 0.9;
+  --workspace-note-surface: var(--color-panel);
+  --workspace-sidebar-surface: var(--color-panel);
+  --workspace-ribbon-surface: var(--background-primary);
+  --workspace-tab-surface: var(--background-primary);
+  --workspace-note-bg: color-mix(in srgb, var(--workspace-note-surface) calc(var(--workspace-note-opacity) * 100%), transparent);
+  --workspace-sidebar-bg: color-mix(in srgb, var(--workspace-sidebar-surface) calc(var(--workspace-sidebar-opacity) * 100%), transparent);
+  --workspace-ribbon-bg: color-mix(in srgb, var(--workspace-ribbon-surface) calc(var(--workspace-ribbon-opacity) * 100%), transparent);
+  --workspace-tab-bg: color-mix(in srgb, var(--workspace-tab-surface) calc(var(--workspace-tab-opacity) * 100%), transparent);
+  --workspace-note-border: color-mix(in srgb, var(--card-border-color, var(--divider-color)) calc(var(--workspace-note-opacity) * 100%), transparent);
+  --workspace-sidebar-border: color-mix(in srgb, var(--card-border-color, var(--divider-color)) calc(var(--workspace-sidebar-opacity) * 100%), transparent);
+  --workspace-ribbon-border: color-mix(in srgb, var(--divider-color) calc(var(--workspace-ribbon-opacity) * 100%), transparent);
+  --workspace-tab-border: color-mix(in srgb, var(--divider-color) calc(var(--workspace-tab-opacity) * 100%), transparent);
+  --workspace-note-glass-bg: color-mix(in srgb, var(--workspace-note-surface) 42%, transparent);
+  --workspace-sidebar-glass-bg: color-mix(in srgb, var(--workspace-sidebar-surface) 42%, transparent);
+  --workspace-ribbon-glass-bg: color-mix(in srgb, var(--workspace-ribbon-surface) 36%, transparent);
+  --workspace-tab-glass-bg: color-mix(in srgb, var(--workspace-tab-surface) 36%, transparent);
+  --glass-edge-highlight: color-mix(in srgb, white 28%, var(--card-border-color, var(--divider-color)));
+  --frosted-glass-blur: 8px;
+  --shadow-base: inset 1px 1px 2px rgb(255 255 255 / 50%), inset -1px -1px 2px rgb(255 255 255 / 50%), inset 0 4px 16px rgb(255 255 255 / 2.5%);
+  --shadow-xs: inset 0 8px 64px rgb(255 255 255 / 12.5%), var(--shadow-base);
+  --blur-s: blur(calc(var(--frosted-glass-blur) / 2)) saturate(1.5) brightness(1.025);
+  --blur-s-alt: blur(calc(var(--frosted-glass-blur) / 2)) saturate(1.5) brightness(0.75);
+  --blur-m: blur(var(--frosted-glass-blur)) saturate(1.5) brightness(1.025);
+  --tab-radius: calc(var(--default-radius) / 2.5);
+  --tab-radius-active: var(--tab-radius);
+  --text-highlight-bg: var(--color-accent);
+  --tab-size: 18px;
+  --tab-max-width: 250px;
+  --shadow-tactile: rgb(0 0 0 / 4%) 0px 2px 8px -2px, rgb(var(--mono-rgb-100), 0.04) 0px 2px 4px -2px;
+  --callout-border-width: 1px;
+  --callout-border-radius: var(--blockquote-radius);
+  --list-marker-color: var(--color-accent);
+  --code-radius: var(--blockquote-radius);
+  --divider-color: var(--divider-color);
+  --nav-item-radius: var(--default-radius);
+  --translucency-mix: 15%;
+  --icon-color: var(--text-normal);
+  --nn-theme-nav-bg: var(--workspace-sidebar-bg);
+  --nn-theme-nav-header-bg: var(--workspace-sidebar-bg);
+  --nn-theme-list-bg: var(--workspace-sidebar-bg);
+  --nn-theme-list-header-bg: var(--workspace-sidebar-bg);
+  --nn-theme-mobile-nav-bg: var(--workspace-sidebar-bg);
+  --nn-theme-mobile-list-header-bg: var(--workspace-sidebar-bg);
+  --nn-theme-mobile-toolbar-bg: var(--workspace-sidebar-bg);
+  --nn-theme-mobile-toolbar-button-icon-color: var(--icon-color);
+  --nn-theme-navitem-border-radius: var(--default-radius);
+  --code-normal: #eeeeee;
+  --code-comment: #16486D;
+  --code-function: #69EED7;
+  --code-important: #4186B6;
+  --code-keyword: #552B79;
+  --code-operator: #6852B3;
+  --code-property: #4A6BDB;
+  --code-punctuation: #558FC7;
+  --code-string: #BE4AA0;
+  --code-tag: #2D76E9;
+  --code-value: #9795EE;
+  --shadow-xxs: inset 0 6px 50px rgb(255 255 255 / 8%), var(--shadow-base);
+  --shadow-border: 0 0 1px 0 rgb(0 0 0 / 40%);
+  --shadow-s: var(--shadow-base), inset 0 0 1px 1px white, var(--shadow-border), 0 8px 15px 0 rgb(0 0 0 / 20%);
+  --shadow-l: var(--shadow-border), inset 0 0 1px 1px white, 0 18px 60px 0 rgb(0 0 0 / 30%);
+  --blur-m: blur(var(--frosted-glass-blur)) saturate(1.5) brightness(1.025);
+  --blur-l: blur(calc(var(--frosted-glass-blur) * 2)) saturate(1.5) brightness(1.025);
+}
+
+body.is-translucent {
+--workspace-note-surface: color-mix(
+  in srgb,
+  var(--color-panel) calc(100% - var(--translucency-mix)),
+  var(--workspace-background-translucent, var(--color-panel)) var(--translucency-mix)
+);
+--workspace-sidebar-surface: color-mix(
+  in srgb,
+  var(--color-panel) calc(100% - var(--translucency-mix)),
+  var(--workspace-background-translucent, var(--color-panel)) var(--translucency-mix)
+);
+--workspace-ribbon-surface: color-mix(
+  in srgb,
+  var(--background-primary) calc(100% - var(--translucency-mix)),
+  var(--workspace-background-translucent, var(--background-primary)) var(--translucency-mix)
+);
+--workspace-tab-surface: color-mix(
+  in srgb,
+  var(--background-primary) calc(100% - var(--translucency-mix)),
+  var(--workspace-background-translucent, var(--background-primary)) var(--translucency-mix)
+);
+--tab-background-active: color-mix(
+  in srgb,
+  var(--color-accent) calc(100% - var(--translucency-mix)),
+  var(--workspace-background-translucent, var(--color-panel)) var(--translucency-mix)
+);
+}
+
+.theme-light {
+  --color-red: #e93147;
+  --color-orange: #ec7500;
+  --color-yellow: #e0ac00;
+  --color-green: #08b94e;
+  --color-cyan: #00bfbc;
+  --color-blue: #086ddd;
+  --color-purple: #7852ee;
+  --color-pink: #d53984;
+  --color-red-rgb: 233, 49, 71;
+  --color-orange-rgb: 236, 117, 0;
+  --color-yellow-rgb: 224, 172, 0;
+  --color-green-rgb: 8, 185, 78;
+  --color-cyan-rgb: 0, 191, 188;
+  --color-blue-rgb: 8, 109, 221;
+  --color-purple-rgb: 120, 82, 238;
+  --color-pink-rgb: 213, 57, 132;
+  --background-default: #CED3DF;
+  --background-primary: #DCE0E8;
+  --card-bg: var(--background-primary);
+  --color-panel: var(--background-default);
+  --text-normal: #101010;
+  --background-primary-alt: var(--background-primary);
+  --background-secondary: var(--background-primary);
+  --background-secondary-alt: var(--background-secondary);
+  --background-modifier-border: var(--divider-color);
+  --divider-color: #70707084;
+  --blockquote-border-color: #101010;
+  --blockquote-background-color: var(--interactive-normal);
+  --citation-bg: var(--color-accent);
+  --graph-bg: var(--background-default);
+  --caret-color: color-mix(in srgb, var(--text-normal) 40%, var(--color-accent) 60%);
+  --icon-color: var(--text-muted);
+  --file-title-color: color-mix(in srgb, var(--color-accent) 60%, var(--text-normal) 40%);
+  --graph-node-tag: var(--color-accent);
+  --text-accent: var(--divider-color);
+  --custom-color-accent-light: #A9B1C7;
+  --interactive-normal: #b5becf;
+  --link-color: #47557B;
+  --link-external-color: var(--link-color);
+  --bases-table-border-color: var(--divider-color);
+  --link-unresolved-color: var(--link-color);
+  --graph-node: var(--divider-color);
+  --background-modifier-hover: color-mix(in srgb, var(--background-primary) 90%, black 10%);
+  --ribbon-background: var(--background-primary);
+  --tab-background-active: var(--color-accent);
+  --tag-background: color-mix(in srgb, var(--color-accent) 30%, var(--color-panel) 70%);
+  --tag-color: var(--color-accent);
+  --ic-infobox-color: var(--interactive-normal) !important;
+  --ic-border-color: var(--divider-color) !important;
+  --ic-image-border-color: var(--divider-color);
+  --ic-section-background-color: var(--color-accent);
+  --ic-section-border-color: var(--blockquote-border-color);
+  --ic-horizontal-rule-color: var(--divider-color);
+  --ic-infobox-title-color: var(--color-accent);
+  --callout-color: var(--ic-infobox-color);
+}
+
+.theme-dark {
+  --color-red: #fb464c;
+  --color-orange: #e9973f;
+  --color-yellow: #e0de71;
+  --color-green: #44cf6e;
+  --color-cyan: #53dfdd;
+  --color-blue: #027aff;
+  --color-purple: #a882ff;
+  --color-pink: #fa99cd;
+  --color-red-rgb: 251, 70, 76;
+  --color-orange-rgb: 233, 151, 63;
+  --color-yellow-rgb: 224, 222, 113;
+  --color-green-rgb: 68, 207, 110;
+  --color-cyan-rgb: 83, 223, 221;
+  --color-blue-rgb: 2, 122, 255;
+  --color-purple-rgb: 168, 130, 255;
+  --color-pink-rgb: 250, 153, 205;
+  --card-shadow: 0 4px 12px rgb(0 0 0 / 30%);
+  --background-default: #0c0c0c;
+  --text-normal: #ffffff;
+  --background-primary: #000000;
+  --background-primary-alt: var(--background-primary) !important;
+  --background-secondary: var(--background-primary);
+  --background-secondary-alt: var(--background-primary);
+  --card-bg: #000000;
+  --divider-color: #59595984;
+  --blockquote-border-color: #595959;
+  --blockquote-background-color: var(--interactive-normal);
+  --blockquote-text: inherit;
+  --citation-bg: var(--color-accent);
+  --graph-bg: var(--color-panel);
+  --graph-node: var(--color-accent);
+  --graph-line: var(--divider-color);
+  --caret-color: color-mix(in srgb, var(--text-normal) 40%, var(--color-accent) 60%);
+  --cursor-color: var(--text-normal);
+  --color-panel: #0c0c0c;
+  --table-header-background: var(--color-accent);
+  --custom-color-accent-dark: #68686e;
+  --external-link-text-shadow: 1px 1px 2px var(--color-accent);
+  --icon-color: var(--text-muted);
+  --file-title-color: color-mix(in srgb, var(--color-accent) 60%, var(--text-normal) 40%);
+  --graph-node-tag: var(--color-accent);
+  --interactive-normal: #313435A6;
+  --text-accent: var(--divider-color);
+  --link-color: #9FA0A4;
+  --link-external-color: var(--link-color);
+  --bases-table-border-color: var(--divider-color);
+  --link-unresolved-color: var(--link-color);
+  --hr-color: var(--divider-color);
+  --text-selection: #a5aab680;
+  --scrollbar-thumb-bg: #ffffff50;
+  --scrollbar-bg: #ffffff10;
+  --code-background: var(--background-default);
+  --background-modifier-hover: color-mix(in srgb, var(--background-primary) 70%, white 30%);
+  --tab-background-active: var(--color-accent);
+  --tag-background: color-mix(in srgb, var(--color-accent) 30%, var(--color-panel) 70%);
+  --tag-color: var(--color-accent);
+  --ic-infobox-color: var(--interactive-normal) !important;
+  --ic-border-color: var(--divider-color) !important;
+  --ic-image-border-color: var(--divider-color);
+  --ic-section-background-color: var(--color-accent) !important;
+  --ic-section-border-color: var(--blockquote-border-color);
+  --ic-horizontal-rule-color: var(--divider-color);
+  --ic-infobox-title-color: var(--color-accent);
+  --callout-color: var(--ic-infobox-color);
+}
+
+body:not(.is-mobile) .horizontal-main-container {
+  padding-bottom: 24px !important;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar-thumb-bg);
+  border-radius: var(--default-radius);
+  width: 2px;
+}
+
+/* ========================================================================== */
+
+/* --- THEMES & COLOR SCHEMES ----------------------------------- */
+
+/* ========================================================================== */
+
+.theme-light.custom-color-accent-light-toggle {
+  --color-accent: var(--custom-color-accent-light);
+}
+
+.theme-dark.custom-color-accent-dark-toggle {
+  --color-accent: var(--custom-color-accent-dark);
+}
+
+/* Extended Dark Color Schemes */
+.theme-dark.extended-dark-color-schemes-toggle.abyss {
+  --background-default: #10081E;
+  --text-normal: #ffffff;
+  --background-primary: #080212;
+  --background-primary-alt: var(--background-primary);
+  --background-secondary: var(--background-primary);
+  --background-secondary-alt: var(--background-primary);
+  --background-modifier-border: var(--divider-color);
+  --card-bg: #080212;
+  --divider-color: #805cbe84;
+  --blockquote-border-color: #300C6E;
+  --blockquote-background-color: var(--interactive-normal);
+  --blockquote-text: inherit;
+  --citation-bg: var(--color-accent);
+  --card-shadow: 0 3px 8px rgb(97 97 97 / 15%);
+  --graph-bg: var(--color-panel);
+  --graph-line: var(--divider-color);
+  --caret-color: color-mix(in srgb, var(--text-normal) 40%, var(--color-accent) 60%);
+  --color-panel: #10081E;
+  --table-header-background: var(--color-accent);
+  --custom-color-accent-dark: #4f288e;
+  --icon-color: var(--divider-color);
+  --file-title-color: var(--divider-color);
+  --interactive-normal: #190D31;
+  --graph-node-tag: var(--color-accent);
+  --text-accent: var(--divider-color);
+  --link-color: #BE99FF;
+  --link-external-color: var(--link-color);
+  --bases-table-border-color: var(--divider-color) !important;
+  --link-unresolved-color: var(--link-color);
+  --graph-node: var(--divider-color);
+  --background-modifier-hover: color-mix(in srgb, var(--background-primary) 70%, white 30%);
+  --tab-background-active: var(--color-accent);
+}
+
+.theme-dark.extended-dark-color-schemes-toggle.atlantic {
+  --background-default: #101b2d;
+  --text-normal: #f0f0f0;
+  --background-primary: #0b121e;
+  --background-primary-alt: var(--background-primary);
+  --background-secondary: var(--background-primary);
+  --background-secondary-alt: var(--background-primary);
+  --background-modifier-border: var(--divider-color);
+  --card-bg: #0b121e;
+  --divider-color: #2d5e7f84;
+  --blockquote-border-color: #134667;
+  --blockquote-background-color: var(--interactive-normal);
+  --blockquote-text: inherit;
+  --citation-bg: var(--color-accent);
+  --card-shadow: 0 3px 8px rgb(97 97 97 / 15%);
+  --graph-bg: var(--color-panel);
+  --graph-line: var(--divider-color);
+  --caret-color: color-mix(in srgb, var(--text-normal) 40%, var(--color-accent) 60%);
+  --color-panel: #101b2d;
+  --table-header-background: var(--color-accent);
+  --custom-color-accent-dark: #003566;
+  --icon-color: var(--divider-color);
+  --file-title-color: var(--divider-color);
+  --interactive-normal: #15243C;
+  --graph-node-tag: var(--color-accent);
+  --text-accent: var(--divider-color);
+  --link-color: #88AAC1;
+  --link-external-color: var(--link-color);
+  --bases-table-border-color: var(--divider-color);
+  --link-unresolved-color: var(--link-color);
+  --graph-node: var(--divider-color);
+  --background-modifier-hover: color-mix(in srgb, var(--background-primary) 70%, white 30%);
+  --tab-background-active: var(--color-accent);
+}
+
+.theme-dark.extended-dark-color-schemes-toggle.moss {
+  --background-default: #0A150C;
+  --text-normal: #f0f0f0;
+  --background-primary: #070d08;
+  --background-primary-alt: var(--background-primary);
+  --background-secondary: var(--background-primary);
+  --background-secondary-alt: var(--background-primary);
+  --background-modifier-border: var(--divider-color);
+  --card-bg: #070d08;
+  --divider-color: #48745084;
+  --blockquote-border-color: #214528;
+  --blockquote-background-color: var(--interactive-normal);
+  --blockquote-text: inherit;
+  --citation-bg: var(--color-accent);
+  --card-shadow: 0 3px 8px rgb(97 97 97 / 15%);
+  --graph-bg: var(--color-panel);
+  --graph-line: var(--divider-color);
+  --caret-color: color-mix(in srgb, var(--text-normal) 40%, var(--color-accent) 60%);
+  --color-panel: #0A150C;
+  --table-header-background: var(--color-accent);
+  --custom-color-accent-dark: #2E6038;
+  --icon-color: var(--divider-color);
+  --file-title-color: var(--divider-color);
+  --interactive-normal: #1B3720;
+  --graph-node-tag: var(--color-accent);
+  --text-accent: var(--divider-color);
+  --link-color: #B4FAC1;
+  --link-external-color: var(--link-color);
+  --bases-table-border-color: var(--divider-color);
+  --link-unresolved-color: var(--link-color);
+  --graph-node: var(--divider-color);
+  --background-modifier-hover: color-mix(in srgb, var(--background-primary) 70%, white 30%);
+  --tab-background-active: var(--color-accent);
+}
+
+.theme-dark.extended-dark-color-schemes-toggle.onyx {
+  --background-default: #0F161A;
+  --text-normal: #f0f0f0;
+  --background-primary: #050A0C;
+  --background-primary-alt: var(--background-primary);
+  --background-secondary: var(--background-primary);
+  --background-secondary-alt: var(--background-primary);
+  --background-modifier-border: var(--divider-color);
+  --blockquote-background-color: var(--interactive-normal);
+  --blockquote-border-color: #263740;
+  --citation-bg: var(--color-accent);
+  --graph-bg: var(--background-default);
+  --graph-line: var(--divider-color);
+  --caret-color: color-mix(in srgb, var(--text-normal) 40%, var(--color-accent) 60%);
+  --card-bg: #050a0c;
+  --divider-color: #4d687684;
+  --color-panel: #0F161A;
+  --table-header-background: var(--color-accent);
+  --custom-color-accent-dark: #2F424C;
+  --icon-color: var(--divider-color);
+  --file-title-color: var(--divider-color);
+  --interactive-normal: #1E2C34;
+  --text-accent: var(--divider-color);
+  --graph-node-tag: var(--color-accent);
+  --link-color: #9DB6C2;
+  --link-external-color: var(--link-color);
+  --bases-table-border-color: var(--divider-color);
+  --link-unresolved-color: var(--link-color);
+  --graph-node: var(--divider-color);
+  --background-modifier-hover: color-mix(in srgb, var(--background-primary) 70%, white 30%);
+  --tab-background-active: var(--color-accent);
+}
+
+/* Extended Light Color Schemes */
+.theme-light.extended-light-color-schemes-toggle.leaf {
+  --background-default: #AEC1C0;
+  --background-primary: #8CA6A4;
+  --card-bg: #8CA6A4;
+  --color-panel: #AEC1C0;
+  --text-normal: #0c0c0c;
+  --background-primary-alt: var(--background-primary);
+  --background-secondary: var(--background-primary);
+  --background-secondary-alt: var(--background-primary);
+  --background-modifier-border: var(--divider-color);
+  --blockquote-background-color: var(--interactive-normal);
+  --blockquote-border-color: #090B0B;
+  --citation-bg: var(--color-accent);
+  --graph-bg: var(--background-default);
+  --graph-line: #090B0B2c;
+  --caret-color: color-mix(in srgb, var(--text-normal) 40%, var(--color-accent) 60%);
+  --divider-color: #090B0B84;
+  --table-header-background: var(--color-accent);
+  --custom-color-accent-light: #627F7C;
+  --icon-color: var(--divider-color);
+  --file-title-color: var(--divider-color);
+  --interactive-normal: #8CA6A4;
+  --graph-node-tag: var(--color-accent);
+  --text-accent: var(--divider-color);
+  --link-color: #2B645E;
+  --link-external-color: var(--link-color);
+  --bases-table-border-color: var(--divider-color);
+  --link-unresolved-color: var(--link-color);
+  --graph-node: var(--divider-color);
+  --background-modifier-hover: color-mix(in srgb, var(--background-primary) 70%, black 30%);
+  --tab-background-active: var(--color-accent);
+}
+
+.theme-light.extended-light-color-schemes-toggle.sky {
+  --background-default: #8498AE;
+  --background-primary: #90A2B6;
+  --card-bg: #90A2B6;
+  --color-panel: #B5C1CF;
+  --text-normal: #0c0c0c;
+  --background-primary-alt: var(--background-primary);
+  --background-secondary: var(--background-primary);
+  --background-secondary-alt: var(--background-primary);
+  --background-modifier-border: var(--divider-color);
+  --blockquote-background-color: var(--interactive-normal);
+  --blockquote-border-color: #080A0C;
+  --citation-bg: var(--color-accent);
+  --graph-bg: var(--background-default);
+  --graph-line: #080A0C2c;
+  --caret-color: color-mix(in srgb, var(--text-normal) 40%, var(--color-accent) 60%);
+  --divider-color: #080A0C84;
+  --table-header-background: var(--color-accent);
+  --custom-color-accent-light: #788ea5;
+  --icon-color: var(--divider-color);
+  --file-title-color: var(--divider-color);
+  --interactive-normal: #6C849D;
+  --graph-node-tag: var(--color-accent);
+  --text-accent: var(--divider-color);
+  --link-color: #52657A;
+  --link-external-color: var(--link-color);
+  --bases-table-border-color: var(--divider-color);
+  --link-unresolved-color: var(--link-color);
+  --graph-node: var(--divider-color);
+  --background-modifier-hover: color-mix(in srgb, var(--background-primary) 80%, black 20%);
+  --tab-background-active: var(--color-accent);
+}
+
+.theme-light.extended-light-color-schemes-toggle.fog {
+  --background-default: #858F99;
+  --background-primary: #7A8590;
+  --card-bg: #7A8590;
+  --color-panel: #9BA4AB;
+  --text-normal: #101010;
+  --background-primary-alt: var(--background-primary);
+  --background-secondary-alt: var(--background-secondary);
+  --background-modifier-border: var(--divider-color);
+  --divider-color: #10101084;
+  --blockquote-border-color: #101010;
+  --blockquote-background-color: var(--interactive-normal);
+  --citation-bg: var(--color-accent);
+  --graph-bg: var(--background-default);
+  --graph-line: #1010102c;
+  --caret-color: color-mix(in srgb, var(--text-normal) 40%, var(--color-accent) 60%);
+  --table-header-background: var(--color-accent);
+  --custom-color-accent-light: #6C7A89;
+  --icon-color: var(--divider-color);
+  --file-title-color: var(--divider-color);
+  --interactive-normal: #848F9A;
+  --graph-node-tag: var(--color-accent);
+  --text-accent: var(--divider-color);
+  --link-color: #5A6672;
+  --link-external-color: var(--link-color);
+  --bases-table-border-color: var(--divider-color);
+  --link-unresolved-color: var(--link-color);
+  --graph-node: var(--divider-color);
+  --background-modifier-hover: color-mix(in srgb, var(--background-primary) 70%, black 30%);
+  --tab-background-active: var(--color-accent);
+}
+
+.theme-light.extended-light-color-schemes-toggle.rose-desert {
+  --background-default: #C5BFC5;
+  --background-primary: #9E949E;
+  --card-bg: #9E949E;
+  --color-panel: #C5BFC5;
+  --text-normal: #101010;
+  --background-primary-alt: var(--background-primary);
+  --background-secondary-alt: var(--background-secondary);
+  --background-modifier-border: var(--divider-color);
+  --divider-color: #10101084;
+  --blockquote-border-color: #101010;
+  --blockquote-background-color: var(--interactive-normal);
+  --citation-bg: var(--color-accent);
+  --graph-bg: var(--background-default);
+  --graph-line: #1010102c;
+  --caret-color: color-mix(in srgb, var(--text-normal) 40%, var(--color-accent) 60%);
+  --table-header-background: var(--color-accent);
+  --custom-color-accent-light: #827382;
+  --icon-color: var(--divider-color);
+  --file-title-color: var(--divider-color);
+  --interactive-normal: #8C7D8C;
+  --graph-node-tag: var(--color-accent);
+  --text-accent: var(--divider-color);
+  --link-color: #615661;
+  --link-external-color: var(--link-color);
+  --bases-table-border-color: var(--divider-color);
+  --link-unresolved-color: var(--link-color);
+  --graph-node: var(--divider-color);
+  --background-modifier-hover: color-mix(in srgb, var(--background-primary) 70%, black 30%);
+  --tab-background-active: var(--color-accent);
+}
+
+.theme-light.extended-light-color-schemes-toggle.violet-haze {
+  --background-default: #BFB5CF;
+  --background-primary: #9E90B6;
+  --card-bg: #9E90B6;
+  --color-panel: #BFB5CF;
+  --text-normal: #101010;
+  --background-primary-alt: var(--background-primary);
+  --background-secondary-alt: var(--background-secondary);
+  --background-modifier-border: var(--divider-color);
+  --divider-color: #10101084;
+  --blockquote-border-color: #101010;
+  --blockquote-background-color: var(--interactive-normal);
+  --citation-bg: var(--color-accent);
+  --graph-bg: var(--background-default);
+  --graph-line: #1010102c;
+  --caret-color: color-mix(in srgb, var(--text-normal) 40%, var(--color-accent) 60%);
+  --table-header-background: var(--color-accent);
+  --custom-color-accent-light: #987EB4;
+  --icon-color: var(--divider-color);
+  --file-title-color: var(--divider-color);
+  --interactive-normal: #9384AE;
+  --graph-node-tag: var(--color-accent);
+  --text-accent: var(--divider-color);
+  --link-color: #715091;
+  --link-external-color: var(--link-color);
+  --bases-table-border-color: var(--divider-color);
+  --link-unresolved-color: var(--link-color);
+  --graph-node: var(--divider-color);
+  --background-modifier-hover: color-mix(in srgb, var(--background-primary) 70%, black 30%);
+  --tab-background-active: var(--color-accent);
+}
+
