@@ -101,7 +101,6 @@ body {
   --shadow-border: 0 0 1px 0 rgb(0 0 0 / 40%);
   --shadow-s: var(--shadow-base), inset 0 0 1px 1px white, var(--shadow-border), 0 8px 15px 0 rgb(0 0 0 / 20%);
   --shadow-l: var(--shadow-border), inset 0 0 1px 1px white, 0 18px 60px 0 rgb(0 0 0 / 30%);
-  --blur-m: blur(var(--frosted-glass-blur)) saturate(1.5) brightness(1.025);
   --blur-l: blur(calc(var(--frosted-glass-blur) * 2)) saturate(1.5) brightness(1.025);
 }
 
