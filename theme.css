@@ -1328,7 +1328,7 @@ body:not(.is-mobile) .horizontal-main-container {
 .theme-dark {
   --card-shadow: 0 4px 12px rgb(0 0 0 / 30%);
   --background-default: #0c0c0c;
-  --text-color: #ffffff;
+  --text-normal: #ffffff;
   --background-primary: #000000;
   --background-primary-alt: var(--background-primary) !important;
   --background-secondary: var(--background-primary);
@@ -2578,10 +2578,6 @@ body.is-phone .vertical-tab-header .vertical-tab-header-group .vertical-tab-head
   border: 1px solid var(--divider-color);
   background-color: var(--background-default);
   overflow: hidden;
-}
-
-.is-phone .modal.mod-settings .vertical-tab-nav-item {
-  padding: 16px 20px;
 }
 
 body.is-mobile .vertical-tab-nav-item {
