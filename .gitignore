@@ -12,7 +12,11 @@
 *.tmp
 *.bak
 *~
-node_modules/
+node_modules
+.env
+reports/
+dist//
+dist/
 .map
 # tweaks
 colored folders.css
