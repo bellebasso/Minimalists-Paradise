@@ -1170,4 +1170,9 @@ settings:
 
 /* ========================================================================== */
 @import "./foundation/variables.css";
+@import "./foundation/typography.css";
+@import "./foundation/animations.css";
+
+@import "./app/workspace.css";
+
 @import "./remaining.css";
