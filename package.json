@@ -6,13 +6,19 @@
   "scripts": {
     "bundle": "node scripts/bundle.js",
     "dev": "chokidar \"src/**/*.css\" \"manifest.json\" -c \"npm run build && npm run sync\" --initial",
-    "sync": "dotenv -- ./sync-to-obsidian.sh",
+    "sync": "dotenv -- ./scripts/sync-to-obsidian.sh",
     "build": "npm run bundle && npm run lint && npm run css:merge && npm run css:check",
     "lint": "stylelint theme.css",
     "lint:fix": "stylelint theme.css --fix",
-    "review": "node scripts/fetch-community-review.js",
     "css:check": "node scripts/css-checklist.js",
-    "css:merge": "node scripts/merge-duplicates.js"
+    "css:merge": "node scripts/merge-duplicates.js",
+    "preversion": "npm run build",
+    "version": "node scripts/update-manifest.js && git add manifest.json",
+    "postversion": "git push && git push --tags",
+    "release": "npm version patch",
+    "release:patch": "npm version patch",
+    "release:minor": "npm version minor",
+    "release:major": "npm version major"
   },
   "repository": {
     "type": "git",
