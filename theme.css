@@ -435,8 +435,15 @@ settings:
     format: hex
     default-light: "#00000010"
     default-dark: "#ffffff10"
-    variable: scrollbar-bg
 
+  - id: cursor-color
+    title: cursor color
+    format: hex
+    type: variable-themed-color
+    default-light: "#000000"
+    default-dark: "#FFFFFF"
+
+    variable: scrollbar-bg
   - id: interactive-accent
     title: interactive accent color
     type: variable-themed-color
@@ -1342,7 +1349,8 @@ body:not(.is-mobile) .horizontal-main-container {
   --graph-bg: var(--color-panel);
   --graph-node: var(--color-accent);
   --graph-line: var(--divider-color);
-  --caret-color: var(--text-color);
+  --caret-color: color-mix(in srgb, var(--text-normal) 40%, var(--color-accent) 60%);
+  --cursor-color: var(--text-normal);
   --color-panel: #0c0c0c;
   --table-header-background: var(--color-accent);
   --custom-color-accent-dark: #68686e;
@@ -1372,7 +1380,7 @@ body:not(.is-mobile) .horizontal-main-container {
   --background-primary: #DCE0E8;
   --card-bg: var(--background-primary);
   --color-panel: var(--background-default);
-  --text-color: #101010;
+  --text-normal: #101010;
   --background-primary-alt: var(--background-primary);
   --background-secondary: var(--background-primary);
   --background-secondary-alt: var(--background-secondary);
@@ -1382,7 +1390,7 @@ body:not(.is-mobile) .horizontal-main-container {
   --blockquote-background-color: var(--interactive-normal);
   --citation-bg: var(--color-accent);
   --graph-bg: var(--background-default);
-  --caret-color: var(--text-color);
+  --caret-color: color-mix(in srgb, var(--text-normal) 40%, var(--color-accent) 60%);
   --icon-color: var(--text-muted);
   --file-title-color: color-mix(in srgb, var(--color-accent) 60%, var(--text-normal) 40%);
   --graph-node-tag: var(--color-accent);
@@ -1412,7 +1420,7 @@ body:not(.is-mobile) .horizontal-main-container {
 /* Extended Dark Color Schemes */
 .theme-dark.extended-dark-color-schemes-toggle.abyss {
   --background-default: #10081E;
-  --text-color: #ffffff;
+  --text-normal: #ffffff;
   --background-primary: #080212;
   --background-primary-alt: var(--background-primary);
   --background-secondary: var(--background-primary);
@@ -1427,7 +1435,7 @@ body:not(.is-mobile) .horizontal-main-container {
   --card-shadow: 0 3px 8px rgb(97 97 97 / 15%);
   --graph-bg: var(--color-panel);
   --graph-line: var(--divider-color);
-  --caret-color: var(--text-color);
+  --caret-color: color-mix(in srgb, var(--text-normal) 40%, var(--color-accent) 60%);
   --color-panel: #10081E;
   --table-header-background: var(--color-accent);
   --custom-color-accent-dark: #4f288e;
@@ -1447,7 +1455,7 @@ body:not(.is-mobile) .horizontal-main-container {
 
 .theme-dark.extended-dark-color-schemes-toggle.atlantic {
   --background-default: #101b2d;
-  --text-color: #f0f0f0;
+  --text-normal: #f0f0f0;
   --background-primary: #0b121e;
   --background-primary-alt: var(--background-primary);
   --background-secondary: var(--background-primary);
@@ -1462,7 +1470,7 @@ body:not(.is-mobile) .horizontal-main-container {
   --card-shadow: 0 3px 8px rgb(97 97 97 / 15%);
   --graph-bg: var(--color-panel);
   --graph-line: var(--divider-color);
-  --caret-color: var(--text-color);
+  --caret-color: color-mix(in srgb, var(--text-normal) 40%, var(--color-accent) 60%);
   --color-panel: #101b2d;
   --table-header-background: var(--color-accent);
   --custom-color-accent-dark: #003566;
@@ -1482,7 +1490,7 @@ body:not(.is-mobile) .horizontal-main-container {
 
 .theme-dark.extended-dark-color-schemes-toggle.moss {
   --background-default: #0A150C;
-  --text-color: #f0f0f0;
+  --text-normal: #f0f0f0;
   --background-primary: #070d08;
   --background-primary-alt: var(--background-primary);
   --background-secondary: var(--background-primary);
@@ -1497,7 +1505,7 @@ body:not(.is-mobile) .horizontal-main-container {
   --card-shadow: 0 3px 8px rgb(97 97 97 / 15%);
   --graph-bg: var(--color-panel);
   --graph-line: var(--divider-color);
-  --caret-color: var(--text-color);
+  --caret-color: color-mix(in srgb, var(--text-normal) 40%, var(--color-accent) 60%);
   --color-panel: #0A150C;
   --table-header-background: var(--color-accent);
   --custom-color-accent-dark: #2E6038;
@@ -1517,7 +1525,7 @@ body:not(.is-mobile) .horizontal-main-container {
 
 .theme-dark.extended-dark-color-schemes-toggle.onyx {
   --background-default: #0F161A;
-  --text-color: #f0f0f0;
+  --text-normal: #f0f0f0;
   --background-primary: #050A0C;
   --background-primary-alt: var(--background-primary);
   --background-secondary: var(--background-primary);
@@ -1528,7 +1536,7 @@ body:not(.is-mobile) .horizontal-main-container {
   --citation-bg: var(--color-accent);
   --graph-bg: var(--background-default);
   --graph-line: var(--divider-color);
-  --caret-color: var(--text-color);
+  --caret-color: color-mix(in srgb, var(--text-normal) 40%, var(--color-accent) 60%);
   --card-bg: #050a0c;
   --divider-color: #4d687684;
   --color-panel: #0F161A;
@@ -1554,7 +1562,7 @@ body:not(.is-mobile) .horizontal-main-container {
   --background-primary: #8CA6A4;
   --card-bg: #8CA6A4;
   --color-panel: #AEC1C0;
-  --text-color: #0c0c0c;
+  --text-normal: #0c0c0c;
   --background-primary-alt: var(--background-primary);
   --background-secondary: var(--background-primary);
   --background-secondary-alt: var(--background-primary);
@@ -1564,7 +1572,7 @@ body:not(.is-mobile) .horizontal-main-container {
   --citation-bg: var(--color-accent);
   --graph-bg: var(--background-default);
   --graph-line: #090B0B2c;
-  --caret-color: var(--text-color);
+  --caret-color: color-mix(in srgb, var(--text-normal) 40%, var(--color-accent) 60%);
   --divider-color: #090B0B84;
   --table-header-background: var(--color-accent);
   --custom-color-accent-light: #627F7C;
@@ -1587,7 +1595,7 @@ body:not(.is-mobile) .horizontal-main-container {
   --background-primary: #90A2B6;
   --card-bg: #90A2B6;
   --color-panel: #B5C1CF;
-  --text-color: #0c0c0c;
+  --text-normal: #0c0c0c;
   --background-primary-alt: var(--background-primary);
   --background-secondary: var(--background-primary);
   --background-secondary-alt: var(--background-primary);
@@ -1597,7 +1605,7 @@ body:not(.is-mobile) .horizontal-main-container {
   --citation-bg: var(--color-accent);
   --graph-bg: var(--background-default);
   --graph-line: #080A0C2c;
-  --caret-color: var(--text-color);
+  --caret-color: color-mix(in srgb, var(--text-normal) 40%, var(--color-accent) 60%);
   --divider-color: #080A0C84;
   --table-header-background: var(--color-accent);
   --custom-color-accent-light: #788ea5;
@@ -1620,7 +1628,7 @@ body:not(.is-mobile) .horizontal-main-container {
   --background-primary: #7A8590;
   --card-bg: #7A8590;
   --color-panel: #9BA4AB;
-  --text-color: #101010;
+  --text-normal: #101010;
   --background-primary-alt: var(--background-primary);
   --background-secondary-alt: var(--background-secondary);
   --background-modifier-border: var(--divider-color);
@@ -1630,7 +1638,7 @@ body:not(.is-mobile) .horizontal-main-container {
   --citation-bg: var(--color-accent);
   --graph-bg: var(--background-default);
   --graph-line: #1010102c;
-  --caret-color: var(--text-color);
+  --caret-color: color-mix(in srgb, var(--text-normal) 40%, var(--color-accent) 60%);
   --table-header-background: var(--color-accent);
   --custom-color-accent-light: #6C7A89;
   --icon-color: var(--divider-color);
@@ -1652,7 +1660,7 @@ body:not(.is-mobile) .horizontal-main-container {
   --background-primary: #9E949E;
   --card-bg: #9E949E;
   --color-panel: #C5BFC5;
-  --text-color: #101010;
+  --text-normal: #101010;
   --background-primary-alt: var(--background-primary);
   --background-secondary-alt: var(--background-secondary);
   --background-modifier-border: var(--divider-color);
@@ -1662,7 +1670,7 @@ body:not(.is-mobile) .horizontal-main-container {
   --citation-bg: var(--color-accent);
   --graph-bg: var(--background-default);
   --graph-line: #1010102c;
-  --caret-color: var(--text-color);
+  --caret-color: color-mix(in srgb, var(--text-normal) 40%, var(--color-accent) 60%);
   --table-header-background: var(--color-accent);
   --custom-color-accent-light: #827382;
   --icon-color: var(--divider-color);
@@ -1684,7 +1692,7 @@ body:not(.is-mobile) .horizontal-main-container {
   --background-primary: #9E90B6;
   --card-bg: #9E90B6;
   --color-panel: #BFB5CF;
-  --text-color: #101010;
+  --text-normal: #101010;
   --background-primary-alt: var(--background-primary);
   --background-secondary-alt: var(--background-secondary);
   --background-modifier-border: var(--divider-color);
@@ -1694,7 +1702,7 @@ body:not(.is-mobile) .horizontal-main-container {
   --citation-bg: var(--color-accent);
   --graph-bg: var(--background-default);
   --graph-line: #1010102c;
-  --caret-color: var(--text-color);
+  --caret-color: color-mix(in srgb, var(--text-normal) 40%, var(--color-accent) 60%);
   --table-header-background: var(--color-accent);
   --custom-color-accent-light: #987EB4;
   --icon-color: var(--divider-color);
@@ -1826,7 +1834,7 @@ body:not(.is-mobile) .workspace-split.mod-vertical.mod-root {
 }
 
 .view-header-title {
-  color: var(--text-color);
+  color: var(--text-normal);
 }
 
 span .view-header-title-parent .view-header-breadcrumb {
@@ -1846,7 +1854,7 @@ span .view-header-title-parent .view-header-breadcrumb {
   align-items: center;
   justify-content: center;
   padding: 0 8px;
-  color: var(--text-color);
+  color: var(--text-normal);
 }
 
 .mod-fade:not(.mod-at-end)::after {
@@ -1858,11 +1866,11 @@ span .view-header-title-parent .view-header-breadcrumb {
   align-items: center;
   justify-content: center;
   padding: 0 8px;
-  color: var(--text-color);
+  color: var(--text-normal);
 }
 
 .view-header-breadcrumb-separator {
-  color: var(--text-color);
+  color: var(--text-normal);
 }
 
 /* Buttons */
@@ -2010,7 +2018,8 @@ body:not(.is-mobile) .workspace-tab-header.is-active.mod-active {
 
 /* Status Bar */
 .status-bar {
-  padding: 0 8px 0 0;
+  display: flex;
+  align-items: center;
   border: none !important;
   width: 100vw;
   left: 0;
@@ -2758,6 +2767,17 @@ body.is-phone .mod-root .workspace-leaf-content[data-mode="source"] .view-action
   color: var(--text-normal);
 }
 
+/* Cursor cursor */
+
+.markdown-source-view.mod-cm6 .cm-content {
+  caret-color: var(--caret-color);
+}
+
+
+.ͼo.cm-focused > .cm-scroller > .cm-cursorLayer > .cm-fat-cursor {
+  background-color: var(--caret-color);
+}
+
 /* Headers */
 
 .markdown-preview-view h1,
@@ -3445,7 +3465,7 @@ body {
 .markdown-preview-view table thead,
 .markdown-source-view.mod-cm6 table thead {
   background-color: var(--color-accent);
-  color: var(--text-color);
+  color: var(--text-normal);
   border: 1px solid var(--divider-color);
 }
 
@@ -3477,7 +3497,7 @@ body {
 }
 
 .callout-content {
-  color: var(--text-color);
+  color: var(--text-normal);
 }
 
 /* Graph View */
