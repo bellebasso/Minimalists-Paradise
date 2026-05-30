@@ -1,0 +1,166 @@
+/* --- FROSTED GLASS / LIQUID GLASS ------------------------- */
+
+.frosted-glass-toggle.frosted-glass .prompt, .frosted-glass-toggle.frosted-glass .modal, .frosted-glass-toggle.frosted-glass .menu,
+.frosted-glass-toggle.ice-glass .prompt, .frosted-glass-toggle.ice-glass .modal, .frosted-glass-toggle.ice-glass .menu,
+.frosted-glass-toggle.frozen-glass .prompt, .frosted-glass-toggle.frozen-glass .modal, .frosted-glass-toggle.frozen-glass .menu {
+  box-shadow: var(--shadow-xxs) !important;
+  backdrop-filter: var(--blur-m);
+}
+
+/* the settings modal does not work as expected, so I'll disable it for now */
+.frosted-glass-toggle.frosted-glass .modal.mod-settings, .frosted-glass-toggle.ice-glass .modal.mod-settings, .frosted-glass-toggle.frozen-glass .modal.mod-settings {
+  box-shadow: none !important;
+}
+
+.frosted-glass-toggle.ice-glass .nav-buttons-container {
+  background-color: var(--workspace-sidebar-glass-bg);
+  box-shadow: var(--shadow-xxs);
+  backdrop-filter: var(--blur-s-alt);
+}
+
+.frosted-glass-toggle.frozen-glass .nav-buttons-container,
+.frosted-glass-toggle.frozen-glass .side-dock-ribbon-action {
+  box-shadow: var(--shadow-xxs) !important;
+  backdrop-filter: var(--blur-l);
+}
+
+.frosted-glass-toggle.frozen-glass .workspace-tab-container,
+.frosted-glass-toggle.frosted-glass .workspace-tab-container,
+.frosted-glass-toggle.ice-glass .workspace-tab-container {
+  border-color: var(--glass-edge-highlight) !important;
+  box-shadow: var(--shadow-xxs) !important;
+  backdrop-filter: var(--blur-l);
+}
+
+.frosted-glass-toggle.frozen-glass .workspace-leaf,
+.frosted-glass-toggle.frosted-glass .workspace-leaf,
+.frosted-glass-toggle.ice-glass .workspace-leaf {
+  background-color: transparent !important;
+}
+
+.frosted-glass-toggle.frosted-glass .nav-buttons-container,
+.frosted-glass-toggle.ice-glass .nav-buttons-container,
+.frosted-glass-toggle.frozen-glass .nav-buttons-container,
+.frosted-glass-toggle.frosted-glass .workspace-sidedock-vault-profile,
+.frosted-glass-toggle.ice-glass .workspace-sidedock-vault-profile,
+.frosted-glass-toggle.frozen-glass .workspace-sidedock-vault-profile {
+  background-color: var(--workspace-sidebar-glass-bg) !important;
+  border-color: var(--glass-edge-highlight) !important;
+}
+
+.frosted-glass-toggle.frozen-glass .workspace-ribbon.side-dock-ribbon,
+.frosted-glass-toggle.frozen-glass .side-dock-ribbon-action {
+  border-color: var(--glass-edge-highlight) !important;
+}
+
+.frosted-glass-toggle.ice-glass .workspace-ribbon.side-dock-ribbon,
+.frosted-glass-toggle.ice-glass .side-dock-ribbon-action,
+.frosted-glass-toggle.frosted-glass .workspace-ribbon.side-dock-ribbon,
+.frosted-glass-toggle.frosted-glass .side-dock-ribbon-action {
+  background-color: var(--workspace-ribbon-glass-bg) !important;
+}
+
+.frosted-glass-toggle.frozen-glass .workspace-leaf,
+.frosted-glass-toggle.frozen-glass .workspace-leaf-content {
+  background-color: transparent !important;
+  box-shadow: none !important;
+}
+
+.frosted-glass-toggle .view-content {
+  background-color: var(--workspace-note-bg);
+}
+
+body.is-mobile.frosted-glass-toggle.frozen-glass .workspace-drawer-inner {
+  box-shadow: var(--shadow-xxs) !important;
+  backdrop-filter: var(--blur-s-alt);
+}
+
+body.is-mobile.frosted-glass-toggle.frozen-glass .workspace-leaf-content[data-type='file-explorer'] {
+  box-shadow: none !important;
+  backdrop-filter: none !important;
+  border-right: 1px solid rgb(255 255 255 / 40%);
+  border-bottom: 1px solid rgb(255 255 255 / 40%);
+}
+
+/* notebook navigator support for frosted-glass - currently not working */
+
+/* .frosted-glass-toggle.frozen-glass .nn-navigation-pane,
+.frosted-glass-toggle.frozen-glass .nn-list-pane,
+.frosted-glass-toggle.frozen-glass .workspace-leaf-content[data-type="notebook-navigator"],
+.frosted-glass-toggle.frozen-glass .nn-split-container,
+.frosted-glass-toggle.frozen-glass .view-content.notebook-navigator {
+  box-shadow: var(--shadow-xxs) !important;
+  backdrop-filter: var(--blur-l);
+  background-color: var(--workspace-sidebar-glass-bg) !important;
+} */
+
+body:not(.is-mobile).frosted-glass-toggle.frozen-glass .workspace-split.mod-left-split .workspace-sidedock-vault-profile,
+body:not(.is-mobile).frosted-glass-toggle.ice-glass .workspace-split.mod-left-split .workspace-sidedock-vault-profile,
+body:not(.is-mobile).frosted-glass-toggle.frosted-glass .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
+  box-shadow: var(--shadow-xxs) !important;
+}
+
+body:not(.is-mobile).frosted-glass-toggle.frozen-glass .workspace-split.mod-left-split .modal-container,
+body:not(.is-mobile).frosted-glass-toggle.ice-glass .workspace-split.mod-left-split .modal,
+body:not(.is-mobile).frosted-glass-toggle.frosted-glass .workspace-split.mod-left-split .modal {
+  box-shadow: var(--shadow-xxs) !important;
+  backdrop-filter: var(--blur-l);
+}
+
+.frosted-glass-toggle.frozen-glass .workspace-tab-header.is-active.mod-active {
+  flex-grow: 2 !important;
+  max-width: 250px;
+  background-color: var(--color-accent);
+  box-shadow: var(--shadow-xs) !important;
+  backdrop-filter: var(--blur-s);
+  box-sizing: border-box;
+  border: none;
+}
+
+.frosted-glass-toggle.frozen-glass .mod-left-split .workspace-tab-header-container .is-active,
+.frosted-glass-toggle.ice-glass .mod-left-split .workspace-tab-header-container .is-active,
+.frosted-glass-toggle.frozen-glass .mod-right-split .workspace-tab-header-container .is-active,
+.frosted-glass-toggle.ice-glass .mod-right-split .workspace-tab-header-container .is-active {
+  background-color: var(--color-accent);
+  box-sizing: border-box;
+  border: none;
+  box-shadow: var(--shadow-xs) !important;
+  backdrop-filter: var(--blur-s);
+}
+
+.frosted-glass-toggle.ice-glass .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header,
+.frosted-glass-toggle.frozen-glass .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header {
+  box-shadow: var(--shadow-xxs) !important;
+  backdrop-filter: var(--blur-s);
+  border-color: var(--glass-edge-highlight) !important;
+}
+
+.frosted-glass-toggle.frosted-glass .nav-buttons-container {
+  background-color: var(--workspace-sidebar-glass-bg);
+  box-shadow: var(--shadow-xs);
+  backdrop-filter: var(--blur-s-alt);
+}
+
+.frosted-glass-toggle.frosted-glass .side-dock-ribbon-action {
+  border-radius: var(--tab-radius);
+  box-shadow: var(--shadow-xs);
+  backdrop-filter: var(--blur-s);
+}
+
+.labeled-nav.frosted-glass-toggle.frozen-glass .mod-left-split .mod-top .workspace-tab-header-container .workspace-tab-header-container-inner,
+.labeled-nav.frosted-glass-toggle.ice-glass .mod-left-split .mod-top .workspace-tab-header-container .workspace-tab-header-container-inner,
+.labeled-nav.frosted-glass-toggle.frosted-glass .mod-left-split .mod-top .workspace-tab-header-container .workspace-tab-header-container-inner {
+  padding: var(--size-4-2) var(--size-4-2);
+  flex-direction: column !important;
+  margin-top: var(--labeled-nav-top-margin);
+  margin-bottom: var(--cards-gap);
+  box-shadow: var(--shadow-xxs) !important;
+  backdrop-filter: var(--blur-l);
+  align-items: flex-start !important;
+  width: 100%;
+  background-color: var(--workspace-sidebar-glass-bg) !important;
+  border: 1px solid var(--glass-edge-highlight) !important;
+  border-radius: var(--card-radius);
+  overflow: hidden;
+  background-clip: padding-box;
+}

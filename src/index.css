@@ -1169,10 +1169,13 @@ settings:
 */
 
 /* ========================================================================== */
+
 @import "./foundation/variables.css";
-@import "./foundation/typography.css";
-@import "./foundation/animations.css";
-
 @import "./app/workspace.css";
-
-@import "./remaining.css";
+@import "./app/mobile.css";
+@import "./app/modals.css";
+@import "./foundation/typography.css";
+@import "./features/ui-elements.css";
+@import "./plugins/misc.css";
+@import "./features/snippets.css";
+@import "./features/frosted-glass.css";

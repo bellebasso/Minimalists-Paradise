@@ -1,0 +1,138 @@
+/* Modals and Prompts */
+
+/* MIT License Copyright (c) 2025 aaaaalexis */
+@starting-style {
+  .modal,
+  .prompt {
+    opacity: 0;
+    background-color: transparent;
+    filter: blur(4px);
+    transform: scale(0.95) rotateX(-1deg);
+  }
+}
+
+.modal-container {
+  perspective: 240px
+}
+
+.modal,
+.prompt {
+  transition: var(--anim-duration-moderate) var(--anim-motion);
+}
+
+.vertical-tab-header-group-items {
+  display: flex;
+  flex-direction: column;
+}
+
+.vertical-tab-nav-item,
+.vertical-tab-nav-item.is-active {
+  border-radius: var(--default-radius);
+}
+
+@starting-style {
+  .menu,
+  .suggestion-container {
+    opacity: 0;
+    background-color: transparent;
+    filter: blur(4px);
+    transform: translateY(-8px)
+  }
+}
+
+.menu,
+.suggestion-container {
+  transition: var(--anim-duration-moderate) var(--anim-motion);
+  padding: 0
+}
+
+.prompt,
+.modal,
+.menu,
+.suggestion-container,
+.suggestion-item.is-selected {
+  border-radius: var(--modal-radius);
+}
+
+body:not(.is-phone) {
+  --menu-padding: 4px;
+}
+
+body:not(.is-mobile) .menu .menu-separator {
+  margin: 6px 8px;
+}
+
+.suggestion-item.is-selected {
+  background-color: var(--background-modifier-hover);
+}
+
+.menu-item {
+  border-radius: 0;
+}
+
+.menu-group .menu-item:first-child {
+  border-top-left-radius: calc(var(--clickable-icon-radius) / 2);
+  border-top-right-radius: calc(var(--clickable-icon-radius) / 2);
+}
+
+.menu-group .menu-item:last-child {
+  border-bottom-left-radius: calc(var(--clickable-icon-radius) / 2);
+  border-bottom-right-radius: calc(var(--clickable-icon-radius) / 2);
+}
+
+.menu-group .menu-item:not(:last-child) {
+  border-bottom: none;
+}
+
+/* Settings Modal */
+
+.setting-item {
+  border: none;
+}
+
+.modal-setting-nav-bar {
+  border-bottom: none;
+}
+
+.community-item {
+  border-radius: var(--card-radius);
+}
+
+/* Inspired by and adapted from the Cupertino Theme MIT License Copyright (c) 2025 aaaaalexis https://github.com/aaaaalexis/obsidian-cupertino */
+
+
+body:not(.is-phone) .modal.mod-settings .installed-plugins-container .setting-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: 1fr;
+  gap: var(--cards-gap)
+}
+
+body:not(.is-phone) .modal.mod-settings .installed-plugins-container .setting-items .setting-item {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid var(--background-modifier-border);
+  border-radius: var(--card-radius);
+  background-color: var(--color-panel);
+  padding: 16px !important;
+  margin: 0 !important
+}
+
+body:not(.is-phone) .modal.mod-settings .installed-plugins-container .setting-items .setting-item-info {
+  margin-inline-end: 0;
+  width: 100%
+}
+
+body:not(.is-phone) .modal.mod-settings .installed-plugins-container .setting-items .setting-item-description>div:last-child {
+  display: -webkit-box;
+  overflow: hidden;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical
+}
+
+body.is-tablet .modal.mod-sidebar-layout .installed-plugins-container {
+  gap: calc(var(--cards-gap) / 2);
+}
+
+/* ========================================================================== */
+

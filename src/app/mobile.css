@@ -1,0 +1,348 @@
+/* --- MOBILE & TABLET STYLES ---------------------------------- */
+
+.is-mobile.theme-dark,
+.is-mobile.theme-light {
+  --mobile-sidebar-background: var(--background-default);
+  --mobile-sidebar-width: 96.5%;
+  --navbar-side-padding: var(--safe-area-inset-side);
+  --safe-area-inset-side: 16px;
+  --navbar-bottom-padding: max(var(--safe-area-inset-bottom), 28px);
+  --touch-size-l: 48px;
+}
+
+/* toggle read and edit button position for phone */
+
+/*
+body.is-phone:not(.mode-switcher-off) .mod-root .workspace-leaf-content[data-type=markdown] .view-actions button:nth-last-child(2) {
+  position: fixed;
+  transition: var(--anim-duration-moderate), background-color var(--anim-duration-moderate);
+  right: var(--navbar-side-padding);
+  bottom: var(--navbar-bottom-padding);
+  margin-bottom: 0;
+  border-radius: 100%;
+  height: var(--navbar-height);
+}
+
+body.is-phone:not(.mode-switcher-off) .mobile-navbar {
+  max-width: calc(100% - 8px - var(--navbar-side-padding) * 2);
+  inset: auto calc(var(--navbar-side-padding) * 3.75) var(--navbar-bottom-padding);
+  overflow: hidden;
+  padding: 4px;
+  margin: 0;
+  transition: var(--anim-duration-moderate), background-color var(--anim-duration-moderate);
+  will-change: bottom;
+}
+*/
+body.is-tablet .workspace-tab-container {
+  border-radius: var(--mobile-card-radius);
+}
+
+body.is-mobile .workspace-tab-container {
+  background-color: var(--workspace-note-bg) !important;
+}
+
+body.is-mobile .workspace-drawer {
+  border-radius: var(--mobile-card-radius);
+  background-color: transparent !important;
+}
+
+body.is-mobile .workspace-drawer-inner {
+  background-color: var(--workspace-sidebar-bg);
+  border: 1px solid var(--workspace-sidebar-border);
+  border-radius: var(--mobile-card-radius);
+}
+
+body.is-tablet .workspace-drawer-inner {
+  padding-top: 10px;
+}
+
+.is-phone .modal.mod-settings .vertical-tab-nav-item-chevron,
+.is-phone .modal.mod-settings .vertical-tab-nav-item-title {
+  border-bottom: none;
+}
+
+body.is-mobile .nav-buttons-container {
+  background-color: transparent;
+  border: none;
+}
+
+body.is-mobile .workspace-tab-header {
+  background-color: transparent;
+}
+
+body.is-phone .nav-buttons-container::after {
+  background: linear-gradient(to top, var(--workspace-sidebar-bg), transparent);
+}
+
+body.is-mobile .workspace-drawer-active-tab-container {
+  background-color: transparent;
+}
+
+body.is-tablet .workspace-drawer:not(.is-pinned).mod-left {
+  margin: 40px 16px 0 9px;
+  padding-top: 0;
+  border-radius: var(--card-radius);
+}
+
+body.is-tablet .workspace-drawer:not(.is-pinned).mod-right {
+  margin: 40px 9px 0 16px;
+  padding-top: 0;
+  border-radius: var(--card-radius);
+}
+
+body.is-tablet .workspace-drawer.is-pinned {
+  margin-top: 20px
+}
+
+body.is-mobile .workspace-sidedock-vault-profile {
+  padding: 0;
+  margin: 0;
+  background-color: var(--workspace-sidebar-bg);
+  border: 1px solid var(--workspace-sidebar-border) !important;
+  border-radius: 0 4px 4px 0;
+}
+
+body.is-mobile .workspace-drawer .nav-header {
+  border: none;
+}
+
+body.is-mobile .mod-root .workspace-tab-header-container-inner {
+  padding-bottom: 6px;
+}
+
+body.is-mobile .workspace-drawer-active-tab-header {
+  max-width: fit-content;
+  border-radius: calc(var(--default-radius));
+}
+
+body.is-mobile .menu-item {
+  background-color: var(--interactive-normal);
+}
+
+/* Phones only (up to 767px) */
+@media (width <= 767px) {
+  .workspace-tab-container,
+  .workspace-split.mod-horizontal {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+  }
+
+  body {
+    overflow-x: hidden !important;
+  }
+
+  body.is-mobile .workspace-drawer {
+    margin-bottom: calc(var(--cards-gap) / 2);
+    margin-top: calc(var(--cards-gap) / 2);
+  }
+
+  body.is-mobile .workspace-drawer.mod-left {
+    margin-left: calc(var(--cards-gap) / 2);
+  }
+}
+
+/* Tablets (768px to 1366px) */
+@media (width >= 768px) and (width <= 1366px) {
+  .workspace-tab-container,
+  .workspace-split.mod-horizontal {
+    overflow-x: hidden !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .is-mobile .workspace>.mod-root {
+    padding-left: calc(var(--cards-gap) / 4);
+    padding-right: calc(var(--cards-gap) / 4);
+  }
+
+  body {
+    overflow-x: hidden !important;
+  }
+
+  body.is-mobile .workspace-tabs {
+    padding-left: calc(var(--cards-gap) / 4);
+    padding-right: calc(var(--cards-gap) / 4);
+    padding-bottom: calc(var(--cards-gap) / 2);
+  }
+
+  body.is-mobile .workspace-drawer.mod-left.is-pinned {
+    padding-left: calc(var(--cards-gap) / 2);
+  }
+
+  body.is-mobile .workspace-drawer.mod-right.is-pinned {
+    padding-right: calc(var(--cards-gap) / 2);
+  }
+
+  body.is-mobile .workspace-drawer.is-pinned {
+    padding-bottom: calc(var(--cards-gap) * 2);
+  }
+
+}
+
+/* collapse icon for mobile */
+body.obsidian-app.fn-whitespace-stop-collapsing.is-mobile .nav-files-container .collapse-icon {
+  border-radius: calc(var(--default-radius) * 2);
+  background-color: var(--background-primary);
+  width: 24px;
+  height: 24px;
+}
+
+body.is-mobile .nav-files-container .tree-item-icon.collapse-icon {
+  right: var(--side-padding);
+  margin-inline-start: unset;
+}
+
+body.obsidian-app.fn-whitespace-stop-collapsing .nav-files-container .collapse-icon {
+  padding-top: 0 !important;
+}
+
+/* modals for mobile */
+
+body.is-phone .vertical-tab-header .vertical-tab-header-group .vertical-tab-header-group-items {
+  border: 1px solid var(--divider-color);
+  background-color: var(--background-default);
+  overflow: hidden;
+}
+
+body.is-mobile .vertical-tab-nav-item {
+  border: none !important;
+}
+
+.is-phone .modal.mod-lg .modal-header,
+.is-phone .modal.mod-sidebar-layout .modal-header {
+  border-bottom: none;
+}
+
+body.is-phone .modal.mod-sidebar-layout .vertical-tab-header,
+body.is-phone .modal.mod-sidebar-layout .vertical-tab-content {
+  padding-right: var(--cards-gap);
+  padding-left: var(--cards-gap);
+}
+
+body.is-phone .menu {
+  margin: calc(var(--cards-gap) / 2);
+  border-radius: calc(var(--mobile-card-radius) * 1.5);
+  background-color: var(--color-panel);
+}
+
+body.is-phone .menu-scroll {
+  padding: var(--card-padding);
+  border-radius: calc(var(--mobile-card-radius) * 1.5);
+  background-color: var(--color-panel);
+}
+
+.is-phone .menu-group .menu-item:first-child {
+  border-top-left-radius: calc(var(--mobile-card-radius) / 2);
+  border-top-right-radius: calc(var(--mobile-card-radius) / 2);
+}
+
+.is-phone .menu-group .menu-item:last-child {
+  border-bottom-left-radius: calc(var(--mobile-card-radius) / 2);
+  border-bottom-right-radius: calc(var(--mobile-card-radius) / 2);
+}
+
+.is-phone .menu-group .menu-item:not(:last-child) {
+  border-bottom: none;
+}
+
+body.is-phone .menu .menu-separator,
+body.is-phone .suggestion-container .menu-separator {
+  margin: 6px 0;
+}
+
+/* Floating Mobile Toolbar */
+
+/* Inspired by and adapted from the Cupertino Theme MIT License Copyright (c) 2025 aaaaalexis https://github.com/aaaaalexis/obsidian-cupertino */
+
+body.is-mobile .mobile-toolbar-spacer {
+  display: none;
+}
+
+body.is-mobile .mobile-toolbar-options-list {
+  --icon-size: var(--icon-l);
+  --icon-color: var(--text-normal);
+
+  gap: 8px;
+  box-shadow: var(--shadow-xs) !important;
+  backdrop-filter: var(--blur-s);
+  justify-content: flex-start;
+  max-width: fit-content;
+  border-radius: var(--clickable-icon-radius);
+  padding: 0 8px;
+  pointer-events: auto;
+  overflow: hidden;
+  transition: var(--anim-duration-moderate);
+}
+
+body.is-mobile .mobile-toolbar-options-list .clickable-icon {
+  width: 48px;
+  height: 48px;
+  padding: 0;
+}
+
+body.is-mobile .mobile-toolbar-option {
+  --icon-size: var(--icon-l);
+  --icon-stroke: var(--icon-l-stroke-width);
+
+  padding: 12px;
+}
+
+body.is-mobile .mobile-toolbar-options-container {
+  gap: 8px;
+}
+
+body.is-mobile .mobile-toolbar {
+  transition: var(--anim-duration-moderate) var(--anim-motion);
+  background-color: transparent;
+  overflow: visible;
+  padding: 0 var(--side-padding) var(--side-padding) !important;
+  box-shadow: none;
+}
+
+body.is-tablet .mobile-toolbar {
+  position: fixed;
+  inset: calc(100vh - calc(var(--mobile-toolbar-height) * 1.45)) 0 max(var(--keyboard-height), 0px);
+  z-index: var(--layer-status-bar);
+  border: none;
+  padding: 0 28px max(var(--safe-area-inset-bottom), 16px);
+}
+
+body.is-tablet .view-actions.mod-raised {
+  background: none;
+}
+
+body.is-phone .mobile-toolbar {
+  position: fixed;
+  right: 0;
+  bottom: var(--keyboard-height);
+  left: 0;
+  z-index: var(--layer-status-bar);
+  border: none;
+  padding: 0 28px max(var(--safe-area-inset-bottom), 16px);
+  top: unset;
+}
+
+/********** Mode Switchcer **********/
+body.is-phone .mod-root .view-header {
+  z-index: 3;
+  border-bottom: none;
+}
+
+body.is-phone .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
+  box-shadow: var(--shadow-xs) !important;
+  transition: var(--anim-duration-moderate) var(--anim-motion-cupertino), opacity var(--anim-duration-moderate) !important;
+  background-color: var(--color-accent);
+}
+
+body.is-phone.mod-toolbar-open .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
+  padding: 10px;
+  margin-bottom: calc(var(--side-padding) - 12px);
+}
+
+body.is-phone .mod-root .workspace-leaf-content[data-mode="source"] .view-actions button:nth-last-child(2) {
+  background-color: var(--interactive-accent) !important;
+  box-shadow: var(--shadow-xs) !important;
+}
+
+/* ========================================================================== */
+
