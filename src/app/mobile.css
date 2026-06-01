@@ -38,12 +38,12 @@ body.is-tablet .workspace-tab-container {
 }
 
 body.is-mobile .workspace-tab-container {
-  background-color: var(--workspace-note-bg) !important;
+  background-color: var(--workspace-note-bg);
 }
 
 body.is-mobile .workspace-drawer {
   border-radius: var(--mobile-card-radius);
-  background-color: transparent !important;
+  background-color: transparent;
 }
 
 body.is-mobile .workspace-drawer-inner {
@@ -98,7 +98,7 @@ body.is-mobile .workspace-sidedock-vault-profile {
   padding: 0;
   margin: 0;
   background-color: var(--workspace-sidebar-bg);
-  border: 1px solid var(--workspace-sidebar-border) !important;
+  border: 1px solid var(--workspace-sidebar-border);
   border-radius: 0 4px 4px 0;
 }
 
@@ -123,12 +123,12 @@ body.is-mobile .menu-item {
 @media (width <= 767px) {
   .workspace-tab-container,
   .workspace-split.mod-horizontal {
-    overflow-x: hidden !important;
-    max-width: 100% !important;
+    overflow-x: hidden;
+    max-width: 100%;
   }
 
   body {
-    overflow-x: hidden !important;
+    overflow-x: hidden;
   }
 
   body.is-mobile .workspace-drawer {
@@ -145,9 +145,9 @@ body.is-mobile .menu-item {
 @media (width >= 768px) and (width <= 1366px) {
   .workspace-tab-container,
   .workspace-split.mod-horizontal {
-    overflow-x: hidden !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
+    overflow-x: hidden;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .is-mobile .workspace>.mod-root {
@@ -156,7 +156,7 @@ body.is-mobile .menu-item {
   }
 
   body {
-    overflow-x: hidden !important;
+    overflow-x: hidden;
   }
 
   body.is-mobile .workspace-tabs {
@@ -193,7 +193,7 @@ body.is-mobile .nav-files-container .tree-item-icon.collapse-icon {
 }
 
 body.obsidian-app.fn-whitespace-stop-collapsing .nav-files-container .collapse-icon {
-  padding-top: 0 !important;
+  padding-top: 0;
 }
 
 /* modals for mobile */
@@ -205,7 +205,7 @@ body.is-phone .vertical-tab-header .vertical-tab-header-group .vertical-tab-head
 }
 
 body.is-mobile .vertical-tab-nav-item {
-  border: none !important;
+  border: none;
 }
 
 .is-phone .modal.mod-lg .modal-header,
@@ -263,7 +263,7 @@ body.is-mobile .mobile-toolbar-options-list {
   --icon-color: var(--text-normal);
 
   gap: 8px;
-  box-shadow: var(--shadow-xs) !important;
+  box-shadow: var(--shadow-xs);
   backdrop-filter: var(--blur-s);
   justify-content: flex-start;
   max-width: fit-content;
@@ -295,7 +295,7 @@ body.is-mobile .mobile-toolbar {
   transition: var(--anim-duration-moderate) var(--anim-motion);
   background-color: transparent;
   overflow: visible;
-  padding: 0 var(--side-padding) var(--side-padding) !important;
+  padding: 0 var(--side-padding) var(--side-padding);
   box-shadow: none;
 }
 
@@ -329,8 +329,8 @@ body.is-phone .mod-root .view-header {
 }
 
 body.is-phone .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
-  box-shadow: var(--shadow-xs) !important;
-  transition: var(--anim-duration-moderate) var(--anim-motion-cupertino), opacity var(--anim-duration-moderate) !important;
+  box-shadow: var(--shadow-xs);
+  transition: var(--anim-duration-moderate) var(--anim-motion-cupertino), opacity var(--anim-duration-moderate);
   background-color: var(--color-accent);
 }
 
@@ -340,8 +340,8 @@ body.is-phone.mod-toolbar-open .mod-root .workspace-leaf-content[data-type="mark
 }
 
 body.is-phone .mod-root .workspace-leaf-content[data-mode="source"] .view-actions button:nth-last-child(2) {
-  background-color: var(--interactive-accent) !important;
-  box-shadow: var(--shadow-xs) !important;
+  background-color: var(--interactive-accent);
+  box-shadow: var(--shadow-xs);
 }
 
 /* ========================================================================== */

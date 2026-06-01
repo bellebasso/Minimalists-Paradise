@@ -75,7 +75,7 @@ body .nn-navitem-content {
   border-radius: calc(var(--default-radius));
   min-width: auto;
   min-height: auto;
-  padding: 0 !important;
+  padding: 0;
   opacity: var(--icon-opacity);
 }
 

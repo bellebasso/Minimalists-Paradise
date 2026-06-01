@@ -114,8 +114,8 @@ body:not(.is-phone) .modal.mod-settings .installed-plugins-container .setting-it
   border: 1px solid var(--background-modifier-border);
   border-radius: var(--card-radius);
   background-color: var(--color-panel);
-  padding: 16px !important;
-  margin: 0 !important
+  padding: 16px;
+  margin: 0
 }
 
 body:not(.is-phone) .modal.mod-settings .installed-plugins-container .setting-items .setting-item-info {

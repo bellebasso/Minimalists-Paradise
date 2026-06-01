@@ -86,7 +86,7 @@ body.mod-mobile canvas {
 }
 
 .collapse-icon {
-  color: var(--file-title-color) !important;
+  color: var(--file-title-color);
 }
 
 .collapse-icon svg.svg-icon.right-triangle {
@@ -99,7 +99,7 @@ body.mod-mobile canvas {
 
 /* Frontmatter */
 .cm-def.cm-hmd-frontmatter {
-  color: var(--color-accent) !important;
+  color: var(--color-accent);
 }
 
 input.metadata-property-key-input {

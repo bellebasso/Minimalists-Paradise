@@ -202,7 +202,7 @@ settings:
   - id: tab-size
     title: tab size
     type: variable-number-slider
-    default: 18
+    default: 22
     min: 14
     max: 28
     step: 1
@@ -1170,12 +1170,12 @@ settings:
 
 /* ========================================================================== */
 
-@import "./foundation/variables.css";
-@import "./app/workspace.css";
-@import "./app/mobile.css";
-@import "./app/modals.css";
-@import "./foundation/typography.css";
-@import "./features/ui-elements.css";
-@import "./plugins/misc.css";
-@import "./features/snippets.css";
-@import "./features/frosted-glass.css";
+@import url("./foundation/variables.css");
+@import url("./app/workspace.css");
+@import url("./app/mobile.css");
+@import url("./app/modals.css");
+@import url("./foundation/typography.css");
+@import url("./features/ui-elements.css");
+@import url("./plugins/misc.css");
+@import url("./features/snippets.css");
+@import url("./features/frosted-glass.css");

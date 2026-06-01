@@ -202,7 +202,7 @@ settings:
   - id: tab-size
     title: tab size
     type: variable-number-slider
-    default: 18
+    default: 22
     min: 14
     max: 28
     step: 1
@@ -1239,7 +1239,7 @@ body {
   --tab-radius: calc(var(--default-radius) / 2.5);
   --tab-radius-active: var(--tab-radius);
   --text-highlight-bg: var(--color-accent);
-  --tab-size: 18px;
+  --tab-size: 22px;
   --tab-max-width: 250px;
   --shadow-tactile: rgb(0 0 0 / 4%) 0px 2px 8px -2px, rgb(var(--mono-rgb-100), 0.04) 0px 2px 4px -2px;
   --callout-border-width: 1px;
@@ -1275,6 +1275,7 @@ body {
   --shadow-s: var(--shadow-base), inset 0 0 1px 1px white, var(--shadow-border), 0 8px 15px 0 rgb(0 0 0 / 20%);
   --shadow-l: var(--shadow-border), inset 0 0 1px 1px white, 0 18px 60px 0 rgb(0 0 0 / 30%);
   --blur-l: blur(calc(var(--frosted-glass-blur) * 2)) saturate(1.5) brightness(1.025);
+  --file-header-background-focused: var(--color-panel);
 }
 
 body.is-translucent {
@@ -1353,8 +1354,8 @@ body.is-translucent {
   --tab-background-active: var(--color-accent);
   --tag-background: color-mix(in srgb, var(--color-accent) 30%, var(--color-panel) 70%);
   --tag-color: var(--color-accent);
-  --ic-infobox-color: var(--interactive-normal) !important;
-  --ic-border-color: var(--divider-color) !important;
+  --ic-infobox-color: var(--interactive-normal);
+  --ic-border-color: var(--divider-color);
   --ic-image-border-color: var(--divider-color);
   --ic-section-background-color: var(--color-accent);
   --ic-section-border-color: var(--blockquote-border-color);
@@ -1383,7 +1384,7 @@ body.is-translucent {
   --background-default: #0c0c0c;
   --text-normal: #ffffff;
   --background-primary: #000000;
-  --background-primary-alt: var(--background-primary) !important;
+  --background-primary-alt: var(--background-primary);
   --background-secondary: var(--background-primary);
   --background-secondary-alt: var(--background-primary);
   --card-bg: #000000;
@@ -1419,17 +1420,17 @@ body.is-translucent {
   --tab-background-active: var(--color-accent);
   --tag-background: color-mix(in srgb, var(--color-accent) 30%, var(--color-panel) 70%);
   --tag-color: var(--color-accent);
-  --ic-infobox-color: var(--interactive-normal) !important;
-  --ic-border-color: var(--divider-color) !important;
+  --ic-infobox-color: var(--interactive-normal);
+  --ic-border-color: var(--divider-color);
   --ic-image-border-color: var(--divider-color);
-  --ic-section-background-color: var(--color-accent) !important;
+  --ic-section-background-color: var(--color-accent);
   --ic-section-border-color: var(--blockquote-border-color);
   --ic-horizontal-rule-color: var(--divider-color);
   --ic-infobox-title-color: var(--color-accent);
 }
 
 body:not(.is-mobile) .horizontal-main-container {
-  padding-bottom: 24px !important;
+  padding-bottom: 24px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -1481,7 +1482,7 @@ body:not(.is-mobile) .horizontal-main-container {
   --text-accent: var(--divider-color);
   --link-color: #BE99FF;
   --link-external-color: var(--link-color);
-  --bases-table-border-color: var(--divider-color) !important;
+  --bases-table-border-color: var(--divider-color);
   --link-unresolved-color: var(--link-color);
   --graph-node: var(--divider-color);
   --background-modifier-hover: color-mix(in srgb, var(--background-primary) 70%, white 30%);
@@ -1764,28 +1765,27 @@ body:not(.is-mobile) .horizontal-main-container {
 /* ========================================================================== */
 
 /* Transparent Borders */
-.workspace-split.mod-horizontal>.workspace-leaf-resize-handle,
-.workspace-split.mod-vertical>.workspace-leaf-resize-handle,
-.pane-view,
-.mod-left,
-.mod-left::before,
-.mod-right,
-.workspace-leaf,
-.view-content,
-.workspace-tab-header-container-inner,
-.workspace-leaf-resize-handle,
-.workspace-tab-header-container {
-  border: none !important;
+.workspace .workspace-split.mod-horizontal > .workspace-leaf-resize-handle,
+.workspace .workspace-split.mod-vertical > .workspace-leaf-resize-handle,
+.workspace .pane-view,
+.workspace .mod-left,
+.workspace .mod-left::before,
+.workspace .mod-right,
+.workspace .workspace-leaf,
+.workspace .view-content,
+.workspace .workspace-tab-header-container-inner,
+.workspace .workspace-tabs .workspace-leaf-resize-handle,
+.workspace .workspace-tab-header-container {
+  border: none;
 }
 
-.view-content {
-  background-color: var(--workspace-note-bg) !important;
+.workspace-split.mod-root .view-content {
+  background-color: var(--workspace-note-bg);
 }
 
 .workspace-tab-header-container-inner {
-  align-items: center !important;
-  align-content: center !important;
-  justify-content: center;
+  align-items: center;
+  align-content: center;
   justify-self: center;
   max-width: 100%;
   gap: 4px;
@@ -1807,7 +1807,7 @@ body:not(.is-mobile) .workspace {
   position: relative;
   overflow: visible;
   padding-right: var(--cards-gap);
-  background-color: transparent !important;
+  background-color: transparent;
 }
 
 body:not(.is-phone) .workspace-tab-container {
@@ -1829,28 +1829,28 @@ body:not(.is-phone) .workspace-tab-container {
 }
 
 .workspace-split {
-  background-color: transparent !important;
+  background-color: transparent;
 }
 
 .workspace.is-left-sidedock-open .workspace-split.mod-horizontal.mod-left-split {
-  margin-right: var(--cards-gap) !important;
+  margin-right: var(--cards-gap);
 }
 
 .workspace.is-right-sidedock-open .workspace-split.mod-horizontal.mod-right-split {
-  margin-left: var(--cards-gap) !important;
+  margin-left: var(--cards-gap);
 }
 
 body:not(.is-mobile) .workspace-split.mod-vertical.mod-root {
-  gap: var(--cards-gap) !important;
+  gap: var(--cards-gap);
 }
 
 .workspace-fake-target-overlay:not(.is-in-sidebar) .workspace-tabs .workspace-leaf,
 .mod-root .workspace-tabs .workspace-leaf {
-  background-color: transparent !important;
+  background-color: transparent;
 }
 
-.workspace-leaf {
-  background-color: var(--workspace-note-bg) !important;
+.workspace-tabs .workspace-leaf {
+  background-color: var(--workspace-note-bg);
   border-radius: inherit;
   overflow: hidden;
 }
@@ -1863,7 +1863,7 @@ body:not(.is-mobile) .workspace-split.mod-vertical.mod-root {
 
 /* Header */
 .view-header {
-  background-color: transparent !important;
+  background-color: transparent;
   border-bottom: 1px dashed var(--workspace-note-border);
   border-radius: 16px 16px 0 0;
   align-self: auto;
@@ -1876,7 +1876,7 @@ body:not(.is-mobile) .workspace-split.mod-vertical.mod-root {
 }
 
 span .view-header-title-parent .view-header-breadcrumb {
-  color: var(--color-accent) !important;
+  color: var(--color-accent);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1924,31 +1924,33 @@ span .view-header-title-parent .view-header-breadcrumb {
 
 /* Tabs */
 
-.workspace-tab-header-container {
+.workspace .workspace-split .workspace-tab-header-container {
   align-items: center;
   position: relative;
   padding-bottom: 0;
   background-color: transparent;
-  border-bottom: 1px solid var(--workspace-tab-border);
+  border: none;
   height: var(--header-height);
 }
 
 html body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
+  display: flex;
+  align-items: center;
   margin-bottom: 0;
-  margin-top: 4px !important;
+  margin-top: 4px;
   gap: 8px;
   width: fit-content;
   height: calc(var(--header-height) + 4px);
   padding: 6px 8px 8px 6px;
 }
 
-.workspace-tab-header {
+.workspace .mod-root .workspace-tab-header {
   max-width: 100%;
   display: flex;
   flex-grow: 1;
   border-radius: var(--tab-radius);
-  padding: 0 !important;
-  box-shadow: none !important;
+  padding: 0;
+  box-shadow: none;
   background: var(--workspace-tab-bg);
   box-sizing: border-box;
   color: var(--text-normal);
@@ -1957,15 +1959,14 @@ html body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
   align-items: center;
 }
 
-.toggle-tab-animations .workspace-tab-header {
+.toggle-tab-animations .workspace .mod-root .workspace-tab-header {
   max-width: 100%;
-  ;
   display: flex;
   flex-grow: 1;
   border-radius: var(--tab-radius);
-  padding: 0 !important;
-  box-shadow: none !important;
-  transition: flex-grow 0.5s ease-in-out, background-color 0.4s ease-in-out !important;
+  padding: 0;
+  box-shadow: none;
+  transition: flex-grow 0.5s ease-in-out, background-color 0.4s ease-in-out;
   background: var(--workspace-tab-bg);
   box-sizing: border-box;
   color: var(--text-normal);
@@ -1975,7 +1976,7 @@ html body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
 }
 
 body:not(.is-mobile).toggle-tab-animations .workspace-tab-header.is-active.mod-active {
-  flex-grow: 2 !important;
+  flex-grow: 2;
   max-width: var(--tab-max-width);
   background-color: var(--tab-background-active);
   box-sizing: border-box;
@@ -1983,7 +1984,7 @@ body:not(.is-mobile).toggle-tab-animations .workspace-tab-header.is-active.mod-a
 }
 
 body:not(.is-mobile) .workspace-tab-header.is-active.mod-active {
-  flex-grow: 2 !important;
+  flex-grow: 2;
   max-width: var(--tab-max-width);
   background-color: var(--color-accent);
   box-sizing: border-box;
@@ -2015,7 +2016,7 @@ body:not(.is-mobile) .workspace-tab-header.is-active.mod-active {
 
 .workspace-tab-header-tab-list {
   box-sizing: border-box;
-  display: none !important;
+  display: none;
 }
 
 .mod-left-split .workspace-tab-header-container .is-active,
@@ -2029,7 +2030,7 @@ body:not(.is-mobile) .workspace-tab-header.is-active.mod-active {
 .mod-left-split .workspace-tab-header,
 .mod-right-split .workspace-tab-header {
   background: color-mix(in srgb, var(--background-primary) calc(var(--workspace-tab-opacity) * 100%), transparent);
-  border-radius: var(--tab-radius) !important;
+  border-radius: var(--tab-radius);
 }
 
 .mod-left-split .workspace-tab-header-inner-icon,
@@ -2050,7 +2051,7 @@ body:not(.is-mobile) .workspace-tab-header.is-active.mod-active {
 }
 
 .workspace .mod-root .workspace-tabs.mod-stacked .workspace-tab-container .workspace-tab-header.is-active {
-  background-color: var(--color-accent) !important;
+  background-color: var(--color-accent);
   border-radius: calc(var(--default-radius) / 2);
 }
 
@@ -2058,7 +2059,7 @@ body:not(.is-mobile) .workspace-tab-header.is-active.mod-active {
 .status-bar {
   display: flex;
   align-items: center;
-  border: none !important;
+  border: none;
   width: 100vw;
   left: 0;
   right: 0;
@@ -2069,9 +2070,9 @@ body:not(.is-mobile) .workspace-tab-header.is-active.mod-active {
 
 /* Vault Profile */
 .workspace-sidedock-vault-profile {
-  padding: 8px !important;
-  margin-right: auto !important;
-  border: 1px solid var(--workspace-sidebar-border) !important;
+  padding: 8px;
+  margin-right: auto;
+  border: 1px solid var(--workspace-sidebar-border);
   border-radius: 0 0 var(--card-radius) var(--card-radius);
   box-sizing: border-box;
   width: 100%;
@@ -2107,7 +2108,7 @@ body:not(.is-mobile) .workspace-split.mod-right-split .workspace-tab-container,
 body:not(.is-mobile) .workspace-split.mod-right-split .workspace-leaf,*/
 body:not(.is-mobile) .workspace-split.mod-left-split .nav-buttons-container,
 body:not(.is-mobile) .workspace-split.mod-right-split .nav-buttons-container {
-  background-color: var(--workspace-sidebar-bg) !important;
+  background-color: var(--workspace-sidebar-bg);
 }
 
 
@@ -2116,26 +2117,25 @@ body:not(.is-mobile) .workspace-split.mod-left-split .workspace-sidedock-vault-p
 }
 
 .workspace-drawer-vault-switcher {
-  padding: 4px 2px !important;
+  padding: 4px 2px;
 }
 
 .workspace-drawer-vault-actions .clickable-icon {
-  padding: 4px !important;
+  padding: 4px;
 }
 
 /* Sidebar */
 .sidebar-toggle-button {
-  background-color: transparent !important;
+  background-color: transparent;
 }
 
 body.is-focused .sidebar-toggle-button {
-  background-color: transparent !important;
+  background-color: transparent;
 }
 
 /* Ribbon */
 .workspace-ribbon.side-dock-ribbon {
   background-color: var(--workspace-ribbon-bg);
-  border-right: 1px solid var(--workspace-ribbon-border);
 }
 
 .side-dock-ribbon-action {
@@ -2235,7 +2235,7 @@ body:not(.empty-state-off) .workspace-leaf-content[data-type="empty"] .empty-sta
 }
 
 .mod-root .mod-horizontal>.workspace-tabs .empty-state-container {
-  padding-bottom: 16px !important;
+  padding-bottom: 16px;
 }
 
 .mod-root .mod-horizontal>.workspace-tabs .empty-state-container .empty-state-action:nth-child(2) {
@@ -2247,11 +2247,11 @@ body:not(.empty-state-off) .workspace-leaf-content[data-type="empty"] .empty-sta
 }
 
 body:not(.empty-state-off).is-mobile .empty-state-container {
-  padding-bottom: 96px !important;
+  padding-bottom: 96px;
 }
 
 body:not(.empty-state-off).is-mobile .empty-state-container::before {
-  margin-top: 44px !important;
+  margin-top: 44px;
 }
 
 body:not(.empty-state-off).is-mobile .empty-state-action {
@@ -2266,7 +2266,7 @@ body:not(.empty-state-off).is-mobile .empty-state-action:first-child {
 }
 
 body:not(.empty-state-off).is-mobile .empty-state-action:nth-child(2) {
-  background-color: var(--background-secondary) !important;
+  background-color: var(--background-secondary);
   padding: 4px var(--side-padding);
 }
 
@@ -2326,12 +2326,12 @@ body.is-tablet .workspace-tab-container {
 }
 
 body.is-mobile .workspace-tab-container {
-  background-color: var(--workspace-note-bg) !important;
+  background-color: var(--workspace-note-bg);
 }
 
 body.is-mobile .workspace-drawer {
   border-radius: var(--mobile-card-radius);
-  background-color: transparent !important;
+  background-color: transparent;
 }
 
 body.is-mobile .workspace-drawer-inner {
@@ -2386,7 +2386,7 @@ body.is-mobile .workspace-sidedock-vault-profile {
   padding: 0;
   margin: 0;
   background-color: var(--workspace-sidebar-bg);
-  border: 1px solid var(--workspace-sidebar-border) !important;
+  border: 1px solid var(--workspace-sidebar-border);
   border-radius: 0 4px 4px 0;
 }
 
@@ -2411,12 +2411,12 @@ body.is-mobile .menu-item {
 @media (width <= 767px) {
   .workspace-tab-container,
   .workspace-split.mod-horizontal {
-    overflow-x: hidden !important;
-    max-width: 100% !important;
+    overflow-x: hidden;
+    max-width: 100%;
   }
 
   body {
-    overflow-x: hidden !important;
+    overflow-x: hidden;
   }
 
   body.is-mobile .workspace-drawer {
@@ -2433,9 +2433,9 @@ body.is-mobile .menu-item {
 @media (width >= 768px) and (width <= 1366px) {
   .workspace-tab-container,
   .workspace-split.mod-horizontal {
-    overflow-x: hidden !important;
-    max-width: 100% !important;
-    box-sizing: border-box !important;
+    overflow-x: hidden;
+    max-width: 100%;
+    box-sizing: border-box;
   }
 
   .is-mobile .workspace>.mod-root {
@@ -2444,7 +2444,7 @@ body.is-mobile .menu-item {
   }
 
   body {
-    overflow-x: hidden !important;
+    overflow-x: hidden;
   }
 
   body.is-mobile .workspace-tabs {
@@ -2481,7 +2481,7 @@ body.is-mobile .nav-files-container .tree-item-icon.collapse-icon {
 }
 
 body.obsidian-app.fn-whitespace-stop-collapsing .nav-files-container .collapse-icon {
-  padding-top: 0 !important;
+  padding-top: 0;
 }
 
 /* modals for mobile */
@@ -2493,7 +2493,7 @@ body.is-phone .vertical-tab-header .vertical-tab-header-group .vertical-tab-head
 }
 
 body.is-mobile .vertical-tab-nav-item {
-  border: none !important;
+  border: none;
 }
 
 .is-phone .modal.mod-lg .modal-header,
@@ -2551,7 +2551,7 @@ body.is-mobile .mobile-toolbar-options-list {
   --icon-color: var(--text-normal);
 
   gap: 8px;
-  box-shadow: var(--shadow-xs) !important;
+  box-shadow: var(--shadow-xs);
   backdrop-filter: var(--blur-s);
   justify-content: flex-start;
   max-width: fit-content;
@@ -2583,7 +2583,7 @@ body.is-mobile .mobile-toolbar {
   transition: var(--anim-duration-moderate) var(--anim-motion);
   background-color: transparent;
   overflow: visible;
-  padding: 0 var(--side-padding) var(--side-padding) !important;
+  padding: 0 var(--side-padding) var(--side-padding);
   box-shadow: none;
 }
 
@@ -2617,8 +2617,8 @@ body.is-phone .mod-root .view-header {
 }
 
 body.is-phone .mod-root .workspace-leaf-content[data-type="markdown"] .view-actions button:nth-last-child(2) {
-  box-shadow: var(--shadow-xs) !important;
-  transition: var(--anim-duration-moderate) var(--anim-motion-cupertino), opacity var(--anim-duration-moderate) !important;
+  box-shadow: var(--shadow-xs);
+  transition: var(--anim-duration-moderate) var(--anim-motion-cupertino), opacity var(--anim-duration-moderate);
   background-color: var(--color-accent);
 }
 
@@ -2628,8 +2628,8 @@ body.is-phone.mod-toolbar-open .mod-root .workspace-leaf-content[data-type="mark
 }
 
 body.is-phone .mod-root .workspace-leaf-content[data-mode="source"] .view-actions button:nth-last-child(2) {
-  background-color: var(--interactive-accent) !important;
-  box-shadow: var(--shadow-xs) !important;
+  background-color: var(--interactive-accent);
+  box-shadow: var(--shadow-xs);
 }
 
 /* ========================================================================== */
@@ -2753,8 +2753,8 @@ body:not(.is-phone) .modal.mod-settings .installed-plugins-container .setting-it
   border: 1px solid var(--background-modifier-border);
   border-radius: var(--card-radius);
   background-color: var(--color-panel);
-  padding: 16px !important;
-  margin: 0 !important
+  padding: 16px;
+  margin: 0
 }
 
 body:not(.is-phone) .modal.mod-settings .installed-plugins-container .setting-items .setting-item-info {
@@ -2783,13 +2783,13 @@ body.is-tablet .modal.mod-sidebar-layout .installed-plugins-container {
 /* Fonts */
 .cm-s-obsidian span.cm-inline-code,
 .markdown-preview-view code {
-  font-family: var(--font-monospace) !important;
+  font-family: var(--font-monospace);
 }
 
 .markdown-preview-view pre code,
 .cm-s-obsidian pre,
 .cm-s-obsidian code[class*="language-"] {
-  font-family: var(--font-monospace) !important;
+  font-family: var(--font-monospace);
   font-size: 0.95rem;
   background-color: var(--code-background);
 }
@@ -3125,7 +3125,7 @@ body.colored-headers.theme-light:not(.colored-headers-override-toggle) {
 
 /* Blockquotes and Citations */
 .cm-quote {
-  color: var(--text-normal) !important;
+  color: var(--text-normal);
 }
 
 .markdown-rendered blockquote {
@@ -3258,7 +3258,7 @@ span .cm-hmd.external-link {
 }
 
 span .cm-hmd.external-link::after {
-  display: none !important;
+  display: none;
 }
 
 /* Highlights */
@@ -3410,7 +3410,7 @@ body.mod-mobile canvas {
 }
 
 .collapse-icon {
-  color: var(--file-title-color) !important;
+  color: var(--file-title-color);
 }
 
 .collapse-icon svg.svg-icon.right-triangle {
@@ -3423,7 +3423,7 @@ body.mod-mobile canvas {
 
 /* Frontmatter */
 .cm-def.cm-hmd-frontmatter {
-  color: var(--color-accent) !important;
+  color: var(--color-accent);
 }
 
 input.metadata-property-key-input {
@@ -3523,7 +3523,7 @@ body .nn-navitem-content {
   border-radius: calc(var(--default-radius));
   min-width: auto;
   min-height: auto;
-  padding: 0 !important;
+  padding: 0;
   opacity: var(--icon-opacity);
 }
 
@@ -3690,7 +3690,7 @@ SOFTWARE.
 .labeled-nav .mod-left-split .mod-top .workspace-tab-header-container {
   border: none;
   padding: 0;
-  flex-direction: column-reverse !important;
+  flex-direction: column-reverse;
   height: auto;
   width: 100%;
   align-items: flex-start;
@@ -3706,13 +3706,13 @@ SOFTWARE.
 
 .labeled-nav .mod-left-split .mod-top .workspace-tab-header-container .workspace-tab-header-container-inner {
   padding: var(--size-4-2) var(--size-4-2);
-  flex-direction: column !important;
+  flex-direction: column;
   margin-top: var(--labeled-nav-top-margin);
   margin-bottom: var(--cards-gap);
   background-color: var(--workspace-sidebar-bg);
-  align-items: flex-start !important;
+  align-items: flex-start;
   width: 100%;
-  border: 1px solid var(--workspace-sidebar-border) !important;
+  border: 1px solid var(--workspace-sidebar-border);
   border-radius: var(--card-radius);
 }
 
@@ -3825,7 +3825,7 @@ SOFTWARE.
   float: right;
   width: var(--ic-width);
   margin-left: var(--ic-outside-padding);
-  background-color: var(--ic-infobox-color) !important;
+  background-color: var(--ic-infobox-color);
   padding: var(--ic-inside-padding);
   border-radius: var(--card-radius);
   border: var(--ic-border) solid;
@@ -3939,8 +3939,8 @@ SOFTWARE.
 .ic-infobox-enable .markdown-rendered .callout[data-callout="infobox"],
 .ic-infobox-enable .markdown-reading-view .callout[data-callout="infobox"],
 .ic-infobox-enable .callout[data-callout="infobox"] {
-  background-color: var(--ic-infobox-color) !important;
-  border-color: var(--ic-border-color) !important;
+  background-color: var(--ic-infobox-color);
+  border-color: var(--ic-border-color);
 }
 
 /* ========================================================================== */
@@ -3957,9 +3957,9 @@ SOFTWARE.
 .tabbed-callout-enable [data-callout="tabbed"] {
   --callout-color: var(--interactive-normal);
 
-  position: relative !important;
-  z-index: 10 !important;
-  background-color: var(--interactive-normal) !important;
+  position: relative;
+  z-index: 10;
+  background-color: var(--interactive-normal);
   outline: 1px solid var(--divider-color);
   border-radius: var(--card-radius);
   border-style: solid;
@@ -4386,8 +4386,8 @@ body:not(.is-mobile) .view-header>* {
 
 /* View Header Surfing */
 body:not(.is-mobile) .workspace-leaf-content[data-type="empty"]:has(.wb-bookmark-bar) .view-header {
-  margin-top: 0 !important;
-  height: var(--header-height) !important;
+  margin-top: 0;
+  height: var(--header-height);
 }
 
 body:not(.is-mobile) .workspace-leaf-content[data-type="empty"]:has(.wb-bookmark-bar) :is(.view-actions, .view-header-nav-buttons, .view-header-title-container) {
@@ -4424,54 +4424,54 @@ body:not(.is-mobile).vault-profile-autohide .workspace-split.mod-left-split .wor
    modifications on the tab header container to the default (non-labeled) state. */
 body.labeled-nav:is(.tab-autohide, .status-bar-autohide, .Ribbon-autohide, .nav-header-autohide, .tab-title-bar-autohide, .vault-profile-autohide) .mod-left-split .mod-top .workspace-tab-header-container {
   /* Restore default horizontal layout */
-  flex-direction: row !important;
-  align-items: center !important;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
-  width: 100% !important;
-  border: none !important;
-  padding: 0 !important;
-  background-color: transparent !important;
-  border-bottom: 1px solid var(--card-bg) !important;
+  width: 100%;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  border-bottom: 1px solid var(--card-bg);
 }
 
 body.labeled-nav:is(.tab-autohide, .status-bar-autohide, .Ribbon-autohide, .nav-header-autohide, .tab-title-bar-autohide, .vault-profile-autohide) .mod-left-split .mod-top .workspace-tab-header-container .workspace-tab-header-container-inner {
   /* Restore default inner container */
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 4px !important;
-  margin-top: 4px !important;
-  margin-bottom: 0 !important;
-  width: fit-content !important;
-  padding: 6px 8px 8px 6px !important;
-  background-color: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 4px;
+  margin-bottom: 0;
+  width: fit-content;
+  padding: 6px 8px 8px 6px;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
 }
 
 /* Hide the text labels in tab headers when hider is active */
 body.labeled-nav:is(.tab-autohide, .status-bar-autohide, .Ribbon-autohide, .nav-header-autohide, .tab-title-bar-autohide, .vault-profile-autohide) .mod-left-split .mod-top .workspace-tab-header-inner-title {
-  display: none !important;
+  display: none;
 }
 
 /* Ensure hider animations work properly by overriding labeled-nav positioning */
 body.labeled-nav.tab-autohide .mod-left-split .mod-top .workspace-tab-header-container {
-  position: relative !important;
+  position: relative;
 }
 
 body.labeled-nav.tab-autohide .mod-left-split .mod-top .workspace-tab-header-container .sidebar-toggle-button.mod-left {
-  position: absolute !important;
-  justify-content: flex-end !important;
-  padding-right: var(--size-4-2) !important;
-  top: 0 !important;
-  right: 0 !important;
+  position: absolute;
+  justify-content: flex-end;
+  padding-right: var(--size-4-2);
+  top: 0;
+  right: 0;
 }
 
 /* Fix the container structure for tab-autohide compatibility */
 body.labeled-nav.tab-autohide .mod-left-split .mod-top .workspace-tab-header-container .workspace-tab-container-inner {
-  flex-grow: 1 !important;
-  gap: 0 !important;
-  padding: var(--size-4-2) var(--size-4-3) !important;
+  flex-grow: 1;
+  gap: 0;
+  padding: var(--size-4-2) var(--size-4-3);
 }
 
 body:not(.is-mobile).vault-profile-autohide:has(.workspace-sidedock-vault-profile:hover) .workspace-split.mod-left-split .workspace-tabs:last-of-type .workspace-tab-container {
@@ -4481,15 +4481,15 @@ body:not(.is-mobile).vault-profile-autohide:has(.workspace-sidedock-vault-profil
 
 body.labeled-nav.tab-autohide .mod-left-split .mod-top .workspace-tab-header .workspace-tab-header-inner {
   gap: var(--size-2-3);
-  padding: 2px !important;
+  padding: 2px;
 }
 
 body.labeled-nav.tab-autohide .mod-left-split .mod-top .workspace-tab-header .workspace-tab-header.tappable.is-active {
-  background-color: var(--color-accent) !important;
+  background-color: var(--color-accent);
 }
 
 body.labeled-nav.tab-autohide .mod-left-split .mod-top .workspace-tab-header.is-active {
-  background-color: var(--color-accent) !important;
+  background-color: var(--color-accent);
 }
 
 /* ========================================================================== */
@@ -4502,13 +4502,13 @@ body.labeled-nav.tab-autohide .mod-left-split .mod-top .workspace-tab-header.is-
 .frosted-glass-toggle.frosted-glass .prompt, .frosted-glass-toggle.frosted-glass .modal, .frosted-glass-toggle.frosted-glass .menu,
 .frosted-glass-toggle.ice-glass .prompt, .frosted-glass-toggle.ice-glass .modal, .frosted-glass-toggle.ice-glass .menu,
 .frosted-glass-toggle.frozen-glass .prompt, .frosted-glass-toggle.frozen-glass .modal, .frosted-glass-toggle.frozen-glass .menu {
-  box-shadow: var(--shadow-xxs) !important;
+  box-shadow: var(--shadow-xxs);
   backdrop-filter: var(--blur-m);
 }
 
 /* the settings modal does not work as expected, so I'll disable it for now */
 .frosted-glass-toggle.frosted-glass .modal.mod-settings, .frosted-glass-toggle.ice-glass .modal.mod-settings, .frosted-glass-toggle.frozen-glass .modal.mod-settings {
-  box-shadow: none !important;
+  box-shadow: none;
 }
 
 .frosted-glass-toggle.ice-glass .nav-buttons-container {
@@ -4519,22 +4519,22 @@ body.labeled-nav.tab-autohide .mod-left-split .mod-top .workspace-tab-header.is-
 
 .frosted-glass-toggle.frozen-glass .nav-buttons-container,
 .frosted-glass-toggle.frozen-glass .side-dock-ribbon-action {
-  box-shadow: var(--shadow-xxs) !important;
+  box-shadow: var(--shadow-xxs);
   backdrop-filter: var(--blur-l);
 }
 
 .frosted-glass-toggle.frozen-glass .workspace-tab-container,
 .frosted-glass-toggle.frosted-glass .workspace-tab-container,
 .frosted-glass-toggle.ice-glass .workspace-tab-container {
-  border-color: var(--glass-edge-highlight) !important;
-  box-shadow: var(--shadow-xxs) !important;
+  border-color: var(--glass-edge-highlight);
+  box-shadow: var(--shadow-xxs);
   backdrop-filter: var(--blur-l);
 }
 
 .frosted-glass-toggle.frozen-glass .workspace-leaf,
 .frosted-glass-toggle.frosted-glass .workspace-leaf,
 .frosted-glass-toggle.ice-glass .workspace-leaf {
-  background-color: transparent !important;
+  background-color: transparent;
 }
 
 .frosted-glass-toggle.frosted-glass .nav-buttons-container,
@@ -4543,26 +4543,26 @@ body.labeled-nav.tab-autohide .mod-left-split .mod-top .workspace-tab-header.is-
 .frosted-glass-toggle.frosted-glass .workspace-sidedock-vault-profile,
 .frosted-glass-toggle.ice-glass .workspace-sidedock-vault-profile,
 .frosted-glass-toggle.frozen-glass .workspace-sidedock-vault-profile {
-  background-color: var(--workspace-sidebar-glass-bg) !important;
-  border-color: var(--glass-edge-highlight) !important;
+  background-color: var(--workspace-sidebar-glass-bg);
+  border-color: var(--glass-edge-highlight);
 }
 
 .frosted-glass-toggle.frozen-glass .workspace-ribbon.side-dock-ribbon,
 .frosted-glass-toggle.frozen-glass .side-dock-ribbon-action {
-  border-color: var(--glass-edge-highlight) !important;
+  border-color: var(--glass-edge-highlight);
 }
 
 .frosted-glass-toggle.ice-glass .workspace-ribbon.side-dock-ribbon,
 .frosted-glass-toggle.ice-glass .side-dock-ribbon-action,
 .frosted-glass-toggle.frosted-glass .workspace-ribbon.side-dock-ribbon,
 .frosted-glass-toggle.frosted-glass .side-dock-ribbon-action {
-  background-color: var(--workspace-ribbon-glass-bg) !important;
+  background-color: var(--workspace-ribbon-glass-bg);
 }
 
 .frosted-glass-toggle.frozen-glass .workspace-leaf,
 .frosted-glass-toggle.frozen-glass .workspace-leaf-content {
-  background-color: transparent !important;
-  box-shadow: none !important;
+  background-color: transparent;
+  box-shadow: none;
 }
 
 .frosted-glass-toggle .view-content {
@@ -4570,13 +4570,13 @@ body.labeled-nav.tab-autohide .mod-left-split .mod-top .workspace-tab-header.is-
 }
 
 body.is-mobile.frosted-glass-toggle.frozen-glass .workspace-drawer-inner {
-  box-shadow: var(--shadow-xxs) !important;
+  box-shadow: var(--shadow-xxs);
   backdrop-filter: var(--blur-s-alt);
 }
 
 body.is-mobile.frosted-glass-toggle.frozen-glass .workspace-leaf-content[data-type='file-explorer'] {
-  box-shadow: none !important;
-  backdrop-filter: none !important;
+  box-shadow: none;
+  backdrop-filter: none;
   border-right: 1px solid rgb(255 255 255 / 40%);
   border-bottom: 1px solid rgb(255 255 255 / 40%);
 }
@@ -4588,29 +4588,29 @@ body.is-mobile.frosted-glass-toggle.frozen-glass .workspace-leaf-content[data-ty
 .frosted-glass-toggle.frozen-glass .workspace-leaf-content[data-type="notebook-navigator"],
 .frosted-glass-toggle.frozen-glass .nn-split-container,
 .frosted-glass-toggle.frozen-glass .view-content.notebook-navigator {
-  box-shadow: var(--shadow-xxs) !important;
+  box-shadow: var(--shadow-xxs);
   backdrop-filter: var(--blur-l);
-  background-color: var(--workspace-sidebar-glass-bg) !important;
+  background-color: var(--workspace-sidebar-glass-bg);
 } */
 
 body:not(.is-mobile).frosted-glass-toggle.frozen-glass .workspace-split.mod-left-split .workspace-sidedock-vault-profile,
 body:not(.is-mobile).frosted-glass-toggle.ice-glass .workspace-split.mod-left-split .workspace-sidedock-vault-profile,
 body:not(.is-mobile).frosted-glass-toggle.frosted-glass .workspace-split.mod-left-split .workspace-sidedock-vault-profile {
-  box-shadow: var(--shadow-xxs) !important;
+  box-shadow: var(--shadow-xxs);
 }
 
 body:not(.is-mobile).frosted-glass-toggle.frozen-glass .workspace-split.mod-left-split .modal-container,
 body:not(.is-mobile).frosted-glass-toggle.ice-glass .workspace-split.mod-left-split .modal,
 body:not(.is-mobile).frosted-glass-toggle.frosted-glass .workspace-split.mod-left-split .modal {
-  box-shadow: var(--shadow-xxs) !important;
+  box-shadow: var(--shadow-xxs);
   backdrop-filter: var(--blur-l);
 }
 
 .frosted-glass-toggle.frozen-glass .workspace-tab-header.is-active.mod-active {
-  flex-grow: 2 !important;
+  flex-grow: 2;
   max-width: 250px;
   background-color: var(--color-accent);
-  box-shadow: var(--shadow-xs) !important;
+  box-shadow: var(--shadow-xs);
   backdrop-filter: var(--blur-s);
   box-sizing: border-box;
   border: none;
@@ -4623,15 +4623,15 @@ body:not(.is-mobile).frosted-glass-toggle.frosted-glass .workspace-split.mod-lef
   background-color: var(--color-accent);
   box-sizing: border-box;
   border: none;
-  box-shadow: var(--shadow-xs) !important;
+  box-shadow: var(--shadow-xs);
   backdrop-filter: var(--blur-s);
 }
 
 .frosted-glass-toggle.ice-glass .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header,
 .frosted-glass-toggle.frozen-glass .workspace-tab-header-container .workspace-tab-header-container-inner .workspace-tab-header {
-  box-shadow: var(--shadow-xxs) !important;
+  box-shadow: var(--shadow-xxs);
   backdrop-filter: var(--blur-s);
-  border-color: var(--glass-edge-highlight) !important;
+  border-color: var(--glass-edge-highlight);
 }
 
 .frosted-glass-toggle.frosted-glass .nav-buttons-container {
@@ -4650,15 +4650,15 @@ body:not(.is-mobile).frosted-glass-toggle.frosted-glass .workspace-split.mod-lef
 .labeled-nav.frosted-glass-toggle.ice-glass .mod-left-split .mod-top .workspace-tab-header-container .workspace-tab-header-container-inner,
 .labeled-nav.frosted-glass-toggle.frosted-glass .mod-left-split .mod-top .workspace-tab-header-container .workspace-tab-header-container-inner {
   padding: var(--size-4-2) var(--size-4-2);
-  flex-direction: column !important;
+  flex-direction: column;
   margin-top: var(--labeled-nav-top-margin);
   margin-bottom: var(--cards-gap);
-  box-shadow: var(--shadow-xxs) !important;
+  box-shadow: var(--shadow-xxs);
   backdrop-filter: var(--blur-l);
-  align-items: flex-start !important;
+  align-items: flex-start;
   width: 100%;
-  background-color: var(--workspace-sidebar-glass-bg) !important;
-  border: 1px solid var(--glass-edge-highlight) !important;
+  background-color: var(--workspace-sidebar-glass-bg);
+  border: 1px solid var(--glass-edge-highlight);
   border-radius: var(--card-radius);
   overflow: hidden;
   background-clip: padding-box;

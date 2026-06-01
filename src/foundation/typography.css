@@ -3,13 +3,13 @@
 /* Fonts */
 .cm-s-obsidian span.cm-inline-code,
 .markdown-preview-view code {
-  font-family: var(--font-monospace) !important;
+  font-family: var(--font-monospace);
 }
 
 .markdown-preview-view pre code,
 .cm-s-obsidian pre,
 .cm-s-obsidian code[class*="language-"] {
-  font-family: var(--font-monospace) !important;
+  font-family: var(--font-monospace);
   font-size: 0.95rem;
   background-color: var(--code-background);
 }
@@ -345,7 +345,7 @@ body.colored-headers.theme-light:not(.colored-headers-override-toggle) {
 
 /* Blockquotes and Citations */
 .cm-quote {
-  color: var(--text-normal) !important;
+  color: var(--text-normal);
 }
 
 .markdown-rendered blockquote {
@@ -478,7 +478,7 @@ span .cm-hmd.external-link {
 }
 
 span .cm-hmd.external-link::after {
-  display: none !important;
+  display: none;
 }
 
 /* Highlights */

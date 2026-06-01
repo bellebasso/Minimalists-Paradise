@@ -99,7 +99,7 @@ SOFTWARE.
 .labeled-nav .mod-left-split .mod-top .workspace-tab-header-container {
   border: none;
   padding: 0;
-  flex-direction: column-reverse !important;
+  flex-direction: column-reverse;
   height: auto;
   width: 100%;
   align-items: flex-start;
@@ -115,13 +115,13 @@ SOFTWARE.
 
 .labeled-nav .mod-left-split .mod-top .workspace-tab-header-container .workspace-tab-header-container-inner {
   padding: var(--size-4-2) var(--size-4-2);
-  flex-direction: column !important;
+  flex-direction: column;
   margin-top: var(--labeled-nav-top-margin);
   margin-bottom: var(--cards-gap);
   background-color: var(--workspace-sidebar-bg);
-  align-items: flex-start !important;
+  align-items: flex-start;
   width: 100%;
-  border: 1px solid var(--workspace-sidebar-border) !important;
+  border: 1px solid var(--workspace-sidebar-border);
   border-radius: var(--card-radius);
 }
 
@@ -234,7 +234,7 @@ SOFTWARE.
   float: right;
   width: var(--ic-width);
   margin-left: var(--ic-outside-padding);
-  background-color: var(--ic-infobox-color) !important;
+  background-color: var(--ic-infobox-color);
   padding: var(--ic-inside-padding);
   border-radius: var(--card-radius);
   border: var(--ic-border) solid;
@@ -348,8 +348,8 @@ SOFTWARE.
 .ic-infobox-enable .markdown-rendered .callout[data-callout="infobox"],
 .ic-infobox-enable .markdown-reading-view .callout[data-callout="infobox"],
 .ic-infobox-enable .callout[data-callout="infobox"] {
-  background-color: var(--ic-infobox-color) !important;
-  border-color: var(--ic-border-color) !important;
+  background-color: var(--ic-infobox-color);
+  border-color: var(--ic-border-color);
 }
 
 /* ========================================================================== */
@@ -366,9 +366,9 @@ SOFTWARE.
 .tabbed-callout-enable [data-callout="tabbed"] {
   --callout-color: var(--interactive-normal);
 
-  position: relative !important;
-  z-index: 10 !important;
-  background-color: var(--interactive-normal) !important;
+  position: relative;
+  z-index: 10;
+  background-color: var(--interactive-normal);
   outline: 1px solid var(--divider-color);
   border-radius: var(--card-radius);
   border-style: solid;
@@ -795,8 +795,8 @@ body:not(.is-mobile) .view-header>* {
 
 /* View Header Surfing */
 body:not(.is-mobile) .workspace-leaf-content[data-type="empty"]:has(.wb-bookmark-bar) .view-header {
-  margin-top: 0 !important;
-  height: var(--header-height) !important;
+  margin-top: 0;
+  height: var(--header-height);
 }
 
 body:not(.is-mobile) .workspace-leaf-content[data-type="empty"]:has(.wb-bookmark-bar) :is(.view-actions, .view-header-nav-buttons, .view-header-title-container) {
@@ -833,54 +833,54 @@ body:not(.is-mobile).vault-profile-autohide .workspace-split.mod-left-split .wor
    modifications on the tab header container to the default (non-labeled) state. */
 body.labeled-nav:is(.tab-autohide, .status-bar-autohide, .Ribbon-autohide, .nav-header-autohide, .tab-title-bar-autohide, .vault-profile-autohide) .mod-left-split .mod-top .workspace-tab-header-container {
   /* Restore default horizontal layout */
-  flex-direction: row !important;
-  align-items: center !important;
+  flex-direction: row;
+  align-items: center;
   justify-content: center;
-  width: 100% !important;
-  border: none !important;
-  padding: 0 !important;
-  background-color: transparent !important;
-  border-bottom: 1px solid var(--card-bg) !important;
+  width: 100%;
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  border-bottom: 1px solid var(--card-bg);
 }
 
 body.labeled-nav:is(.tab-autohide, .status-bar-autohide, .Ribbon-autohide, .nav-header-autohide, .tab-title-bar-autohide, .vault-profile-autohide) .mod-left-split .mod-top .workspace-tab-header-container .workspace-tab-header-container-inner {
   /* Restore default inner container */
-  flex-direction: row !important;
-  align-items: center !important;
-  justify-content: center !important;
-  gap: 4px !important;
-  margin-top: 4px !important;
-  margin-bottom: 0 !important;
-  width: fit-content !important;
-  padding: 6px 8px 8px 6px !important;
-  background-color: transparent !important;
-  border: none !important;
-  border-radius: 0 !important;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  margin-top: 4px;
+  margin-bottom: 0;
+  width: fit-content;
+  padding: 6px 8px 8px 6px;
+  background-color: transparent;
+  border: none;
+  border-radius: 0;
 }
 
 /* Hide the text labels in tab headers when hider is active */
 body.labeled-nav:is(.tab-autohide, .status-bar-autohide, .Ribbon-autohide, .nav-header-autohide, .tab-title-bar-autohide, .vault-profile-autohide) .mod-left-split .mod-top .workspace-tab-header-inner-title {
-  display: none !important;
+  display: none;
 }
 
 /* Ensure hider animations work properly by overriding labeled-nav positioning */
 body.labeled-nav.tab-autohide .mod-left-split .mod-top .workspace-tab-header-container {
-  position: relative !important;
+  position: relative;
 }
 
 body.labeled-nav.tab-autohide .mod-left-split .mod-top .workspace-tab-header-container .sidebar-toggle-button.mod-left {
-  position: absolute !important;
-  justify-content: flex-end !important;
-  padding-right: var(--size-4-2) !important;
-  top: 0 !important;
-  right: 0 !important;
+  position: absolute;
+  justify-content: flex-end;
+  padding-right: var(--size-4-2);
+  top: 0;
+  right: 0;
 }
 
 /* Fix the container structure for tab-autohide compatibility */
 body.labeled-nav.tab-autohide .mod-left-split .mod-top .workspace-tab-header-container .workspace-tab-container-inner {
-  flex-grow: 1 !important;
-  gap: 0 !important;
-  padding: var(--size-4-2) var(--size-4-3) !important;
+  flex-grow: 1;
+  gap: 0;
+  padding: var(--size-4-2) var(--size-4-3);
 }
 
 body:not(.is-mobile).vault-profile-autohide:has(.workspace-sidedock-vault-profile:hover) .workspace-split.mod-left-split .workspace-tabs:last-of-type .workspace-tab-container {
@@ -890,15 +890,15 @@ body:not(.is-mobile).vault-profile-autohide:has(.workspace-sidedock-vault-profil
 
 body.labeled-nav.tab-autohide .mod-left-split .mod-top .workspace-tab-header .workspace-tab-header-inner {
   gap: var(--size-2-3);
-  padding: 2px !important;
+  padding: 2px;
 }
 
 body.labeled-nav.tab-autohide .mod-left-split .mod-top .workspace-tab-header .workspace-tab-header.tappable.is-active {
-  background-color: var(--color-accent) !important;
+  background-color: var(--color-accent);
 }
 
 body.labeled-nav.tab-autohide .mod-left-split .mod-top .workspace-tab-header.is-active {
-  background-color: var(--color-accent) !important;
+  background-color: var(--color-accent);
 }
 
 /* ========================================================================== */

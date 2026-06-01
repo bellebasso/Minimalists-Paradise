@@ -66,7 +66,7 @@ body {
   --tab-radius: calc(var(--default-radius) / 2.5);
   --tab-radius-active: var(--tab-radius);
   --text-highlight-bg: var(--color-accent);
-  --tab-size: 18px;
+  --tab-size: 22px;
   --tab-max-width: 250px;
   --shadow-tactile: rgb(0 0 0 / 4%) 0px 2px 8px -2px, rgb(var(--mono-rgb-100), 0.04) 0px 2px 4px -2px;
   --callout-border-width: 1px;
@@ -102,6 +102,7 @@ body {
   --shadow-s: var(--shadow-base), inset 0 0 1px 1px white, var(--shadow-border), 0 8px 15px 0 rgb(0 0 0 / 20%);
   --shadow-l: var(--shadow-border), inset 0 0 1px 1px white, 0 18px 60px 0 rgb(0 0 0 / 30%);
   --blur-l: blur(calc(var(--frosted-glass-blur) * 2)) saturate(1.5) brightness(1.025);
+  --file-header-background-focused: var(--color-panel);
 }
 
 body.is-translucent {
@@ -180,8 +181,8 @@ body.is-translucent {
   --tab-background-active: var(--color-accent);
   --tag-background: color-mix(in srgb, var(--color-accent) 30%, var(--color-panel) 70%);
   --tag-color: var(--color-accent);
-  --ic-infobox-color: var(--interactive-normal) !important;
-  --ic-border-color: var(--divider-color) !important;
+  --ic-infobox-color: var(--interactive-normal);
+  --ic-border-color: var(--divider-color);
   --ic-image-border-color: var(--divider-color);
   --ic-section-background-color: var(--color-accent);
   --ic-section-border-color: var(--blockquote-border-color);
@@ -210,7 +211,7 @@ body.is-translucent {
   --background-default: #0c0c0c;
   --text-normal: #ffffff;
   --background-primary: #000000;
-  --background-primary-alt: var(--background-primary) !important;
+  --background-primary-alt: var(--background-primary);
   --background-secondary: var(--background-primary);
   --background-secondary-alt: var(--background-primary);
   --card-bg: #000000;
@@ -246,17 +247,17 @@ body.is-translucent {
   --tab-background-active: var(--color-accent);
   --tag-background: color-mix(in srgb, var(--color-accent) 30%, var(--color-panel) 70%);
   --tag-color: var(--color-accent);
-  --ic-infobox-color: var(--interactive-normal) !important;
-  --ic-border-color: var(--divider-color) !important;
+  --ic-infobox-color: var(--interactive-normal);
+  --ic-border-color: var(--divider-color);
   --ic-image-border-color: var(--divider-color);
-  --ic-section-background-color: var(--color-accent) !important;
+  --ic-section-background-color: var(--color-accent);
   --ic-section-border-color: var(--blockquote-border-color);
   --ic-horizontal-rule-color: var(--divider-color);
   --ic-infobox-title-color: var(--color-accent);
 }
 
 body:not(.is-mobile) .horizontal-main-container {
-  padding-bottom: 24px !important;
+  padding-bottom: 24px;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -308,7 +309,7 @@ body:not(.is-mobile) .horizontal-main-container {
   --text-accent: var(--divider-color);
   --link-color: #BE99FF;
   --link-external-color: var(--link-color);
-  --bases-table-border-color: var(--divider-color) !important;
+  --bases-table-border-color: var(--divider-color);
   --link-unresolved-color: var(--link-color);
   --graph-node: var(--divider-color);
   --background-modifier-hover: color-mix(in srgb, var(--background-primary) 70%, white 30%);
