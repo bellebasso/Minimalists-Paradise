@@ -52,7 +52,10 @@
 
 .callout {
   box-shadow: var(--shadow-tactile);
-  background: linear-gradient(rgb(var(--callout-color), 0.2), rgb(var(--callout-color), 0.3));
+  background: linear-gradient(
+    color-mix(in srgb, var(--callout-color) 20%, transparent),
+    color-mix(in srgb, var(--callout-color) 30%, transparent)
+  );
   border-radius: var(--blockquote-radius);
 }
 

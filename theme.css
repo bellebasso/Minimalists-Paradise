@@ -1360,7 +1360,6 @@ body.is-translucent {
   --ic-section-border-color: var(--blockquote-border-color);
   --ic-horizontal-rule-color: var(--divider-color);
   --ic-infobox-title-color: var(--color-accent);
-  --callout-color: var(--ic-infobox-color);
 }
 
 .theme-dark {
@@ -1427,7 +1426,6 @@ body.is-translucent {
   --ic-section-border-color: var(--blockquote-border-color);
   --ic-horizontal-rule-color: var(--divider-color);
   --ic-infobox-title-color: var(--color-accent);
-  --callout-color: var(--ic-infobox-color);
 }
 
 body:not(.is-mobile) .horizontal-main-container {
@@ -3378,7 +3376,10 @@ input[type="checkbox"] {
 
 .callout {
   box-shadow: var(--shadow-tactile);
-  background: linear-gradient(rgb(var(--callout-color), 0.2), rgb(var(--callout-color), 0.3));
+  background: linear-gradient(
+    color-mix(in srgb, var(--callout-color) 20%, transparent),
+    color-mix(in srgb, var(--callout-color) 30%, transparent)
+  );
   border-radius: var(--blockquote-radius);
 }
 
