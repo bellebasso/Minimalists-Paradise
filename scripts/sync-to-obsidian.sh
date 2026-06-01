@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # Ensure we are in the project root
-cd "$(dirname "$0")"
+cd "$(dirname "$0")/.."
 
 # DEST is set via OBSIDIAN_VAULT_PATH env var
 if [ -z "$OBSIDIAN_VAULT_PATH" ]; then
