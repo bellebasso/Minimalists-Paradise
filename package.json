@@ -32,7 +32,7 @@
   },
   "homepage": "https://github.com/bellebasso/Minimalists-Paradise#readme",
   "dependencies": {
-    "axios": "^1.16.1",
+    "axios": "^1.17.0",
     "cheerio": "^1.2.0"
   },
   "devDependencies": {
