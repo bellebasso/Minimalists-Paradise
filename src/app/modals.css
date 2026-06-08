@@ -43,7 +43,8 @@
 .menu,
 .suggestion-container {
   transition: var(--anim-duration-moderate) var(--anim-motion);
-  padding: 0
+  padding: 0;
+  box-shadow: none;
 }
 
 .prompt,
