@@ -1991,6 +1991,13 @@ body:not(.is-mobile) .workspace-tab-header.is-active.mod-active {
   border: none;
 }
 
+.workspace .mod-root .workspace-tab-header.is-active {
+  max-width: var(--tab-max-width);
+  background-color: var(--tab-background-active);
+  box-sizing: border-box;
+  border: none;
+}
+
 .workspace-tab-header .is-active {
   max-width: var(--tab-max-width);
   background-color: var(--tab-background-active);
@@ -2682,7 +2689,8 @@ body.is-phone .mod-root .workspace-leaf-content[data-mode="source"] .view-action
 .menu,
 .suggestion-container {
   transition: var(--anim-duration-moderate) var(--anim-motion);
-  padding: 0
+  padding: 0;
+  box-shadow: none;
 }
 
 .prompt,

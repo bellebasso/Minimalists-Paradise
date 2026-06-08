@@ -3,27 +3,27 @@
 /* ========================================================================== */
 
 /* Transparent Borders */
-.workspace .workspace-split.mod-horizontal > .workspace-leaf-resize-handle,
-.workspace .workspace-split.mod-vertical > .workspace-leaf-resize-handle,
-.workspace .pane-view,
-.workspace .mod-left,
-.workspace .mod-left::before,
-.workspace .mod-right,
-.workspace .workspace-leaf,
-.workspace .view-content,
-.workspace .workspace-tab-header-container-inner,
-.workspace .workspace-tabs .workspace-leaf-resize-handle,
-.workspace .workspace-tab-header-container {
+.workspace-split.mod-horizontal>.workspace-leaf-resize-handle,
+.workspace-split.mod-vertical>.workspace-leaf-resize-handle,
+.pane-view,
+.mod-left,
+.mod-left::before,
+.mod-right,
+.workspace-leaf,
+.view-content,
+.workspace-tab-header-container-inner,
+.workspace-leaf-resize-handle,
+.workspace-tab-header-container {
   border: none;
 }
 
-.workspace-split.mod-root .view-content {
+.view-content {
   background-color: var(--workspace-note-bg);
 }
 
 .workspace-tab-header-container-inner {
   align-items: center;
-  align-content: center;
+  place-content: center center;
   justify-self: center;
   max-width: 100%;
   gap: 4px;
@@ -87,7 +87,7 @@ body:not(.is-mobile) .workspace-split.mod-vertical.mod-root {
   background-color: transparent;
 }
 
-.workspace-tabs .workspace-leaf {
+.workspace-leaf {
   background-color: var(--workspace-note-bg);
   border-radius: inherit;
   overflow: hidden;
@@ -162,18 +162,16 @@ span .view-header-title-parent .view-header-breadcrumb {
 
 /* Tabs */
 
-.workspace .workspace-split .workspace-tab-header-container {
+.workspace-tab-header-container {
   align-items: center;
   position: relative;
   padding-bottom: 0;
   background-color: transparent;
-  border: none;
+  border-bottom: 1px solid var(--workspace-tab-border);
   height: var(--header-height);
 }
 
 html body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
-  display: flex;
-  align-items: center;
   margin-bottom: 0;
   margin-top: 4px;
   gap: 8px;
@@ -182,7 +180,7 @@ html body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
   padding: 6px 8px 8px 6px;
 }
 
-.workspace .mod-root .workspace-tab-header {
+.workspace-tab-header {
   max-width: 100%;
   display: flex;
   flex-grow: 1;
@@ -197,8 +195,9 @@ html body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
   align-items: center;
 }
 
-.toggle-tab-animations .workspace .mod-root .workspace-tab-header {
+.toggle-tab-animations .workspace-tab-header {
   max-width: 100%;
+  ;
   display: flex;
   flex-grow: 1;
   border-radius: var(--tab-radius);
@@ -225,13 +224,6 @@ body:not(.is-mobile) .workspace-tab-header.is-active.mod-active {
   flex-grow: 2;
   max-width: var(--tab-max-width);
   background-color: var(--color-accent);
-  box-sizing: border-box;
-  border: none;
-}
-
-.workspace .mod-root .workspace-tab-header.is-active {
-  max-width: var(--tab-max-width);
-  background-color: var(--tab-background-active);
   box-sizing: border-box;
   border: none;
 }
@@ -381,6 +373,7 @@ body.is-focused .sidebar-toggle-button {
 /* Ribbon */
 .workspace-ribbon.side-dock-ribbon {
   background-color: var(--workspace-ribbon-bg);
+  /* border-right: 1px solid var(--workspace-ribbon-border); */
 }
 
 .side-dock-ribbon-action {
