@@ -1220,6 +1220,7 @@ body {
   --workspace-note-bg: color-mix(in srgb, var(--workspace-note-surface) calc(var(--workspace-note-opacity) * 100%), transparent);
   --workspace-sidebar-bg: color-mix(in srgb, var(--workspace-sidebar-surface) calc(var(--workspace-sidebar-opacity) * 100%), transparent);
   --workspace-ribbon-bg: color-mix(in srgb, var(--workspace-ribbon-surface) calc(var(--workspace-ribbon-opacity) * 100%), transparent);
+ --workspace-mobile-toolbar-bg: linear-gradient( var(--interactive-normal), color-mix( in srgb, var(--interactive-normal), transparent)), color-mix(in srgb, var(--interactive-normal), transparent);
   --workspace-tab-bg: color-mix(in srgb, var(--workspace-tab-surface) calc(var(--workspace-tab-opacity) * 100%), transparent);
   --workspace-note-border: color-mix(in srgb, var(--card-border-color, var(--divider-color)) calc(var(--workspace-note-opacity) * 100%), transparent);
   --workspace-sidebar-border: color-mix(in srgb, var(--card-border-color, var(--divider-color)) calc(var(--workspace-sidebar-opacity) * 100%), transparent);
@@ -2586,6 +2587,10 @@ body.is-mobile .mobile-toolbar-option {
 
 body.is-mobile .mobile-toolbar-options-container {
   gap: 8px;
+}
+
+body.is-tablet .mobile-toolbar-options-list-container, body.is-tablet .mobile-toolbar-floating-options {
+  background: var(--workspace-mobile-toolbar-bg);
 }
 
 body.is-mobile .mobile-toolbar {

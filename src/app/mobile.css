@@ -291,6 +291,10 @@ body.is-mobile .mobile-toolbar-options-container {
   gap: 8px;
 }
 
+body.is-tablet .mobile-toolbar-options-list-container, body.is-tablet .mobile-toolbar-floating-options {
+  background: var(--workspace-mobile-toolbar-bg);
+}
+
 body.is-mobile .mobile-toolbar {
   transition: var(--anim-duration-moderate) var(--anim-motion);
   background-color: transparent;
