@@ -1236,6 +1236,8 @@ body {
   --blur-s: blur(calc(var(--frosted-glass-blur) / 2)) saturate(1.5) brightness(1.025);
   --blur-s-alt: blur(calc(var(--frosted-glass-blur) / 2)) saturate(1.5) brightness(0.75);
   --blur-m: blur(var(--frosted-glass-blur)) saturate(1.5) brightness(1.025);
+  --blur-opacity-xs: 40%;
+  --blur-background: color-mix(in srgb, var(--interactive-normal) var(--blur-opacity-xs), transparent) linear-gradient(var(--interactive-normal), color-mix(in srgb, var(--interactive-normal) var(--blur-opacity-xs), transparent));
   --tab-radius: calc(var(--default-radius) / 2.5);
   --tab-radius-active: var(--tab-radius);
   --text-highlight-bg: var(--color-accent);
@@ -2149,7 +2151,7 @@ body.is-focused .sidebar-toggle-button {
   padding: var(--size-2-2);
   background-color: var(--workspace-ribbon-bg);
   border: none;
-  border-radius: var(--tab-radius);
+  border-radius: var(--clickable-icon-radius);
 }
 
 /* Empty State */

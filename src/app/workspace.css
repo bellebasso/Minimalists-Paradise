@@ -387,7 +387,7 @@ body.is-focused .sidebar-toggle-button {
   padding: var(--size-2-2);
   background-color: var(--workspace-ribbon-bg);
   border: none;
-  border-radius: var(--tab-radius);
+  border-radius: var(--clickable-icon-radius);
 }
 
 /* Empty State */
