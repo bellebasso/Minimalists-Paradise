@@ -18,7 +18,8 @@
     "release": "npm version patch -m \"chore(release): %s\"",
     "release:patch": "npm version patch -m \"chore(release): %s\"",
     "release:minor": "npm version minor -m \"chore(release): %s\"",
-    "release:major": "npm version major -m \"chore(release): %s\""
+    "release:major": "npm version major -m \"chore(release): %s\"",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -36,8 +37,11 @@
     "cheerio": "^1.2.0"
   },
   "devDependencies": {
+    "@commitlint/cli": "^21.0.2",
+    "@commitlint/config-conventional": "^21.0.2",
     "chokidar-cli": "^3.0.0",
     "dotenv-cli": "^11.0.0",
+    "husky": "^9.1.7",
     "playwright": "^1.60.0",
     "postcss": "^8.5.14",
     "postcss-combine-duplicated-selectors": "^10.0.3",
