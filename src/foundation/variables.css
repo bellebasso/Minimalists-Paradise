@@ -68,6 +68,8 @@ body {
   --blur-background: color-mix(in srgb, var(--interactive-normal) var(--blur-opacity-xs), transparent) linear-gradient(var(--interactive-normal), color-mix(in srgb, var(--interactive-normal) var(--blur-opacity-xs), transparent));
   --tab-radius: calc(var(--default-radius) / 2.5);
   --tab-radius-active: var(--tab-radius);
+  --tab-padding: 2px;
+  --tab-mobile-padding: 3px;
   --text-highlight-bg: var(--color-accent);
   --tab-size: 22px;
   --tab-max-width: 250px;

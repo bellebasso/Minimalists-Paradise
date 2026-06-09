@@ -1241,6 +1241,8 @@ body {
   --blur-background: color-mix(in srgb, var(--interactive-normal) var(--blur-opacity-xs), transparent) linear-gradient(var(--interactive-normal), color-mix(in srgb, var(--interactive-normal) var(--blur-opacity-xs), transparent));
   --tab-radius: calc(var(--default-radius) / 2.5);
   --tab-radius-active: var(--tab-radius);
+  --tab-padding: 2px;
+  --tab-mobile-padding: 3px;
   --text-highlight-bg: var(--color-accent);
   --tab-size: 22px;
   --tab-max-width: 250px;
@@ -1930,21 +1932,25 @@ span .view-header-title-parent .view-header-breadcrumb {
 .workspace .workspace-split .workspace-tab-header-container {
   align-items: center;
   position: relative;
-  padding-bottom: 0;
+  padding-bottom: 4px;
+  padding-top: 4px;
   background-color: transparent;
   border: none;
   height: var(--header-height);
 }
 
-html body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
+body .mod-root .workspace-tab-header-container-inner {
+  height: var(--header-height);
+}
+
+body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
   display: flex;
   align-items: center;
-  margin-bottom: 0;
-  margin-top: 4px;
   gap: 8px;
   width: fit-content;
   height: calc(var(--header-height) + 4px);
-  padding: 6px 8px 8px 6px;
+  padding: 6px;
+  margin: 0;
 }
 
 .workspace .mod-root .workspace-tab-header {
@@ -1952,7 +1958,7 @@ html body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
   display: flex;
   flex-grow: 1;
   border-radius: var(--tab-radius);
-  padding: 0;
+  padding: var(--tab-padding);
   box-shadow: none;
   background: var(--workspace-tab-bg);
   box-sizing: border-box;
@@ -1967,7 +1973,7 @@ html body:not(.is-mobile) .mod-root .workspace-tab-header-container-inner {
   display: flex;
   flex-grow: 1;
   border-radius: var(--tab-radius);
-  padding: 0;
+  padding: var(--tab-padding);
   box-shadow: none;
   transition: flex-grow 0.5s ease-in-out, background-color 0.4s ease-in-out;
   background: var(--workspace-tab-bg);
@@ -2006,6 +2012,11 @@ body:not(.is-mobile) .workspace-tab-header.is-active.mod-active {
   background-color: var(--tab-background-active);
   box-sizing: border-box;
   border: none;
+}
+
+.workspace .mod-root .workspace-tab-header-inner {
+  width: 100%;
+  height: 100%;
 }
 
 .workspace-tab-header-inner::after,
@@ -2335,6 +2346,10 @@ body.is-tablet .workspace-tab-container {
   border-radius: var(--mobile-card-radius);
 }
 
+body.layout-viewfinder.is-tablet .mod-root {
+  margin-top: var(--safe-area-inset-top);
+}
+
 body.is-mobile .workspace-tab-container {
   background-color: var(--workspace-note-bg);
 }
@@ -2366,6 +2381,13 @@ body.is-mobile .nav-buttons-container {
 
 body.is-mobile .workspace-tab-header {
   background-color: transparent;
+  height: calc(var(--tab-size) * 1.75);
+}
+
+body.is-mobile .workspace-split .mod-root .workspace-tab-header-inner {
+  padding: var(--tab-mobile-padding);
+  width: 100%;
+  height: 100%;
 }
 
 body.is-phone .nav-buttons-container::after {
@@ -2405,7 +2427,9 @@ body.is-mobile .workspace-drawer .nav-header {
 }
 
 body.is-mobile .mod-root .workspace-tab-header-container-inner {
-  padding-bottom: 6px;
+  display: flex;
+  align-items: center;
+  margin: 6px;
 }
 
 body.is-mobile .workspace-drawer-active-tab-header {
