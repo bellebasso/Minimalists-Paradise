@@ -264,13 +264,11 @@ body.is-mobile .mobile-toolbar-options-list {
 
   gap: 8px;
   box-shadow: var(--shadow-xs);
-  backdrop-filter: var(--blur-s);
   justify-content: flex-start;
   max-width: fit-content;
   border-radius: var(--clickable-icon-radius);
   padding: 0 8px;
   pointer-events: auto;
-  overflow: hidden;
   transition: var(--anim-duration-moderate);
 }
 
@@ -322,10 +320,26 @@ body.is-phone .mobile-toolbar {
   left: 0;
   z-index: var(--layer-status-bar);
   border: none;
-  padding: 0 28px max(var(--safe-area-inset-bottom), 16px);
+  padding: 0 14px max(var(--safe-area-inset-bottom), 16px);
   top: unset;
 }
 
+
+body.is-phone:not(.AT-row, .AT-multirow, .AT-column).mod-toolbar-open
+  .mod-root
+  .view-content {
+  margin-bottom: calc(var(--mobile-toolbar-height) + var(--keyboard-spacing));
+}
+
+body.is-phone:not(.AT-row, .AT-multirow, .AT-column) .mobile-toolbar-spacer {
+  display: none;
+}
+
+body.is-phone:not(.AT-row, .AT-multirow, .AT-column) .mobile-toolbar {
+  top: calc(
+    99vh - var(--keyboard-height) - var(--mobile-toolbar-height)
+  );
+}
 /********** Mode Switchcer **********/
 body.is-phone .mod-root .view-header {
   z-index: 3;
