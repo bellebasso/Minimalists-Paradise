@@ -75,6 +75,10 @@ body.is-mobile .workspace-tab-header {
   height: calc(var(--tab-size) * 1.75);
 }
 
+body.is-mobile .workspace-drawer .workspace-tab-header {
+  height: auto;
+}
+
 body.is-mobile .workspace-split .mod-root .workspace-tab-header-inner {
   padding: var(--tab-mobile-padding);
   width: 100%;
