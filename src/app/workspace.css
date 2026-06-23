@@ -160,6 +160,11 @@ span .view-header-title-parent .view-header-breadcrumb {
   border-radius: var(--clickable-icon-radius);
 }
 
+/* Tooltips */
+body .tooltip, body .cm-tooltip {
+  border-radius: var(--default-radius)
+}
+
 /* Tabs */
 
 .workspace .workspace-split .workspace-tab-header-container {
