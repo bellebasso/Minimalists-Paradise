@@ -2162,6 +2162,11 @@ body.is-focused .sidebar-toggle-button {
 /* Ribbon */
 .workspace-ribbon.side-dock-ribbon {
   background-color: var(--workspace-ribbon-bg);
+  border: none;
+}
+
+.workspace-ribbon.mod-primary::before {
+  border: none;
 }
 
 .side-dock-ribbon-action {
@@ -3514,7 +3519,7 @@ input.metadata-property-key-input {
 @supports (color: color-mix(in srgb, white 50%, black)) {
   .callout {
     --bases-table-header-background: transparent;
-    --bases-table-header-background-hover: rgb(var(--callout-color), 0.1);
+    --bases-table-header-background-hover: color-mix(in srgb, var(--callout-color) 10%, transparent);
     --bases-embed-border-color: var(--divider-color);
     --bases-table-border-color: var(--divider-color);
     --table-border-color: var(--divider-color);

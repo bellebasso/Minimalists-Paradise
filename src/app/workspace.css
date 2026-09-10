@@ -395,6 +395,11 @@ body.is-focused .sidebar-toggle-button {
 /* Ribbon */
 .workspace-ribbon.side-dock-ribbon {
   background-color: var(--workspace-ribbon-bg);
+  border: none;
+}
+
+.workspace-ribbon.mod-primary::before {
+  border: none;
 }
 
 .side-dock-ribbon-action {
