@@ -1264,6 +1264,7 @@ body {
   --nn-theme-mobile-toolbar-bg: var(--workspace-sidebar-bg);
   --nn-theme-mobile-toolbar-button-icon-color: var(--icon-color);
   --nn-theme-navitem-border-radius: var(--default-radius);
+  --vim-motions-cursorline-bg: var(--interactive-normal);
   --code-normal: #eeeeee;
   --code-comment: #16486D;
   --code-function: #69EED7;
@@ -3645,6 +3646,12 @@ button.kanban-plugin__new-item-button {
 
 .various-complements__suggestion-item.is-selected {
   background-color: var(--color-accent);
+}
+
+/* Vim Motions */
+.vim-motions-cursorline {
+  background-color: var(--vim-motions-cursorline-bg, color-mix(in oklch, var(--text-accent) 6%, transparent));
+  border-radius: calc(var(--blockquote-radius) / 2);
 }
 
 /* ========================================================================== */

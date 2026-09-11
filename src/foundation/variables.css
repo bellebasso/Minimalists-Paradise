@@ -91,6 +91,7 @@ body {
   --nn-theme-mobile-toolbar-bg: var(--workspace-sidebar-bg);
   --nn-theme-mobile-toolbar-button-icon-color: var(--icon-color);
   --nn-theme-navitem-border-radius: var(--default-radius);
+  --vim-motions-cursorline-bg: var(--interactive-normal);
   --code-normal: #eeeeee;
   --code-comment: #16486D;
   --code-function: #69EED7;
