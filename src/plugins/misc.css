@@ -138,6 +138,14 @@ button.kanban-plugin__new-item-button {
   border-radius: calc(var(--blockquote-radius) / 2);
 }
 
+.vim-motions-picker-section .vim-motions-picker-preview, .vim-motions-picker-section .vim-motions-picker-results {
+  border-radius: var(--modal-radius);
+}
+
+.vim-motions-picker-section input.vim-motions-picker-input, .vim-motions-picker-section input.vim-motions-picker-input:active, .vim-motions-picker-section input.vim-motions-picker-input:focus {
+  border-radius: var(--input-radius);
+}
+
 /* ========================================================================== */
 
 /* --- SYNTAX HIGHLIGHTING ------------------------------------ */
