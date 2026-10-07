@@ -1152,11 +1152,6 @@ settings:
     level: 1
     collapsed: true
 
-
-  - id: empty-state-off
-    title: disable new tab styling
-    type: class-toggle
-
   - id: anim-speed
     title: animation speed
     type: variable-number-slider
